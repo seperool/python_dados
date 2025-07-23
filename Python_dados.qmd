@@ -1,0 +1,80 @@
+---
+title: "Estudo de Python e dados"
+author: "Sergio Pedro Rodrigues Oliveira"
+date: last-modified
+date-format: DD MMMM YYYY
+format:
+    html:
+        code-fold: true
+        number-sections: true
+    pdf:
+      toc: false
+      lof: false
+      lot: false
+      toc-depth: 5
+      number-sections: true
+      number-depth: 5
+      colorlinks: true
+      cite-method: biblatex
+    docx:
+      toc: true
+      number-sections: true
+      highlight-style: github
+jupyter: python3
+bibliography: Quarto/pythonbibliografia.bib
+csl: Quarto/abnt.csl
+---
+
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{roman}
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\contentsname}{SUMÁRIO}
+\tableofcontents
+```
+
+\newpage
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\listfigurename}{LISTA DE FIGURAS}
+\listoffigures
+```
+\newpage
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\listtablename}{LISTA DE TABELAS}
+\listoftables
+```
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+from IPython.display import Markdown
+from tabulate import tabulate
+import math
+import statistics
+import numpy as np
+import pandas as pd
+import json
+```
+
+\newpage
+\pagenumbering{arabic}
+
+# Objetivo
+
+# Básico sobre o `DataFrame` do Pandas
+
+# Estrutura de dados do Pandas
+
+# Introdução à plotagem
+
+\newpage
+
+# Referências
