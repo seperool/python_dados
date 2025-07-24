@@ -69,7 +69,17 @@ import json
 
 # Objetivo
 
+\newpage
+
 # Básico sobre o `DataFrame` do Pandas
+
+## Introdução
+## Carregando seu primeiro conjunto de dados
+## Observando colunas, linhas e células
+## Cálculos agrupados e agregados
+## Plotagem básica
+
+\newpage
 
 # Estrutura de dados do Pandas
 
