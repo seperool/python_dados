@@ -1,9 +1,15 @@
-ESCRITO EM 22/07/25
+ESCRITO EM 24/07/25
 ---
-PARA 23/07/25
+PARA 25/07/25
 ---
 Subir github:
 
 Doing:
 
 To do:
+    - Básico sobre o DataFrame do Pandas
+        - Introdução
+        - Carregando seu primeiro conjunto de dados
+        - Observando colunas, linhas e células
+        - Cálculos agrupados e agregados
+        - Plotagem básica
