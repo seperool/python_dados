@@ -69,7 +69,7 @@ import json
 
 # Objetivo
 
-\newpage
+O objetivo deste estudo é explorar e documentar as funcionalidades essenciais das principais bibliotecas científicas do Python, como NumPy, Pandas e outras, através de exemplos práticos e casos de uso selecionados. Pretende-se consolidar o conhecimento sobre a manipulação, análise e visualização de dados, servindo como um guia de referência pessoal para futuros projetos de programação científica.
 
 # Básico sobre o `DataFrame` do Pandas
 
