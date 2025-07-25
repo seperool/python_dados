@@ -74,6 +74,32 @@ O objetivo deste estudo é explorar e documentar as funcionalidades essenciais d
 # Básico sobre o `DataFrame` do Pandas
 
 ## Introdução
+
+O `Pandas` é uma biblioteca `Python` de código aberto para análise de dados. Ele dá a `Python` a capacidade de trabalhar com dados do tipo planilha, permitindo **carregar**, **manipular**, **alinhar** e **combinar dados** rapidamente, entre outras funções.
+
+Para proporcionar esses recursos mais sofisticados ao `Python`, o `Pandas` introduz dois novos tipos de dados: `Series` e `DataFrame`.
+  
+  * `DataFrame`
+  
+  Representa os dados de planilhas ou retangulares completos.
+  
+  * `Series`
+  
+  Corresponde a única coluna do `DataFrame`.
+  
+  * Também podemos pensar em um `DataFrame` do `Pandas` como um `dicionário` ou uma coleção de objetos `Series`.
+
+Por que você deveria usar uma linguagem de programação como `Python` e uma ferramenta como o `Pandas` para trabalhar com dados? Tudo se reduz à automação e à reprodutibilidade.
+
+Objetivos do capítulo:
+
+  1. Carga de um arquivo de dados simples e delimitado.
+  2. Como contar quantas linhas e colunas foram carregadas.
+  3. Como delimitar quais tipos de dados foram carregados.
+  4. Observação de diferentes porções de dados criando subconjuntos de linhas e colunas.
+
+\newpage
+
 ## Carregando seu primeiro conjunto de dados
 ## Observando colunas, linhas e células
 ## Cálculos agrupados e agregados
