@@ -101,6 +101,11 @@ Objetivos do capítulo:
 \newpage
 
 ## Carregando seu primeiro conjunto de dados
+
+
+
+\newpage
+
 ## Observando colunas, linhas e células
 ## Cálculos agrupados e agregados
 ## Plotagem básica
