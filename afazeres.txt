@@ -1,15 +1,15 @@
-ESCRITO EM 25/07/25
+ESCRITO EM 26/07/25
 ---
-PARA 26/07/25
+PARA 27/07/25
 ---
 Subir github:
 
 Doing:
+    - Básico sobre o DataFrame do Pandas
+        - Carregando seu primeiro conjunto de dados
 
 To do:
     - Básico sobre o DataFrame do Pandas
-        - Introdução
-        - Carregando seu primeiro conjunto de dados
         - Observando colunas, linhas e células
         - Cálculos agrupados e agregados
         - Plotagem básica
