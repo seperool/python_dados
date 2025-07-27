@@ -104,6 +104,27 @@ Objetivos do capítulo:
 
 
 
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-tiposPandasvsPython
+#| tbl-cap: Tipos do Pandas versus tipos de Python
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["object","string","Cadeia de caracteres, usado para representar texto."],
+         ["int64","int","Números inteiros."],
+         ["float64","float","Números com decimais."],
+         ["datetime64","datetime","`datetime` trata-se de uma biblioteca-padrão de Python \n(ou seja, não é carregado por padrão e deve ser importado). \nRepresenta pontos específicos no tempo."]
+         ]
+Markdown(tabulate(
+  table, 
+  headers=["Tipo do Pandas","Tipo de Python","Discrição"],
+  colalign=("left","left","left")
+))
+```
+
 \newpage
 
 ## Observando colunas, linhas e células
