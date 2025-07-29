@@ -1,14 +1,12 @@
-ESCRITO EM 28/07/25
+ESCRITO EM 29/07/25
 ---
-PARA 29/07/25
+PARA 30/07/25
 ---
 Subir github:
 
 Doing:
     - Básico sobre o DataFrame do Pandas
         - Carregando seu primeiro conjunto de dados
-            - Atributo shape
-            - Atributo columns
             - Atributo dtypes
             - Método info()
 
