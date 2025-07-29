@@ -138,12 +138,44 @@ print(df.head())
 
   A função `type()` é conveniente quando começamos a trabalhar com vários tipos diferentes de objetos Python e precisamos saber em qual objeto estamos trabalhando no momento. 
 
-```{python}
-print(type(df))
-```
+  ```{python}
+  print(type(df))
+  ```
 
 * Atributo `shape`:
+
+  No momento, o conjunto de dados que carregamos esta salvo como um objeto `DataFrame` do **Pandas**, e é relativamente pequeno.
+
+  Todo objeto `DataFrame` tem um atributo `shape` que nos dará o número de linhas e de colunas desse objeto.
+
+  O atributo `shape` devolve uma tupla[^tupla] na qual o primeiro valor é o número de linhas e o segundo é a quantidade de colunas.
+
+  Com base nesse resultado anteior, podemos ver que nosso conjunto de dados Gapminder tem 1704 linhas e 6 colunas.
+
+  Como `shape` é um atributo de `DataFrame`, e não uma função ou um método, não há parênteses após o ponto. Se você cometer o erro de colocar parênteses depois do atributo `shape`, um erro será devolvido.
+
+  ```{python}
+  # Obtém o número de linhas e colunas
+  print(df.shape)
+  ```
+
+[^tupla]: Uma tupla é semelhante a uma `list`, pois ambas podem armazenar informações heterogêneas. A principal diferença é que o conteúdo de uma tupla é "imutável", o que significa que ela não pode ser alterada. As tuplas também são criadas com parênteses, ().
+
+\newpage
+
 * Atributo `columns`:
+
+  Em geral, quando observamos um conjunto de dados pela primeira vez, queremos saber quantas linhas e colunas há (acabamos de fazer isso).
+
+  Para ter uma noção de quais informações ele contém, devemos observar as colunas.
+
+  Os nomes das colunas, assim como `shape`, são especificados usando o atributo `columns` do objeto dataframe.
+
+  ```{python}
+  # Obtém os nomes das colunas
+  print(df.columns)
+  ```
+
 * Atributo `dtypes`:
 * Método `info()`:
 
