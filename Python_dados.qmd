@@ -102,7 +102,52 @@ Objetivos do capítulo:
 
 ## Carregando seu primeiro conjunto de dados
 
+Dado um conjunto de dados inicialmente o carregamos e começamos a observar sua estrutura e contéudo.
 
+O modo mais simples de observar um conjunto de dados é analisar e criar subconjuntos de linhas e colunas específicas. Podemos ver quais tipos de informação estão armazenadas em cada coluna, e começar a procurar padrões por meio de estatísticas descritivas agregadas.
+
+Como o **Pandas** não faz parte da biblioteca-padrão de Python, devemos dizer antes ao Python que carregue a biblioteca (`import`):
+
+```
+import pandas as pd
+```
+
+Quando trabalhamos com funções **Pandas**, usar o alias `pd` para `pandas` é uma prática comum.
+
+Com a biblioteca carregada, podemos usar a função `read_csv` para carregar um arquivo de dados **CSV**. Para acessar a função `read_csv` do Pandas, usamos a notação de ponto.
+
+```{python}
+# Por padrão, a função read_csv lerá um arquivo separado por vírgula;
+# Nosso dados Gapminder estão separados por tabulações;
+# Podemos usar o parâmetro sep a representar uma tabulação com \t
+import pandas as pd # Importa a biblioteca pandas como 'pd'.
+
+# --- Carregamento e Inspeção Inicial ---
+df = pd.read_csv('./Data/Cap_01/gapminder.tsv', sep='\t')
+# Carrega o arquivo TSV em um DataFrame, usando tabulação como separador.
+
+# Usamos o método head para que Python nos mostre as 5 primeiras linhas
+print(df.head())
+```
+
+\newpage
+
+* Função `type()`:
+
+  Podemos verificar se estamos trabalhando com um `DataFrame` do Pandas usando a função embutida `type` (isto é, se ele vem diretamente de Python, e não de algum pacote, como o Pandas).
+
+  A função `type()` é conveniente quando começamos a trabalhar com vários tipos diferentes de objetos Python e precisamos saber em qual objeto estamos trabalhando no momento. 
+
+```{python}
+print(type(df))
+```
+
+* Atributo `shape`:
+* Atributo `columns`:
+* Atributo `dtypes`:
+* Método `info()`:
+
+\newpage
 
 ```{python}
 #| echo: false
