@@ -177,7 +177,53 @@ print(df.head())
   ```
 
 * Atributo `dtypes`:
+
+  O objeto `DataFrame` do **Pandas** é semelhante a objetos do tipo `DataFrame` que se encontra em outras linguagens (por exemplo, Julia e R).
+
+  Toda coluna (`Series`) deve ser do mesmo tipo, enquanto cada linha pode conter tipos variados.
+
+  Em nosso exemplo atual, podemos esperar que a coluna `country` só contenha strings e que `year` contenha inteiros. No entanto, é melhor garantir que isso seja verdade usando o atributo `dtypes` ou o método `info()`.
+
+  O atributo `dtypes` de um `DataFrame` **Pandas** retorna uma `Series` que descreve o tipo de dado de cada coluna do `DataFrame`. Ele é útil para inspecionar os tipos de dados inferidos ou atribuídos às suas colunas, o que é crucial para operações corretas e eficientes.
+
+  ```{python}
+  # Obtém o dtype de cada coluna
+  print(df.dtypes)
+  ```
+
+\newpage
+
 * Método `info()`:
+
+  O método `info()` de um `DataFrame` **Pandas** é uma ferramenta essencial para obter um resumo conciso e detalhado do seu `DataFrame`. Ele imprime um resumo conciso do `DataFrame`, incluindo:
+
+  ```{python}
+  #| echo: false
+  #| error: false
+  #| warning: false
+  #| label: tbl-infoPandas
+  #| tbl-cap: Informações do método info() do Pandas
+
+  from IPython.display import Markdown
+  from tabulate import tabulate
+  table = [["Tipo de índice","Informações sobre o índice \n(por exemplo, RangeIndex)."],
+         ["Número de entradas (linhas)","Quantas linhas seu DataFrame possui."],
+         ["Número de colunas","Quantas colunas seu DataFrame tem."],
+         ["Contagem de valores não nulos por coluna","Para cada coluna, informa quantos valores \nnão são nulos. \nIsso é crucial para identificar dados faltantes."],
+         ["Dtype (tipo de dado) de cada coluna","Semelhante ao atributo dtype, \nmas apresentado de forma mais organizada."],
+         ["Uso de memória","A quantidade de memória que o DataFrame \nestá utilizando."]
+         ]
+  Markdown(tabulate(
+  table, 
+  headers=["Informação","Discrição"],
+  colalign=("left","left")
+  ))
+  ```
+
+  ```{python}
+  # Obtém mais informações sobre nossos dados
+  print(df.info())
+  ```
 
 \newpage
 
@@ -205,6 +251,20 @@ Markdown(tabulate(
 \newpage
 
 ## Observando colunas, linhas e células
+
+### Obtendo subconjuntos de colunas
+
+#### Obtendo subconjuntos de colunas pelo nome {.unnumbered}
+
+#### Obter subconjuntos de colunas pela posição dos índices não funciona mais no Pandas v0.20 {.unnumbered}
+
+\newpage
+
+### Obtendo subconjuntos de linhas
+### Combinando tudo
+
+\newpage
+
 ## Cálculos agrupados e agregados
 ## Plotagem básica
 
