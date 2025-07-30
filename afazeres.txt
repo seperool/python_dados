@@ -1,17 +1,19 @@
-ESCRITO EM 29/07/25
+ESCRITO EM 30/07/25
 ---
-PARA 30/07/25
+PARA 31/07/25
 ---
 Subir github:
 
 Doing:
     - Básico sobre o DataFrame do Pandas
-        - Carregando seu primeiro conjunto de dados
-            - Atributo dtypes
-            - Método info()
+        - Observando colunas, linhas e células
+            - Subconjunto de colunas
+                - Obtendo subconjuntos de colunas pelo nome
+                - Obter subconjuntos de colunas pela posição dos índices não funciona mais no Pandas v0.20
+            - Subconjunto de linhas
+            - Combinando tudo
 
 To do:
     - Básico sobre o DataFrame do Pandas
-        - Observando colunas, linhas e células
         - Cálculos agrupados e agregados
         - Plotagem básica
