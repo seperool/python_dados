@@ -252,9 +252,17 @@ Markdown(tabulate(
 
 ## Observando colunas, linhas e células
 
+Agora que somos capazes de carregar um arquivo de dados simples, queremos inspecionar o seu conteúdo. Podemos exibir o conteúdo do dataframe com `print`, mas com os dados de hoje em dia, com frequência, haverá células demais para ser possível compreender todas as informações exibidas. Em vez disso, a melhor maneira de observar nossos dados é inspecioná-los por partes, observando vários subconjuntos dos dados.
+
+Já vimos que podemos usar o método `head()` de um dataframe para observar as cinco primeiras linhas de nossos dados. Isso é conveniente para ver se os dados foram carregados de modo apropriado e para ter uma noção de cada uma das colunas, seus nomes e o conteúdo. Às vezes, porém, talvez queiramos ver somente linhas, colunas e valores específicos de nossos dados.
+
 ### Obtendo subconjuntos de colunas
 
+Se quiser analisar várias colunas, especifique-as com base nos nomes, nas posições ou em intervalos.
+
 #### Obtendo subconjuntos de colunas pelo nome {.unnumbered}
+
+
 
 #### Obter subconjuntos de colunas pela posição dos índices não funciona mais no Pandas v0.20 {.unnumbered}
 
