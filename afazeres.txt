@@ -1,15 +1,12 @@
-ESCRITO EM 31/07/25
+ESCRITO EM 01/08/25
 ---
-PARA 01/08/25
+PARA 02/08/25
 ---
 Subir github:
 
 Doing:
     - Básico sobre o DataFrame do Pandas
         - Observando colunas, linhas e células
-            - Subconjunto de colunas
-                - Obtendo subconjuntos de colunas pelo nome
-                - Obter subconjuntos de colunas pela posição dos índices não funciona mais no Pandas v0.20
             - Subconjunto de linhas
             - Combinando tudo
 
