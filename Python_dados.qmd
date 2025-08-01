@@ -262,13 +262,70 @@ Se quiser analisar várias colunas, especifique-as com base nos nomes, nas posi�
 
 #### Obtendo subconjuntos de colunas pelo nome {.unnumbered}
 
+Se quiser observar apenas uma coluna específica de nossos dados, podemos acessá-la usando colchetes.
 
+```{python}
+# Obtém somente a coluna country e a salva em sua própria variável
+country_df = df['country']
+
+# Mostra as 5 primeiras observações
+print(country_df.head())
+```
+
+\newpage
+
+```{python}
+# Mostra as 5 últimas observações
+print(country_df.tail())
+```
+
+Para específicar várias colunas pelo nome, devemos passar uma `list` Python entre os colchetes. Isso pode parecer um pouco estranho, pois haverá dois conjuntos de colchetes.
+
+```{python}
+# Observando country, continent e year
+subset = df[['country', 'continent', 'year']]
+print(subset.head())
+```
+
+```{python}
+# Mostra as 5 últimas observações
+print(subset.tail())
+```
+
+Mais uma vez, é possível optar por exibir todo o dataframe subset usando `print`.
+
+\newpage
 
 #### Obter subconjuntos de colunas pela posição dos índices não funciona mais no Pandas v0.20 {.unnumbered}
+
+Ocasionalmente, talvez você queira obter uma coluna em particular com base em sua posição, e não em seu nome. Por exemplo, pode querer a primeira ("country") e a terceira ("year") colunas, ou somente a última ("gdpPercap").
+
+No `pandas v0.20` não é mais possível passar uma lista de inteiros entre colchetes para obter subconjuntos de colunas. Por exemplo, `df[[1]]`, `df[[0,-1]]` e `df[list(range(5))]` não funcionam mais. Há outras formas de obter subconjuntos de colunas, mas não baseadas na técnica usada para obter subconjuntos de linhas.
 
 \newpage
 
 ### Obtendo subconjuntos de linhas
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-IndexacaoLinhas
+#| tbl-cap: Diferentes métodos para indexação de linhas (ou de colunas).
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["`loc`","Subconjunto baseado no rótulo do índice \n(**nome** da linha)."],
+         ["`iloc`","Subconjunto baseada no índice da linha \n(**número** da linha)."],
+         ["`ix` (não funciona mais no \n`Pandas v0.20`)","Subconjunto baseado no rótulo do índice ou \nno índice da linha."]
+         ]
+Markdown(tabulate(
+  table, 
+  headers=["Método para obtenção de subconjuntos","Discrição"],
+  colalign=("left","left")
+))
+```
+
 ### Combinando tudo
 
 \newpage
