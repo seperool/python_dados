@@ -306,11 +306,13 @@ No `pandas v0.20` não é mais possível passar uma lista de inteiros entre colc
 
 ### Obtendo subconjuntos de linhas
 
+Podemos obter subconjuntos de linhas de várias maneiras, pelos nomes ou pelos índices das linhas. A @tbl-il apresenta uma visão geral rápida dos diversos métodos.
+
 ```{python}
 #| echo: false
 #| error: false
 #| warning: false
-#| label: tbl-IndexacaoLinhas
+#| label: tbl-il
 #| tbl-cap: Diferentes métodos para indexação de linhas (ou de colunas).
 
 from IPython.display import Markdown
@@ -325,6 +327,12 @@ Markdown(tabulate(
   colalign=("left","left")
 ))
 ```
+
+#### Obtendo subconjuntos de linhas pelo rótulo dos índices: `loc` {.unnumbered}
+
+#### Obtendo subconjuntos de linhas pelo número das linhas: `iloc` {.unnumbered}
+
+#### Obtenção de subconjuntos de linhas com `ix` não funciona mais no Pandas v0.20 {.unnumbered}
 
 ### Combinando tudo
 
