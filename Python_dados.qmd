@@ -330,6 +330,34 @@ Markdown(tabulate(
 
 #### Obtendo subconjuntos de linhas pelo rótulo dos índices: `loc` {.unnumbered}
 
+Vamos observar uma parte de nossos dados `Gapminder`.
+
+```{python}
+print(df.head())
+```
+
+A esquerda do DataFrame exibido, vemos o que parece ser os números das linhas. Essa lista de valores sem coluna é o rótulo dos índices do dataframe.
+
+Pense no rótulo dos índices como um nome de coluna, mas para linhas em vez de colunas. Por padrão, o Pandas preencherá os rótulos dos índices com os números das linhas (observe que a contagem começa em 0).
+
+Um exemplo comum em que os rótulos dos índices das linhas não são iguais ao número das linhas ocorre quando trabalhamos com dados de séries temporais. Nesse caso, o rótulo dos índices será algum tipo de timestamp. Por exemplo, manteremos os valores default, que são os números das linhas.
+
+Podemos usar o atributo `loc` do dataframe para obter subconjuntos de linhas com base no rótulo dos índices.
+
+```{python}
+# Obtém a primeira linha
+# Python começa a contar de 0
+print(df.loc[0])
+```
+
+```{python}
+# Obtém a centesima linha
+# Python começa a contar de 0
+print(df.loc[99])
+```
+
+\newpage
+
 #### Obtendo subconjuntos de linhas pelo número das linhas: `iloc` {.unnumbered}
 
 #### Obtenção de subconjuntos de linhas com `ix` não funciona mais no Pandas v0.20 {.unnumbered}
