@@ -1,6 +1,6 @@
-ESCRITO EM 02/08/25
+ESCRITO EM 03/08/25
 ---
-PARA 03/08/25
+PARA 04/08/25
 ---
 Subir github:
 
@@ -8,6 +8,9 @@ Doing:
     - Básico sobre o DataFrame do Pandas
         - Observando colunas, linhas e células
             - Subconjunto de linhas
+                - Obtendo subconjuntos de linhas pelo rótulo dos índices: loc
+                - Obtendo subconjuntos de linhas pelo número das linhas: iloc
+                - Obtenção de subconjuntos de linhas com `ix` não funciona mais no Pandas v0.20
             - Combinando tudo
 
 To do:
