@@ -358,6 +358,50 @@ print(df.loc[99])
 
 \newpage
 
+**Para obtér a última linha**, uma alternativa seria passar -1 para `loc`, porém acarretaria num erro. Ao passar -1 para `loc` causará um erro, pois o código procurará a linha cujo rótulo de índice (nesse caso, número da linha) seja "-1", e esse valor não existe no nosso exemplo.
+
+Em vez disso, podemos usar um pouco de Python para calcular o número de linhas e passar esse valor para `loc`.
+
+```{python}
+# Obtém a última linha (corretamente)
+# Usar o primeiro valor dado por shape para obter o número de linhas
+number_of_rows = df.shape[0]
+
+# Subtrai 1 do valor, pois queremos obter o número do último índice
+last_row_index = number_of_rows - 1
+
+# Obtem agora o subconjunto usando o índice da última linha
+print(df.loc[last_row_index])
+```
+
+Como alternativa, podemos usar o método `tail` para devolver a última linha, em vez de usar o default de 5.
+
+```{python}
+# Método tail, devolvendo a última linha
+print(df.tail(n=1))
+```
+
+Observe que, quando usamos `tail()` e `loc`, os resultados foram exibidos de modo diferentes. Vamos observar o tipo devolvido quando usamos esses métodos.
+
+\newpage
+
+```{python}
+subset_loc = df.loc[0]
+subset_head = df.head(n=1)
+
+# type usando loc para uma linha
+print("type usando loc para uma linha:")
+print(type(subset_loc))
+
+# type usando head para uma linha
+print("\ntype usando head para uma linha:")
+print(type(subset_head))
+```
+
+No ínicio desse capítulo, mencionamos que o Pandas introduziu dois novos tipos de dados em Python. Conforme o método que usamos e a quantidade de linhas retornada, o Pandas devolverá um objeto diferente. O modo como o objeto é exibido pela tela pode ser um indicador do tipo, mas sempre é melhor usar a função `type()` por garantia.
+
+\newpage
+
 #### Obtendo subconjuntos de linhas pelo número das linhas: `iloc` {.unnumbered}
 
 #### Obtenção de subconjuntos de linhas com `ix` não funciona mais no Pandas v0.20 {.unnumbered}
