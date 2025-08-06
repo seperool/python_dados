@@ -402,6 +402,17 @@ No ínicio desse capítulo, mencionamos que o Pandas introduziu dois novos tipos
 
 \newpage
 
+**Obtenção de subconjuntos com várias linhas**. Assim como para as colunas, podemos selecionar várias linhas.
+
+```{python}
+# Selecione a primeira, a centesima e a milésima linha
+# Observe os colchetes duplos, semelhante a sintaxe usada para
+#obter subconjuntos com várias colunas
+print(df.loc[[0,99,999]])
+```
+
+\newpage
+
 #### Obtendo subconjuntos de linhas pelo número das linhas: `iloc` {.unnumbered}
 
 #### Obtenção de subconjuntos de linhas com `ix` não funciona mais no Pandas v0.20 {.unnumbered}
