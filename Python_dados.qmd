@@ -415,7 +415,45 @@ print(df.loc[[0,99,999]])
 
 #### Obtendo subconjuntos de linhas pelo número das linhas: `iloc` {.unnumbered}
 
+`iloc` faz o mesmo que `loc`, mas é usado para obter subconjuntos com base no número de índice das linhas.
+
+Em nosso exemplo atual, `iloc` e `loc` se comportarão exatamente do mesmo modo, pois os rótulos dos índices são os números das linhas. Tenha em mente, porém, que os rótulos dos índices não necessariamente têm de ser os números das linhas.
+
+```{python}
+# Obtém a segunda linha
+print(df.iloc[1])
+```
+
+```{python}
+# Obtém a centésima linha
+print(df.iloc[99])
+```
+
+Observe que quando colocamos 1 na lista, na verdade, obtemos a segunda linha, e não a primeira. Isso está de acordo com o comportamento de indexação a partir do 0 de Python, o que significa que o primeiro item de um contêiner é o índice 0 (ou seja, o item 0 do contêiner).
+
+\newpage
+
+Com `iloc` podemos passar `-1` para **obter a última linha** - algo que não era possível com `loc`.
+
+```{python}
+# Usando -1 para obter a última linha
+print(df.iloc[-1])
+```
+
+Como antes, é possível passar **uma lista de inteiros para obter várias linhas**.
+
+```{python}
+# Obtém a primeira, a centésima e a milésima linha
+print(df.iloc[[0, 99, 999]])
+```
+
+\newpage
+
 #### Obtenção de subconjuntos de linhas com `ix` não funciona mais no Pandas v0.20 {.unnumbered}
+
+
+
+\newpage
 
 ### Combinando tudo
 
