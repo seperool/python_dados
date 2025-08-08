@@ -1,15 +1,17 @@
-ESCRITO EM 07/08/25
+ESCRITO EM 08/08/25
 ---
-PARA 08/08/25
+PARA 09/08/25
 ---
 Subir github:
 
 Doing:
     - Básico sobre o DataFrame do Pandas
-        - Observando colunas, linhas e células
-            - Subconjunto de linhas
-                - Obtenção de subconjuntos de linhas com ix não funciona mais no Pandas v0.20
             - Combinando tudo
+                - Obtendo subconjuntos de colunas
+                - Obtendo subconjuntos de colunas por intervalo
+                - Fatiando colunas
+                - Obtendo subconjuntos de linhas e de colunas
+                - Obtendo subconjuntos de várias linhas e de colunas
 
 To do:
     - Básico sobre o DataFrame do Pandas
