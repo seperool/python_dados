@@ -451,11 +451,37 @@ print(df.iloc[[0, 99, 999]])
 
 #### Obtenção de subconjuntos de linhas com `ix` não funciona mais no Pandas v0.20 {.unnumbered}
 
+O atributo `ix` não funciona em versões de Pandas posteriores a v0.20, pois pode ser confuso. Apesar disso, faremos uma revisão rápida de `ix` nesta seção para que a explicação fique completa.
 
+Podemos pensar em `ix` como uma combinação de `loc` e `iloc`, pois permite que tenhamos subconjuntos por rótulo ou por inteiro. Por padrão, ele procura rótulos. Se não puder encontrar o rótulo correspondente, ele recorrerá ao uso de indexação por inteiros. Isso pode ser causa de muitas confusões, e, assim, esse recurso foi removido.
+
+O código que usa `ix` se parecerá exatamente com o código escrito quando `loc` e `iloc` são usados.
+
+```
+# Primeira linha
+df.ix[0]
+
+# Centésima linha
+df.ix[99]
+
+# Primeira, centésima e milésima linhas
+df.ix[[0,99,999]]
+```
 
 \newpage
 
 ### Combinando tudo
+
+#### Obtendo subconjuntos de colunas {.unnumbered}
+
+#### Obtendo subconjuntos de colunas por intervalo {.unnumbered}
+
+#### Fatiando colunas {.unnumbered}
+
+#### Obtendo subconjuntos de linhas e de colunas {.unnumbered}
+
+#### Obtendo subconjuntos de várias linhas e de colunas {.unnumbered}
+
 
 \newpage
 
