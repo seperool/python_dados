@@ -472,7 +472,15 @@ df.ix[[0,99,999]]
 
 ### Combinando tudo
 
+Os atributos `loc` e `iloc` podem ser usados para obter subconjuntos de colunas, linhas ou de ambos.
+
+A sintaxe geral de `loc` e `iloc` faz uso de colchetes com uma vírgula. A parte à esquerda da vírgula são os valores das linhas para o subconjunto; a parte à direita são os valores das colunas. Ou seja, `df.loc[[rows],[columns]]` ou `df.iloc[[rows],[columns]]`.
+
 #### Obtendo subconjuntos de colunas {.unnumbered}
+
+
+
+\newpage
 
 #### Obtendo subconjuntos de colunas por intervalo {.unnumbered}
 
