@@ -79,3 +79,15 @@ print(df.iloc[[0, 99, 999]])
 #------------------------------------------------------------------------------
 
 # --- Combinando Tudo ---
+
+print("\n--- Combinando Seleção de Linhas e Colunas ---")
+
+# Seleciona todas as linhas e as colunas 'year' e 'pop' pelos seus nomes.
+print("\nSubconjuntos de Colunas loc:")
+subset = df.loc[:,['year','pop']]
+print(subset.head())
+
+# Seleciona todas as linhas e as colunas nas posições 2, 4 e a última (índice -1).
+print("\nSubconjuntos de Colunas iloc:")
+subset = df.iloc[:,[2,4,-1]]
+print(subset.head())
