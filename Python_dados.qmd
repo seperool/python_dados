@@ -478,11 +478,35 @@ A sintaxe geral de `loc` e `iloc` faz uso de colchetes com uma vírgula. A parte
 
 #### Obtendo subconjuntos de colunas {.unnumbered}
 
+Se quiser usar técnicas para obter subconjuntos somente de colunas, use a sintaxe de fatiamento (slicing) de Python. Temos de fazer isso porque, se estivermos gerando subconjuntos de colunas, teremos todas as linhas da coluna especificadas. Portanto precisamos de um método para capturar todas as linhas.
 
+A sintaxe de fatiamento de Python usa dois-pontos, isto é, :. Se tivermos apenas dois-pontos sozinhos, o atributo se referirá a tudo. Assim, se quisermos obter somente a primeira coluna usando a sintaxe `loc` ou de `iloc`, podemos escrever algo como `df.loc[:,[columns]]` para obter o subconjunto da(s) coluna(s).
+
+```{python}
+# Obtendo um subconjunto de colunas com loc
+# Observe a posição dos dois-pontos
+# Ele é usado para selecionar todas as linhas
+subset = df.loc[:,['year','pop']]
+print(subset.head())
+```
+
+\newpage
+
+```{python}
+# Obtendo um subconjunto de colunas com iloc
+# iloc nos permitirá usar inteiros
+# -1 selecionará a última coluna
+subset = df.iloc[:,[2,4,-1]]
+print(subset.head())
+```
 
 \newpage
 
 #### Obtendo subconjuntos de colunas por intervalo {.unnumbered}
+
+
+
+\newpage
 
 #### Fatiando colunas {.unnumbered}
 
