@@ -1,13 +1,12 @@
-ESCRITO EM 09/08/25
+ESCRITO EM 11/08/25
 ---
-PARA 10/08/25
+PARA 12/08/25
 ---
 Subir github:
 
 Doing:
     - Básico sobre o DataFrame do Pandas
             - Combinando tudo
-                - Obtendo subconjuntos de colunas
                 - Obtendo subconjuntos de colunas por intervalo
                 - Fatiando colunas
                 - Obtendo subconjuntos de linhas e de colunas
