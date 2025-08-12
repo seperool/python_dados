@@ -504,11 +504,67 @@ print(subset.head())
 
 #### Obtendo subconjuntos de colunas por intervalo {.unnumbered}
 
+Podemos usar a função embutida `range` para criar um intervalo de valores em Python. Desse modo, é possível especificar os valores de início e fim, e Python criará automaticamente um intervalo com os valores entre eles.
 
+Por padrão, todo valor entro o início e o fim (**inclusive à esquerda, não inclusive a direita**) será criado, a comenos que você especifique um passo.
+
+Em Python 3, a função `range` devolve um gerador.
+
+Se estiver usando Python 2, a função `range` devolverá uma lista e a função `xrange` devolve um gerador.
+
+Se observarmos o código apresentado antes, veremos que subconjuntos de colunas foram obtidos usando uma lista de inteiros. Como `range` devolve um gerador, é preciso convertê-lo em uma lista antes.  
+`list(range(5))`
+
+Observe que, quando `range(5)` é achamado, cinco inteiros são devolvidos: 0-4.
+
+```{python}
+# Cria um intervalo de inteiros de 0 a 4 inclusive, [0,5)
+small_range = list(range(5))
+print(small_range)
+```
+
+```{python}
+# Obtém um subconjunto de dataframe usando o intervalo
+subset = df.iloc[:,small_range]
+print(subset.head()) 
+```
+
+\newpage
+
+```{python}
+# Cria um intervalo de 3 a 5 incluvie, [3,5] ou [3,6)
+small_range = list(range(3,6))
+print(small_range)
+subset = df.iloc[:,small_range]
+print(subset.head())
+```
+
+**Pergunta** (**Desafio 1**):
+    
+  **O que acontecerá se você especificar um intervalo que estiver além do número de colunas existente?**
+
+**Resposta**:
+    
+  Erro do tipo `IndexError`.
+
+\newpage
+
+Mais uma vez, observe que os valores são especificados de modo que **o intervalo é inclusivo à esquerda, mas não a direita**.
+
+```{python}
+# Cria um intervalo de 0 a 5 inclusive, com inteiros alternados [0,6)
+small_range = list(range(0,6,2))
+subset = df.iloc[:,small_range]
+print(subset.head())
+```
+
+Converter um gerador em uma lista é um pouco complicado; podemos usar a sintaxe de fatiamento de Python para dar um jeito nisso.
 
 \newpage
 
 #### Fatiando colunas {.unnumbered}
+
+\newpage
 
 #### Obtendo subconjuntos de linhas e de colunas {.unnumbered}
 
