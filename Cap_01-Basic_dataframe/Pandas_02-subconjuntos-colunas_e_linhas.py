@@ -91,3 +91,25 @@ print(subset.head())
 print("\nSubconjuntos de Colunas iloc:")
 subset = df.iloc[:,[2,4,-1]]
 print(subset.head())
+
+#------------------------------------------------------------------------------
+
+# --- Subconjunto de colunas por intervalo ---
+
+print("\nSubconjunto de colunas usando intervalo de 0 a 5")
+small_range = list(range(5)) # Cria uma lista com os índices de coluna de 0 a 4.
+print(small_range)
+subset = df.iloc[:, small_range] # Seleciona todas as linhas e as colunas nos índices da lista 'small_range'.
+print(subset.head())
+
+print("\nSubconjunto de colunas usando intervalo de 3 a 6")
+small_range = list(range(3, 6)) # Cria uma lista com os índices de coluna de 3 a 5.
+print(small_range)
+subset = df.iloc[:, small_range] # Seleciona todas as linhas e as colunas nos índices da lista 'small_range'.
+print(subset.head())
+
+print("\nSubconjunto de colunas usando intervalo de 0 a 6, pulando de 2 em 2")
+small_range = list(range(0, 6, 2)) # Cria uma lista com os índices de coluna 0, 2 e 4.
+print(small_range)
+subset = df.iloc[:, small_range] # Seleciona todas as linhas e as colunas nos índices da lista 'small_range'.
+print(subset.head())
