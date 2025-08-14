@@ -564,9 +564,69 @@ Converter um gerador em uma lista é um pouco complicado; podemos usar a sintaxe
 
 #### Fatiando colunas {.unnumbered}
 
+A sintaxe de **fatiamento de Python**, **:**, **é semelhante à sintaxe de** `range`. Em vez de usar uma função que especifique os valores de início, fim e o passo, delimitados por vírgula, separamos os valores com dois-pontos.
+
+Se você entendeu o que estava acontecendo com a função `range` que usamos antes, o fatiamento então poderá ser visto como um atalho para fazer o mesmo.
+
+Exemplo `range`:
+
+```{python}
+small_range = list(range(3))
+subset = df.iloc[:,small_range]
+print(subset.head())
+```
+
+Exemplo fatiamento de Python:
+
+```{python}
+# Fatia as três primeiras colunas
+subset = df.iloc[:,:3]
+print(subset.head())
+```
+
+\newpage
+
+Exemplo `range`:
+
+```{python}
+small_range = list(range(3,6))
+subset = df.iloc[:,small_range]
+print(subset.head())
+```
+
+Exemplo fatiamento de Python:
+
+```{python}
+# Fatia as colunas de 3 a 5 inclusive, [3,6)
+subset = df.iloc[:,3:6]
+print(subset.head())
+```
+
+\newpage
+
+Exemplo `range`:
+
+```{python}
+small_range = list(range(0,6,2))
+subset = df.iloc[:,small_range]
+print(subset.head())
+```
+
+Exemplo fatiamento de Python:
+
+```{python}
+# Fatia as cinco primeiras colunas alternadamente
+subset = df.iloc[:,:6:2]
+print(subset.head())
+```
+
 \newpage
 
 #### Obtendo subconjuntos de linhas e de colunas {.unnumbered}
+
+
+
+\newpage
 
 #### Obtendo subconjuntos de várias linhas e de colunas {.unnumbered}
 
