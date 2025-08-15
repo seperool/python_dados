@@ -1,13 +1,12 @@
-ESCRITO EM 14/08/25
+ESCRITO EM 15/08/25
 ---
-PARA 15/08/25
+PARA 16/08/25
 ---
 Subir github:
 
 Doing:
     - Básico sobre o DataFrame do Pandas
             - Combinando tudo
-                - Obtendo subconjuntos de linhas e de colunas
                 - Obtendo subconjuntos de várias linhas e de colunas
 
 To do:
