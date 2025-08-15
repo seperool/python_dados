@@ -624,11 +624,26 @@ print(subset.head())
 
 #### Obtendo subconjuntos de linhas e de colunas {.unnumbered}
 
+Temos usado dois-pontos, :, em `loc` e em `iloc` à esquerda da vírgula. Quando fazemos isso, selecionamos todas as linhas de nosso dataframe. No entanto, podemos optar por colocar valores à esquerda da vírgula se quisermos selecionar linhas específicas, além de colunas específicas.
 
+```{python}
+# Usando loc
+print(df.loc[42,'country'])
+```
+
+```{python}
+# Usando iloc
+print(df.iloc[42,0])
+```
+
+Certifique-se de que não se esquecerá das diferenças entre `loc` (rótulo do índice, nome) e `iloc` (índice, número).
+
+Observe agora como `ix` pode ser confuso. É bom que ele não esteja mais funcionando.
 
 \newpage
 
 #### Obtendo subconjuntos de várias linhas e de colunas {.unnumbered}
+
 
 
 \newpage
