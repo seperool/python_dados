@@ -1,15 +1,15 @@
-ESCRITO EM 15/08/25
+ESCRITO EM 16/08/25
 ---
-PARA 16/08/25
+PARA 17/08/25
 ---
 Subir github:
 
 Doing:
     - Básico sobre o DataFrame do Pandas
-            - Combinando tudo
-                - Obtendo subconjuntos de várias linhas e de colunas
+        - Cálculos agrupados e agregados
+            - Médias agrupadas
+            - Condatodes de frequência agrupados
 
 To do:
     - Básico sobre o DataFrame do Pandas
-        - Cálculos agrupados e agregados
         - Plotagem básica
