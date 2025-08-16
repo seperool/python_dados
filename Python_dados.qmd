@@ -644,11 +644,50 @@ Observe agora como `ix` pode ser confuso. É bom que ele não esteja mais funcio
 
 #### Obtendo subconjuntos de várias linhas e de colunas {.unnumbered}
 
+Podemos combinar a sintaxe de obtenção de subconjuntos de linhas e de colunas com a sintaxe de subconjuntos de várias linhas e várias colunas a fim de obter fatias de nossos dados.
 
+```{python}
+# Obtém a primeira, a centésima e a milésima linha
+# da primeira, quarta e sexta coluna;
+# As colunas que esperamos obter são
+# country, lifeExp e gdpPercap
+print(df.iloc[[0,99,999],[0,3,5]])
+```
+
+**Atenção!!!**
+
+Em meu trabalho, tento passar os nomes das colunas para obter subconjuntos de dados, sempre que possível. Essa abordagem deixa o código mais legível, pois não será necessário observar o vetor de nomes das colunas para saber qual índice está sendo especificado.
+
+Além disso, usar índices absolutos (número da coluna) pode resultar em problemas caso a ordem das colunas seja alterada por algum motivo.
+
+Essa é somente uma regra geral, uma vez que haverá exceções em que usar a posição do índice será uma opção melhor (por exemplo, para concatenar dados).
+
+```{python}
+# Se usarmos os nomes das colunas diretamente,
+# o código será um pouco mais facil de ler
+# Observe agora que temos que usar loc ao invés de iloc
+print(df.loc[[0,99,999],['country','lifeExp','gdpPercap']])
+```
+
+**Usar** `loc` **sempre que possível!!!**
+
+\newpage
+
+Lembre-se de que podemos usar a sintaxe de fatiamento na parte referente às linhas dos atributos `loc` e `iloc`.
+
+```{python}
+print(df.loc[10:13,['country','lifeExp','gdpPercap']])
+```
 
 \newpage
 
 ## Cálculos agrupados e agregados
+
+### Médias agrupadas
+### Condatodes de frequência agrupados
+
+\newpage
+
 ## Plotagem básica
 
 \newpage
