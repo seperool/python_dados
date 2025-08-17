@@ -683,6 +683,22 @@ print(df.loc[10:13,['country','lifeExp','gdpPercap']])
 
 ## Cálculos agrupados e agregados
 
+Se você já trabalhou com outras bibliotecas numéricas ou linguagens, saberá que muitos cálculos estatísticos básicos estarão disponíveis na biblioteca ou embutidos na linguagem. Vamos observar novamente nossos dados Gapminder.
+
+```{python}
+print(df.head(n=10))
+```
+
+**Perguntas estatísticas**
+
+Há várias perguntas iniciais que podemos nos fazer:
+
+1. Para cada ano em nossos dados, qual era a expectativa de vida média? Qual é a expectativa de vida média, a população e o GDP?
+2. E se estratificarmos os dados por continente e fizermos os mesmos cálculos?
+3. Quantos países estão listados para cada continente?
+
+\newpage
+
 ### Médias agrupadas
 ### Condatodes de frequência agrupados
 
