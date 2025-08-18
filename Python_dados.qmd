@@ -700,6 +700,65 @@ Há várias perguntas iniciais que podemos nos fazer:
 \newpage
 
 ### Médias agrupadas
+
+Para responder as perguntas que acabaram de ser propostas, precisamos fazer um cálculo **agrupado** (isto é, **agregado**). Em outras palavras, temos de fazer um cálculo, seja uma média ou uma contagem de frequência, mas aplicá-lo em cada subconjuntode uma variável.
+
+Outro modo de pensar em cálculos agrupados é vê-los como um processo do tipo **separar-aplicar-combinar**.
+
+   * Inicialmente, separamos nossos dados em várias partes;
+   * Em seguida, aplicamos uma função (ou cálculo) de nossa escolha em cada parte separada;
+   * E, por fim, combinamos todos os cálculos individuais em um único dataframe.
+
+Fazemos processamentos agrupados/agregados usando o método `groupby` nos dataframe.
+
+```{python}
+# Para cada ano em nossos dados, qual era a expectativa de vida média?
+# Para responder a essa pergunta,
+# temos que separar nossos dados em partes, de acordo com o ano;
+# em seguida, obtemos a coluna 'lifeExp' e calculamos a média
+
+#Agrupamento (year) 
+#Separação/subconjunto (lifeExp) 
+#Aplicar (média)
+
+print(df.groupby('year')['lifeExp'].mean())
+```
+
+\newpage
+
+Vamos detalhar a instrução que usamos nesse exemplo.
+
+  * Em primeiro lugar, criamos um objeto **agrupado**. Observe que, se exibíssemos o dataframe agrupado, o Pandas devolveria somente a posição na memória.
+
+    ```{python}
+    grouped_year_df = df.groupby('year')
+    print(type(grouped_year_df))
+    print(grouped_year_df)
+    ```
+
+  * A partir dos dados agrupados, podemos obter um **subconjunto** das colunas de nosso interesse, nas quais queremos fazer os cálculos. Para responder à nossa pergunta, precisamos da coluna `lifeExp`. Podemos usar os métodos de obtenção de subconjuntos.
+
+    ```{python}
+    grouped_year_df_lifeExp = grouped_year_df['lifeExp']
+    print(type(grouped_year_df_lifeExp))
+    print(grouped_year_df_lifeExp)
+    ```
+
+    Observe que agora temos uma série (pois pedimos apenas uma coluna) cujo conteúdo é agrupado (em nosso exemplo por ano).
+  
+  * Por fim, sabemos que a coluna `lifeExp` é do tipo `float64`. Uma operação que podemos **executar** em um vetor de números e **calcular** a média para obter o resultado que desejamos.
+
+    ```{python}
+    mean_lifeExp_by_year = grouped_year_df_lifeExp.mean()
+    print(mean_lifeExp_by_year.head(n=10))
+    ```
+
+\newpage
+
+
+
+\newpage
+
 ### Condatodes de frequência agrupados
 
 \newpage
