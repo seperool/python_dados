@@ -755,7 +755,32 @@ Vamos detalhar a instrução que usamos nesse exemplo.
 
 \newpage
 
+Podemos executar um conjunto semelhante de cálculos para a população e o GDP, pois eles são dos tipos `int64` e `float64`, respectivamente. Mas e se quiséssemos agrupar e estratificar os dados com base em mais de uma váriavel? E se quiséssemos fazer o mesmo cálculo em várias colunas? Podemos partir do código anterior apresentado e usar uma lista.
 
+```{python}
+# A barra invertida nos permite quebrar uma linha longa de código Python
+# em várias linhas.
+# df.groupby(['year','continent'])[['lifeExp','gdpPercap']].mean()
+# é o mesmo que o código a seguir
+multi_group_var = df.\
+  groupby(['year','continent'])\
+  [['lifeExp','gdpPercap']]\
+  .mean()
+print(multi_group_var.head(n=20))
+```
+
+\newpage
+
+Os dados de saída estão agrupados por ano e por continente. Para cada par ano-continente, calculamos a expectativa de vida média e o GDP médio. 
+
+Os dados também são exibidos de modo um pouco diferente. Observe que os "nomes das colunas" de ano e continente não estão na mesma linhaque os "nomes das colunas" de expectativa de vida e GPD. Há uma certa estrutura hierárquica entre os índices das linhas de ano e continente.
+
+Caso precise "achatar" o dataframe, use o método `reset_index`.
+
+```{python}
+flat = multi_group_var.reset_index()
+print(flat.head(n=20))
+```
 
 \newpage
 
