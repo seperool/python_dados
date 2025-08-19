@@ -1,13 +1,12 @@
-ESCRITO EM 18/08/25
+ESCRITO EM 19/08/25
 ---
-PARA 19/08/25
+PARA 20/08/25
 ---
 Subir github:
 
 Doing:
     - Básico sobre o DataFrame do Pandas
         - Cálculos agrupados e agregados
-            - Médias agrupadas
             - Condatodes de frequência agrupados
 
 To do:
