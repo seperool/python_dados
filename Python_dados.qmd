@@ -786,6 +786,32 @@ print(flat.head(n=20))
 
 ### Condatodes de frequência agrupados
 
+Outra tarefa comum relacionada aos dados é calcular frequências.
+
+Podemos usar os métodos `nunique` e `value_counts`, respectivamente, para obter contadores de valores únicos e contadores de frequência em uma `Series` do Pandas.
+
+* Método `nunique`:
+
+  ```{python}
+  # Uso de nunique (number unique, ou número de únicos)
+  # para calcular o número de valores únicos em uma série
+  print(df.groupby('continent')['country'].nunique())
+  ```
+
+* Método `value_counts`:
+
+  ```{python}
+  # Nova série que mostra cada valor único
+  # e sua respectiva frequência (quantidade de ocorrências).
+  print(df['continent'].value_counts())
+  ```
+
+Resumo da diferença:
+
+  * `nunique()` diz quantos valores únicos existem. O resultado é um número.
+
+  * `value_counts()` diz quais são os valores únicos e quantas vezes cada um aparece. O resultado é uma série.
+
 \newpage
 
 ## Plotagem básica
