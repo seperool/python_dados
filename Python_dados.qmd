@@ -62,6 +62,7 @@ import statistics
 import numpy as np
 import pandas as pd
 import json
+import matplotlib.pyplot as plt
 ```
 
 \newpage
@@ -815,6 +816,25 @@ Resumo da diferença:
 \newpage
 
 ## Plotagem básica
+
+As visualizações são extremamente importantes em quase todos os passos do processamento de dados. Elas nos ajudam a identificar tendências nos dados quando estamos tentando entendê-los e limpá-los, além de contribuir para a apresentação de nossas descobretas finais.
+
+Vamos observar as expectativas de vida anuais da população mundial novamente.
+
+```{python}
+global_yearly_life_expectancy = df.groupby('year')['lifeExp'].mean()
+print(global_yearly_life_expectancy)
+```
+
+\newpage
+
+Podemos usar o Pandas para criar algumas plotagens básicas.
+
+```
+global_yearly_life_expectancy.plot()
+```
+
+![Plotagem básica no Pandas mostrando a expectativa de vida média no tempo.](./Imagens/Cap_01-Basic_dataframe/Expectativa_vida_media.png){width=400}
 
 \newpage
 
