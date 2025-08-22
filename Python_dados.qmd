@@ -838,7 +838,60 @@ global_yearly_life_expectancy.plot()
 
 \newpage
 
+## Conclusão
+
+Explicamos como carregar um conjunto de dados simples e começar a analisar observações específicas.
+
+Tenha em mente que, quando fazemos análise de dados, o objetivo é gerar resultados reproduzíveis, sem fazer tarefas repetitivas. As linguagens de scripting lhe oferecem esses recursos e essa flexibilidade.
+
+Nesse processo, conhecemos alguns dos recursos fundamentais de programação e as estruturas de dados que Python tem a nos oferecer.
+
+Também vimos um modo rápido de obter estatísticas agregadas e fazer plotagens.
+
+\newpage
+
 # Estrutura de dados do Pandas
+
+## Introdução
+
+O capítulo anterior apresentou os objetos `Dataframe` e `Series` do Pandas. Essas estruturas de dados assemelham-se aos contêineres de dados primitivos de Python (lista e dicionários, estruturas de dados básicas do Python que podem armazenar coleções de objetos) para indexação e rótulos, mas têm recursos adicionais que facilitam trabalhar com os dados.
+
+### Mapa Conceitual {.unnumbered}
+
+1. Conhecimento prévio
+    1. Contêineres (`list` e `dict`)
+    2. Uso de funções
+    3. Obtenção de subconjuntos e indexação
+2. Carga de dados manual
+3. `Series`
+   1. Criando uma série
+      * `dict`
+      * `ndarray`
+      * escalar
+      * listas
+   2. Fatiamento 
+4. `Dataframe`
+
+\newpage
+
+## Criando seus próprios dados
+
+### Criando uma Series
+### Criando um Dataframe
+
+\newpage
+
+## Series
+
+## Dataframe
+
+## Fazendo alterações em Series e em Dataframe
+
+## Exportando e importando dados
+
+## Conclusão
+
+\newpage
 
 # Introdução à plotagem
 
