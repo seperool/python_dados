@@ -1,12 +1,12 @@
-ESCRITO EM 21/08/25
+ESCRITO EM 22/08/25
 ---
-PARA 22/08/25
+PARA 23/08/25
 ---
 Subir github:
 
 Doing:
     - Básico sobre o DataFrame do Pandas
-        - Plotagem básica
+        - Conclusão
 
 To do:
     - Estrutura de dados do Pandas
