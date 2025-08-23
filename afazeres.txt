@@ -1,6 +1,6 @@
-ESCRITO EM 22/08/25
+ESCRITO EM 23/08/25
 ---
-PARA 23/08/25
+PARA 24/08/25
 ---
 Subir github:
 
@@ -8,6 +8,7 @@ Doing:
     - Estrutura de dados do Pandas
         - Criando seus próprios dados
             - Criando uma Series
+                - Perguntas
             - Criando um Dataframe
 
 To do:
