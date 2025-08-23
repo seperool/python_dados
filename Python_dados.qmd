@@ -232,7 +232,7 @@ print(df.head())
 #| echo: false
 #| error: false
 #| warning: false
-#| label: tbl-tiposPandasvsPython
+#| label: tbl-pdvspy
 #| tbl-cap: Tipos do Pandas versus tipos de Python
 
 from IPython.display import Markdown
@@ -877,6 +877,43 @@ O capítulo anterior apresentou os objetos `Dataframe` e `Series` do Pandas. Ess
 ## Criando seus próprios dados
 
 ### Criando uma Series
+
+A `Series` do Pandas é um **contêiner unidimensional**, semelhante à `list` embutida de Python.
+
+É o tipo de dado que representa cada coluna do `Dataframe`. A @tbl-pdvspy lista os possíveis `dtypes` das colunas do `Dataframe` de Pandas. **Cada coluna em um** `dataframe` **deve ter o mesmo** `dtypes`.
+
+Por ser possível pensar em `dataframe` como um dicionário de objetos `Series`, em que cada `key` é o nome da coluna e `value` é a `Series`, podemos concluir que uma Series é muito semelhante a uma `list` Python, exceto que todos os elementos devem ser do mesmo `dtype`. As pessoas que já usaram a biblioteca `numpy` perceberão que esse é o mesmo comportamento exibido por ndarray.
+
+O modo mais fácil de criar uma `Series` é passando uma `list` Python.
+
+Se passamos uma lista com tipos misturados, a representação mais comum será usada.
+
+Em geral, `dtype` (tipo) da `Series` será um `object`.
+
+```{python}
+import pandas as pd
+
+s = pd.Series(['Banana',42])
+print(s)
+```
+
+Observe que o "número da linha" é exibido à esquerda. Na verdade, esse é o `index` da série. É semelhante ao nome e ao índice da linha que vimos sobre `dataframes`.
+
+\newpage
+
+Isso implica que podemos atribuir realmente um "nome" aos valores de nossa série.
+
+```{python}
+# Atribui valores de índice manualmente em uma série
+# passando uma list Python
+s = pd.Series(['Wes McKinney','Creator of Python'],
+index=['Person','Who'])
+
+print(s)
+```
+
+\newpage
+
 ### Criando um Dataframe
 
 \newpage
