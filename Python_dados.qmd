@@ -914,7 +914,101 @@ print(s)
 
 \newpage
 
+**Perguntas**
+
+ 1. O que acontecerá se você usar outros contêineres Python como `list`, `tuple`, `dict` ou ate mesmo o `ndarray` da biblioteca `numpy`?
+
+   * Quando você usa uma `list` (lista) ou `tuple` (tupla) para criar uma `Series`, o pandas simplesmente pega os elementos na ordem em que eles aparecem e os usa para popular a `Series`. O índice padrão é gerado automaticamente, começando do `0` e indo até `n-1`, onde `n` é o número de elementos.
+  
+     ```{python}
+     print("#------------list------------#")
+     s = pd.Series(['Wes McKinney', 'Creator of Pandas'])
+     print(s)
+     ```
+
+     ```{python}
+     print("#----------tuple-----------#")
+     s = pd.Series(('Wes McKinney', 'Creator of Pandas'))
+     print(s)
+     ```
+
+
+   * O `dict` é um caso especial e muito útil. Quando você cria uma `Series` a partir de um dicionário, o pandas usa as chaves do dicionário como o índice da Series e os valores como os dados. Isso permite que você crie uma `Series` já com rótulos significativos, o que é ótimo para dados categorizados.
+  
+     ```{python}
+     print("#----------------dict----------------#")
+     dict_dados = {'a':100,'b': 200, 'c':300}
+     s = pd.Series(dict_dados)
+     print(s)
+     ```
+
+
+   * O `ndarray`[^ndarray] é o contêiner mais eficiente para o pandas. O pandas foi construído sobre o `NumPy`, então o `ndarray` é o formato subjacente de dados para a maioria das operações. Quando você usa um `ndarray` para criar uma Series, o processo é extremamente rápido, pois não há necessidade de converter o tipo de dado. O índice padrão também é gerado automaticamente.
+
+     ```{python}
+     print("#----------ndarray----------#")
+     numpy_dados = np.array([5,6,7])
+     s = pd.Series(numpy_dados)
+     print(s)
+     ```
+
+\newpage
+
+ 2. O que acontecerá se você passar um `index` com os contêineres?
+
+   * Quando os dados vêm de uma `list`, `tuple` ou `ndarray`, o pandas simplesmente combina os dados com o `index` fornecido. O pandas espera que o `index` tenha o mesmo número de elementos que o contêiner de dados.
+   
+     ```{python}
+     index_dados = ['a','b','c']
+     dados_lista = [100,200,300]
+
+     print("#----------------list----------------#")
+     s = pd.Series(dados_lista,index=index_dados)
+     print(s)
+     ```
+
+     ```{python}
+     index_dados = ['a','b','c']
+     dados_tupla = (100,200,300)
+
+     print("#----------------tuple----------------#")
+     s = pd.Series(dados_tupla,index=index_dados)
+     print(s)
+     ```
+
+     ```{python}
+     index_dados = ['a','b','c']
+     dados_ndarray = np.array([100,200,300])
+
+     print("#----------------ndarray----------------#")
+     s = pd.Series(dados_ndarray,index=index_dados)
+     print(s)
+     ```
+
+   * Quando você passa um dict junto com um index, o pandas não usa as chaves do dicionário para criar o índice da Series. Em vez disso, ele usa o index fornecido para selecionar e reordenar os valores do dicionário.
+  
+     ```{python}
+     index_dict = ['c','a','d','b']
+     dict_dados = {'a':100,'b': 200, 'c':300}
+
+     print("#----------------dict----------------#")
+     s = pd.Series(dict_dados,index=index_dict)
+     print(s)
+     ```
+
+\newpage
+
+ 3. Passar um `index` quando usamos um dict sobrescreverá o índice? Ou ele ordenará os valores?
+
+   O index que você passa ao criar a `Series` não sobrescreve os rótulos do dicionário. Em vez disso, ele ordena os valores e determina quais deles serão incluídos na `Series` final.
+
+[^ndarray]:`ndarray` é o nome oficial do tipo de dado (a classe) que o NumPy usa para representar arrays multidimensionais. `np.array()` é a função que você chama para criar uma instância (um objeto) dessa classe `ndarray`.
+
+\newpage
+
 ### Criando um Dataframe
+
+
 
 \newpage
 
