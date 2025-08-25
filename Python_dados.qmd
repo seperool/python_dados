@@ -1008,6 +1008,27 @@ print(s)
 
 ### Criando um Dataframe
 
+Conforme mencionamos podemos pensar em um `Dataframe` como um dicionário de objetos `Series`. É por isso que os dicionários são o modo mais comum de criar um `Dataframe`.
+
+`key` representa o nome da coluna, enquanto os `values` são o conteúdo.
+
+* `key` representa o nome da coluna;
+* Os `values` são o conteúdo.
+
+```{python}
+scientists = pd.DataFrame({
+  'Nome': ['Rosaline Franklin','William Gosset'],
+  'Occupation':['Chemist','Statistician'],
+  'Born':['1920-07-25','1876-06-13'],
+  'Died':['1958-04-16','1937-10-16'],
+  'Age':[37,61]
+})
+
+print(scientists)
+```
+
+A ordem das colunas ao criar um DataFrame a partir de um dicionário não é garantida nas versões mais antigas do Python (anteriores ao 3.7). A partir do Python 3.7, a ordem de inserção dos elementos em dicionários é preservada.
+
 
 
 \newpage
