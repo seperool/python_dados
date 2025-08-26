@@ -1029,11 +1029,63 @@ print(scientists)
 
 A ordem das colunas ao criar um DataFrame a partir de um dicionário não é garantida nas versões mais antigas do Python (anteriores ao 3.7). A partir do Python 3.7, a ordem de inserção dos elementos em dicionários é preservada.
 
+\newpage
 
+**Ordem das colunas e nome dos índices:**
+
+   * Se consultarmos a documentação do `Dataframe`, veremos que é possível usar o parâmetro `columns` ou específicar a ordem das colunas. **Ordena as colunas**.
+   * Se quisermos usar colunas `name` para o índice da linha, podemos usar o parâmetro index. **Nomeia o índice**.
+
+```{python}
+scientists = pd.DataFrame({
+'Occupation':['Chemist','Statistician'],
+'Born':['1920-07-25','1876-06-13'],
+'Died':['1958-04-16','1937-10-16'],
+'Age':[37,61]
+},
+index=['Rosaline Franklin','William Gosset'],
+columns=['Occupation','Born','Died','Age'])
+
+print(scientists)
+```
+
+\newpage
+
+Antes do Python 3.7, os dicionários padrão (`dict`) não mantinham a ordem de inserção dos itens. Se você quisesse um dicionário que lembrasse a ordem em que os itens foram adicionados, precisava usar o `OrderedDict()`, classe do módulo `collections`.
+
+`from collections import OrderedDict`
+
+A partir do Python 3.7, os dicionários padrão passaram a manter a ordem de inserção por padrão. Isso significa que, na maioria dos casos, você não precisa mais usar o `OrderedDict` para essa finalidade.
+
+Contudo, para efeito de estudo, segue o exemplo de uso do `OrderedDict`:
+
+```{python}
+from collections import OrderedDict
+
+# Observe os parênteses após OrderedDict
+# Então passamos uma lista com duas tuplas
+
+scientists = pd.DataFrame(OrderedDict([
+  ('Nome', ['Rosaline Franklin','William Gosset']),
+  ('Occupation',['Chemist','Statistician']),
+  ('Born',['1920-07-25','1876-06-13']),
+  ('Died',['1958-04-16','1937-10-16']),
+  ('Age',[37,61])
+])
+)
+
+print(scientists)
+```
 
 \newpage
 
 ## Series
+
+### `Series` é semelhante a `ndarray`
+### Subconjuntos com booleanos: `Series`
+### Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
+
+\newpage
 
 ## Dataframe
 
