@@ -5,29 +5,34 @@ Created on Sat Mar 30 23:07:22 2024
 @author: Sérgio
 """
 
-import os                                      # Interação com o sistema operacional
-import math                                    # Funções matemáticas
-import statistics                              # Funções estatísticas
-import numpy as np                             # Computação numérica (arrays, matrizes)
-import pandas as pd                            # Análise e manipulação de dados (DataFrames)
-import json                                    # Manipulação de dados JSON
-import csv                                     # Leitura e escrita de arquivos CSV
-import unittest                                # Testes unitários
-import datetime                                # Trabalha com datas e horas, manipula intervalos de tempo
+# Módulos de sistema e utilitários
+import os                       # Interage com o sistema operacional
+import sys                      # Acesso a variáveis e funções do interpretador Python
+import math                     # Funções matemáticas
+import statistics               # Funções estatísticas
+import datetime                 # Manipulação de datas e horas
+import collections              # Tipos de dados especializados (dicionários, filas, etc.)
+import json                     # Leitura e escrita de arquivos JSON
+import csv                      # Leitura e escrita de arquivos CSV
+import unittest                 # Framework para testes de unidade
 
-import tensorflow as tf                        # Aprendizado de máquina (Google)
-from tensorflow import keras                   # API de alto nível para redes neurais
-from tensorflow.keras import layers            # Camadas para redes neurais
+# Bibliotecas de computação e análise de dados
+import numpy as np              # Computação numérica de alto desempenho (arrays e matrizes)
+import pandas as pd             # Estrutura de dados e ferramentas para análise de dados
 
-import sklearn                                 # Aprendizado de máquina (scikit-learn)
+# Bibliotecas de Machine Learning
+import tensorflow as tf         # Aprendizado de máquina (Google)
+from tensorflow import keras    # API de alto nível para redes neurais
+from tensorflow.keras import layers # Camadas comuns para construção de redes neurais
 
-# Bibliotecas gráficas
-import matplotlib.pyplot as plt                # Criação de gráficos
-import Pygal                                   # Criação de gráficos vetoriais escaláveis (gráficos online)
-import seaborn as sns                          # Visualização de dados (baseado no Matplotlib)
+import sklearn                  # Biblioteca de aprendizado de máquina (scikit-learn)
 
-import kivy                                    # Desenvolvimento de aplicativos multi-touch
+# Bibliotecas de visualização de dados
+import matplotlib.pyplot as plt # Criação de gráficos estáticos e interativos
+import seaborn as sns           # Visualização estatística de dados, baseada no Matplotlib
+import Pygal                    # Criação de gráficos vetoriais escaláveis (SVG)
 
-# Bibliotecas adicionais (Quarto - para outputs formatados)
-from IPython.display import Markdown           # Renderizar Markdown
-from tabulate import tabulate                  # Formatar tabelas de texto
+# Bibliotecas adicionais
+import kivy                     # Framework para desenvolvimento de aplicativos multi-touch
+from IPython.display import Markdown # Ferramenta para renderizar texto como Markdown
+from tabulate import tabulate   # Formata dados tabulares para texto
