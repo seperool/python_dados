@@ -1,17 +1,18 @@
-ESCRITO EM 25/08/25
+ESCRITO EM 26/08/25
 ---
-PARA 26/08/25
+PARA 27/08/25
 ---
 Subir github:
 
 Doing:
     - Estrutura de dados do Pandas
-        - Criando seus próprios dados
-            - Criando um Dataframe
+        - Series
+            - Series é semelhante a ndarray
+            - Subconjuntos com booleanos: Series
+            - Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
 
 To do:
     - Estrutura de dados do Pandas
-        - Series
         - Dataframe
         - Fazendo alterações em Series e em Dataframe
         - Exportando e importando dados
