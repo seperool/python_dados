@@ -1081,6 +1081,122 @@ print(scientists)
 
 ## Series
 
+Vimos como o método de fatiamento afeta o `type` do resultado. Se usarmos o atributo `loc` para gerar o subconjunto com a primeira linha de nosso `dataframe` `scientists`, obteremos um objeto `Series`.
+
+Vamos recriar inicialmente o nosso dataframe de exemplo:
+
+```{python}
+scientists = pd.DataFrame({
+'Occupation':['Chemist','Statistician'],
+'Born':['1920-07-25','1876-06-13'],
+'Died':['1958-04-16','1937-10-16'],
+'Age':[37,61]
+},
+index=['Rosaline Franklin','William Gosset'],
+columns=['Occupation','Born','Died','Age'])
+
+print(scientists)
+```
+
+Agora selecionaremos um cientista pelo rótulo do índice da linha:
+
+```{python}
+first_row = scientists.loc['William Gosset']
+
+print("\nTipo do objeto: ")
+print(type(first_row))
+
+print("\nObjeto: ")
+print(first_row)
+```
+
+\newpage
+
+Quando uma série é exibida (isto é, a sua representação em string), o índice é representado como a primeira "coluna", e os valores são mostrados a segunda "coluna". Há muitos atributos e métodos associados a um objeto `Series`.
+
+Apresentação Objeto `Series`:
+
+   * Primeira coluna = índices (`index`)
+   
+   * Segunda coluna = valores (`values`)
+
+Dois exemplos de atributos são `index` e `values`:
+
+   * Atributo `index`:
+     ```{python}
+     # index é um atributo, não precisa de parênteses
+     print(first_row.index)
+     ```
+
+   * Atributo `values`:
+     ```{python}
+     # values é um atributo, não precisa de parênteses
+     print(first_row.values)
+     ```
+
+Um exemplo de um **método** de `Series` é `keys`, que é um alias (apelido) para o atributo `index`:
+
+```{python}
+# keys é um método, precisa de parênteses
+print(first_row.keys())
+```
+
+\newpage
+
+A essa altura, talvez você tenha perguntas sobre a sintaxe de `index`, `values` e `keys`.
+
+  * Podemos pensar nos **atributos** como propriedades de um objeto (nesse exemplo, nosso objeto é uma `Series`).  
+  `index` e `values`.
+  
+  *  Podemos pensar nos **métodos** como um cálculo ou uma operação executada.  
+  `keys`.
+
+A sintaxe de subconjuntos para `loc`, `iloc` e `ix` é composta de todos os atributos. É por isso que essa sintaxe não depende de um conjunto de parênteses, (), mas de colchetes, [].
+
+A sintaxe de subconjuntos para os indexadores `loc`, `iloc` e `ix` no pandas é feita usando colchetes, []. Isso ocorre porque eles são usados para a operação de indexação (seleção de dados), que é a sintaxe padrão de Python para esse fim, e não para a chamada de métodos, que usaria parênteses, ().
+
+Como `keys` é um método, se quiséssemos obter a primeira chave (que é também o primeiro índice), usaríamos colchetes após a chamada do método.
+
+```{python}
+# Obter o primeiro índice usando atributo index
+print(first_row.index[0])
+```
+
+```{python}
+# Obter a primeira key usando método keys
+print(first_row.keys()[0])
+```
+
+\newpage
+
+Alguns atributos de uma `Series` estão listados na @tbl-attseries.
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-attseries
+#| tbl-cap: Alguns dos atributos de uma Series
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["`loc`","Subconjunto usando o valor de índice."],
+          ["`iloc`","Subconjunto usando a posição de índice."],
+          ["`ix`","Subconjunto usando valor e/ou posição de índice."],
+          ["`dtype` ou `dtypes`","Tipos de conteúdo de `Series`."],
+          ["`T`","Transposta da série."],
+          ["`shape`","Dimensões dos dados."],
+          ["`size`","Número de elementos em `Series`."],
+          ["`values`","`ndarray` ou dado semelhante de `Series`."]]
+Markdown(tabulate(
+  table, 
+  headers=["Atributo de Series","Descrição"],
+  colalign=("left","left")
+  ))
+```
+
+\newpage
+
 ### `Series` é semelhante a `ndarray`
 ### Subconjuntos com booleanos: `Series`
 ### Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
