@@ -1198,7 +1198,57 @@ Markdown(tabulate(
 \newpage
 
 ### `Series` é semelhante a `ndarray`
+
+* A estrutura de dados do Pandas conhecida como `Series` é muito semelhante ao `numpy.ndarray`.
+* Por sua vez, muitos métodos e funções que atuam em um `numpy` funcionarão também em uma `Series`.
+* As vezes, uma `Series` poderá ser referenciada como um "vetor".
+
+#### Métodos de `Series`
+
+Vamos inicialmente obter uma série da coluna "Age" de nosso dataframe `scientists`.
+
+```{python}
+# Obtém a coluna "Age"
+ages = scientists['Age']
+print(ages)
+```
+
+O `numpy` é uma biblioteca de processamento cientifíco que, em geral, lida com vetores numéricos. Como podemos pensar em uma `Series` como uma extensão de `numpy.ndarray`, há uma sobreposição de atributos e de métodos. Quando temos uma vetor de números, há cálculos comuns que podem ser executados.
+
+\newpage
+
+Exemplos de métodos no Pandas:
+
+* `mean()` - Média:
+  ```{python}
+  print(ages.mean())
+  ```
+
+* `min()` - Mínimo:
+  ```{python}
+  print(ages.min())
+  ```
+
+* `max()` - Máximo:
+  ```{python}
+  print(ages.max())
+  ```
+
+* `std()` - Desvio-padrão:
+  ```{python}
+  print(ages.std())
+  ```
+
+`mean`, `min`, `max` e `std` também são métodos em `numpy.ndarray`. Alguns métodos se Series estão listados na \color{red}TABELA\color{black}.
+
+\newpage
+
 ### Subconjuntos com booleanos: `Series`
+
+
+
+\newpage
+
 ### Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
 
 \newpage
