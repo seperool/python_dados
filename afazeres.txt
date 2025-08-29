@@ -1,13 +1,12 @@
-ESCRITO EM 28/08/25
+ESCRITO EM 29/08/25
 ---
-PARA 29/08/25
+PARA 30/08/25
 ---
 Subir github:
 
 Doing:
     - Estrutura de dados do Pandas
         - Series
-            - Series é semelhante a ndarray
             - Subconjuntos com booleanos: Series
             - Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
 
