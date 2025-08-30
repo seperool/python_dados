@@ -1239,13 +1239,50 @@ Exemplos de métodos no Pandas:
   print(ages.std())
   ```
 
-`mean`, `min`, `max` e `std` também são métodos em `numpy.ndarray`. Alguns métodos se Series estão listados na \color{red}TABELA\color{black}.
+`mean`, `min`, `max` e `std` também são métodos em `numpy.ndarray`. Alguns métodos se Series estão listados na @tbl-mseries.
 
 \newpage
 
 ### Subconjuntos com booleanos: `Series`
 
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-mseries
+#| tbl-cap: Alguns métodos que podem ser executados em uma `Series`
 
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["`append`","Concatena duas ou mais `Series`."],
+         ["`corr`","Calcula uma correlação com outra `Series`.*"],
+         ["`cov`","Calcula uma covariância com outra `Series`.*"],
+         ["`describe`","Calcula estatísticas resumidas.*"],
+         ["`drop_duplicates`","Devolve uma `Series` sem duplicações."],
+         ["`equals`","Determina se uma `Series` tem os mesmos elementos."],
+         ["`get_values`","Obtém valores da `Series`; o mesmo que o atributo `values`."],
+         ["`hist`","Desenha um histograma."],
+         ["`isin`","Verifica se valores estão contidos em uma `Series`."],
+         ["`min`","Devolve o valor mínimo."],
+         ["`max`","Devolve o valor máximo."],
+         ["`mean`","Devolve a média aritimética."],
+         ["`median`","Devolve a mediana."],
+         ["`mode`","Devolve a(s) moda(s)."],
+         ["`quantile`","Devolve o valor em um dado quantil."],
+         ["`replace`","Substitui valores da `Series` por um valor especificado."],
+         ["`sample`","Devolve uma amostra aleatória de valores da `Series`."],
+         ["`sort_values`","Ordena valores."],
+         ["`to_frame`","Converte uma `Series` em um `DataFrame`."],
+         ["`transpose`","Devolve a transposta."],
+         ["`unique`","Devolve um `numpy.ndarray` de valores únicos."]]
+Markdown(tabulate(
+  table, 
+  headers=["Métodos de `Series`","Descrição"],
+  colalign=("left","left")
+  ))
+```
+
+*Indica se valores ausentes serão automaticamente descartados.
 
 \newpage
 
