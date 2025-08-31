@@ -1245,6 +1245,8 @@ Exemplos de métodos no Pandas:
 
 ### Subconjuntos com booleanos: `Series`
 
+Podemos usar índices específicos para obter subconjuntos de nossos dados (como visto anteriormente). Apenas raramente, porém, saberemos o índice exato das linhas e colunas para obter um subconjunto dos dados. Em geral, você estará procurando valores que satisfaçam (ou não) aum cálculo ou uma observação em particular.
+
 ```{python}
 #| echo: false
 #| error: false
@@ -1283,6 +1285,18 @@ Markdown(tabulate(
 ```
 
 *Indica se valores ausentes serão automaticamente descartados.
+
+\newpage
+
+Para explorar esse processo, vamos usar um conjunto de dados maior.
+
+```{python}
+scientists = pd.read_csv('./Data/Cap_02/scientists.csv')
+
+ages = scientists['Age']
+print(ages)
+print(ages.describe())
+```
 
 \newpage
 
