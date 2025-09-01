@@ -1,13 +1,12 @@
-ESCRITO EM 31/08/25
+ESCRITO EM 01/09/25
 ---
-PARA 01/09/25
+PARA 02/09/25
 ---
 Subir github:
 
 Doing:
     - Estrutura de dados do Pandas
         - Series
-            - Subconjuntos com booleanos: Series
             - Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
 
 To do:
