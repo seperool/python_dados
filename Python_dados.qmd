@@ -1267,7 +1267,7 @@ table = [["`append`","Concatena duas ou mais `Series`."],
          ["`isin`","Verifica se valores estão contidos em uma `Series`."],
          ["`min`","Devolve o valor mínimo."],
          ["`max`","Devolve o valor máximo."],
-         ["`mean`","Devolve a média aritimética."],
+         ["`mean`","Devolve a média aritmética."],
          ["`median`","Devolve a mediana."],
          ["`mode`","Devolve a(s) moda(s)."],
          ["`quantile`","Devolve o valor em um dado quantil."],
@@ -1292,10 +1292,61 @@ Para explorar esse processo, vamos usar um conjunto de dados maior.
 
 ```{python}
 scientists = pd.read_csv('./Data/Cap_02/scientists.csv')
+```
 
+Acabamos de ver como podemos calcular métricas descritivas básicas de vetores.
+
+O método `describe` calculará várias estatísticas descritivas com uma única chamada de método.
+
+```{python}
 ages = scientists['Age']
 print(ages)
-print(ages.describe())
+```
+
+* `describe` - Estatísticas básicas:
+
+  ```{python}
+  # Obtém estatísticas básicas
+  print(ages.describe())
+  ```
+
+* `mean` - Média aritmética:
+
+  ```{python}
+  # Média de todas as idades
+  print(ages.mean())
+  ```
+
+\newpage
+
+E se quisermos obter o subconjunto de nossas idades identificando aquelas que estejam acima da média?
+
+```{python}
+print(ages[ages > ages.mean()])
+```
+
+Vamos analisar essa instrução e observar o que `ages > ages.mean()` devolve.
+
+```{python}
+print(ages > ages.mean())
+```
+
+```{python}
+print(type(ages > ages.mean()))
+```
+
+Essa instrução devolve uma `Series` com `dtype` igual a `bool` (booleano, verdadeiro ou falso). Em outras palavras, podemos não só obter subconjunto de valores usando rótulos e índices, mas também especificar um vetor com valores booleanos.
+
+Python tem muitas funções e métodos. Conforme o modo como estão implementados, eles poderão devolver rótulos, índices ou booleanos. Tenha esse ponto em mente quando conhecer novos métodos e tentar combinar várias partes em seu trabalho.
+
+\newpage
+
+Se quisermos podemos fornecer manualmente um vetor de `bool`s para obter um subconjunto de nossos dados.
+
+```{python}
+# Obtém os índices 0, 1, 4, 5 e 7
+manual_bool_values = [True,True,False,False,True,True,False,True]
+print(ages[manual_bool_values])
 ```
 
 \newpage
