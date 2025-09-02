@@ -1353,6 +1353,16 @@ print(ages[manual_bool_values])
 
 ### Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
 
+Se você não tem familiaridade com programação, acharia estranho que `ages > ages.mean()` devolva um vetor sem nenhum laço `for`.
+
+Muitos dos métodos que funcionam em `Series` (e em `DataFrames` também) são vetorizados, o que significa que atuam em todo vetor simultaneamente.
+
+Essa abordagem deixa o código mais legível e, em geral, há otimizações disponíveis para deixar os cálculos mais rápidos.
+
+#### Vetores de mesmo tamanho
+#### Vetores com inteiros (escalares)
+#### Vetores com tamanhos diferentes
+
 \newpage
 
 ## Dataframe
