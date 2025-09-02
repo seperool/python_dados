@@ -1,6 +1,6 @@
-ESCRITO EM 01/09/25
+ESCRITO EM 02/09/25
 ---
-PARA 02/09/25
+PARA 03/09/25
 ---
 Subir github:
 
@@ -8,6 +8,9 @@ Doing:
     - Estrutura de dados do Pandas
         - Series
             - Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
+                - Vetores de mesmo tamanho
+                - Vetores com inteiros (escalares)
+                - Vetores com tamanhos diferentes
 
 To do:
     - Estrutura de dados do Pandas
