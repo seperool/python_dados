@@ -1360,7 +1360,37 @@ Muitos dos métodos que funcionam em `Series` (e em `DataFrames` também) são v
 Essa abordagem deixa o código mais legível e, em geral, há otimizações disponíveis para deixar os cálculos mais rápidos.
 
 #### Vetores de mesmo tamanho
+
+Se você executar uma operação entre dois vetores de mesmo tamanho, o vetor resultante será um cálculo feito com os vetores, elemento a elemento.
+
+```{python}
+# Soma vetores do mesmo tamanho
+print(ages + ages)
+```
+
+```{python}
+# Multiplica vetores do mesmo tamanho
+print(ages * ages)
+```
+
+\newpage
+
 #### Vetores com inteiros (escalares)
+
+Ao executar uma operação em um vetor usando um escalar, esse será usado em todos os elementos do vetor.
+
+```{python}
+# Soma vetor e um escalar
+print(ages + 100)
+```
+
+```{python}
+# Multiplicação de um vetor por um escalar
+print(ages * 2)
+```
+
+\newpage
+
 #### Vetores com tamanhos diferentes
 
 \newpage
