@@ -1393,6 +1393,29 @@ print(ages * 2)
 
 #### Vetores com tamanhos diferentes
 
+Quando estiver trabalhando com vetores de tamanhos diferentes, o comportamento dependerá do `type` dos vetores.
+
+Em uma `Series`, os vetores executarão uma operação de acordo com o índice correspondente. O resto do vetor resultante será preenchido com um valor "ausente", representado por `NaN`, que quer dizer "*Not a Number*" (não é um número).
+
+Esse tipo de comportamento, é chamado de **Broadcasting**.
+
+```{python}
+print(ages + pd.Series([1,100]))
+```
+
+Com outros `types`, os formatos devem coincidir, ou retornará um erro.
+
+```
+import numpy as np
+
+# Isto causará um erro
+print(ages + np.array([1,100]))
+```
+
+\newpage
+
+#### Vetores com rótulos de índice comuns (alinhamento automático)
+
 \newpage
 
 ## Dataframe
