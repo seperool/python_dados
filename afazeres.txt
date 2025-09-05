@@ -1,18 +1,17 @@
-ESCRITO EM 04/09/25
+ESCRITO EM 05/09/25
 ---
-PARA 05/09/25
+PARA 06/09/25
 ---
 Subir github:
 
 Doing:
     - Estrutura de dados do Pandas
-        - Series
+        - Dataframe
+            - Subconjuntos com booleanos: `DataFrames`
             - Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
-                - Vetores com rótulos de índice comuns (alinhamento automático)
 
 To do:
     - Estrutura de dados do Pandas
-        - Dataframe
         - Fazendo alterações em Series e em Dataframe
         - Exportando e importando dados
         - Conclusão
