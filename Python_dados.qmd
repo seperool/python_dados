@@ -1416,9 +1416,47 @@ print(ages + np.array([1,100]))
 
 #### Vetores com rótulos de índice comuns (alinhamento automático)
 
+Um aspecto interessante no Pandas é o modo como o alinhamento de dados é quase sempre automático.
+
+Se for possível, os dados sempre se alinharão de acordo com o rótulo do índice na execução de ações.
+
+```{python}
+# ages conforme aparecem nos dados
+print(ages)
+```
+
+```{python}
+# ages invertendo a ordem dos índices
+rev_ages = ages.sort_index(ascending=False)
+print(rev_ages)
+```
+
+\newpage
+
+Se executarmos uma operação usando `ages` e `rev_ages`, ela ainda será conduzida elemento a elemento, mas os vetores serão alinhados antes de a operação ser realizada.
+
+```{python}
+# Saída de referência para mostrar o alinhamento dos rótulos de índice
+print(ages * 2)
+```
+
+```{python}
+# Observe que obtemos os mesmos valores
+# apesar de o vetor estar invertido
+print(ages + rev_ages)
+```
+
+**O índice é a referência para as operações e há um realinhamento (ordenamento)**.
+
 \newpage
 
 ## Dataframe
+
+### Subconjuntos com booleanos: `DataFrames`
+
+### Operações são alinhadas e vetorizadas automaticamente (*Broadcasting*)
+
+\newpage
 
 ## Fazendo alterações em Series e em Dataframe
 
