@@ -1452,7 +1452,64 @@ print(ages + rev_ages)
 
 ## Dataframe
 
+O `DataFrame` é o objeto mais comum do Pandas. Podemos pensar nele como o modo Python de armazenar dados do tipo planilha.
+
+Muitos dos recursos da estrutura de dados `Series` se aplicam ao `DataFrame`.
+
 ### Subconjuntos com booleanos: `DataFrames`
+
+Assim como pudemos obter um subconjunto de uma `Series` usando um vetor *booleano*, podemos obter um subconjunto de um `DataFrame` com um `bool`.
+
+```{python}
+# Vetores booleanos servem para obter subconjuntos de linhas
+print(scientists[scientists['Age'] > scientists['Age'].mean()])
+```
+
+Quando você usa uma lista de booleanos para selecionar linhas em um `DataFrame` do Pandas, o número de valores `True` e `False` deve ser exatamente igual ao número total de linhas do `DataFrame`.
+
+O conceito de *broadcasting* não se aplica aqui. A lista booleana atua como uma máscara de seleção, onde cada `True` ou `False` corresponde a uma linha específica. Se a máscara tiver um tamanho diferente do `DataFrame`, o Pandas não saberá quais linhas incluir ou ignorar, e isso resultará em um erro (`IndexError`).
+
+```{python}
+# 8 valores passados como um vetor booleanos
+# 3 linhas devolvidas
+print(scientists.loc[[True,True,False,True,False,False,False,False]])
+```
+
+\newpage
+
+A @tbl-msubconjdf resumo os diversos tipos de métodos para obtenção de subconjuntos.
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-msubconjdf
+#| tbl-cap: Tabela de métodos para obtenção de subconjuntos de DataFrame
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["`df[column_name]`","Única coluna."],
+  ["",""],
+  ["",""],
+  ["",""],
+  ["",""],
+  ["",""],
+  ["",""],
+  ["",""],
+  ["",""],
+  ["",""],
+  ["",""]
+  ]
+Markdown(tabulate(
+table, 
+headers=["Sintaxe","Resultado da seleção"],
+colalign=("left","left")
+))
+```
+
+*Observe que `ix` não funciona mais depois do Pandas v0.20.
+
+\newpage
 
 ### Operações são alinhadas e vetorizadas automaticamente (*Broadcasting*)
 
