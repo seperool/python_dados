@@ -1489,16 +1489,16 @@ A @tbl-msubconjdf resumo os diversos tipos de métodos para obtenção de subcon
 from IPython.display import Markdown
 from tabulate import tabulate
 table = [["`df[column_name]`","Única coluna."],
-  ["",""],
-  ["",""],
-  ["",""],
-  ["",""],
-  ["",""],
-  ["",""],
-  ["",""],
-  ["",""],
-  ["",""],
-  ["",""]
+  ["`df[[column1,column2,...]]`","Várias colunas."],
+  ["`df.loc[row_label]`","Linha pelo rótulo do índice da linha (nome da linha)."],
+  ["`df.loc[label1,label2,...]`","Várias linhas pelos rótulos do índice."],
+  ["`df.iloc[row_number]`","Linha pelo número da linha."],
+  ["`df.iloc[row1,row2,...]`","Várias linhas pelos números das linhas."],
+  ["`df.ix[label_or_number]`","Linha pelo rótulo do índice ou pelo número."],
+  ["`df.ix[lab_num1,lab_num2,...]`","Várias linhas pelos rótulos de índice ou pelos números."],
+  ["`df[bool]`","Linha baseada em `bool`."],
+  ["`df[bool1,bool2,...]`","Várias linhas baseadas em `bool`."],
+  ["`df[start:stop:step]`","Linhas baseadas em notação de fatiamento."]
   ]
 Markdown(tabulate(
 table, 
