@@ -1513,6 +1513,23 @@ colalign=("left","left")
 
 ### Operações são alinhadas e vetorizadas automaticamente (*Broadcasting*)
 
+O Pandas aceita *broadcasting*, disponibilizado pela biblioteca `numpy`. Essencialmente, ele descreve o que acontece quando realizamos operações entre objetos do tipo array, que é o caso de `Series` e `DataFrame`. Esses comportamentos dependem do tipo do objeto, de seu tamanho e de qualquer rótulo assoaciado a ele.
+
+Inicialmente, vamos criar subconjuntos de nosso dataframe.
+
+```{python}
+first_half = scientists[:4]
+second_half = scientists[4:]
+```
+
+```{python}
+print(first_half)
+```
+
+```{python}
+print(second_half)
+```
+
 \newpage
 
 ## Fazendo alterações em Series e em Dataframe
