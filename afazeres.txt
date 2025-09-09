@@ -1,16 +1,14 @@
-ESCRITO EM 08/09/25
+ESCRITO EM 09/09/25
 ---
-PARA 09/09/25
+PARA 10/09/25
 ---
 Subir github:
 
 Doing:
     - Estrutura de dados do Pandas
-        - Dataframe
-            - Operações são alinhadas e vetorizadas automaticamente (Broadcasting)
-
+        - Fazendo alterações em Series e em Dataframe
+        
 To do:
     - Estrutura de dados do Pandas
-        - Fazendo alterações em Series e em Dataframe
         - Exportando e importando dados
         - Conclusão
