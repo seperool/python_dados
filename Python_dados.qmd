@@ -1532,6 +1532,60 @@ print(second_half)
 
 \newpage
 
+Quando executamos uma ação em um dataframe com um escalar, há uma tentativa de aplicar a operação em cada célula do dataframe.
+
+#### Escalar {.unnumbered}
+
+Nesse exemplo, os números serão multiplicados por 2 e as *strings* serão **duplicadas** (esse é o comportamento usual do Python com *strings*).
+
+```{python}
+# Multiplicar por um escalar
+print(scientists * 2)
+```
+
+\newpage
+
+#### Somar - método `.add()` {.unnumbered}
+
+Se seus dataframes tiverem somente valores numéricos e você quiser "somar" os valores célula a célula, o método `add` poderá ser usado.
+
+O método `.add()` em pandas é uma maneira muito útil de somar dataframes elemento a elemento. Ele é especialmente flexível porque, ao contrário do operador `+`, ele tem um parâmetro chamado `fill_value`.
+
+Esse parâmetro é extremamente útil quando os dataframes têm índices (linhas) ou colunas diferentes. Se uma célula em um dataframe não tiver uma "correspondente" no outro dataframe, o `fill_value` será usado para preencher o valor ausente antes de fazer a soma. Isso evita que o resultado seja `NaN` (*Not a Number*) para essas células, que é o comportamento padrão do operador `+`.
+
+```{python}
+# DataFrame 1
+df1 = pd.DataFrame({
+    'A': [10, 20, 30],
+    'B': [40, 50, 60]
+}, index=['X', 'Y', 'Z'])
+
+print("DataFrame 1:")
+print(df1)
+```
+
+```{python}
+# DataFrame 2
+df2 = pd.DataFrame({
+    'A': [5, 10, 15],
+    'C': [2, 4, 6]  # Note a coluna 'C', que não existe em df1
+}, index=['X', 'Y', 'W'])  # Note a linha 'W', que não existe em df1
+
+print("DataFrame 2:")
+print(df2)
+```
+
+```{python}
+# Usando .add() com fill_value
+# Preenche os valores ausentes com 0 para que a soma ocorra
+df_soma = df1.add(df2, fill_value=0)
+
+print("Resultado da soma com .add(fill_value=0):")
+print(df_soma)
+```
+
+\newpage
+
 ## Fazendo alterações em Series e em Dataframe
 
 ## Exportando e importando dados
