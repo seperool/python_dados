@@ -1588,6 +1588,17 @@ print(df_soma)
 
 ## Fazendo alterações em Series e em Dataframe
 
+Agora que já conhecemos várias maneiras de obter subconjuntos e fatiar nossos dados (veja @tbl-msubconjdf), podemos alterar nossos objetos de dados.
+
+### Adicionando mais colunas
+
+\newpage
+
+### Alterando diretamente uma coluna
+### Descartando valores
+
+\newpage
+
 ## Exportando e importando dados
 
 ## Conclusão
