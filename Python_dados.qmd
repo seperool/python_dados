@@ -1592,6 +1592,48 @@ Agora que já conhecemos várias maneiras de obter subconjuntos e fatiar nossos 
 
 ### Adicionando mais colunas
 
+O `type` das colunas `Born` e `Died` é `object`, ou seja são strings.
+
+```{python}
+print(scientists['Born'].dtype)
+```
+
+```{python}
+print(scientists['Died'].dtype)
+```
+
+É possível converter as strings em um tipo `datatime` apropriado para que possamos executar operações comuns de data e hora (por exemplo, obter as diferenças entre datas ou calcular a idade de uma pessoa).
+
+Você pode fornecer o seu próprio `format` caso tenha uma data com um formato específico. Uma lista de variáveis `format` pode ser encontrada na documentação do módulo `datetime` de Python.
+
+O formato da data que vamos trabalhar tem o aspecto "AAAA-MM-DD", portanto podemos usar o formato '%Y-%m-%d'.
+
+```{python}
+# Formata a coluna 'Born' como datetime
+born_datetime = pd.to_datetime(scientists['Born'], format='%Y-%m-%d')
+print(born_datetime)
+```
+
+```{python}
+died_datetime = pd.to_datetime(scientists['Died'], format='%Y-%m-%d')
+print(died_datetime)
+```
+
+\newpage
+
+Se quiséssemos, poderiamos criar um novo conjunto de colunas contendo as representações como `datetime` das datas que são `object` (string).
+
+O exemplo a seguir usa a sintaxe de atribuição múltipla do Python.
+
+```{python}
+scientists['born_dt'],scientists['died_dt'] = (born_datetime, died_datetime)
+print(scientists.head())
+```
+
+```{python}
+print(scientists.shape)
+```
+
 \newpage
 
 ### Alterando diretamente uma coluna
