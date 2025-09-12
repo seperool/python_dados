@@ -1637,6 +1637,33 @@ print(scientists.shape)
 \newpage
 
 ### Alterando diretamente uma coluna
+
+Podemos também atribuir um novo valor diretamente a uma coluna existente.
+
+O exemplo nesta seção mostra como deixar aleatório o conteúdo de uma coluna.
+
+Inicalmente, vamos observar os valores originais de `Age`.
+
+```{python}
+print(scientists['Age'])
+```
+
+Vamos agora embaralhar os valores.
+
+```
+import random
+
+# Define uma semente (seed) para que a aleatoriedade seja sempre igual
+random.seed(42)
+random.shuffle(scientists['Age'])
+
+print(scientists['Age'])
+```
+
+A mensagem `SettingWithCopyWarning` no código anterior nos informa que o modo apropriado de lidar com a instrução seria escrevê-la usando `loc`, ou podemos usar o método embutido `sample` para mostrar aleatoriamente o tamanho da coluna.
+
+\newpage
+
 ### Descartando valores
 
 \newpage
