@@ -1,6 +1,6 @@
-ESCRITO EM 11/09/25
+ESCRITO EM 12/09/25
 ---
-PARA 12/09/25
+PARA 13/09/25
 ---
 Subir github:
 
@@ -15,3 +15,13 @@ To do:
     - Estrutura de dados do Pandas
         - Exportando e importando dados
         - Conclusão
+
+    - scripts
+        - Dataframe
+            - Subconjuntos
+            - booleanos
+            - Broadcasting
+            - .add
+            - Add colunas
+            - Alterando colunas
+            - Descartando colunas
