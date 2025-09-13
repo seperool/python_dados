@@ -1662,6 +1662,25 @@ print(scientists['Age'])
 
 A mensagem `SettingWithCopyWarning` no código anterior nos informa que o modo apropriado de lidar com a instrução seria escrevê-la usando `loc`, ou podemos usar o método embutido `sample` para mostrar aleatoriamente o tamanho da coluna.
 
+Neste exemplo, é necessário executar `reset_index`, pois `sample` usa somente índice da linha. Desse modo, se você tentar atribuir-lhe um novo valor ou usá-lo novamente, os valores "embaralhados" serão automaticamente alinhados ao índice e serão ordenados de novo como eram antes de `sample`.
+
+\newpage
+
+O parâmetro `drop=True` em `reset_index` informa ao Pandas que não insira o índice nas colunas do dataframe, de modo que somente os valores sejam mantidos.
+
+```{python}
+import random
+
+# random_state é usado para deixar a 'aleatoriedade' menos aleatória
+scientists['Age'] = scientists['Age'].\
+  sample(len(scientists['Age']),random_state=24).\
+    reset_index(drop=True) #Valores permanecem aleatórios
+
+print(scientists['Age'])
+```
+
+Observe que o método `random.shuffle` parece atuar diretamente na coluna. A documentação de `random.shuffle` menciona que a sequência será embaralhada "*in place*", o que significa que ela atuará diretamente na sequência. Compare isso com o método anterior, em que atribuímos os valores novos calculados a uma variável diferente antes que pudéssemos atribuí-los à coluna.
+
 \newpage
 
 ### Descartando valores
