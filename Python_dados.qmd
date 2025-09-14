@@ -1681,6 +1681,16 @@ print(scientists['Age'])
 
 Observe que o método `random.shuffle` parece atuar diretamente na coluna. A documentação de `random.shuffle` menciona que a sequência será embaralhada "*in place*", o que significa que ela atuará diretamente na sequência. Compare isso com o método anterior, em que atribuímos os valores novos calculados a uma variável diferente antes que pudéssemos atribuí-los à coluna.
 
+* `len(scientists['Age'])`: Este argumento diz à função `sample()` para pegar uma amostra do mesmo tamanho que a coluna inteira. Em outras palavras, ele está pedindo para selecionar todos os valores da coluna, mas em uma ordem aleatória.
+
+* `random_state=24`: Este é o equivalente a `random.seed()`. Usar `random_state` garante que a "aleatoriedade" seja reproduzível. Se você executar o código várias vezes com `random_state=24`, o embaralhamento será sempre o mesmo. Isso é extremamente útil para depuração e para garantir que seus resultados sejam consistentes.
+
+* `reset_index()`: Reseta o índice da Series (ou DataFrame) para a ordem padrão (0, 1, 2, ...).
+
+* `drop=True`: Este argumento é muito importante. Ele diz ao `reset_index()` para descartar o índice antigo. Se você não usar `drop=True`, o pandas adicionará o índice antigo como uma nova coluna no seu DataFrame, o que não é o que queremos aqui.
+
+* "*in-place*" (no lugar): significa que uma função modifica o objeto original diretamente, sem criar uma nova cópia.
+
 \newpage
 
 ### Descartando valores
