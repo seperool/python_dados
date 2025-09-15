@@ -1691,6 +1691,44 @@ Observe que o método `random.shuffle` parece atuar diretamente na coluna. A doc
 
 * "*in-place*" (no lugar): significa que uma função modifica o objeto original diretamente, sem criar uma nova cópia.
 
+Podemos recalcular a idade "real" usando aritmética com `datetime`.
+
+```{python}
+# Subtrair datas nos dá o número de dias
+scientists['age_days_dt'] = (scientists['died_dt'] - \
+  scientists['born_dt'])
+
+print(scientists) 
+```
+
+\newpage
+
+```
+# Podemos converter o valor somente para o ano
+# usando o método astype
+scientists['age_years_dt'] = scientists['age_days_dt'].\
+  astype('timedelta64[Y]')
+
+print(scientists)
+```
+
+Correção:
+
+o método astype('timedelta64[Y]') nunca funcionou para converter dias em anos dessa forma. O problema principal é a variabilidade do ano. Diferente de um dia (24 horas) ou uma hora (60 minutos), um ano não tem uma duração fixa e precisa em dias. Ele pode ter 365 ou 366 dias (nos anos bissextos).
+
+O tipo de dado `timedelta64` foi projetado para lidar com diferenças de tempo exatas e fixas, como dias, horas, segundos, milissegundos, etc. Tentar usar uma unidade como "ano" (Y) ou "mês" (M) não seria preciso, porque o pandas não saberia se deve usar 365 ou 366 dias na conversão.
+
+```{python}
+scientists['age_years_dt'] = scientists['age_days_dt'].\
+  dt.total_seconds() / (365.25 * 24 * 60 * 60)
+
+print(scientists)
+```
+
+\newpage
+
+Muitas funções e métodos do Pandas terão um parâmetro `inplace` que poderá ser definida com `True` caso você queira executar a ação "*in place*". Isso fará com que a dada coluna seja alterada diretamente, sem devolver nada.
+
 \newpage
 
 ### Descartando valores
