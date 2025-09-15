@@ -1,13 +1,12 @@
-ESCRITO EM 14/09/25
+ESCRITO EM 15/09/25
 ---
-PARA 15/09/25
+PARA 16/09/25
 ---
 Subir github:
 
 Doing:
     - Estrutura de dados do Pandas
         - Fazendo alterações em Series e em Dataframe
-            - Alterando diretamente uma coluna
             - Descartando valores
 
         
