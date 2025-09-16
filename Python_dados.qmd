@@ -1733,9 +1733,33 @@ Muitas funções e métodos do Pandas terão um parâmetro `inplace` que poderá
 
 ### Descartando valores
 
+Para descartar uma coluna, podemos selecionar todas as colunas que queremos usando as técnicas de obtenção de subconjuntos de colunas ou selecionar as colunas a serem descartadas com o método `drop` de nosso dataframe.
+
+```{python}
+# Todas as colunas de nossos dados no momento
+print(scientists.columns)
+```
+
+```{python}
+# Descarta a coluna de idade embaralhada
+# Específique o argumento axis=1 para descartar toda a coluna
+scientists_dropped = scientists.drop(['Age'], axis=1)
+
+# Colunas após descartar a nossa coluna
+print(scientists_dropped.columns)
+```
+
 \newpage
 
 ## Exportando e importando dados
+
+### pickle
+### CSV
+### Excel
+### Formato feather para interface com R
+### Outros tipos de saída de dados
+
+\newpage
 
 ## Conclusão
 
