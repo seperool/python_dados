@@ -1,18 +1,20 @@
-ESCRITO EM 15/09/25
+ESCRITO EM 16/09/25
 ---
-PARA 16/09/25
+PARA 17/09/25
 ---
 Subir github:
 
 Doing:
     - Estrutura de dados do Pandas
-        - Fazendo alterações em Series e em Dataframe
-            - Descartando valores
-
+        - Exportando e importando dados
+            - pickle
+            - CSV
+            - Excel
+            - Formato feather para interface com R
+            - Outros tipos de saída de dados
         
 To do:
     - Estrutura de dados do Pandas
-        - Exportando e importando dados
         - Conclusão
 
     - scripts
