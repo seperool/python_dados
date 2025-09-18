@@ -1,6 +1,6 @@
-ESCRITO EM 16/09/25
+ESCRITO EM 18/09/25
 ---
-PARA 17/09/25
+PARA 19/09/25
 ---
 Subir github:
 
@@ -8,6 +8,9 @@ Doing:
     - Estrutura de dados do Pandas
         - Exportando e importando dados
             - pickle
+                - Series
+                - DataFrame
+                - Lendo dados de pickle
             - CSV
             - Excel
             - Formato feather para interface com R
@@ -26,3 +29,8 @@ To do:
             - Add colunas
             - Alterando colunas
             - Descartando colunas
+        - Exportando e importando dados
+            - picke
+                - Series
+                - DataFrame
+            - CSV
