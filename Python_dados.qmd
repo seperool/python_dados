@@ -1753,7 +1753,20 @@ print(scientists_dropped.columns)
 
 ## Exportando e importando dados
 
-### pickle
+Em nossos exemplos até agora, importamos dados. Exportar e salvar conjuntos de dados enquanto os processamos também é uma prática comum. Conjuntos de dados são salvos como versões finais limpas ou como passos intermediários. As duas saídas podem ser usadas para análise ou como entrada para outra parte do fluxo de processamento de dados.
+
+### `pickle`
+
+O Python tem uma maneira de executar `pickle` de dados. É o modo Python de serializar e salvar dados em formato binário.
+
+A leitura de dados serializados também é uma operação compatível com versões anteriores.
+
+#### `Series`
+#### `DataFrame`
+#### Lendo dados de `pickle`
+
+\newpage
+
 ### CSV
 ### Excel
 ### Formato feather para interface com R
