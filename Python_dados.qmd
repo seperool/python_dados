@@ -1762,7 +1762,37 @@ O Python tem uma maneira de executar `pickle` de dados. É o modo Python de seri
 A leitura de dados serializados também é uma operação compatível com versões anteriores.
 
 #### `Series`
+
+Muitos dos métodos de exportação para `Series` também estão disponíveis para `DataFrame`.
+
+Os leitores que tiverem experiência com o `numpy` saberão que um método `save` está disponível para `ndarrays`.
+
+Esse método (`save`) foi considerado obsoleto, e o método `to_pickle` deve ser usado como substituto.
+
+```{python}
+names = scientists['Name']
+print(names)
+```
+
+```
+# Passar uma string como o path para salvar
+names.to_pickle('../output/scientists_names_series.pickle')
+```
+
+A saída de `pickle` tem **formato binário**. Assim, se você tentar abri-la em um editor de texto, verá um conjunto de caracteres confusos.
+
+Se o objeto que você estiver salvando for um passo intermediário em um conjunto de processamentos que você queira guardar, ou se souber que seus dados permanecerão no mundo Python, a operação de salvar um objeto em um `pickle` será **otimizada** para o Python, assim como no que concerne ao **espaço de armazenamento em disco**.
+
+No entanto, essa abordagem implica que as pessoas que não usam Python não poderão ler os dados.
+
 #### `DataFrame`
+
+O mesmo método pode ser usado em objetos `DataFrame`.
+
+```
+scientists.to_pickle('../output/scientists_df.pickle')
+```
+
 #### Lendo dados de `pickle`
 
 \newpage
