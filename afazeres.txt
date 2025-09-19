@@ -1,6 +1,6 @@
-ESCRITO EM 18/09/25
+ESCRITO EM 19/09/25
 ---
-PARA 19/09/25
+PARA 20/09/25
 ---
 Subir github:
 
@@ -8,8 +8,6 @@ Doing:
     - Estrutura de dados do Pandas
         - Exportando e importando dados
             - pickle
-                - Series
-                - DataFrame
                 - Lendo dados de pickle
             - CSV
             - Excel
