@@ -1793,7 +1793,27 @@ O mesmo método pode ser usado em objetos `DataFrame`.
 scientists.to_pickle('../output/scientists_df.pickle')
 ```
 
+\newpage
+
 #### Lendo dados de `pickle`
+
+Para ler dados de `pickle`, podemos usar a função `pd.read_pickle`.
+
+* `Series`:
+
+  ```
+  # Para Series
+  scientist_names_from_pickle = pd.read_pickle('../output/scientists_names_series.pickle')
+  ```
+
+* `DataFrame`:
+  
+  ```
+  # Para DataFrame
+  scientists_from_pickle = pd.read_pickle('../output/scientists_df.pickle')
+  ```
+
+Os arquivos `pickle` são salvos em extensão **.p**, **.pkl** ou **.pickle**.
 
 \newpage
 
