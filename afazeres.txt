@@ -1,6 +1,6 @@
-ESCRITO EM 20/09/25
+ESCRITO EM 21/09/25
 ---
-PARA 21/09/25
+PARA 22/09/25
 ---
 Subir github:
 
@@ -18,13 +18,12 @@ To do:
 
     - scripts
         - Dataframe
-            - Subconjuntos
-            - booleanos
-            - Broadcasting
-            - .add
-            - Add colunas
-            - Alterando colunas
-            - Descartando colunas
+            - 02-Estatisticas
+            - 04-Broadcasting
+            - 05-.add
+            - 06-Add colunas
+            - 07-Alterando colunas
+            - 08-Descartando colunas
         - Exportando e importando dados
             - picke
                 - Salvando arquivo pickle
