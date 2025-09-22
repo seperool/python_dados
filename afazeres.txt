@@ -1,6 +1,6 @@
-ESCRITO EM 21/09/25
+ESCRITO EM 22/09/25
 ---
-PARA 22/09/25
+PARA 23/09/25
 ---
 Subir github:
 
@@ -18,7 +18,6 @@ To do:
 
     - scripts
         - Dataframe
-            - 02-Estatisticas
             - 04-Broadcasting
             - 05-.add
             - 06-Add colunas
