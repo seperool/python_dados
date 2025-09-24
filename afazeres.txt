@@ -1,6 +1,6 @@
-ESCRITO EM 23/09/25
+ESCRITO EM 24/09/25
 ---
-PARA 24/09/25
+PARA 25/09/25
 ---
 Subir github:
 
@@ -18,10 +18,8 @@ To do:
 
     - scripts
         - Dataframe
-            - 05-.add
-            - 06-Add colunas
-            - 07-Alterando colunas
-            - 08-Descartando colunas
+            - 06-Alterando diretamente uma coluna
+            - 07-Descartando colunas
         - Exportando e importando dados
             - picke
                 - Salvando arquivo pickle
