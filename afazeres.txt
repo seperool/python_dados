@@ -1,6 +1,6 @@
-ESCRITO EM 24/09/25
+ESCRITO EM 25/09/25
 ---
-PARA 25/09/25
+PARA 26/09/25
 ---
 Subir github:
 
@@ -18,7 +18,6 @@ To do:
 
     - scripts
         - Dataframe
-            - 06-Alterando diretamente uma coluna
             - 07-Descartando colunas
         - Exportando e importando dados
             - picke
