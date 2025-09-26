@@ -1749,6 +1749,8 @@ scientists_dropped = scientists.drop(['Age'], axis=1)
 print(scientists_dropped.columns)
 ```
 
+O argumento `axis=1` (ou `axis='columns'`) indica ao Pandas para procurar e remover nos eixos verticais (colunas). Se você quisesse remover uma linha, usaria `axis=0` (ou `axis='index'`).
+
 \newpage
 
 ## Exportando e importando dados
