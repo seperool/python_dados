@@ -1,6 +1,6 @@
-ESCRITO EM 25/09/25
+ESCRITO EM 26/09/25
 ---
-PARA 26/09/25
+PARA 27/09/25
 ---
 Subir github:
 
@@ -17,8 +17,6 @@ To do:
         - Conclusão
 
     - scripts
-        - Dataframe
-            - 07-Descartando colunas
         - Exportando e importando dados
             - picke
                 - Salvando arquivo pickle
