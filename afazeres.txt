@@ -1,6 +1,6 @@
-ESCRITO EM 27/09/25
+ESCRITO EM 28/09/25
 ---
-PARA 28/09/25
+PARA 29/09/25
 ---
 Subir github:
 
@@ -8,6 +8,9 @@ Doing:
     - Estrutura de dados do Pandas
         - Exportando e importando dados
             - CSV
+                - Exportando dados CSV
+                - Removendo os números das linhas de saída
+                - Importando dados CSV
             - Excel
             - Formato feather para interface com R
             - Outros tipos de saída de dados
