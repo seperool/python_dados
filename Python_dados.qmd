@@ -1820,6 +1820,24 @@ Os arquivos `pickle` são salvos em extensão **.p**, **.pkl** ou **.pickle**.
 \newpage
 
 ### CSV
+
+- Parâmetro `sep`
+  - Vírgula (default)
+  - Ponto e vírgula (`sep=';'`)
+  - Tabulação (`sep='\t'`)
+
+#### Exportando dados CSV
+
+#### Removendo os números das linhas de saída
+
+- Parâmetro `index`
+  - True (`index=True`)
+  - False (`index=False`)
+
+#### Importando dados CSV
+
+\newpage
+
 ### Excel
 ### Formato feather para interface com R
 ### Outros tipos de saída de dados
