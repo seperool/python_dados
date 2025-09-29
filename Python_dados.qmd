@@ -1821,10 +1821,24 @@ Os arquivos `pickle` são salvos em extensão **.p**, **.pkl** ou **.pickle**.
 
 ### CSV
 
+O formato CSV (*Comma-Separated Values*, Valores separados por vírgula) é o tipo mais flexível para armazenagem de dados.
+
+Para cada linha, as informações das colunas são separadas com uma vírgula. Porém a vírgula não é o único tipo de delimitador. Alguns arquivos são delimitados com uma tabulação (TSV) ou até mesmo por ponto e vírgula.
+
+O principal motivo para o CSV ser um formato de dados preferível para colaboração e compartilhamento de dados deve-se ao fato de qualquer programa ser capaz de abrir esse tipo de estrutura de dados. Ele pode ser aberto até mesmo em um editor de texto.
+
 - Parâmetro `sep`
   - Vírgula (default)
+    
+    Por default é a opção do sistema, não precisa ser declarado (explicitado).
+
   - Ponto e vírgula (`sep=';'`)
+
+    Normalmente usado em alternativa ao separador com vírgula, pricipalmente em dados brasileiros, por conta dos números que usam vírgula.
+
   - Tabulação (`sep='\t'`)
+  
+    Muito usado para evitar mal-entendidos caso algum tipo de dado use virgula como separador.
 
 #### Exportando dados CSV
 
