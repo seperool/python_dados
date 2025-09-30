@@ -1842,6 +1842,25 @@ O principal motivo para o CSV ser um formato de dados preferível para colabora�
 
 #### Exportando dados CSV
 
+`Series` e `DataFrame` têm um método `.to_csv()` para escrever um arquivo CSV. A documentação de `Series` e de `DataFrame` identifica muitos modos diferentes pelos quais podemos modificar o arquivo CSV resultante. Por exemplo, se quiser salvar um arquivo TSV porque há vírgulas em seus dados, você poderá alterar o parâmetro `sep`.
+
+* `Series`:
+
+```
+# Salva (exporta) uma série em um CSV
+names.to_csv('../output/scientist_name_series.csv')
+```
+
+* `DataFrame`:
+
+```
+# Salva (exporta) um DataFrame em um TSV
+# que significa Tab-Separated Value (Valor Separado por Tabulação)
+scientists.to_csv('../output/scientist_name_series.tsv', sep='\t')
+```
+
+\newpage
+
 #### Removendo os números das linhas de saída
 
 - Parâmetro `index`
