@@ -1863,9 +1863,30 @@ scientists.to_csv('../output/scientist_name_series.tsv', sep='\t')
 
 #### Removendo os números das linhas de saída
 
+Se você abrir o arquivo CSV ou TSV criado, perceberá que a primeira "coluna" parece ser o número de linhas do `DataFrame`. Muitas vezes ela não será necessária especialmente se você estiver trabalhando em colaboração com outras pessoas.
+
+Tenha em mente que essa "coluna" está realmente salvando o "rótulo da linha", que poderá ser importante.
+
+A documentação mostrará que há um parâmetro `index` com o qual podemos escrever os nomes das linhas.
+
 - Parâmetro `index`
   - True (`index=True`)
+    
+    Adiciona o rótulo das linhas do arquivo CSV.
+  
+     ```
+     # Escreve os nomes das linhas na saída CSV
+     scientists.to_csv('../output/scientist_name_series.tsv', index=True)
+     ```
+
   - False (`index=False`)
+    
+    Excluí o rótulo das linhas do arquivo CSV.
+
+     ```
+     # Não escreve os nomes das linhas na saída CSV
+     scientists.to_csv('../output/scientist_name_series.tsv', index=False)
+     ```
 
 #### Importando dados CSV
 
