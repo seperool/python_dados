@@ -1890,6 +1890,14 @@ A documentação mostrará que há um parâmetro `index` com o qual podemos escr
 
 #### Importando dados CSV
 
+Importação de arquivos CSV. Essa operação usa a função do Pandas `pd.read_csv()`.
+
+```
+import pandas as pd
+
+nome_do_dataframe = pd.read_csv('caminho/para/seu/arquivo.csv')
+```
+
 \newpage
 
 ### Excel
