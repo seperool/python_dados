@@ -1,6 +1,6 @@
-ESCRITO EM 03/10/25
+ESCRITO EM 04/10/25
 ---
-PARA 04/10/25
+PARA 05/10/25
 ---
 Subir github:
 
@@ -8,6 +8,8 @@ Doing:
     - Estrutura de dados do Pandas
         - Exportando e importando dados
             - Excel
+                - Series
+                - DataFrame
             - Formato feather para interface com R
             - Outros tipos de saída de dados
         
