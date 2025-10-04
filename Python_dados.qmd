@@ -1901,6 +1901,16 @@ nome_do_dataframe = pd.read_csv('caminho/para/seu/arquivo.csv')
 \newpage
 
 ### Excel
+
+O Excel, que provavelmente é o tipo de dado mais comum usado (ou o segundo mais comum, ficando depois dos CSVs), tem uma reputação ruim na comunidade de ciência de dados, principalmente porque informações sobre cores e outros supérfluos podem facilmente ser incluídos no conjunto de dados, sem mencionar os cálculos feitos uma só vez, que podem arruinar a estrutura retangular de um conjunto de dados.
+
+O objetivo não é atacar o Excel, mas mostar uma ferramenta alternativa razoável para análise de dados. Em suma, quanto mais de seu trabalho você puder fazer com uma linguagem de scripting, mais fácil será escalar em direção a projetos maiores, identificar e corrigir erros e promover colaboração. Entretando não há rivais para a popularidade e a parcela do mercado do Excel. O Excel tem a sua própria linguagem scripting caso você tenha realmente que trabalhar com ele. Isso permitirá que você trabalhe com os dados de uma maneira mais previsível e reproduzível.
+
+#### `Series`
+#### `DataFrame`
+
+\newpage
+
 ### Formato feather para interface com R
 ### Outros tipos de saída de dados
 
