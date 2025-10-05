@@ -1907,7 +1907,54 @@ O Excel, que provavelmente é o tipo de dado mais comum usado (ou o segundo mais
 O objetivo não é atacar o Excel, mas mostar uma ferramenta alternativa razoável para análise de dados. Em suma, quanto mais de seu trabalho você puder fazer com uma linguagem de scripting, mais fácil será escalar em direção a projetos maiores, identificar e corrigir erros e promover colaboração. Entretando não há rivais para a popularidade e a parcela do mercado do Excel. O Excel tem a sua própria linguagem scripting caso você tenha realmente que trabalhar com ele. Isso permitirá que você trabalhe com os dados de uma maneira mais previsível e reproduzível.
 
 #### `Series`
+
+A estrutura de dados `Series` não tem um método `to_excel` explicito.
+
+Se você tiver uma `Series` que precise ser exportada para um arquivo Excel, uma opção é converter a `Series` em um `DataFrame` de uma só coluna.
+
+```
+# Converte a Series em um DataFrame
+# antes de salvá-la em um arquivo Excel
+names_df = names.to_frame()
+
+import xlwt 
+# arquivo .xls
+names_df.to_excel('../output/scientists_names_series_df.xls')
+
+import openpyxl 
+# arquivo .xlsx
+names_df.to_excel('../output/scientists_names_series_df.xlsx')
+```
+
+\newpage
+
 #### `DataFrame`
+
+#### Bibliotecas que converte `DataFrame` em Excel
+
+As bibliotecas que fazem a conversão de `DataFrame` para Excel são:
+  
+  * `xlwt`
+  
+  * `openpyxl`
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-bibexcel
+#| tbl-cap: Principais biblitecas de conversão de dados para Excel
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["`xlwt`",".xls \n(Formato antigo do Excel 97-2003)","Apenas escrever dados e formatação \nem arquivos antigos."],
+         ["`openpyxl`",".xlsx \n(Formato moderno do Excel 2007+)","Ler e escrever dados, formatação,\n fórmulas e gráficos nos formatos modernos."]]
+Markdown(tabulate(
+  table, 
+  headers=["Biblioteca","Formato de Arquivo (Extensão)","Uso Principal"],
+  colalign=("left","left","left")
+  ))
+```
 
 \newpage
 
