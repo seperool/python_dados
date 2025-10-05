@@ -14,6 +14,8 @@ import datetime                 # Manipulação de datas e horas
 import collections              # Tipos de dados especializados (dicionários, filas, etc.)
 import json                     # Leitura e escrita de arquivos JSON
 import csv                      # Leitura e escrita de arquivos CSV
+import xlwt                     # Escrever em formato Excel antigo (.xls)
+import openpyxl                 # Ler e escrever em formato Excel moderno (.xlsx)
 import unittest                 # Framework para testes de unidade
 import random                   # Geração de números pseudoaleatórios
 
