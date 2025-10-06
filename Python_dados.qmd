@@ -1930,6 +1930,18 @@ names_df.to_excel('../output/scientists_names_series_df.xlsx')
 
 #### `DataFrame`
 
+A documentação mostra várias maneiras de ajustar melhor a saída. Por exemplo, os dados podem estar em uma "planilha" específica usando o parâmetro `sheet_name`.
+
+```
+import openpyxl 
+# arquivo .xlsx
+
+# Salvando um DataFrame em formato Excel
+scientists.to_excel('../output/scientists_names_series_df.xlsx',
+  sheet_name='scientists',
+  index=False)
+```
+
 #### Bibliotecas que converte `DataFrame` em Excel
 
 As bibliotecas que fazem a conversão de `DataFrame` para Excel são:
@@ -1958,7 +1970,7 @@ Markdown(tabulate(
 
 \newpage
 
-### Formato feather para interface com R
+### Formato `feather` para interface com R
 ### Outros tipos de saída de dados
 
 \newpage
