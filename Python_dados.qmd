@@ -1970,6 +1970,42 @@ Markdown(tabulate(
 
 \newpage
 
+#### Para leitura de aquivo Excel no Python
+
+Se ainda não tiver, você precisará instalar o pandas e uma biblioteca que o pandas usa para ler arquivos Excel mais antigos (como .xls), que é o `xlrd`.
+
+`pip install pandas xlrd`
+
+```
+import pandas as pd
+
+# Substitua 'seu_arquivo.xls' pelo nome e caminho real do seu arquivo
+caminho_do_arquivo = 'seu_arquivo.xls'
+
+# Abrindo o arquivo XLS como um DataFrame
+# Por padrão, ele lê a primeira aba (sheet)
+df = pd.read_excel(caminho_do_arquivo)
+
+# Para verificar as primeiras linhas do DataFrame
+print(df.head())
+```
+
+Para arquivos .xlsx (mais novos): O `pd.read_excel()` funciona perfeitamente também. Você pode precisar do motor `openpyxl` em vez do `xlrd`.
+
+Especificar uma aba (`sheet`): Se o seu arquivo tiver várias abas e você quiser uma específica, você pode usar o argumento `sheet_name`.
+
+`pip install pandas openpyxl`
+
+```
+# Lê a aba chamada "Dados_Fevereiro"
+df = pd.read_excel(caminho_do_arquivo, sheet_name='Dados_Fevereiro')
+
+# Ou lê a segunda aba (índice 1, pois começa em 0)
+df = pd.read_excel(caminho_do_arquivo, sheet_name=1)
+```
+
+\newpage
+
 ### Formato `feather` para interface com R
 ### Outros tipos de saída de dados
 
