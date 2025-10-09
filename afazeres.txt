@@ -1,6 +1,6 @@
-ESCRITO EM 08/10/25
+ESCRITO EM 09/10/25
 ---
-PARA 09/10/25
+PARA 10/10/25
 ---
 Subir github:
 
@@ -16,5 +16,4 @@ To do:
 
     - scripts
         - Exportando e importando dados
-            - Excel
-                - Leitura
+            - feather
