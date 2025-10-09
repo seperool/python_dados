@@ -2007,6 +2007,8 @@ df = pd.read_excel(caminho_do_arquivo, sheet_name=1)
 \newpage
 
 ### Formato `feather` para interface com R
+
+
 ### Outros tipos de saída de dados
 
 \newpage
