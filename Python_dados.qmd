@@ -2008,6 +2008,49 @@ df = pd.read_excel(caminho_do_arquivo, sheet_name=1)
 
 ### Formato `feather` para interface com R
 
+O formato chamado "`feather`" é usado para salvar um objeto binário que possa ser carregado também na linguagem `R`. A principal vantagem dessa abordagem é que ela é mais rápida que escrever e ler um arquivo `CSV` entre as linguagens.
+
+A regra geral para usar esse formato de dados é usá-lo somente como intermediário, sem utilizar o formato `feather` para armazenagem de longo prazo. Ou seja, use-o em seu código somente para passar dados para `R`, e não para salvar uma versão final de seus dados.
+
+Instalando o formato de `feather`:
+
+* No Anaconda:
+  
+   `conda install -c conda-forge feather-for-mat`
+
+* No `pip`:
+  
+   `pip install feather-format`
+
+O método `to_feather` pode ser usado em um `DataFrame` para salvar o objeto `feather`.
+
+Nem todo `DataFrame` pode ser convertido em um objeto `feather`. Por exemplo, o nosso conjunto atual de dados contém uma coluna de valores `date`; ate o presente momento, esse tipo de valor não era aceito por `feather`.
+
+A recomendação mais moderna e preferível é instalar o `PyArrow` ao invés de `feather-format`.
+
+Instalação:
+
+* No Anaconda:
+
+   `conda install -c conda-forge pyarrow`
+
+* No `pip`:
+  
+   `pip install pyarrow`
+
+Você não precisa chamar a biblioteca `pyarrow` diretamente na maioria das vezes para usar o formato `Feather`. Basta chamar apenas o `Pandas`.
+
+Importar e exportar dados em `feather`:
+
+* Escrever (exportar) dados em `feather`:
+
+   `df.to_feather('arquivo.feather')`
+
+* Ler (importar) dados em `feather`:
+
+   `pd.read_feather('arquivo.feather')`
+
+\newpage
 
 ### Outros tipos de saída de dados
 
