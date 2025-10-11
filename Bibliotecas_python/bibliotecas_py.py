@@ -16,6 +16,7 @@ import json                     # Leitura e escrita de arquivos JSON
 import csv                      # Leitura e escrita de arquivos CSV
 import xlwt                     # Escrever em formato Excel antigo (.xls)
 import openpyxl                 # Ler e escrever em formato Excel moderno (.xlsx)
+import odo                      # Simplifica a transferência de dados entre diversos formatos (ex: CSV para SQL, DataFrame).
 import unittest                 # Framework para testes de unidade
 import random                   # Geração de números pseudoaleatórios
 
