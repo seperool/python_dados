@@ -2054,9 +2054,65 @@ Importar e exportar dados em `feather`:
 
 ### Outros tipos de saída de dados
 
+Há muitas maneiras pelas quais o Pandas pode exportar e importar dados. Na verdade, `to_pickle`, `to_csv`, `to_excel` e `to_feather` são apenas alguns dos formatos de dados que podem ser usados com `DataFrames` no Pandas.
+
+A @tbl-expdf lista alguns desses outros formatos de saída.
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-expdf
+#| tbl-cap: Métodos de DataFrame para exportação
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["`to_clipboard`","Salva dados na área de transferência (clipboard)\n do sistema para colar."],
+        ["`to_dense`",'Converte dados em um `DataFrame` regular "denso"*.'],
+        ["`to_dict`","Coverte dados em um `dict` (dicionário) Python."],
+        ["`to_gbq`","Converte dados em uma tabela Google BigQuery."],
+        ["`to_hdf`","Salva dados em HDF (Hierarchal Data Format)."],
+        ["`to_msgpack`","Salva dados em um binário portável do tipo JSON."],
+        ["`to_html`","Converte dados em uma tabela HTML."],
+        ["`to_json`","Converte dados em uma string JSON."],
+        ["`to_latex`","Converte dados em um ambiente tabular LATEX."],
+        ["`to_records`","Converte dados em um array de registros."],
+        ["`to_string`","Exibe o `DataFrame` como um string para stdout."],
+        ["`to_sparse`","Converte dados em um `SparceDataFrame`**."],
+        ["`to_sql`","Salva dados em um banco de dados SQL."],
+        ["`to_stata`","Converte dados em um arquivo `Stata dta`."]]
+Markdown(tabulate(
+  table, 
+  headers=["Métodos para exportação","Descrição"],
+  colalign=("left","left")
+  ))
+```
+
+*Estruturas Densas (Regulares): São a forma padrão de um DataFrame, onde memória é alocada para todas as células, independentemente de conterem um valor ou o valor padrão (zero/vazio).
+
+**Estruturas Esparsas: São aquelas que otimizam o uso de memória armazenando apenas os valores que são diferentes do valor padrão (o valor esparso). Se 99% das células são zero, a estrutura esparsa só armazena as 1% de células que não são zero, economizando muito espaço.
+
 \newpage
 
-## Conclusão
+No que diz respeito as versões de dados mais complicadas e genéricas (não necessariamente apenas para exportar dados), a biblioteca `odo` tem um modo consistente de fazer conversões entre formatos de dados.
+
+O `odo` foi projetado para migrar dados de forma eficiente de uma fonte para um destino, geralmente com apenas uma linha de código.
+
+* Instalando `odo`:
+   
+   `pip install odo`
+
+* Importando biblioteca:
+   
+   `from odo import odo`
+
+* Sintaxe simplificada:
+   
+   `odo(fonte, destino)  # Carrega a fonte no destino`
+
+* Exemplo:
+   
+   `dataframe_resultado = odo(file_path, pd.DataFrame)`
 
 \newpage
 
