@@ -2118,6 +2118,13 @@ O `odo` foi projetado para migrar dados de forma eficiente de uma fonte para um 
 
 # Introdução à plotagem
 
+## Introdução
+## `matplotlib`
+## Gráficos estatísticos usando a `matplotlib`
+## `seaborn`
+## Objetos do Pandas
+## Temas e estilos do `seaborn`
+
 \newpage
 
 # Referências
