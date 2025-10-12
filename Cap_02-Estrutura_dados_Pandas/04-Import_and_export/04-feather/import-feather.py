@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Oct  9 20:39:59 2025
+Created on Sun Oct 12 15:58:15 2025
 
 @author: sergio
 """
@@ -14,14 +14,14 @@ import pandas as pd      # Principal biblioteca para manipulação e análise de
 # ====================================
 # Definição do Caminho
 # ====================================
-# Define a variável com o caminho/nome do arquivo Excel a ser lido
-caminho_do_arquivo = 'scientists.xlsx'
+# Define a variável com o caminho/nome do arquivo Feather a ser lido
+caminho_do_arquivo = 'scientists.feather'
 
 # ====================================
-# Leitura do Arquivo Excel
+# Leitura do Arquivo Feather
 # ====================================
-# Abre o arquivo XLSX e armazena os dados em um DataFrame (df)
-df = pd.read_excel(caminho_do_arquivo)
+# Abre o arquivo Feather e armazena os dados em um DataFrame (df)
+df = pd.read_feather(caminho_do_arquivo)
 
 # ====================================
 # Verificação Inicial
