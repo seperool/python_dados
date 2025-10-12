@@ -1,6 +1,6 @@
-ESCRITO EM 11/10/25
+ESCRITO EM 12/10/25
 ---
-PARA 12/10/25
+PARA 13/10/25
 ---
 Subir github:
 
@@ -8,8 +8,11 @@ Doing:
         
 To do:
     - Introdução à plotagem
+        - Introdução
+        - matplotlib
+        - Gráficos estatísticos usando a matplotlib
+        - seaborn
+        - Objetos do Pandas
+        - Temas e estilos do seaborn
 
     - scripts
-        - Exportando e importando dados
-            - feather
-            - odo
