@@ -63,6 +63,7 @@ import numpy as np
 import pandas as pd
 import json
 import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
 \newpage
@@ -2119,6 +2120,50 @@ O `odo` foi projetado para migrar dados de forma eficiente de uma fonte para um 
 # Introdução à plotagem
 
 ## Introdução
+
+A visualização de dados faz parte do passo tanto do processamento quanto da apresentação dos dados. É muito mais fácil comparar valores quando estes são plotados do que comparar valores numéricos. Ao visualizar dados, podemos ter uma noção mais intuitiva deles em comparação a observar somente tabelas de valores. Além do mais, as visualizações podem trazer à tona padrões ocultos nos dados, que você, o analista, poderá explorar para selecionar um modelo.
+
+### Mapa Conceitual {.unnumbered}
+
+1. Conhecimento prévio
+   1. Contêineres
+   2. Uso de funções
+   3. Obtenção de subconjuntos e indexação
+   4. Classes
+2. `matplotlib`
+3. `seaborn`
+4. Pandas
+
+### Objetivos {.unnumbered}
+
+Este capítulo abordará:
+
+1. `matplotlib`
+2. `seaborn`
+3. Plotagem no Pandas
+
+O exemplo quintessencial para criar visualizações de dados é o quarteto de Anscombe. Esse conjunto de dados foi criado pelo estatístico inglês Frank Anscombe para mostrar a importância dos gráficos estatísticos.
+
+Os dados de Anscombe contêm quatro conjuntos de dados, cada um com duas variáveis contínuas. Todos os conjuntos têm a mesma média, variância, correlação e linha de regressão. No entanto, somente quando os dados são visualizados é que se torna óbivia que os conjuntos não seguem o mesmo padrão. Isso serve para mostrar as vantagens das visualizações e as armadilhas de se observarem somente estatísticas resumidas.
+
+\newpage
+
+```{python}
+# O conjunto de dados Anscombe pode ser encontrado na biblioteca seaborn
+import seaborn as sns
+
+anscombe = sns.load_dataset("anscombe")
+print(anscombe)
+```
+
+```{python}
+# Para ver o famoso efeito Anscombe:
+print("--- Estatísticas Descritivas Agrupadas por Dataset (Revelação do Anscombe) ---")
+print(anscombe.groupby('dataset').describe())
+```
+
+\newpage
+
 ## `matplotlib`
 ## Gráficos estatísticos usando a `matplotlib`
 ## `seaborn`
