@@ -1,14 +1,19 @@
-ESCRITO EM 13/10/25
+ESCRITO EM 14/10/25
 ---
-PARA 14/10/25
+PARA 15/10/25
 ---
 Subir github:
 
 Doing:
+
+    - Introdução à plotagem
+        - matplotlib
+            - matplotlib.pyplot
+            - Subplots
+            - Partes de uma figura
         
 To do:
     - Introdução à plotagem
-        - matplotlib
         - Gráficos estatísticos usando a matplotlib
         - seaborn
         - Objetos do Pandas
