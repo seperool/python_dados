@@ -2165,6 +2165,13 @@ print(anscombe.groupby('dataset').describe())
 \newpage
 
 ## `matplotlib`
+
+### `matplotlib.pyplot` {.unnumbered}
+### Subplots {.unnumbered}
+### Partes de uma figura {.unnumbered}
+
+\newpage
+
 ## Gráficos estatísticos usando a `matplotlib`
 ## `seaborn`
 ## Objetos do Pandas
