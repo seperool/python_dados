@@ -2167,6 +2167,35 @@ print(anscombe.groupby('dataset').describe())
 ## `matplotlib`
 
 ### `matplotlib.pyplot` {.unnumbered}
+
+A `matplotlib` é a biblioteca fundamental de plotagem de Python. É extremamente flexível e dá ao usuário um controle total sobre os elementos da plotagem.
+
+Importar os recursos de plotagem da `matplotlib` é um pouco diferente de nossas importações de pacote anteriores. Podemos pensar nesse operação como importar o pacote `matplotlib`, com todos os utilitários de plotagem encontrados em uma subpasta (ou subpacote) chamado `pyplot`. Assim como importamos um pacote e lhe demos um nome abreviado, podemos fazer o mesmo com `matplotlib.pyplot`.
+
+`import matplotlib.pyplot as plt`
+
+Os nomes da maioria das plotagens básicas começará com `plt.plot`. 
+
+Em nosso exemplo, o recurso de plotagem recebe um vetor para os valores de x e um vetor correspondente para os valores de y.
+
+```{python}
+# Cria um subconjunto dos dados
+# contém somente o primeiro conjunto de dados de Anscombe
+dataset_1 = anscombe[anscombe['dataset'] == 'I']
+
+plt.plot(dataset_1['x'],dataset_1['y'])
+```
+
+\newpage
+
+Por padrão, `plt.plot` desenhará linhas. Se quiser que ele desenhe círculos (pontos), podemos passar um parâmetro 'o' para dizer ao `plt.plot` que use pontos.
+
+```{python}
+plt.plot(dataset_1['x'],dataset_1['y'],'o')
+```
+
+\newpage
+
 ### Subplots {.unnumbered}
 ### Partes de uma figura {.unnumbered}
 
