@@ -1,8 +1,13 @@
-ESCRITO EM 15/10/25
+ESCRITO EM 16/10/25
 ---
-PARA 16/10/25
+PARA 17/10/25
 ---
 Subir github:
+    
+    - script
+        - matplotlib.pyplot
+            - linha
+            - pontos
 
 Doing:
 
@@ -20,5 +25,4 @@ To do:
 
     - scripts
         - matplotlib.pyplot
-            - plot (linha)
-            - plot (pontos)
+            - subplots
