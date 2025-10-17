@@ -2197,6 +2197,29 @@ plt.plot(dataset_1['x'],dataset_1['y'],'o')
 \newpage
 
 ### Subplots {.unnumbered}
+
+Podemos repetir esse processo para o restante dos `datasets` em nossos dados de Anscombe.
+
+```{python}
+dataset_2 = anscombe[anscombe['dataset'] == 'II']
+dataset_3 = anscombe[anscombe['dataset'] == 'III']
+dataset_4 = anscombe[anscombe['dataset'] == 'IV']
+```
+
+Nesse ponto, poderíamos fazer essas plotagens individualmente, uma de cada vez, mas o `matplotlib` oferece uma forma muito mais conveniente de criar subplotagens. Você pode especificar asdimensões de sua figura final e inserir plotagens menores que se enquadrem nas dimensões especificadas. Desse modo, é possível apresentar os resultados em uma única figura, em vez de exibi-los em figuras totalmente separadas.
+
+A sintaxe de `subplot` aceita três parâmetros:
+
+1. Número de linhas na figura para as subplotagens.
+
+2. Número de colunas na figura para as subplotagens.
+
+3. Local da subplotagem.
+
+O local da subplotagem é numerado sequencialmente, e as plotagens são colocadas inicialmente da esquerda para a direita, e então de cima para baixo (linha, coluna). Se tentarmos plotar isso agora (apenas executando o código a seguir), teremos uma figura vazia.
+
+\newpage
+
 ### Partes de uma figura {.unnumbered}
 
 \newpage
