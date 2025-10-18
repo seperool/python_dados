@@ -2222,6 +2222,10 @@ O local da subplotagem é numerado sequencialmente, e as plotagens são colocada
 
 ### Partes de uma figura {.unnumbered}
 
+![Uma das partes mais confusas da plotagem em Python esta no uso dos termos "eixo" e "eixos", pois referem-se a diferentes partes de uma figura. Essa era a versão antiga da figura "Parts of a Figure" da documentação da `matplotlib`.](./Imagens/Cap_03-Introducao_plotagem/matplotlib-antiga_partes_firgura.png){width=400}
+
+![Uma versão mais nova da representação de "Parts of a Figure", com mais detalhes sobre outros aspectos de uma figura. De modo diferente da figura antiga, a figura mais recente foi totalmente criada com a `matplotlib`.](./Imagens/Cap_03-Introducao_plotagem/matplotlib-nova_partes_firgura.png){width=400}
+
 \newpage
 
 ## Gráficos estatísticos usando a `matplotlib`
