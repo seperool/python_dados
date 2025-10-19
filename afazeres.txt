@@ -1,6 +1,6 @@
-ESCRITO EM 18/10/25
+ESCRITO EM 19/10/25
 ---
-PARA 19/10/25
+PARA 20/10/25
 ---
 Subir github:
 
@@ -8,7 +8,6 @@ Doing:
 
     - Introdução à plotagem
         - matplotlib
-            - Subplots
             - Partes de uma figura
         
 To do:
