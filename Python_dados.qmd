@@ -2218,6 +2218,61 @@ A sintaxe de `subplot` aceita três parâmetros:
 
 O local da subplotagem é numerado sequencialmente, e as plotagens são colocadas inicialmente da esquerda para a direita, e então de cima para baixo (linha, coluna). Se tentarmos plotar isso agora (apenas executando o código a seguir), teremos uma figura vazia.
 
+Tudo que fizemos até agora foi criar uma figura e separá-la em uma grade de $2 \times 2$ na qual as plotagens podem ser colocadas. Como nenhuma plotagem foi criada nem inserida, nada é apresentado.
+
+\newpage
+
+```{python}
+# Cria toda a figura na qual nossas subplotagens serão inseridas
+
+fig = plt.figure()
+# diz a figura como as subplotagens deverão ser dispostas no exemplo,
+# teremos 2 linhas de plotagems, e cada linha terá 2 plotagens
+# a subplotegem tem 2 linhas e 2 colunas, local 1 de plotegem
+axes1 = fig.add_subplot(2,2,1)
+
+# a subplotegem tem 2 linhas e 2 colunas, local 2 de plotegem
+axes2 = fig.add_subplot(2,2,2)
+
+# a subplotegem tem 2 linhas e 2 colunas, local 3 de plotegem
+axes3 = fig.add_subplot(2,2,3)
+
+# a subplotegem tem 2 linhas e 2 colunas, local 4 de plotegem
+axes4 = fig.add_subplot(2,2,4)
+```
+
+Podemos usar o método `plot` em cada eixo para criar nossa plotagem.
+
+```{python}
+# adicionar ma plotagem em cada um dos eixos criados anteriormente
+axes1.plot(dataset_1['x'], dataset_1['y'],"o")
+axes2.plot(dataset_2['x'], dataset_2['y'],"o")
+axes3.plot(dataset_3['x'], dataset_3['y'],"o")
+axes4.plot(dataset_4['x'], dataset_4['y'],"o")
+```
+
+Por fim, podemos acrescentar um rótulo às nossas subplotagens e usar `tight_layout` para garantir que os eixos estejam separados uns dos outros.
+
+```{python}
+# acrescenta um pequeno título para cada subplotagem
+axes1.set_title("dataset_1")
+axes2.set_title("dataset_2")
+axes3.set_title("dataset_3")
+axes4.set_title("dataset_4")
+
+# adiciona um título para toda figura
+fig.suptitle("Anscombe Data")
+
+# usa um layout organizado
+fig.tight_layout()
+
+fig
+```
+
+As visualizações dos dados de Anscombe mostram por que simplesmente olhar valores estatísticos resumidos pode levar a enganos. No momento em que os pontos são visualizados, torna-se claro que, apesar de cada conjunto de dados teros mesmos valores estatísticos resumidos, os relacionamentos entre os pontos variam bastante entre os conjuntos de dados.
+
+Para concluir o exemplo com os dados de Anscombe, podemos adicionar `set_xlabel()` e `set_ylabel()` em cada uma das subplotagens a fim de acrescentar rótulos aos eixos x e y, assim como adicionamos um título à figura.
+
 \newpage
 
 ### Partes de uma figura {.unnumbered}
