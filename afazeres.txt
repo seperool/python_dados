@@ -1,18 +1,22 @@
-ESCRITO EM 19/10/25
+ESCRITO EM 20/10/25
 ---
-PARA 20/10/25
+PARA 21/10/25
 ---
 Subir github:
 
 Doing:
 
     - Introdução à plotagem
-        - matplotlib
-            - Partes de uma figura
+        - Gráficos estatísticos usando a matplotlib
+            -  Univariado
+                - Histogramas
+            -  Bivariado
+                - Gráfico de dispersão
+                - Gráfico de caixa
+            -  Dados multivariados
         
 To do:
     - Introdução à plotagem
-        - Gráficos estatísticos usando a matplotlib
         - seaborn
         - Objetos do Pandas
         - Temas e estilos do seaborn
