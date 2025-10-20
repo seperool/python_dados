@@ -3,6 +3,7 @@ title: "Estudo de Python e dados"
 author: "Sergio Pedro Rodrigues Oliveira"
 date: last-modified
 date-format: DD MMMM YYYY
+lang: pt
 format:
     html:
         code-fold: true
@@ -2277,13 +2278,35 @@ Para concluir o exemplo com os dados de Anscombe, podemos adicionar `set_xlabel(
 
 ### Partes de uma figura {.unnumbered}
 
-![Uma das partes mais confusas da plotagem em Python esta no uso dos termos "eixo" e "eixos", pois referem-se a diferentes partes de uma figura. Essa era a versão antiga da figura "Parts of a Figure" da documentação da `matplotlib`.](./Imagens/Cap_03-Introducao_plotagem/matplotlib-antiga_partes_firgura.png){width=400}
+Antes de prosseguir e aprender a criar mais plotagens estatísticas, você deverá ter familiaridade com a documentação da `matplotlib` sobre "*Parts of a Figure*" (Partes de uma figura). Reproduzi a figura mais antiga na @fig-antiga, e a nova na @fig-nova.
 
-![Uma versão mais nova da representação de "Parts of a Figure", com mais detalhes sobre outros aspectos de uma figura. De modo diferente da figura antiga, a figura mais recente foi totalmente criada com a `matplotlib`.](./Imagens/Cap_03-Introducao_plotagem/matplotlib-nova_partes_firgura.png){width=400}
+![Uma das partes mais confusas da plotagem em Python esta no uso dos termos "eixo" e "eixos", pois referem-se a diferentes partes de uma figura. Essa era a versão antiga da figura "Parts of a Figure" da documentação da `matplotlib`.](./Imagens/Cap_03-Introducao_plotagem/matplotlib-antiga_partes_firgura.png){width=400 #fig-antiga}
+
+Uma das partes mais confusas da plotagem em Python é o uso do termo "eixo" e "eixos", especialmente quando tentamos descrever as diferentes partes. No exemplo com os dados Anscombe, cada subplotagem individual tem eixos. Os eixos contêm tanto um eixo x quanto um eixo y. Todas as quarto subplotagens juntos formam a figura.
+
+![Uma versão mais nova da representação de "Parts of a Figure", com mais detalhes sobre outros aspectos de uma figura. De modo diferente da figura antiga, a figura mais recente foi totalmente criada com a `matplotlib`.](./Imagens/Cap_03-Introducao_plotagem/matplotlib-nova_partes_firgura.png){width=400 #fig-nova}
 
 \newpage
 
 ## Gráficos estatísticos usando a `matplotlib`
+
+### Univariado
+
+#### Histogramas
+
+\newpage
+
+### Bivariado
+
+#### Gráfico de dispersão
+#### Gráfico de caixa
+
+\newpage
+
+### Dados multivariados
+
+\newpage
+
 ## `seaborn`
 ## Objetos do Pandas
 ## Temas e estilos do `seaborn`
