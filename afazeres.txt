@@ -1,6 +1,6 @@
-ESCRITO EM 20/10/25
+ESCRITO EM 21/10/25
 ---
-PARA 21/10/25
+PARA 22/10/25
 ---
 Subir github:
 
@@ -22,5 +22,7 @@ To do:
         - Temas e estilos do seaborn
 
     - scripts
-        - matplotlib.pyplot
-            - subplots
+        - Gráficos estatísticos usando a matplotlib
+            - Histogramas
+            - Gráfico de dispersão
+            - Gráfico de caixa
