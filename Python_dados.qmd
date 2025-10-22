@@ -2290,9 +2290,35 @@ Uma das partes mais confusas da plotagem em Python é o uso do termo "eixo" e "e
 
 ## Gráficos estatísticos usando a `matplotlib`
 
+Os dados de gorjeta que usaremos na próxima série de visualizações são provenientes da biblioteca `seaborn`. Esse conjunto de dados contém a quantidade de gorjetas que as pessoas deixam para diversas variáveis. Por exemplo, o custo total da conta, o tamanho do grupo, o dia da semana e o horário.
+
+Podemos carregar esse conjunto de dados como fizemos com o conjunto de dados de Anscombe.
+
+```{python}
+tips = sns.load_dataset("tips")
+print(tips.head())
+```
+
+\newpage
+
 ### Univariado
 
+No jargão de estatística, o termo "univariado" refere-se a uma única variável.
+
 #### Histogramas
+
+Os histogramas são o meio mais comum de observar uma única variável. Os valoressão colocados em "recipientes", isto é, são agrupados e plotados para mostrar a distribuição da variável.
+
+```{python}
+fig = plt.figure()
+axes1 = fig.add_subplot(1,1,1)
+axes1.hist(tips['total_bill'],bins=10)
+axes1.set_title('Histogram of Total Bill')
+axes1.set_xlabel('Frequency')
+axes1.set_ylabel('Total Bill')
+```
+
+`bins=10`: Define que o intervalo de dados ('total_bill') deve ser dividido em 10 "caixas" ou barras (bins) de igual largura para o histograma.
 
 \newpage
 
