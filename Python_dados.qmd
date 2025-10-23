@@ -2324,8 +2324,44 @@ axes1.set_ylabel('Total Bill')
 
 ### Bivariado
 
+No jargão de estatística, o termo "bivariado" refere-se a duas variáveis.
+
 #### Gráfico de dispersão
+
+O gráfico de dispersão (scatterplots) são usados quando uma variável contínua é plotada em relação a outra variável contínua.
+
+```{python}
+scatter_plot = plt.figure()
+axes1 = scatter_plot.add_subplot(1,1,1)
+axes1.scatter(tips['total_bill'],tips['tip'])
+axes1.set_title("Scatterplot of Total Bill vs Tip")
+axes1.set_xlabel("Total Bill")
+axes1.set_ylabel("Tip")
+```
+
+\newpage
+
 #### Gráfico de caixa
+
+Os gráficos ou diagramas de caixa (boxplots) são usados quando uma variável discreta é plotada em relação a outra variável contínua.
+
+```{python}
+boxplot = plt.figure()
+axes1 = boxplot.add_subplot(1,1,1)
+axes1.boxplot(
+  # O primeiro argumento de um gráfico de caixa é o dado,
+  # pois estamos plotando várias porções de dados;
+  # temos que colocar cada porção de dados em uma lista
+  [tips[tips['sex'] == 'Female']['tip'],
+  tips[tips['sex'] == 'Male']['tip']],
+  # Podemos então passar um parâmetro labels opcional
+  # para especificar um rótulo aos dados que passamos
+  labels = ['Female','Male']
+)
+axes1.set_xlabel('Sex')
+axes1.set_ylabel('Tip')
+axes1.set_title('Boxplot of Tips by Sex')
+```
 
 \newpage
 
