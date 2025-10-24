@@ -1,6 +1,6 @@
-ESCRITO EM 23/10/25
+ESCRITO EM 24/10/25
 ---
-PARA 24/10/25
+PARA 25/10/25
 ---
 Subir github:
 
@@ -8,9 +8,6 @@ Doing:
 
     - Introdução à plotagem
         - Gráficos estatísticos usando a matplotlib
-            -  Bivariado
-                - Gráfico de dispersão (comentário)
-                - Gráfico de caixa (comentário)
             -  Dados multivariados
         
 To do:
