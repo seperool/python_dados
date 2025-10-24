@@ -2341,6 +2341,46 @@ axes1.set_ylabel("Tip")
 
 \newpage
 
+Sobre o código:
+
+* `plt.figure()`: 
+   
+   Cria uma Figura (Figure). Pense na Figura como a tela ou o pôster onde você vai desenhar. É o contêiner de alto nível que pode conter um ou mais gráficos (eixos).
+
+* scatter_plot.add_subplot(): 
+   
+   Adiciona um Eixo (Axes) à sua Figura. O Eixo é o gráfico real onde os dados serão plotados.
+
+   (1, 1, 1): Esses três números definem a grade da Figura e onde seu gráfico será posicionado:
+
+     - O primeiro 1: A figura terá 1 linha de gráficos.
+
+     - O segundo 1: A figura terá 1 coluna de gráficos.
+
+     - O terceiro 1: O gráfico será posicionado na primeira posição (linha 1, coluna 1).
+
+   Neste caso, você está criando um único gráfico grande na Figura.
+
+   O objeto Eixo é armazenado na variável `axes1`.
+
+* axes1.scatter(...): 
+  
+   Este é o método que desenha o gráfico. Você está chamando o método scatter no seu objeto Eixo (`axes1`).
+
+   `tips['total_bill']`: Define os valores que serão colocados no eixo X.
+
+   `tips['tip']`: Define os valores que serão colocados no eixo Y.
+
+   Ele desenha um gráfico de dispersão (`scatterplot`) mostrando a relação entre a conta total (`total_bill`) e a gorjeta (`tip`) do seu DataFrame `tips`.
+
+* `set_title()`: Define o título principal do gráfico.
+
+* `set_xlabel()`: Define o rótulo do eixo X.
+
+* `set_ylabel()`: Define o rótulo do eixo Y.
+
+\newpage
+
 #### Gráfico de caixa
 
 Os gráficos ou diagramas de caixa (boxplots) são usados quando uma variável discreta é plotada em relação a outra variável contínua.
@@ -2362,6 +2402,37 @@ axes1.set_xlabel('Sex')
 axes1.set_ylabel('Tip')
 axes1.set_title('Boxplot of Tips by Sex')
 ```
+
+Sobre o código:
+
+* `boxplot = plt.figure()`:
+  
+   Cria a Figura (a "tela" ou contêiner).
+
+* `axes1 = boxplot.add_subplot(1,1,1)`:
+
+   Adiciona o Eixo (o gráfico real) que ocupará toda a Figura.
+
+* `axes1.boxplot(...)`:
+
+   Chama o método para desenhar o gráfico de caixa no seu Eixo.
+
+   O Boxplot no Matplotlib espera uma lista de arrays/Series, onde cada item da lista representa uma caixa separada no gráfico.
+
+   Você está usando o Pandas para filtrar os dados:
+
+     - `tips[tips['sex'] == 'Female']['tip']`:
+     
+       Seleciona todas as gorjetas (tip) onde o sexo (sex) é 'Female'.
+
+     - `tips[tips['sex'] == 'Male']['tip']`:
+     
+       Seleciona todas as gorjetas (tip) onde o sexo (sex) é 'Male'.
+
+   Ao passar essas duas Séries em uma lista, o Matplotlib cria dois boxplots lado a lado.
+
+   `labels = ['Female', 'Male']`:
+   Atribui os rótulos correspondentes a cada boxplot na ordem em que os dados foram passados, garantindo que você saiba qual caixa representa qual grupo.
 
 \newpage
 
