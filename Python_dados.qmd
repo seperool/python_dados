@@ -2441,6 +2441,19 @@ Sobre o código:
 \newpage
 
 ## `seaborn`
+
+### Univariado
+
+#### Histogramas
+#### Plotagem de densidade (estimativa de densidade por Kernel)
+#### Rug plot
+#### Plotagem de contadores (plotagem de barras)
+
+### Dados bivariado
+### Dados multivariado
+
+\newpage
+
 ## Objetos do Pandas
 ## Temas e estilos do `seaborn`
 
