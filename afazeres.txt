@@ -1,6 +1,6 @@
-ESCRITO EM 26/10/25
+ESCRITO EM 27/10/25
 ---
-PARA 27/10/25
+PARA 28/10/25
 ---
 Subir github:
 
@@ -9,6 +9,7 @@ Doing:
     - Introdução à plotagem
         - Gráficos estatísticos usando a matplotlib
             -  Dados multivariados
+                - Programação e gráfico
         
 To do:
     - Introdução à plotagem
