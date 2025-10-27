@@ -2438,6 +2438,24 @@ Sobre o código:
 
 ### Dados multivariados
 
+Plotar dados multivariados é complicado porque não há uma panaceia nem um template que possam ser usados em todos os casos.
+
+Para mostrar o processo de plotar dados multivariados, vamos nos basear no nosso gráfico de dispersão anterior. Se quiséssemos adcionar outra variável, por exemplo, `sex`, uma opção seria colorir os pontos com base no valor da terceira variável.
+
+Se quiséssemos adicionar uma quarta variável, poderiamos acrescentar tamanho aos pontos. A única ressalva em usar o tamanho como uma variável é que os seres humanos não são muito bons para diferenciar áreas. É claro que, se houver um ponto enorme ao lado de um ponto minúsculo, sua informação será evidente, mas diferenças menores são difíceis de distinguir e poderão deixar a sua visualização confunsa. Uma maneira de reduzir a confusão é adicionar certa dose de transparência aos pontos individuais, de modo que muitos pontos sobrepostos serão exibidos como uma região mais escura de uma plotagem, em comparação com áreas menos cheias.
+
+Ou seja, tamanho e transparencia são recursos interessantes, porem cor é mais recomendados para destacar as variáveis. A cor é o recurso mais direto para adicionar uma variável extra (terceira) em um gráfico de dispersão, enquanto o tamanho, embora útil para uma quarta variável, deve ser usado com cautela devido à dificuldade humana em diferenciar áreas. A transparência serve como um ajuste para aumentar a clareza, revelando regiões de maior concentração de pontos sobrepostos.
+
+Como regra geral, cores diferentes são muito mais fáceis de distinguir do que variações de tamanho. Se você tiver de usar áreas para representar diferenças entre valores, certifique-se de que estará realmente plotando áreas relativas. Uma armadilha comum é mapear um valor para o raio de um círculo nas plotagens, mas, como a fórmula de um círculo é $\pi r^2$, suas áreas na verdade estarão baseadas em uma escala quadrática, Isso não só é enganoso como também é incorreto.
+
+Ao utilizar o tamanho (área) dos pontos para representar valores de dados, uma 'armadilha' comum e incorreta é mapear o valor dos dados ($V$) diretamente para o raio ($r$) de um círculo. Como a área do círculo é determinada pela fórmula $A=\pi r^2$, se $r=V$, a área plotada crescerá em escala quadrática ($A=\pi V^2$) em relação ao valor original, e não linearmente. Isso é enganoso. A solução, de forma análoga, é mapear o valor ($V$) para a área desejada ($A_{desejada} ​= V$) e, então, calcular o raio necessário ($r=\sqrt{\frac{V}{π}​}$).
+
+Cores também são difíces de escolher. Os seres humanos não percebem tons em uma escala linear, portanto será necessário pensar cuidadosamente ao selecionar as paletas de cores. Felizmente o `matplotlib` e o `seabor` têm o próprio conjunto de paletas de cores, e ferramentas como o `colorbrewer` podem ajudar você a escolher boas paletas.
+
+\newpage
+
+A figura \textcolor{red}{x} usa cores para adicionar uma terceira variável, `sex`, em nosso gráfico de dispersão.
+
 \newpage
 
 ## `seaborn`
