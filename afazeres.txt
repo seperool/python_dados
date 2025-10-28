@@ -1,17 +1,11 @@
-ESCRITO EM 27/10/25
+ESCRITO EM 28/10/25
 ---
-PARA 28/10/25
+PARA 29/10/25
 ---
 Subir github:
 
 Doing:
 
-    - Introdução à plotagem
-        - Gráficos estatísticos usando a matplotlib
-            -  Dados multivariados
-                - Programação e gráfico
-        
-To do:
     - Introdução à plotagem
         - seaborn
             - Univariado
@@ -19,6 +13,11 @@ To do:
                 - Plotagem de densidade (estimativa de densidade por Kernel)
                 - Rug plot
                 - Plotagem de contadores (plotagem de barras)
+            
+        
+To do:
+    - Introdução à plotagem
+        - seaborn
             - Dados bivariado
             - Dados multivariado
         - Objetos do Pandas
