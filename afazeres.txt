@@ -25,4 +25,5 @@ To do:
 
     - scripts
         - Gráficos estatísticos usando a matplotlib
+            - dados Multivariados
             
