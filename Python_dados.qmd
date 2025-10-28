@@ -2456,6 +2456,69 @@ Cores também são difíces de escolher. Os seres humanos não percebem tons em 
 
 A figura \textcolor{red}{x} usa cores para adicionar uma terceira variável, `sex`, em nosso gráfico de dispersão.
 
+```{python}
+# Cria uma variável de cor baseada em sexo
+def recode_sex(sex):
+  if sex == 'Female':
+    return 0
+  else:
+    return 1
+
+tips['sex_color'] = tips['sex'].apply(recode_sex)
+
+scatter_plot = plt.figure()
+axes1 = scatter_plot.add_subplot(1,1,1)
+axes1.scatter(
+  x=tips['total_bill'],
+  y=tips['tip'],
+
+  # Define o tamanho dos pontos com base no tamanho dos grupos;
+  # Multiplicamos os valores por 10 para deixar os pontos maiores
+  # e enfatizar as diferenças.
+  s=tips['size']*10,
+
+  # Define a cor para o sexo.
+  c=tips['sex_color'],
+
+  # Define o valor de alpha para que os pontos sejam mais transparentes.
+  # Isso ajuda no caso de pontos que se sobrepõem.
+  alpha=0.5
+)
+axes1.set_title('Total Bill vs Tip Colored by Sex and Sized by Size')
+axes1.set_xlabel('Total Bill')
+axes1.set_ylabel('tip')
+```
+
+Sobre o programa:
+
+* `recode_sex(sex)`: 
+   
+   Esta é uma função simples que converte os valores categóricos da coluna 'sex' ('Female' e 'Male') em valores numéricos.
+
+     - Se o sexo for 'Female', retorna 0.
+
+     - Se for 'Male' (ou qualquer outro valor), retorna 1.
+
+* `tips['sex_color'] = tips['sex'].apply(recode_sex)`:
+
+   - Cria uma nova coluna no DataFrame tips chamada `sex_color`.
+
+   - Aplica a função recode_sex a cada valor da coluna original `tips['sex']`.
+
+   - Propósito: O `Matplotlib` (e muitas bibliotecas de plotagem) geralmente exige valores numéricos para mapear cores em um gráfico de dispersão. Esta coluna (`sex_color`) será usada para definir a cor dos pontos.
+
+* `s = tips['size']*10`:
+  
+   Define o tamanho dos pontos. O valor de `tips['size']` (tamanho do grupo/mesa) é multiplicado por 10 para torná-los mais visíveis e enfatizar as diferenças. `size` (Tamanho do Grupo).
+
+* `c = tips['sex_color']`:	
+   
+   Define a cor dos pontos, usando os valores numéricos 0 (Female) e 1 (Male). `sex` (Sexo).
+
+* alpha	(Constante 0.5):
+   
+   Define a transparência dos pontos (0.0 é totalmente transparente, 1.0 é opaco). Isso é muito útil para visualizações onde pontos se sobrepõem (`overplotting`).	(Transparência).
+
 \newpage
 
 ## `seaborn`
