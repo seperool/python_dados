@@ -1,6 +1,6 @@
-ESCRITO EM 28/10/25
+ESCRITO EM 29/10/25
 ---
-PARA 29/10/25
+PARA 30/10/25
 ---
 Subir github:
 
@@ -24,6 +24,3 @@ To do:
         - Temas e estilos do seaborn
 
     - scripts
-        - Gráficos estatísticos usando a matplotlib
-            - dados Multivariados
-            
