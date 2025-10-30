@@ -2523,6 +2523,12 @@ Sobre o programa:
 
 ## `seaborn`
 
+Podemos pensar a bibliteca `matplotlib` como a principal ferramenta básica de plotagem em Python. O `seaborn` é baseada na `matplotlib` e oferece uma interface de nível mais alto para **gráficos estatísticos**. Ele provê uma interface para criar visualizações mais bonitas e complexas com menos linhas de código.
+
+A biblioteca `seaborn` está altamente integrada ao `Pandas` e ao restante da pilha PyData (`numpy`, `scipy`, `statsmodels`), fazendo com que as visualizações de qualquer parte do processo de análise de dados seja muito simples. 
+
+Como o `seaborn` foi desenvolvido com base no `matplotlib`, o usuário continua tendo a capacidade de fazer ajustes finos nas visualizações.
+
 ### Univariado
 
 #### Histogramas
