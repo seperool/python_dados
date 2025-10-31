@@ -2531,10 +2531,44 @@ Como o `seaborn` foi desenvolvido com base no `matplotlib`, o usuário continua 
 
 ### Univariado
 
+Assim como fizemos com os exemplos da `matplotlib`, criaremos uma série de plotagens univariadas.
+
 #### Histogramas
+
+Os histogramas são criados usando `sns.distplot`.
+
+```{python}
+# Essa função subplots é um atalho para criar objetos 
+# separados de figuras e adicionar subplotagens 
+# individuais (eixos) a figura
+hist, ax = plt.subplots()
+
+# Usa a função distplot do seaborn para criar nossa plotagem
+ax = sns.distplot(tips['total_bill'])
+ax.set_title("Total Bill Histogram with Density Plot")
+```
+
+`distplot` caiu em desuso, as alternativas recomendadas são:
+
+   * `seaborn.histplot()`:
+    
+     É a função principal e de "baixo nível" (axes-level) para plotar apenas o histograma (barras) de uma única distribuição, ou um histograma com a curva de Densidade de Kernel (KDE) sobreposta, se você usar o argumento `kde=True`.
+
+   * `seaborn.displot()`:
+     
+     É a função de "alto nível" (figure-level) que substitui o `distplot`. Por padrão, ela plota um histograma usando o `histplot()`, mas tem a capacidade adicional de:
+
+       - Criar múltiplos gráficos usando col ou row (FacetGrid).
+
+       - Mudar o tipo de gráfico (por exemplo, `kind='kde'` para um gráfico de densidade puro).
+
+\newpage
+
 #### Plotagem de densidade (estimativa de densidade por Kernel)
 #### Rug plot
 #### Plotagem de contadores (plotagem de barras)
+
+\newpage
 
 ### Dados bivariado
 ### Dados multivariado
