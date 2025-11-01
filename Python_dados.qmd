@@ -2548,6 +2548,40 @@ ax = sns.distplot(tips['total_bill'])
 ax.set_title("Total Bill Histogram with Density Plot")
 ```
 
+\newpage
+
+O `distplot` default plotará tanto um histograma quanto uma plotagem de densidade (usando uma estimativa de densidade por kernel).
+
+o `KDE` (*Kernel Density Estimate*), que é a linha de densidade suave que aparece sobre o histograma por padrão.
+
+`hist, ax = plt.subplots()` Cria simultaneamente dois objetos principais para a plotagem: a Figure (hist) e os Axes (ax).
+
+   - `hist` (Figure): É o contêiner geral de todos os elementos. Pense na tela em branco ou na janela onde o gráfico será desenhado.
+
+   - `ax` (Axes): É o sistema de coordenadas real, ou seja, a área de plotagem com eixos X e Y. É nele que você chama as funções de plotagem (`sns.distplot`, `ax.set_title`, etc.).
+   
+   - É possível reescrever de uma forma menos comum, mas com o mesmo resultado para um único gráfico:
+  
+   ```
+   figura = plt.figure() # Cria apenas o contêiner (Figure)
+   eixos = figura.add_subplot(1, 1, 1) # Adiciona a área de plotagem (Axes)
+   # Em seguida, você usaria 'eixos' no lugar de 'ax'
+   ```
+
+\newpage
+
+Se quisermos somente o histograma, podemos definir o parâmetro `kde` com `False`.
+
+```{python}
+hist, ax = plt.subplots()
+ax = sns.distplot(tips['total_bill'], kde=False)
+ax.set_title('Total Bill Histogram')
+ax.set_xlabel('Total Bill')
+ax.set_ylabel('Frequency')
+```
+
+\newpage
+
 `distplot` caiu em desuso, as alternativas recomendadas são:
 
    * `seaborn.histplot()`:
