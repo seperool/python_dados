@@ -1,6 +1,6 @@
-ESCRITO EM 01/11/25
+ESCRITO EM 02/11/25
 ---
-PARA 02/11/25
+PARA 03/11/25
 ---
 Subir github:
 
@@ -23,3 +23,8 @@ To do:
         - Temas e estilos do seaborn
 
     - scripts
+        - seaborn
+            - Histograma
+                - distplot
+                - histplot
+                - displot
