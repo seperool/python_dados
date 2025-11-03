@@ -2180,6 +2180,7 @@ Os nomes da maioria das plotagens básicas começará com `plt.plot`.
 Em nosso exemplo, o recurso de plotagem recebe um vetor para os valores de x e um vetor correspondente para os valores de y.
 
 ```{python}
+#| warning: false
 # Cria um subconjunto dos dados
 # contém somente o primeiro conjunto de dados de Anscombe
 dataset_1 = anscombe[anscombe['dataset'] == 'I']
@@ -2192,6 +2193,7 @@ plt.plot(dataset_1['x'],dataset_1['y'])
 Por padrão, `plt.plot` desenhará linhas. Se quiser que ele desenhe círculos (pontos), podemos passar um parâmetro 'o' para dizer ao `plt.plot` que use pontos.
 
 ```{python}
+#| warning: false
 plt.plot(dataset_1['x'],dataset_1['y'],'o')
 ```
 
@@ -2224,6 +2226,7 @@ Tudo que fizemos até agora foi criar uma figura e separá-la em uma grade de $2
 \newpage
 
 ```{python}
+#| warning: false
 # Cria toda a figura na qual nossas subplotagens serão inseridas
 
 fig = plt.figure()
@@ -2245,6 +2248,7 @@ axes4 = fig.add_subplot(2,2,4)
 Podemos usar o método `plot` em cada eixo para criar nossa plotagem.
 
 ```{python}
+#| warning: false
 # adicionar ma plotagem em cada um dos eixos criados anteriormente
 axes1.plot(dataset_1['x'], dataset_1['y'],"o")
 axes2.plot(dataset_2['x'], dataset_2['y'],"o")
@@ -2255,6 +2259,7 @@ axes4.plot(dataset_4['x'], dataset_4['y'],"o")
 Por fim, podemos acrescentar um rótulo às nossas subplotagens e usar `tight_layout` para garantir que os eixos estejam separados uns dos outros.
 
 ```{python}
+#| warning: false
 # acrescenta um pequeno título para cada subplotagem
 axes1.set_title("dataset_1")
 axes2.set_title("dataset_2")
@@ -2295,6 +2300,7 @@ Os dados de gorjeta que usaremos na próxima série de visualizações são prov
 Podemos carregar esse conjunto de dados como fizemos com o conjunto de dados de Anscombe.
 
 ```{python}
+#| warning: false
 tips = sns.load_dataset("tips")
 print(tips.head())
 ```
@@ -2310,6 +2316,7 @@ No jargão de estatística, o termo "univariado" refere-se a uma única variáve
 Os histogramas são o meio mais comum de observar uma única variável. Os valoressão colocados em "recipientes", isto é, são agrupados e plotados para mostrar a distribuição da variável.
 
 ```{python}
+#| warning: false
 fig = plt.figure()
 axes1 = fig.add_subplot(1,1,1)
 axes1.hist(tips['total_bill'],bins=10)
@@ -2331,6 +2338,7 @@ No jargão de estatística, o termo "bivariado" refere-se a duas variáveis.
 O gráfico de dispersão (scatterplots) são usados quando uma variável contínua é plotada em relação a outra variável contínua.
 
 ```{python}
+#| warning: false
 scatter_plot = plt.figure()
 axes1 = scatter_plot.add_subplot(1,1,1)
 axes1.scatter(tips['total_bill'],tips['tip'])
@@ -2386,6 +2394,7 @@ Sobre o código:
 Os gráficos ou diagramas de caixa (boxplots) são usados quando uma variável discreta é plotada em relação a outra variável contínua.
 
 ```{python}
+#| warning: false
 boxplot = plt.figure()
 axes1 = boxplot.add_subplot(1,1,1)
 axes1.boxplot(
@@ -2457,6 +2466,8 @@ Cores também são difíces de escolher. Os seres humanos não percebem tons em 
 A figura \textcolor{red}{x} usa cores para adicionar uma terceira variável, `sex`, em nosso gráfico de dispersão.
 
 ```{python}
+#| warning: false
+
 # Cria uma variável de cor baseada em sexo
 def recode_sex(sex):
   if sex == 'Female':
@@ -2538,6 +2549,7 @@ Assim como fizemos com os exemplos da `matplotlib`, criaremos uma série de plot
 Os histogramas são criados usando `sns.distplot`.
 
 ```{python}
+#| warning: false
 # Essa função subplots é um atalho para criar objetos 
 # separados de figuras e adicionar subplotagens 
 # individuais (eixos) a figura
@@ -2573,6 +2585,7 @@ o `KDE` (*Kernel Density Estimate*), que é a linha de densidade suave que apare
 Se quisermos somente o histograma, podemos definir o parâmetro `kde` com `False`.
 
 ```{python}
+#| warning: false
 hist, ax = plt.subplots()
 ax = sns.distplot(tips['total_bill'], kde=False)
 ax.set_title('Total Bill Histogram')
@@ -2599,6 +2612,35 @@ ax.set_ylabel('Frequency')
 \newpage
 
 #### Plotagem de densidade (estimativa de densidade por Kernel)
+
+As plotagens de densidade (*density plots*) são outra maneira de visualizar uma distribuição univariada.
+
+Essencialmente, são criadas usando uma distribuição normal centralizada emcada ponto de dado, e então suavizado as plotagens que se sobrepõem de modo que a área sob a curva seja 1.
+
+```{python}
+#| warning: false
+den, ax = plt.subplots()
+ax = sns.distplot(tips['total_bill'], hist=False)
+ax.set_title('Total Bill Density')
+ax.set_xlabel("Total Bill")
+ax.set_ylabel("Unit Probability")
+```
+
+Você também pode executar `sns.kdeplot` se quiser somente uma plotagem de densidade.
+
+```{python}
+#| warning: false
+den, ax = plt.subplots()
+ax = sns.kdeplot(tips['total_bill'],fill=True)
+ax.set_title('Total Bill Density')
+ax.set_xlabel("Total Bill")
+ax.set_ylabel("Unit Probability")
+```
+
+`fill=True`: Preenche a área sob a curva de densidade para facilitar a visualização.
+
+\newpage
+
 #### Rug plot
 #### Plotagem de contadores (plotagem de barras)
 
