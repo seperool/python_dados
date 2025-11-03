@@ -1,6 +1,6 @@
-ESCRITO EM 02/11/25
+ESCRITO EM 03/11/25
 ---
-PARA 03/11/25
+PARA 04/11/25
 ---
 Subir github:
 
@@ -9,7 +9,6 @@ Doing:
     - Introdução à plotagem
         - seaborn
             - Univariado
-                - Plotagem de densidade (estimativa de densidade por Kernel)
                 - Rug plot
                 - Plotagem de contadores (plotagem de barras)
             
@@ -28,3 +27,5 @@ To do:
                 - distplot
                 - histplot
                 - displot
+                - displot + density
+                - kdeplot
