@@ -2642,6 +2642,23 @@ ax.set_ylabel("Unit Probability")
 \newpage
 
 #### Rug plot
+
+As `rug plots` (literalmente, plotagem de tapete) são uma representação unidimensional da distribuição de uma variável.
+
+Em geral, são usadas com outras plotagens para melhorar uma visualização.
+
+É um histograma sobreposto a uma plotagem de densidade, com um `rug plot` na parte inferior.
+
+```{python}
+#| warning: false
+hist_den_rug, ax = plt.subplots()
+ax = sns.distplot(tips["total_bill"], rug=True)
+ax.set_title("Total Bill Histogram with Density and Rug Plot")
+ax.set_xlabel("Total Bill")
+```
+
+\newpage
+
 #### Plotagem de contadores (plotagem de barras)
 
 \newpage
