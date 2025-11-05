@@ -1,6 +1,6 @@
-ESCRITO EM 04/11/25
+ESCRITO EM 05/11/25
 ---
-PARA 05/11/25
+PARA 06/11/25
 ---
 Subir github:
 
@@ -8,14 +8,18 @@ Doing:
 
     - Introdução à plotagem
         - seaborn
-            - Univariado
-                - Plotagem de contadores (plotagem de barras)
-            
-        
+            - Dados bivariado
+                - Gráfico de dispersão
+                - Plotagem hexbin
+                - Plotagem de densidade 2D
+                - Plotagem de barras
+                - Gráfico de caixa
+                - Plotagem de violino
+                - Relacionamentos aos pares
+                    
 To do:
     - Introdução à plotagem
         - seaborn
-            - Dados bivariado
             - Dados multivariado
         - Objetos do Pandas
         - Temas e estilos do seaborn
@@ -29,3 +33,4 @@ To do:
                 - displot + density
                 - kdeplot
                 - rug plot
+                - countplot
