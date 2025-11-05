@@ -2661,9 +2661,31 @@ ax.set_xlabel("Total Bill")
 
 #### Plotagem de contadores (plotagem de barras)
 
+As plotagens de barra (bar plots) são muito parecidas com os histogramas, mas, em vez de colocar os valores em "recipientes" para gerar uma distribuição, as plotagens de barras podem ser usadas para contar variáveis discretas. Uma plotagem de contadores (`count plot`) é usada com essa finalidade.
+
+```{python}
+#| warning: false
+count, ax = plt.subplots()
+ax = sns.countplot(x='day', data=tips)
+ax.set_title("Count of Days")
+ax.set_xlabel("Day of the Week")
+ax.set_ylabel("Frequency")
+```
+
 \newpage
 
 ### Dados bivariado
+
+#### Gráfico de dispersão
+#### Plotagem hexbin
+#### Plotagem de densidade 2D
+#### Plotagem de barras
+#### Gráfico de caixa
+#### Plotagem de violino
+#### Relacionamentos aos pares
+
+\newpage
+
 ### Dados multivariado
 
 \newpage
