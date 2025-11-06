@@ -2674,7 +2674,9 @@ ax.set_ylabel("Frequency")
 
 \newpage
 
-### Dados bivariado
+### Dados bivariados
+
+Usaremos agora a biblioteca `seaborn` para plotar varias variáveis.
 
 #### Gráfico de dispersão
 #### Plotagem hexbin
