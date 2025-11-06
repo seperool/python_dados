@@ -8,7 +8,7 @@ Doing:
 
     - Introdução à plotagem
         - seaborn
-            - Dados bivariado
+            - Dados bivariados
                 - Gráfico de dispersão
                 - Plotagem hexbin
                 - Plotagem de densidade 2D
