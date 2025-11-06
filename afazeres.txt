@@ -1,6 +1,6 @@
-ESCRITO EM 05/11/25
+ESCRITO EM 06/11/25
 ---
-PARA 06/11/25
+PARA 07/11/25
 ---
 Subir github:
 
@@ -27,7 +27,6 @@ To do:
     - scripts
         - seaborn
             - Histograma
-                - distplot
                 - histplot
                 - displot
                 - displot + density
