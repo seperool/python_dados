@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov  6 17:11:13 2025
+Script Python para Análise Exploratória de Dados (EDA) e Visualização
+usando Pandas e Seaborn.
 
+Created on Thu Nov  6 17:11:13 2025
 @author: sergio
+
+O foco é demonstrar a funcionalidade da função **sns.distplot**.
+
+Diferença entre distplot e Alternativas:
+A função **sns.distplot** é considerada **obsoleta** (deprecated) e não deve ser usada em códigos novos.
+Ela foi substituída por duas funções principais que oferecem maior clareza e flexibilidade:
+1. `sns.histplot`: Função de "nível de Axes" (Axes-level) ideal para plotar um único histograma (e opcionalmente KDE) e oferece maior controle de customização do Matplotlib.
+2. `sns.displot`: Função de "nível de Figure" (Figure-level) que unifica diferentes tipos de gráficos de distribuição (`kind='hist'`, `kind='kde'`) e é a única a suportar o *faceting* nativo (criação de múltiplos subgráficos com `col` ou `row`).
 """
 
 # ===============================================

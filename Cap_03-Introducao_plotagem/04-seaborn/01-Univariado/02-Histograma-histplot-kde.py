@@ -1,9 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Nov  7 15:40:43 2025
+Script Python para Análise Exploratória de Dados (EDA) e Visualização
+usando Pandas e Seaborn.
 
+Created on Fri Nov  7 15:40:43 2025
 @author: sergio
+
+O foco é a criação de um Histograma Univariado utilizando sns.histplot.
+
+Diferença entre histplot e Alternativas:
+O **histplot** é a função de "nível de Axes" do Seaborn, ideal para plotar um único gráfico
+e que permite integração direta com objetos Axes do Matplotlib (via 'ax=...').
+É o sucessor direto e a versão mais flexível do antigo `sns.distplot` (agora obsoleto).
+Ao contrário do `displot` (função de alto nível), o `histplot` não suporta o Faceting
+automático (subgráficos com 'col' ou 'row'), mas oferece maior controle sobre o Axes individual.
 """
 
 # ===============================================
