@@ -1,6 +1,6 @@
-ESCRITO EM 09/11/25
+ESCRITO EM 10/11/25
 ---
-PARA 10/11/25
+PARA 11/11/25
 ---
 Subir github:
 
@@ -27,7 +27,5 @@ To do:
     - scripts
         - seaborn
             - Histograma
-                - displot + density
-                - kdeplot
                 - rug plot
                 - countplot
