@@ -1,6 +1,6 @@
-ESCRITO EM 10/11/25
+ESCRITO EM 11/11/25
 ---
-PARA 11/11/25
+PARA 12/11/25
 ---
 Subir github:
 
@@ -26,6 +26,11 @@ To do:
 
     - scripts
         - seaborn
-            - Histograma
-                - rug plot
-                - countplot
+            - Dados bivariados
+                - Gráfico de dispersão
+                - Plotagem hexbin
+                - Plotagem de densidade 2D
+                - Plotagem de barras
+                - Gráfico de caixa
+                - Plotagem de violino
+                - Relacionamentos aos pares
