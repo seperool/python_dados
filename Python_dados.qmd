@@ -2678,7 +2678,43 @@ ax.set_ylabel("Frequency")
 
 Usaremos agora a biblioteca `seaborn` para plotar varias variáveis.
 
-#### Gráfico de dispersão
+#### Gráficos de dispersão
+
+##### `regplot`
+
+Há algumas maneiras de criar um gráfico de dispersão no `seaborn`. Não há nenhuma função explícita chamada `scatter`. Em vez disso, usamos `regplot`. Ela plotará um gráfico de dispersão, além de criar uma **linha de regressão**.
+
+Se definirmos `fit_reg=False`, a visualização mostrará somente o gráfico de dispersão.
+
+```{python}
+#| warning: false
+scatter, ax = plt.subplots()
+ax = sns.regplot(
+  x='total_bill',
+  y='tip',
+  data=tips)
+ax.set_title("Scatterplot of Total Bill and Tip")
+ax.set_xlabel("Total Bill")
+ax.set_ylabel("Tip")
+```
+
+Sobre o programa:
+   
+   - `sns.regplot()`:
+     
+     É uma das opções de gráfico de dispersão para `seaborn`, com **linha de regressão** inclusa (para desativar a linha de regressão `fit_reg=False`).
+  
+   - Argumentos do `regplot` (`x=`,`y=` e `data=`):
+     
+     A função `regplot`, precisa que sejam explicitadas quais as colunas dos valores de x e y, e o dataframe da qual esta pegando os valores.
+
+\newpage
+
+##### `lmplot`
+##### `jointplot`
+
+\newpage
+
 #### Plotagem hexbin
 #### Plotagem de densidade 2D
 #### Plotagem de barras
