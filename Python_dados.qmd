@@ -2711,6 +2711,23 @@ Sobre o programa:
 \newpage
 
 ##### `lmplot`
+
+Uma função semelhante, `lmplot`, também é capaz de criar um gráfico de dispersão. Internamente, `lmplot` chama `regplot`, portanto esse é uma função de plotagem mais genérica.
+
+A principal diferença é que `regplot` cria eixos, enquanto `lmplot` cria uma figura.
+
+```{python}
+#| warning: false
+g = sns.lmplot(
+  x='total_bill',
+  y='tip',
+  data=tips)
+
+g.fig.suptitle("Relação entre Conta Total e Gorjeta")
+```
+
+\newpage
+
 ##### `jointplot`
 
 \newpage
