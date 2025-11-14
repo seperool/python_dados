@@ -1,6 +1,6 @@
-ESCRITO EM 13/11/25
+ESCRITO EM 14/11/25
 ---
-PARA 14/11/25
+PARA 15/11/25
 ---
 Subir github:
 
@@ -9,8 +9,6 @@ Doing:
     - Introdução à plotagem
         - seaborn
             - Dados bivariados
-                - Gráfico de dispersão
-                    - jointplot
                 - Plotagem hexbin
                 - Plotagem de densidade 2D
                 - Plotagem de barras
