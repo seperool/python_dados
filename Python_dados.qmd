@@ -2721,7 +2721,11 @@ A principal diferença é que `regplot` cria eixos, enquanto `lmplot` cria uma f
 g = sns.lmplot(
   x='total_bill',
   y='tip',
-  data=tips)
+  data=tips,
+  height=4, # Controla a altura de cada painel (em polegadas)
+  aspect=1  # Controla a proporção LARGURA/ALTURA.
+            # Um valor maior que 1 aumenta a largura em relação à altura.
+  )
 
 g.fig.suptitle("Relação entre Conta Total e Gorjeta")
 ```
@@ -2730,9 +2734,36 @@ g.fig.suptitle("Relação entre Conta Total e Gorjeta")
 
 ##### `jointplot`
 
+Também podemos criar um gráfico de dispersão que inclua uma plotagem univariada em cada eixo usando `jointplot`. Uma diferença importante é que `jointplot` não devolve eixos, portanto não precisamos criar uma figura com eixos na qual colocaremos nossa plotagem. Em vez disso, essa função cria um objeto `JointGrid`.
+
+```{python}
+#| warning: false
+joint = sns.jointplot(
+  x='total_bill',
+  y='tip',
+  data=tips,
+  height=5  # O valor padrão é 6. Reduzir para 5, 4 ou 3 diminui o gráfico.
+  )
+
+joint.set_axis_labels(
+  xlabel='Total Bill',
+  ylabel='Tip')
+
+#Adiciona um título, define o tamanho da fonte e
+# move o texto acima dos eixos de total das contas
+joint.fig.suptitle('Join Plot of Total Bill and Tip',
+fontsize=10,
+y=1.03)
+```
+
 \newpage
 
 #### Plotagem hexbin
+
+
+
+\newpage
+
 #### Plotagem de densidade 2D
 #### Plotagem de barras
 #### Gráfico de caixa
