@@ -2758,13 +2758,64 @@ y=1.03)
 
 \newpage
 
-#### Plotagem hexbin
+#### Plotagem `hexbin`
 
+Os gráficos de dispersão são ótimos para comparar duas variáveis. As vezes, porém, há pontos demais para que um gráfico de dispersão seja significativo. Uma forma de contornar esse problema é reunir pontos no gráfico. Assim como os histogramas podem reunir dados de uma variável para criar uma barra, o `hexbin` pode fazer o mesmo com duas variáveis. Um hexágono é usado com essa finalidade, pois é o formato mais eficiente para cobrir uma superfície 2D arbitrária.
 
+Esse é um exemplo do `seaborn` funcionando com base na `matplotlib`, pois `hexbin` éuma função da `matplotlib`.
+
+```{python}
+hexbin = sns.jointplot(             # Cria o Gráfico de Junção (Joint Plot)
+  x="total_bill",                   # Define a variável para o Eixo X
+  y="tip",                          # Define a variável para o Eixo Y
+  data=tips,                        # Especifica o DataFrame a ser usado
+  kind="hex"                        # Define o tipo de gráfico como Hexbin
+)
+
+hexbin.set_axis_labels(             # Define os Rótulos dos Eixos
+  xlabel='Total Bill',              # Rótulo para o Eixo X
+  ylabel='Tip'                      # Rótulo para o Eixo Y
+)
+
+hexbin.fig.suptitle(                # Adiciona um Título Geral à Figura
+  'Hexbin Joint Plot of Total Bill and Tip', # Texto do título
+  fontsize=10,                      # Define o tamanho da fonte
+  y=1.03                            # Ajusta a posição vertical do título
+)
+```
+
+\newpage
+
+Sobre o código:
+
+  - O método `sns.jointplot()` cria sua própria figura e seus próprios eixos (`subplots`) internamente. Por essa razão, você não precisa usar o padrão `fig, ax = plt.subplots()` para criar um `jointplot`.
+  
+  - `hexbin = sns.jointplot(...)`
+
+    Esta linha é a principal, responsável por criar e desenhar toda a figura. O resultado é armazenado na variável `hexbin`, que é um objeto `JointGrid` do `Seaborn`.
+
+  - `x="total_bill", y="tip", data=tips`
+
+    Definem as variáveis do DataFrame tips a serem plotadas: `total_bill` no eixo horizontal (X), `tip` no eixo vertical (Y) e o Dataframe como `tips`.
+
+- `kind="hex"`
+
+    Especifica o tipo de plotagem para a área central (bivariada). O valor "hex" indica o uso do gráfico de densidade `Hexbin`, onde a cor representa a frequência de pontos.
+
+- `hexbin.set_axis_labels(...)`
+
+    Método usado para definir os rótulos de forma clara para os eixos X e Y do gráfico principal, melhorando a interpretação.
+
+- `hexbin.fig.suptitle(...)`
+
+    Adiciona um título grande (`suptitle`) à figura inteira (que contém todos os `subplots`), sendo essencial para contextualizar o gráfico.
 
 \newpage
 
 #### Plotagem de densidade 2D
+
+\newpage
+
 #### Plotagem de barras
 #### Gráfico de caixa
 #### Plotagem de violino
