@@ -2765,6 +2765,7 @@ Os gráficos de dispersão são ótimos para comparar duas variáveis. As vezes,
 Esse é um exemplo do `seaborn` funcionando com base na `matplotlib`, pois `hexbin` éuma função da `matplotlib`.
 
 ```{python}
+#| warning: false
 hexbin = sns.jointplot(             # Cria o Gráfico de Junção (Joint Plot)
   x="total_bill",                   # Define a variável para o Eixo X
   y="tip",                          # Define a variável para o Eixo Y
@@ -2813,6 +2814,36 @@ Sobre o código:
 \newpage
 
 #### Plotagem de densidade 2D
+
+Também é possível criar uma plotagem de densidade por kernel 2D. Esse tipo de processo é semelhante ao modo como `sns.kdeplot` funciona, exceto porcriar uma plotagem de densidade entre duas variáveis.
+
+A plotagem bivariada pode ser mostrada sozinha, ou você pode colocar as duas plotagens univariadas uma ao lado da outra usando `jointplot`.
+
+```{python}
+#| warning: false
+kde, ax = plt.subplots()
+ax = sns.kdeplot(
+  x=tips['total_bill'],
+  y=tips['tip'],
+  fill=True
+)
+
+ax.set_title('Kernel Density Plot of Total Bill and Tip')
+ax.set_xlabel('Total Bill')
+ax.set_ylabel('Tip')
+```
+
+\newpage
+
+```{python}
+#| warning: false
+kde_joint = sns.jointplot(
+  x='total_bill',
+  y='tip',
+  data=tips,
+  kind='kde'
+)
+```
 
 \newpage
 
