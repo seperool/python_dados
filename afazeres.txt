@@ -1,6 +1,6 @@
-ESCRITO EM 15/11/25
+ESCRITO EM 16/11/25
 ---
-PARA 16/11/25
+PARA 17/11/25
 ---
 Subir github:
 
@@ -9,7 +9,7 @@ Doing:
     - Introdução à plotagem
         - seaborn
             - Dados bivariados
-                - Plotagem de densidade 2D
+                - Plotagem de densidade 2D (comentar os códigos)
                 - Plotagem de barras
                 - Gráfico de caixa
                 - Plotagem de violino
