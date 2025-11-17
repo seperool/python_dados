@@ -2821,33 +2821,46 @@ A plotagem bivariada pode ser mostrada sozinha, ou você pode colocar as duas pl
 
 ```{python}
 #| warning: false
-kde, ax = plt.subplots()
-ax = sns.kdeplot(
-  x=tips['total_bill'],
-  y=tips['tip'],
-  fill=True
+kde, ax = plt.subplots() # Cria uma figura e um conjunto de eixos
+ax = sns.kdeplot( # Gera um gráfico de estimativa de densidade kernel 2D
+  x=tips['total_bill'], # Usa a coluna 'total_bill' para o eixo X
+  y=tips['tip'], # Usa a coluna 'tip' para o eixo Y
+  fill=True # Preenche as áreas sob as curvas de densidade
 )
 
-ax.set_title('Kernel Density Plot of Total Bill and Tip')
-ax.set_xlabel('Total Bill')
-ax.set_ylabel('Tip')
+# Define o título do gráfico
+ax.set_title('Kernel Density Plot of Total Bill and Tip') 
+ax.set_xlabel('Total Bill') # Define o rótulo do eixo X
+ax.set_ylabel('Tip') # Define o rótulo do eixo Y
 ```
+
+\newpage
+
+Sobre o código:
+
+  - Na versão mais antiga do `kdeplot` (no livro) ao invés de usar `x`, `y` e `fill`, era respectivamente `data`, `data2` e `shade`, porém o significando é o mesmo.
 
 \newpage
 
 ```{python}
 #| warning: false
-kde_joint = sns.jointplot(
-  x='total_bill',
-  y='tip',
-  data=tips,
-  kind='kde'
+kde_joint = sns.jointplot( # Cria um gráfico de distribuição conjunta
+  x='total_bill',          # Define a coluna para o eixo X
+  y='tip',                 # Define a coluna para o eixo Y
+  data=tips,               # Especifica o DataFrame a ser usado
+  kind='kde'               # Usa a Estimativa de Densidade Kernel (KDE) 
+                           # para o plot central e margens
 )
 ```
 
 \newpage
 
 #### Plotagem de barras
+
+
+
+\newpage
+
 #### Gráfico de caixa
 #### Plotagem de violino
 #### Relacionamentos aos pares
