@@ -1,6 +1,6 @@
-ESCRITO EM 16/11/25
+ESCRITO EM 17/11/25
 ---
-PARA 17/11/25
+PARA 18/11/25
 ---
 Subir github:
 
@@ -9,7 +9,6 @@ Doing:
     - Introdução à plotagem
         - seaborn
             - Dados bivariados
-                - Plotagem de densidade 2D (comentar os códigos)
                 - Plotagem de barras
                 - Gráfico de caixa
                 - Plotagem de violino
@@ -31,6 +30,8 @@ To do:
                     - jointplot
                 - Plotagem hexbin
                 - Plotagem de densidade 2D
+                    - kdeplot
+                    - jointplot
                 - Plotagem de barras
                 - Gráfico de caixa
                 - Plotagem de violino
