@@ -2857,11 +2857,31 @@ kde_joint = sns.jointplot( # Cria um gráfico de distribuição conjunta
 
 #### Plotagem de barras
 
+As plotagens de barras (`bar plots`) também podem ser usadas para mostrar diversas variáveis.
 
+Por padrão, `barplot` calculará uma média, mas você pode passar qualquer função para o parâmetro `estimador`. Por exemplo, poderíamos passar a função `numpy.std` para calcular o desvio-padrão.
+
+```{python}
+#| warning: false
+bar, ax = plt.subplots()
+ax = sns.barplot(
+  x='time',
+  y='total_bill',
+  data=tips,
+  estimator=np.std
+)
+
+ax.set_title("Bar plor of average total bill for time of day")
+ax.set_xlabel("Time of day")
+ax.set_ylabel("Average total bill")
+```
 
 \newpage
 
 #### Gráfico de caixa
+
+\newpage
+
 #### Plotagem de violino
 #### Relacionamentos aos pares
 
