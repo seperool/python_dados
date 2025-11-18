@@ -1,6 +1,6 @@
-ESCRITO EM 17/11/25
+ESCRITO EM 18/11/25
 ---
-PARA 18/11/25
+PARA 19/11/25
 ---
 Subir github:
 
@@ -9,7 +9,6 @@ Doing:
     - Introdução à plotagem
         - seaborn
             - Dados bivariados
-                - Plotagem de barras
                 - Gráfico de caixa
                 - Plotagem de violino
                 - Relacionamentos aos pares
@@ -33,6 +32,7 @@ To do:
                     - kdeplot
                     - jointplot
                 - Plotagem de barras
+                    - barplot
                 - Gráfico de caixa
                 - Plotagem de violino
                 - Relacionamentos aos pares
