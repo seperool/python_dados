@@ -2880,9 +2880,30 @@ ax.set_ylabel("Average total bill")
 
 #### Gráfico de caixa
 
+De modo diferente das plotagens mencionadas antes, uma plotagem de caixa (`boxplot`) mostra várias estatísticas: o mínimo, o primeiro quartil, a mediana, o terceiro quartil, o máximo e, se for aplicável, valores discrepantes baseados no intervalo interquartil.
+
+O parâmetro `y` é opcional. Se for omitido, a função de plotagem criará uma única caixa no gráfico.
+
+```{python}
+#| warning: false
+box, ax = plt.subplots()
+ax = sns.boxplot(
+  x='time',
+  y='total_bill',
+  data=tips
+)
+
+ax.set_title('Boxplot of total bill by time of day')
+ax.set_xlabel('Time of day')
+ax.set_ylabel('Total Bill')
+```
+
 \newpage
 
 #### Plotagem de violino
+
+\newpage
+
 #### Relacionamentos aos pares
 
 \newpage
