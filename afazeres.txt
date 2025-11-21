@@ -1,6 +1,6 @@
-ESCRITO EM 19/11/25
+ESCRITO EM 21/11/25
 ---
-PARA 20/11/25
+PARA 22/11/25
 ---
 Subir github:
 
@@ -9,7 +9,6 @@ Doing:
     - Introdução à plotagem
         - seaborn
             - Dados bivariados
-                - Plotagem de violino
                 - Relacionamentos aos pares
                     
 To do:
@@ -35,4 +34,5 @@ To do:
                 - Gráfico de caixa
                     - boxplot
                 - Plotagem de violino
+                    - violinplot
                 - Relacionamentos aos pares
