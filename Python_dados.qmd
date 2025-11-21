@@ -2902,6 +2902,26 @@ ax.set_ylabel('Total Bill')
 
 #### Plotagem de violino
 
+As plotagens de caixa são uma visualização estatística clássica, mas elas podem obscurecer a distribuição subjacente dos dados.
+
+As plotegens de violino (`violin plots`) podem mostrar os mesmos valores que uma plotegem de caixa, porém plotam as "caixas" com uma estimativa de **densidade por kernel**.
+
+Isso pode ajudar a preservar informações mais visuais sobre seus dados, pois é possível que plotar somente estatísticas resumidas leve a enganos, conforme vimos pelo quarteto de Anscombe.
+
+```{python}
+#| warning: false
+violin, ax = plt.subplots()
+ax = sns.violinplot(
+  x='time',
+  y='total_bill',
+  data=tips
+)
+
+ax.set_title("Violin plot of total bill by time of day")
+ax.set_xlabel('Time of day')
+ax.set_ylabel('Total Bill')
+```
+
 \newpage
 
 #### Relacionamentos aos pares
