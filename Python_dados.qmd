@@ -2926,6 +2926,30 @@ ax.set_ylabel('Total Bill')
 
 #### Relacionamentos aos pares
 
+Quando temos dados numéricos em sua maioria, a visualização de todos os relacionamentos aos pares pode ser feita facilmente usando `pairplot`.
+
+Essa função plotará um gráfico de dispersão entre cada par de variáveis, e um histograma para os dados univariados.
+
+```{python}
+#| warning: false
+fig = sns.pairplot(tips)
+```
+
+\newpage
+
+Uma desvantagem ao usar `pairplot` esta no fato de haver informações reduntantes, isto é, a parte superior da visualização é igual a metade inferior.
+
+Podemos usar `pairgrid` para atribuir manualmente as plotagens para a metade superior e a metade inferior.
+
+```{python}
+#| warning: false
+pair_grid = sns.PairGrid(tips)
+# podemos usar plt.scatter em vez de sns.regplot
+pair_grid = pair_grid.map_upper(sns.regplot)
+pair_grid = pair_grid.map_lower(sns.kdeplot)
+pair_grid = pair_grid.map_diag(sns.distplot, rug=True)
+```
+
 \newpage
 
 ### Dados multivariado
