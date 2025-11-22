@@ -1,6 +1,6 @@
-ESCRITO EM 21/11/25
+ESCRITO EM 22/11/25
 ---
-PARA 22/11/25
+PARA 23/11/25
 ---
 Subir github:
 
@@ -9,7 +9,9 @@ Doing:
     - Introdução à plotagem
         - seaborn
             - Dados bivariados
-                - Relacionamentos aos pares
+                - Relacionamentos aos pares (comentar código)
+                    - pairplot
+                    - PairGrid
                     
 To do:
     - Introdução à plotagem
@@ -36,3 +38,5 @@ To do:
                 - Plotagem de violino
                     - violinplot
                 - Relacionamentos aos pares
+                    - pairplot
+                    - PairGrid
