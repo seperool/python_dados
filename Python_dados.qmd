@@ -2935,6 +2935,16 @@ Essa função plotará um gráfico de dispersão entre cada par de variáveis, e
 fig = sns.pairplot(tips)
 ```
 
+Sobre o código:
+
+   * Finalidade: Cria um `pair plot` (gráfico de pares), que é uma matriz de gráficos que visualiza as relações pareadas em um dataset Pandas.
+
+   * Visualização Principal: Mostra `scatter plots` (gráficos de dispersão) para as relações entre cada par de variáveis numéricas.
+
+   * Diagonal: Por padrão, exibe um histograma para a distribuição de cada variável única na diagonal da matriz.
+
+   * Retorno: A função retorna um objeto `PairGrid` (que foi atribuído à variável `fig`), permitindo ajustes posteriores no gráfico.
+
 \newpage
 
 Uma desvantagem ao usar `pairplot` esta no fato de haver informações reduntantes, isto é, a parte superior da visualização é igual a metade inferior.
@@ -2950,9 +2960,25 @@ pair_grid = pair_grid.map_lower(sns.kdeplot)
 pair_grid = pair_grid.map_diag(sns.distplot, rug=True)
 ```
 
+Sobre o código:
+
+   * Controle Fino: O uso de `sns.PairGrid()` permite que o usuário especifique funções de plotagem diferentes para as áreas superior, inferior e diagonal da matriz.
+
+   * Inicialização: A primeira linha (`pair_grid = sns.PairGrid(tips)`) apenas inicializa a estrutura da matriz; ela não plota nada. O `dataframe` tips é carregado no objeto `PairGrid`.
+
+   * Diagonal (`map_diag`): Plota a distribuição de cada variável única (e.g., histograma com linha de densidade de kernel) usando `sns.distplot` na diagonal. O argumento `rug=True` adiciona `rug plots` (pequenas marcações) no eixo para indicar observações individuais.
+
+   * Triângulo Superior (`map_upper`): Plota gráficos de regressão (`regression plots`) usando `sns.regplot` nas células acima da diagonal, visualizando a relação e a linha de regressão linear entre os pares de variáveis.
+
+   * Triângulo Inferior (`map_lower`): Plota gráficos de densidade de kernel (Kernel Density Estimate - `KDE plots`) bivariados usando `sns.kdeplot` nas células abaixo da diagonal. Isso mostra a concentração conjunta dos dados entre os pares de variáveis.
+
 \newpage
 
-### Dados multivariado
+### Dados multivariados
+
+#### Cores
+#### Tamanho e formato
+#### Facetas
 
 \newpage
 
