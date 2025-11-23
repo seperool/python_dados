@@ -1,22 +1,19 @@
-ESCRITO EM 22/11/25
+ESCRITO EM 23/11/25
 ---
-PARA 23/11/25
+PARA 24/11/25
 ---
 Subir github:
 
 Doing:
-
     - Introdução à plotagem
         - seaborn
-            - Dados bivariados
-                - Relacionamentos aos pares (comentar código)
-                    - pairplot
-                    - PairGrid
-                    
+            - Dados multivariados
+                - Cores
+                - Tamanho e formato
+                - Facetas
+
 To do:
     - Introdução à plotagem
-        - seaborn
-            - Dados multivariado
         - Objetos do Pandas
         - Temas e estilos do seaborn
 
