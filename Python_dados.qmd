@@ -2976,6 +2976,10 @@ Sobre o código:
 
 ### Dados multivariados
 
+Conforme mencionamos na seção anterior, não há nenhum template que seja um padrão de fato para plotagem de dados multivariados.
+
+Possíveis maneiras de incluir mais informações são usar **cor**, **tamanho** e **formato** para distinguir os dados na plotagem.
+
 #### Cores
 #### Tamanho e formato
 #### Facetas
