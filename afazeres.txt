@@ -1,6 +1,6 @@
-ESCRITO EM 27/11/25
+ESCRITO EM 28/11/25
 ---
-PARA 28/11/25
+PARA 29/11/25
 ---
 Subir github:
 
@@ -21,7 +21,6 @@ To do:
         - seaborn
             - Dados bivariados
                 - Gráfico de dispersão
-                    - lmplot
                     - jointplot
                 - Plotagem hexbin
                 - Plotagem de densidade 2D
