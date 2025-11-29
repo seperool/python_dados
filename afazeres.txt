@@ -1,6 +1,6 @@
-ESCRITO EM 28/11/25
+ESCRITO EM 29/11/25
 ---
-PARA 29/11/25
+PARA 30/11/25
 ---
 Subir github:
 
@@ -20,8 +20,6 @@ To do:
     - scripts
         - seaborn
             - Dados bivariados
-                - Gráfico de dispersão
-                    - jointplot
                 - Plotagem hexbin
                 - Plotagem de densidade 2D
                     - kdeplot
