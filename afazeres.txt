@@ -1,6 +1,6 @@
-ESCRITO EM 01/12/25
+ESCRITO EM 03/12/25
 ---
-PARA 02/12/25
+PARA 04/12/25
 ---
 Subir github:
 
@@ -20,9 +20,6 @@ To do:
     - scripts
         - seaborn
             - Dados bivariados
-                - Plotagem de densidade 2D
-                    - kdeplot
-                    - jointplot
                 - Plotagem de barras
                     - barplot
                 - Gráfico de caixa
