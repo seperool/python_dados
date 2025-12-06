@@ -1,6 +1,6 @@
 ESCRITO EM 03/12/25
 ---
-PARA 04/12/25
+PARA 06/12/25
 ---
 Subir github:
 
@@ -20,8 +20,6 @@ To do:
     - scripts
         - seaborn
             - Dados bivariados
-                - Plotagem de barras
-                    - barplot
                 - Gráfico de caixa
                     - boxplot
                 - Plotagem de violino
