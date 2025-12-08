@@ -1,6 +1,6 @@
-ESCRITO EM 07/12/25
+ESCRITO EM 08/12/25
 ---
-PARA 08/12/25
+PARA 09/12/25
 ---
 Subir github:
 
@@ -20,8 +20,6 @@ To do:
     - scripts
         - seaborn
             - Dados bivariados
-                - Plotagem de violino
-                    - violinplot
                 - Relacionamentos aos pares
                     - pairplot
                     - PairGrid
