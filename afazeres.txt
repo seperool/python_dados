@@ -1,6 +1,6 @@
-ESCRITO EM 08/12/25
+ESCRITO EM 09/12/25
 ---
-PARA 09/12/25
+PARA 10/12/25
 ---
 Subir github:
 
@@ -19,7 +19,4 @@ To do:
 
     - scripts
         - seaborn
-            - Dados bivariados
-                - Relacionamentos aos pares
-                    - pairplot
-                    - PairGrid
+            - Dados multivariados
