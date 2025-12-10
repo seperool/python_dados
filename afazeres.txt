@@ -1,6 +1,6 @@
-ESCRITO EM 09/12/25
+ESCRITO EM 10/12/25
 ---
-PARA 10/12/25
+PARA 11/12/25
 ---
 Subir github:
 
@@ -20,3 +20,7 @@ To do:
     - scripts
         - seaborn
             - Dados multivariados
+                - Cores (hue)
+                    - violinplot (com e sem split)
+                    - lmplot
+                    - pairplot
