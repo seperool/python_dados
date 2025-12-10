@@ -2981,6 +2981,39 @@ Conforme mencionamos na seção anterior, não há nenhum template que seja um p
 Possíveis maneiras de incluir mais informações são usar **cor**, **tamanho** e **formato** para distinguir os dados na plotagem.
 
 #### Cores
+
+Quando usamos `violinplot`, podemos passar o parâmetro `hue` para colorir a plotagem de acordo com `sex`. É possível reduzir as informações redundantes fazendo com que cada metade dos violinos represente um `sex` diferente.
+
+* Com o parâmetro `split`:
+
+```{python}
+violin, ax = plt.subplots()
+ax = sns.violinplot(
+  x='time',
+  y='total_bill',
+  hue='sex',
+  data=tips,
+  split=True
+)
+```
+
+* Sem o parâmetro `split`:
+
+```{python}
+violin, ax = plt.subplots()
+ax = sns.violinplot(
+  x='time',
+  y='total_bill',
+  hue='sex',
+  data=tips,
+  split=False
+)
+```
+
+O parâmetro `split` (dividir) é crucial para reduzir a redundância e economizar espaço quando você usa o `hue` no `violinplot`.
+
+\newpage
+
 #### Tamanho e formato
 #### Facetas
 
