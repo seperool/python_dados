@@ -2987,6 +2987,7 @@ Quando usamos `violinplot`, podemos passar o parâmetro `hue` para colorir a plo
 * Com o parâmetro `split`:
 
 ```{python}
+#| warning: false
 violin, ax = plt.subplots()
 ax = sns.violinplot(
   x='time',
@@ -3000,6 +3001,7 @@ ax = sns.violinplot(
 * Sem o parâmetro `split`:
 
 ```{python}
+#| warning: false
 violin, ax = plt.subplots()
 ax = sns.violinplot(
   x='time',
@@ -3011,6 +3013,35 @@ ax = sns.violinplot(
 ```
 
 O parâmetro `split` (dividir) é crucial para reduzir a redundância e economizar espaço quando você usa o `hue` no `violinplot`.
+
+\newpage
+
+O parâmetro `hue` pode ser passado para várias outras funções de plotagem também.
+
+* O seu uso em um `lmplot`:
+
+```{python}
+#| warning: false
+# Observe o uso de lmplot no lugar de regplot
+scatter = sns.lmplot(
+  x='total_bill',
+  y='tip',
+  data=tips,
+  hue='sex',
+  fit_reg=False
+)
+```
+
+\newpage
+
+Podemos deixar nossas plotagens de pares um pouco mais significativas passando uma das variáveis de categoria como o parâmetro `hue`.
+
+* Essa abordagem em nosso `pairplot`:
+
+```{python}
+#| warning: false
+fig = sns.pairplot(tips, hue='sex')
+```
 
 \newpage
 
