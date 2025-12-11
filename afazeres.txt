@@ -1,6 +1,6 @@
-ESCRITO EM 10/12/25
+ESCRITO EM 11/12/25
 ---
-PARA 11/12/25
+PARA 12/12/25
 ---
 Subir github:
 
@@ -8,7 +8,6 @@ Doing:
     - Introdução à plotagem
         - seaborn
             - Dados multivariados
-                - Cores
                 - Tamanho e formato
                 - Facetas
 
