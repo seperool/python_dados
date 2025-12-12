@@ -3046,6 +3046,11 @@ fig = sns.pairplot(tips, hue='sex')
 \newpage
 
 #### Tamanho e formato
+
+
+
+\newpage
+
 #### Facetas
 
 \newpage
