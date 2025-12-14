@@ -3049,6 +3049,20 @@ fig = sns.pairplot(tips, hue='sex')
 
 Trabalhar com tamanho de pontos pode ser outra forma de acrescentar mais informações em uma plotagem. No entanto, essa opção deve ser usada com moderação, pois o olho humano não é muito bom para comparar áreas.
 
+```
+tips['size'] = tips['size'].astype(float)
+tips.dropna(subset=['size'], inplace=True)
+
+scatter = sns.lmplot(
+  x='total_bill',
+  y='tip',
+  data=tips,
+  fit_reg=False,
+  hue='sex',
+  scatter_kws={'s': (tips['size']*10)}
+)
+```
+
 \newpage
 
 #### Facetas
