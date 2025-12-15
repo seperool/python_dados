@@ -3049,17 +3049,38 @@ fig = sns.pairplot(tips, hue='sex')
 
 Trabalhar com tamanho de pontos pode ser outra forma de acrescentar mais informações em uma plotagem. No entanto, essa opção deve ser usada com moderação, pois o olho humano não é muito bom para comparar áreas.
 
-```
-tips['size'] = tips['size'].astype(float)
-tips.dropna(subset=['size'], inplace=True)
+Considere um exemplo de como o `seaborn` trabalha com chamadas de função da `matplotlib`. Se consultar a documentação de `lmplot`, você verá que ela aceita parâmetros de nomes `catter`, `line scatter`, `line_kws`.
 
+O parâmetro `scatter_kws` aceita um par chave-valor - um `dict` (dicionário) Python para ser mais exato. Pares chave-valor passados para `scatter_kws` são então passados para a função `plt.scatter` da `matplotlib`. É assim que acessaríamos o parâmetro `s` para alterar o tamanho dos pontos.
+
+\newpage
+
+* Alterando tamanho dos pontos no `lmplot`:
+
+```{python}
 scatter = sns.lmplot(
   x='total_bill',
   y='tip',
   data=tips,
   fit_reg=False,
   hue='sex',
-  scatter_kws={'s': (tips['size']*10)}
+  scatter_kws={'s': 80}
+)
+```
+
+\newpage
+
+* Alterando Formato dos pontos no `lmplot`:
+
+```{python}
+scatter = sns.lmplot(
+  x='total_bill',
+  y='tip',
+  data=tips,
+  fit_reg=False,
+  hue='sex',
+  markers=['o','x'],
+  scatter_kws={'s': 80}
 )
 ```
 
