@@ -1,6 +1,6 @@
-ESCRITO EM 14/12/25
+ESCRITO EM 15/12/25
 ---
-PARA 15/12/25
+PARA 16/12/25
 ---
 Subir github:
 
@@ -9,6 +9,7 @@ Doing:
         - seaborn
             - Dados multivariados
                 - Tamanho e formato
+                    - lmplot (Formato, parte escrita)
                 - Facetas
 
 To do:
@@ -22,3 +23,5 @@ To do:
                 - Cores (hue)
                     - lmplot
                     - pairplot
+                - Tamanho e formato
+                    - lmplot (Formato)
