@@ -3064,11 +3064,13 @@ scatter = sns.lmplot(
   data=tips,
   fit_reg=False,
   hue='sex',
-  scatter_kws={'s': 80}
+  scatter_kws={'s': 40}
 )
 ```
 
 \newpage
+
+Além disso, ao trabalhar com diversas variáveis, às vezes ter dois elementos de plotagem que mostrem as mesmas informações será conveniente. O uso de cor e tamanho para distinguir valores diferentes da variável `sex`.
 
 * Alterando Formato dos pontos no `lmplot`:
 
@@ -3080,7 +3082,7 @@ scatter = sns.lmplot(
   fit_reg=False,
   hue='sex',
   markers=['o','x'],
-  scatter_kws={'s': 80}
+  scatter_kws={'s': 40}
 )
 ```
 
