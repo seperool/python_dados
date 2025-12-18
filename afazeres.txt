@@ -1,6 +1,6 @@
-ESCRITO EM 17/12/25
+ESCRITO EM 18/12/25
 ---
-PARA 18/12/25
+PARA 19/12/25
 ---
 Subir github:
 
@@ -18,5 +18,6 @@ To do:
     - scripts
         - seaborn
             - Dados multivariados
-                - Tamanho e formato
-                    - lmplot (Formato)
+                - Facetas
+                    - lmplot
+                    - FacetGrid
