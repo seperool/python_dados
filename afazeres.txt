@@ -1,6 +1,6 @@
-ESCRITO EM 18/12/25
+ESCRITO EM 19/12/25
 ---
-PARA 19/12/25
+PARA 20/12/25
 ---
 Subir github:
 
@@ -9,6 +9,8 @@ Doing:
         - seaborn
             - Dados multivariados
                 - Facetas
+                    - lmplot
+                    - FacetGrid
 
 To do:
     - Introdução à plotagem
