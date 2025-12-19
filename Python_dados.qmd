@@ -3090,7 +3090,58 @@ scatter = sns.lmplot(
 
 #### Facetas
 
+"E se quiséssemos mostrar mais variáveis?"
 
+"Ou se soubermos qual plotagem queremos para a nossa visualização, mas desejamos fazer várias plotagens sobre uma categoria?"
+
+As facetas foram criadas para atender a essas necessidades. Em vez de ter de gerar subconjuntos de dados individuais e desenhar os eixos na figura (como visto no `subplots` do `matplotlib`, usando fatiamento de dados), as facetas `seaborn` podem cuidar dessa tarefa para você. 
+
+Para usar facetas, seus dados devem ser o que Hadley Wickham chama de "Tidy data" (Dados organizados), em que cada linha representa uma observação dos dados e cada coluna é uma variável (também conhecida como "dado longo" [long data]).
+
+* *Tidy Data* (**Dados Organizados**):
+
+É uma organização onde os dados são estruturados para análise. Segue três regras: 
+   
+   * cada **variável** em uma **coluna**; 
+   
+   * cada **observação** em uma **linha**; 
+   
+   * cada **valor** em uma **célula**. 
+
+Facilita o processamento vetorial no Pandas.
+
+* *Wide Data* (**Largo**):
+
+Neste formato, as informações de uma mesma categoria se espalham por várias colunas (ex: uma coluna para cada ano: 2021, 2022, 2023). É comum em planilhas financeiras por ser fácil de ler, mas dificulta a automação.
+
+* *Long Data* (**Longo**):
+
+Transforma as colunas do formato Wide em linhas. Usamos uma coluna para identificar a variável (ex: Ano) e outra para o conteúdo (ex: Valor). É o formato exigido pelo Seaborn para criar gráficos comparativos de forma automática.
+
+\newpage
+
+Recriação dos dados do quarteto de Anscombe no `seaborn`:
+
+```{python}
+anscombe_plot = sns.lmplot(
+    x='x',                   # Eixo horizontal
+    y='y',                   # Eixo vertical
+    data=anscombe,           # Fonte dos dados
+    fit_reg=False,           # Remove linha de regressão
+    col='dataset',           # Cria subplots por categoria
+    col_wrap=2,              # Limita a 2 colunas por linha
+    height=2,                # Altura de cada quadro (em polegadas)
+    aspect=1                 # Razão largura/altura (1 = quadrado)
+)
+```
+
+Tudo que fizemos para criar essa visualização foi passar dois parâmetros para a função de gráfico de dispersão no `seaborn`.
+
+Parâmetros:
+
+   * `col`: É a variável que define a faceta da plotagem. Cria subplots por categoria;
+   
+   * `col_wrap`: Cria uma figura com duas colunas. Se o parâmetro `col_wrap` não for usado, todas as quatro plotagens serão feitas na mesma linha.
 
 \newpage
 
