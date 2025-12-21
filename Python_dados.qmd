@@ -3058,6 +3058,7 @@ O parâmetro `scatter_kws` aceita um par chave-valor - um `dict` (dicionário) P
 * Alterando tamanho dos pontos no `lmplot`:
 
 ```{python}
+#| warning: false
 scatter = sns.lmplot(
   x='total_bill',
   y='tip',
@@ -3075,6 +3076,7 @@ Além disso, ao trabalhar com diversas variáveis, às vezes ter dois elementos 
 * Alterando Formato dos pontos no `lmplot`:
 
 ```{python}
+#| warning: false
 scatter = sns.lmplot(
   x='total_bill',
   y='tip',
@@ -3123,6 +3125,7 @@ Transforma as colunas do formato Wide em linhas. Usamos uma coluna para identifi
 Recriação dos dados do quarteto de Anscombe no `seaborn`:
 
 ```{python}
+#| warning: false
 anscombe_plot = sns.lmplot(
     x='x',                   # Eixo horizontal
     y='y',                   # Eixo vertical
@@ -3142,6 +3145,47 @@ Parâmetros:
    * `col`: É a variável que define a faceta da plotagem. Cria subplots por categoria;
    
    * `col_wrap`: Cria uma figura com duas colunas. Se o parâmetro `col_wrap` não for usado, todas as quatro plotagens serão feitas na mesma linha.
+
+\newpage
+
+Já discutimos as diferenças entre `lmplot` e `regplot`. `lmplot` é uma função no âmbito de figura. Em oposição, muitas das plotagens que criamos no `seaborn` são funções no âmbito de eixos. Isso significa que nem toda função de plotagem terá parâmetros `col` e `col_wrap` para facetas. Em vez disso, devemos criar um `FaceGrid` que saberá sobre qual variável deverá criar a faceta, e então fornecer o código da plotagem individual para cada faceta.
+
+Uma faceta criada manualmente:
+
+```{python}
+#| warning: false
+# Cria a FaceGrid
+facet = sns.FacetGrid(       # Inicializa a grade baseada na coluna 'time'
+  tips,
+  col='time'
+)
+# Para cada valor de tempo, plota um histograma do total da conta
+facet.map(                   # Aplica a função de plotagem em cada subgráfico
+  sns.distplot,              # Define o tipo de gráfico (distribuição)
+  'total_bill',              # Define a variável do eixo X
+  rug=True                   # Adiciona marcas de densidade no eixo
+)
+```
+
+\newpage
+
+As facetas individuais não precisam ser plotagens univariadas.
+
+```{python}
+#| warning: false
+# Faceta multivariada, hue='sex'
+facet = sns.FacetGrid(      # Define a grade por 'day' e cores por 'sex'
+  tips,
+  col='day',
+  hue='sex'
+)
+facet = facet.map(          # Mapeia o gráfico de dispersão para a grade
+  plt.scatter,              # Define a função de plotagem (matplotib)
+  'total_bill',             # Variável do eixo X
+  'tip'                     # Variável do eixo Y
+)
+facet = facet.add_legend()  # Adiciona a legenda baseada no parâmetro 'hue'
+```
 
 \newpage
 
