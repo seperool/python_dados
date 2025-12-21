@@ -3189,7 +3189,108 @@ facet = facet.add_legend()  # Adiciona a legenda baseada no parâmetro 'hue'
 
 \newpage
 
+Podemos construir `seaborn` figure aos moldes de faceta.
+
+Se quiser continuar trabalhando com `seaborn`, pode criar a mesma plotagem usando `lmplot`.
+
+```{python}
+#| warning: false
+fig = sns.lmplot(
+    x='total_bill',    # Eixo X: valor da conta
+    y='tip',           # Eixo Y: valor da gorjeta
+    data=tips,         # Fonte dos dados
+    fit_reg=False,     # Remove a linha de regressão
+    hue='sex',         # Cor por categoria (gênero)
+    col='day'          # Cria subplots por dia
+)
+```
+
+\newpage
+
+Outra tarefa que pode ser feita com facetas é ter uma variável com faceta no eixo x e outra no eixo y. Fazemos isso passando um parâmetro `row`.
+
+```{python}
+#| warning: false
+facet = sns.FacetGrid(
+    tips,              # Fonte dos dados
+    col='time',        # Colunas por horário (almoço/jantar)
+    row='smoker',      # Linhas por fumante/não fumante
+    hue='sex',         # Cores por gênero
+    height=2.5,        # Altura de cada subplot (polegadas)
+    aspect=1           # Define a largura de cada gráfico 
+                       #como um múltiplo da altura
+                       #relação altura x largura
+)
+
+facet.map(
+    plt.scatter,       # Tipo de gráfico (dispersão)
+    'total_bill',      # Variável do eixo X
+    'tip'              # Variável do eixo Y
+)
+```
+
+\newpage
+
+O `col` e o `row` funcionam como segmentadores automáticos do seu DataFrame:
+
+   * `col` (*Column*): Filtra os dados em colunas verticais (cria subplots lado a lado).
+
+   * `row` (*Row*): Filtra os dados em linhas horizontais (cria subplots um abaixo do outro).
+
+O `seaborn` aplica um `groupby` automático nas variáveis escolhidas e desenha um gráfico para cada subconjunto resultante dessa interseção.
+
+\newpage
+
+Se você não quiser que todos os elementos `hue` se sobreponham (isto é, quer esse comportamento nos gráficos de dispersão,mas não nas plotagens de `violin` ou `boxplot`), use a função `sns.factorplot`.
+
+A função `factorplot` foi renomeada para `catplot` em versões recentes do `seaborn` para maior clareza, mas os parâmetros permanecem os mesmos.
+
+* `catplot` para plotagem `violin`:
+
+```{python}
+facet = sns.catplot(
+    x='day',           # Eixo X: categorias (dias)
+    y='total_bill',    # Eixo Y: valores numéricos
+    hue='sex',         # Cores por gênero
+    data=tips,         # Fonte dos dados
+    row='smoker',      # Linhas: filtro por fumante
+    col='time',        # Colunas: filtro por horário
+    kind='violin',     # Tipo de gráfico: violino
+    height=2.5,        # Altura de cada subplot (polegadas)
+    aspect=1           # Define a largura de cada gráfico 
+)
+```
+
+\newpage
+
+* `catplot` para plotagem `boxplot`:
+
+```{python}
+facet = sns.catplot(
+    x='day',           # Eixo X: categorias
+    y='total_bill',    # Eixo Y: valores
+    hue='sex',         # Cores por gênero
+    data=tips,         # Dados
+    row='smoker',      # Filtro em linhas
+    col='time',        # Filtro em colunas
+    kind='box',        # Tipo de gráfico: Boxplot
+    height=2.5,        # Altura de cada subplot (polegadas)
+    aspect=1           # Define a largura de cada gráfico 
+)
+```
+
+\newpage
+
 ## Objetos do Pandas
+
+### Histogramas
+### Plotagem de densidade
+### Gráfico de dispersão
+### Plotagem hexbin
+### Gráfico de caixa
+
+\newpage
+
 ## Temas e estilos do `seaborn`
 
 \newpage
