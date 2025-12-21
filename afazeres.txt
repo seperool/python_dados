@@ -1,20 +1,20 @@
-ESCRITO EM 20/12/25
+ESCRITO EM 21/12/25
 ---
-PARA 21/12/25
+PARA 22/12/25
 ---
 Subir github:
 
 Doing:
     - Introdução à plotagem
-        - seaborn
-            - Dados multivariados
-                - Facetas
-                    - lmplot
-                    - FacetGrid
+        - Objetos do Pandas
+            - Histogramas
+            - Plotagem de densidade
+            - Gráfico de dispersão
+            - Plotagem hexbin
+            - Gráfico de caixa
 
 To do:
     - Introdução à plotagem
-        - Objetos do Pandas
         - Temas e estilos do seaborn
 
     - scripts
@@ -23,3 +23,5 @@ To do:
                 - Facetas
                     - lmplot
                     - FacetGrid
+                    - catplot, kind=violin
+                    - catplot, kind=box
