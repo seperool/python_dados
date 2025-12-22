@@ -3248,6 +3248,7 @@ A função `factorplot` foi renomeada para `catplot` em versões recentes do `se
 * `catplot` para plotagem `violin`:
 
 ```{python}
+#| warning: false
 facet = sns.catplot(
     x='day',           # Eixo X: categorias (dias)
     y='total_bill',    # Eixo Y: valores numéricos
@@ -3266,6 +3267,7 @@ facet = sns.catplot(
 * `catplot` para plotagem `boxplot`:
 
 ```{python}
+#| warning: false
 facet = sns.catplot(
     x='day',           # Eixo X: categorias
     y='total_bill',    # Eixo Y: valores

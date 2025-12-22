@@ -1,6 +1,6 @@
-ESCRITO EM 21/12/25
+ESCRITO EM 22/12/25
 ---
-PARA 22/12/25
+PARA 23/12/25
 ---
 Subir github:
 
@@ -21,7 +21,6 @@ To do:
         - seaborn
             - Dados multivariados
                 - Facetas
-                    - lmplot
                     - FacetGrid
                     - catplot, kind=violin
                     - catplot, kind=box
