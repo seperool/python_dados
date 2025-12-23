@@ -1,6 +1,6 @@
-ESCRITO EM 22/12/25
+ESCRITO EM 23/12/25
 ---
-PARA 23/12/25
+PARA 24/12/25
 ---
 Subir github:
 
@@ -18,9 +18,4 @@ To do:
         - Temas e estilos do seaborn
 
     - scripts
-        - seaborn
-            - Dados multivariados
-                - Facetas
-                    - FacetGrid
-                    - catplot, kind=violin
-                    - catplot, kind=box
+        - Objetos do Pandas
