@@ -3285,6 +3285,12 @@ facet = sns.catplot(
 
 ## Objetos do Pandas
 
+Os objetos do Pandas também tem as próprias funções de plotagem.
+
+Assim como `seaborn`, as funções de plotagem incluídas no Pandas são apenas *wrappers* em torno da `matplotlib`, com valores predefinidos.
+
+Em geral, a plotagem usando o Pandas é feita de acordo com as funções `DataFrame.plot.TIPO_DA_PLOTAGEM` ou `Series.plot.TIPO_DA_PLOTAGEM`.
+
 ### Histogramas
 ### Plotagem de densidade
 ### Gráfico de dispersão
