@@ -1,13 +1,12 @@
-ESCRITO EM 26/12/25
+ESCRITO EM 27/12/25
 ---
-PARA 27/12/25
+PARA 28/12/25
 ---
 Subir github:
 
 Doing:
     - Introdução à plotagem
         - Objetos do Pandas
-            - Histogramas
             - Plotagem de densidade
             - Gráfico de dispersão
             - Plotagem hexbin
@@ -19,3 +18,8 @@ To do:
 
     - scripts
         - Objetos do Pandas
+            - Histogramas
+            - Plotagem de densidade
+            - Gráfico de dispersão
+            - Plotagem hexbin
+            - Gráfico de caixa
