@@ -3292,7 +3292,44 @@ Assim como `seaborn`, as funções de plotagem incluídas no Pandas são apenas 
 Em geral, a plotagem usando o Pandas é feita de acordo com as funções `DataFrame.plot.TIPO_DA_PLOTAGEM` ou `Series.plot.TIPO_DA_PLOTAGEM`.
 
 ### Histogramas
+
+Os histogramas podem ser criados usando a função `Series.plot.hist` ou a função `DataFrame.plot.hist`.
+
+* Em uma `Series`:
+
+```{python}
+#| warning: false
+#| fig-cap: "Histograma de uma Series do Pandas"
+fig, ax = plt.subplots()
+ax = tips['total_bill'].plot.hist()
+```
+
+\newpage
+
+* Em um `DataFrame`:
+
+```{python}
+#| warning: false
+#| fig-cap: "Histograma de um DataFrame do Pandas"
+# Define um canal de transparência alpha,
+#de modo que possamos ver através das barras que se sobrepõem.
+
+fig, ax = plt.subplots()
+ax = tips[['total_bill','tip']].plot.hist(
+  alpha=0.5,
+  bins=20,
+  ax=ax
+)
+```
+
+\newpage
+
 ### Plotagem de densidade
+
+
+
+\newpage
+
 ### Gráfico de dispersão
 ### Plotagem hexbin
 ### Gráfico de caixa
