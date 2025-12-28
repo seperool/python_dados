@@ -1,14 +1,12 @@
-ESCRITO EM 27/12/25
+ESCRITO EM 28/12/25
 ---
-PARA 28/12/25
+PARA 29/12/25
 ---
 Subir github:
 
 Doing:
     - Introdução à plotagem
         - Objetos do Pandas
-            - Plotagem de densidade
-            - Gráfico de dispersão
             - Plotagem hexbin
             - Gráfico de caixa
 
