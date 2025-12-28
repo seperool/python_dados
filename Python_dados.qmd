@@ -3195,6 +3195,8 @@ Se quiser continuar trabalhando com `seaborn`, pode criar a mesma plotagem usand
 
 ```{python}
 #| warning: false
+#| label: fig-seabornmv
+#| fig-cap: "Plotagem do seaborn com facetas criadas manualmente contendo diversas variáveis."
 fig = sns.lmplot(
     x='total_bill',    # Eixo X: valor da conta
     y='tip',           # Eixo Y: valor da gorjeta
@@ -3211,6 +3213,8 @@ Outra tarefa que pode ser feita com facetas é ter uma variável com faceta no e
 
 ```{python}
 #| warning: false
+#| label: fig-seaborn2v
+#| fig-cap: "Plotagem do seaborn com facetas criadas manualmente com duas variáveis."
 facet = sns.FacetGrid(
     tips,              # Fonte dos dados
     col='time',        # Colunas por horário (almoço/jantar)
@@ -3249,6 +3253,8 @@ A função `factorplot` foi renomeada para `catplot` em versões recentes do `se
 
 ```{python}
 #| warning: false
+#| label: fig-seaborncatviolin
+#| fig-cap: "Plotagem do seaborn com facetas criadas manualmente com duas variáveis violin."
 facet = sns.catplot(
     x='day',           # Eixo X: categorias (dias)
     y='total_bill',    # Eixo Y: valores numéricos
@@ -3268,6 +3274,8 @@ facet = sns.catplot(
 
 ```{python}
 #| warning: false
+#| label: fig-seaborncatbox
+#| fig-cap: "Plotagem do seaborn com facetas criadas manualmente com duas variáveis boxplot."
 facet = sns.catplot(
     x='day',           # Eixo X: categorias
     y='total_bill',    # Eixo Y: valores
@@ -3299,7 +3307,8 @@ Os histogramas podem ser criados usando a função `Series.plot.hist` ou a funç
 
 ```{python}
 #| warning: false
-#| fig-cap: "Histograma de uma Series do Pandas"
+#| label: fig-histpandasS
+#| fig-cap: "Histograma de uma Series do Pandas."
 fig, ax = plt.subplots()
 ax = tips['total_bill'].plot.hist()
 ```
@@ -3310,7 +3319,8 @@ ax = tips['total_bill'].plot.hist()
 
 ```{python}
 #| warning: false
-#| fig-cap: "Histograma de um DataFrame do Pandas"
+#| label: fig-histpandasdf
+#| fig-cap: "Histograma de um DataFrame do Pandas."
 # Define um canal de transparência alpha,
 #de modo que possamos ver através das barras que se sobrepõem.
 
@@ -3326,12 +3336,42 @@ ax = tips[['total_bill','tip']].plot.hist(
 
 ### Plotagem de densidade
 
+A plotagem de estimativa de densidade por kernel (densidade) pode ser criada com a função `DataFrame.plot.kde`.
 
+```{python}
+#| warning: false
+#| label: fig-kdepandasdf
+#| fig-cap: "Plotagem de KDE do Pandas."
+fig, ax = plt.subplots()
+ax = tips['tip'].plot.kde()
+```
 
 \newpage
 
 ### Gráfico de dispersão
+
+Os gráficos de dispersão são criados usando a função `DataFrame.plot.scatter`.
+
+```{python}
+#| warning: false
+#| label: fig-scatterpandasdf
+#| fig-cap: "Gráfico de dispersão do Pandas."
+fig, ax = plt.subplots()
+ax = tips.plot.scatter(
+  x='total_bill',
+  y='tip',
+  ax=ax
+)
+```
+
+\newpage
+
 ### Plotagem hexbin
+
+
+
+\newpage
+
 ### Gráfico de caixa
 
 \newpage
