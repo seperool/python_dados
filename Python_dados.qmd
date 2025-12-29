@@ -3368,7 +3368,36 @@ ax = tips.plot.scatter(
 
 ### Plotagem hexbin
 
+As plotagens `hexbin` são criadas usando a função `DataFrame.plot.hexbin`.
 
+```{python}
+#| warning: false
+#| label: fig-hexbinpandasdf
+#| fig-cap: "Plotagem hexbin Pandas."
+fig, ax = plt.subplots()
+ax = tips.plot.hexbin(
+  x='total_bill',
+  y='tip',
+  ax=ax
+)
+```
+
+\newpage
+
+O tamanho da grade pode ser ajustado com o parâmetro `gridsize`.
+
+```{python}
+#| warning: false
+#| label: fig-sizehexbinpandasdf
+#| fig-cap: "Plotagem hexbin do Pandas com tamanho de grade modificado."
+fig,ax = plt.subplots()
+ax = tips.plot.hexbin(
+  x='total_bill',
+  y='tip',
+  gridsize=10,
+  ax=ax
+)
+```
 
 \newpage
 
