@@ -3403,9 +3403,73 @@ ax = tips.plot.hexbin(
 
 ### Gráfico de caixa
 
+Os gráficos de caixa (boxplot) são criados com a função `DataFrame.plot.box`.
+
+```{python}
+#| warning: false
+#| label: fig-boxpandasdf
+#| fig-cap: "Plotagem de caixas do Pandas."
+fig, ax = plt.subplots()
+ax = tips.plot.box(
+  ax=ax
+)
+```
+
 \newpage
 
 ## Temas e estilos do `seaborn`
+
+Todas as plotagens do `seaborn` mostradas nesse capítulo usaram os estilos de plotagem default.
+
+Podemos alterar o estilo de plotagem com a função `sns.set_style`.
+
+Em geral, essa função é executada comente uma vez, no início de seu código; todas as plotagens subsequentes usarão o mesmo conjunto de estilos.
+
+Os estilos incluídos no `seaborn` são:
+* `darkgrid`
+* `whitegrid`
+* `dark`
+* `white`
+* `ticks`
+
+A @fig-stylebasicsns mostra uma plotagem básica, enquanto a @fig-stylewhitegridsns exibe uma plotagem com estilo `whitegrid`.
+
+```{python}
+#| warning: false
+#| label: fig-stylebasicsns
+#| fig-cap: "Estilo básico do seaborn."
+# Plotagem inicial para comparação
+fig, ax = plt.subplots()
+ax = sns.violinplot(
+  x='time',
+  y='total_bill',
+  hue='sex',
+  data=tips,
+  split=True
+)
+```
+
+\newpage
+
+```{python}
+#| warning: false
+#| label: fig-stylewhitegridsns
+#| fig-cap: "Estilo whitegrid do seaborn."
+# Define o estilo e faz a plotagem
+sns.set_style('whitegrid')
+fig, ax = plt.subplots()
+ax = sns.violinplot(
+  x='time',
+  y='total_bill',
+  hue='sex',
+  data=tips,
+  split=True
+)
+```
+
+\newpage
+
+## Conclusão
 
 \newpage
 
