@@ -1,17 +1,16 @@
-ESCRITO EM 29/12/25
+ESCRITO EM 30/12/25
 ---
-PARA 30/12/25
+PARA 31/12/25
 ---
 Subir github:
 
 Doing:
     - Introdução à plotagem
-        - Objetos do Pandas
-            - Gráfico de caixa
-
+        - Temas e estilos do seaborn
+        
 To do:
     - Introdução à plotagem
-        - Temas e estilos do seaborn
+        - Conclusão
 
     - scripts
         - Objetos do Pandas
