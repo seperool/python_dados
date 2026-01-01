@@ -1,5 +1,6 @@
 ---
 title: "Estudo de Python e dados"
+subtitle: "Introdução: Básico de DataFrame Pandas, Estrutura de dados Pandas e Visualização com Pandas, Matplotlib e Seaborn"
 author: "Sergio Pedro Rodrigues Oliveira"
 date: last-modified
 date-format: DD MMMM YYYY
@@ -72,7 +73,7 @@ import seaborn as sns
 
 # Objetivo
 
-O objetivo deste estudo é explorar e documentar as funcionalidades essenciais das principais bibliotecas científicas do Python, como NumPy, Pandas e outras, através de exemplos práticos e casos de uso selecionados. Pretende-se consolidar o conhecimento sobre a manipulação, análise e visualização de dados, servindo como um guia de referência pessoal para futuros projetos de programação científica.
+O objetivo deste estudo é explorar e documentar as funcionalidades essenciais das principais bibliotecas científicas do Python, como `NumPy`, `Pandas` e outras, através de exemplos práticos e casos de uso selecionados. Pretende-se consolidar o conhecimento sobre a manipulação, análise e visualização de dados, servindo como um guia de referência pessoal para futuros projetos de programação científica.
 
 # Básico sobre o `DataFrame` do Pandas
 
@@ -3469,7 +3470,38 @@ ax = sns.violinplot(
 
 \newpage
 
+O código a seguir mostra a aparência de todos os estilos:
+
+```{python}
+#| warning: false
+#| label: fig-stylessns
+#| fig-cap: "Todos os estilos seaborn."
+fig=plt.figure()
+seaborn_styles=['darkgrid','whitegrid',
+'dark','white','ticks']
+for idx, style in enumerate(seaborn_styles):
+  plot_position = idx + 1
+  with sns.axes_style(style):
+    ax = fig.add_subplot(2,3,plot_position)
+    violin = sns.violinplot(
+      x='time',
+      y='total_bill',
+      data=tips,
+      ax=ax
+    )
+    violin.set_title(style)
+fig.tight_layout()
+```
+
+\newpage
+
 ## Conclusão
+
+A visualização de dados é parte integrante da análise de dados exploratória e da apresentação dos dados.
+
+Este capítulo apresentou uma introdução das diversas maneiras de explorar e apresentar seus dados. À medida que avançamos no livro, conheceremos visualizações mais complexas.
+
+Há uma variedade de recursos de plotagem e visualização disponíveis na internet. A documentação `seaborn`, a documentação de visualização `Pandas` e a documentação da `matplotlib` descrevem maneiras de ajustar melhor as suas plotagens (por exemplo, cores, espessura das linhas, posicionamento de legendas, anotações na figura). Outros recursos incluen o `colorbrewer` para ajudar a selecionar bons esquemas de cores. As bibliotecas de plotagem mencionadas neste capítulo também têm diversos esquemas de cores que podem ser usados para dar ênfase ao conteúdo de suas visualizações.
 
 \newpage
 
