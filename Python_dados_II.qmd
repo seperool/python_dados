@@ -1,0 +1,84 @@
+---
+title: "Estudo de Python e dados II"
+subtitle: "Manipulação de dados: Preparação de dados, dados ausentes e Tidy data"
+author: "Sergio Pedro Rodrigues Oliveira"
+date: last-modified
+date-format: DD MMMM YYYY
+lang: pt
+format:
+    html:
+        code-fold: true
+        number-sections: true
+    pdf:
+      toc: false
+      lof: false
+      lot: false
+      toc-depth: 5
+      number-sections: true
+      number-depth: 5
+      colorlinks: true
+      cite-method: biblatex
+    docx:
+      toc: true
+      number-sections: true
+      highlight-style: github
+jupyter: python3
+bibliography: Quarto/pythonbibliografia.bib
+csl: Quarto/abnt.csl
+---
+
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{roman}
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\contentsname}{SUMÁRIO}
+\tableofcontents
+```
+
+\newpage
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\listfigurename}{LISTA DE FIGURAS}
+\listoffigures
+```
+\newpage
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\listtablename}{LISTA DE TABELAS}
+\listoftables
+```
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+from IPython.display import Markdown
+from tabulate import tabulate
+import math
+import statistics
+import numpy as np
+import pandas as pd
+import json
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+\newpage
+\pagenumbering{arabic}
+
+# Objetivo
+
+O objetivo deste estudo é explorar e documentar as funcionalidades essenciais das principais bibliotecas científicas do Python, como `NumPy`, `Pandas` e outras, através de exemplos práticos e casos de uso selecionados. Pretende-se consolidar o conhecimento sobre a manipulação, análise e visualização de dados, servindo como um guia de referência pessoal para futuros projetos de programação científica.
+
+# Preparação dos dados
+# Dados Ausentes
+# Tidy data (dados organizados)
+
+\newpage
+
+# Referências
