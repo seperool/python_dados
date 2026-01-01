@@ -1,18 +1,17 @@
-ESCRITO EM 31/12/25
+ESCRITO EM 01/01/26
 ---
-PARA 01/01/26
+PARA 02/01/26
 ---
 Subir github:
 
-Doing:
-    - Introdução à plotagem
-        - Temas e estilos do seaborn
+Doing:  
+    - Manipulção de dados
+        - Preparação dos dados
         
 To do:
-    - Introdução à plotagem
-        - Conclusão
+    - Manipulção de dados
+        - Preparação dos dados
+        - Dados ausentes
+        - Tidy data (dados organizados)
 
     - scripts
-        - Objetos do Pandas
-            - Plotagem hexbin
-            - Gráfico de caixa
