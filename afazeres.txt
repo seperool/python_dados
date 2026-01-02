@@ -1,16 +1,20 @@
-ESCRITO EM 01/01/26
+ESCRITO EM 02/01/26
 ---
-PARA 02/01/26
+PARA 03/01/26
 ---
 Subir github:
 
 Doing:  
     - Manipulção de dados
         - Preparação dos dados
+            - Tidy data
+            - Concatenação
+            - Combinando vários conjuntos de dados
+            - Conclusão
+
         
 To do:
     - Manipulção de dados
-        - Preparação dos dados
         - Dados ausentes
         - Tidy data (dados organizados)
 
