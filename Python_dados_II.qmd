@@ -75,7 +75,40 @@ import seaborn as sns
 
 O objetivo deste estudo é explorar e documentar as funcionalidades essenciais das principais bibliotecas científicas do Python, como `NumPy`, `Pandas` e outras, através de exemplos práticos e casos de uso selecionados. Pretende-se consolidar o conhecimento sobre a manipulação, análise e visualização de dados, servindo como um guia de referência pessoal para futuros projetos de programação científica.
 
+\newpage
+
 # Preparação dos dados
+
+## Introdução
+
+A essa altura, você deverá ser capaz de carregar dados no `Pandas` e fazer algumas visualização básica. Essa parte do livro tem como foco várias tarefas de limpeza dos dados. Começaremos com a preparação de um conjunto de dados para análise por meio da combinação de diversos conjuntos.
+
+### Mapa conceitual {.unnumbered}
+
+#. Conhecimento prévio
+   #. Carga de dados;
+   #. Obtenção de subconjuntos de dados;
+   #. Funções e métodos de classe.
+
+### Objetivos {.unnumbered}
+
+Este capítulo abordará:
+   
+   #. *Tidy data* (dados organizados);
+   
+   #. Concatenação de dados;
+   
+   #. Combinação (merge) de conjunto de dados.
+
+\newpage
+
+## Tidy data
+## Concatenação
+## Combinando vários conjuntos de dados
+## Conclusão
+
+\newpage
+
 # Dados Ausentes
 # Tidy data (dados organizados)
 
