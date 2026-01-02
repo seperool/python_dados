@@ -100,6 +100,13 @@ Este capítulo abordará:
    
    #. Combinação (merge) de conjunto de dados.
 
+```{mermaid}
+graph TD
+    A[Preparação dos dados] --> B[Tidy Data]
+    A --> C[Concatenação de dados]
+    A --> D[merge]
+```
+
 \newpage
 
 ## Tidy data
