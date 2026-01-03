@@ -57,6 +57,9 @@ csl: Quarto/abnt.csl
 #| echo: false
 #| error: false
 #| warning: false
+
+# Bibliotecas para o funcionamento do documento Quarto
+
 from IPython.display import Markdown
 from tabulate import tabulate
 import math
@@ -101,6 +104,9 @@ Este capítulo abordará:
    #. Combinação (merge) de conjunto de dados.
 
 ```{mermaid}
+%%| label: fig-prepdados
+%%| fig-cap: "Preparação de dados, principais tópicos."
+
 graph TD
     A[Preparação dos dados] --> B[Tidy Data]
     A --> C[Concatenação de dados]
@@ -110,6 +116,45 @@ graph TD
 \newpage
 
 ## Tidy data
+
+Hadley Wickham, um dos mais proeminentes membros da comunidade **R**, fala sobre a ideia de *tidy data* (dados organizados). 
+
+Com efeito, ele escreveu um artigo sobre esse conceito no *Journal of Statistical Software*. *Tidy data* é um framework para estruturar [conjuntos de dados]{.underline} a fim de que sejam facilmente [analisados]{.underline}. É usado principalmente como um objetivo a que devemos visar quando [limpamos os dados]{.underline}. Depois que você compreender o que é o conceito de *tidy data*, esse conhecimento fará com que a [coleta de dados]{.underline} seja muito mais fácil.
+
+Então o que é *tidy data*? O artigo de Hadley Wickham o define como um conceito que atende aos seguintes critérios:
+
+#. "**Cada observação deve formar uma linha**" (Observation)
+
+   Uma observação é o conjunto de todas as medidas feitas em uma única unidade (ex: uma pessoa em um exame, um país em um ano específico).
+
+   * O erro comum: Repetir a mesma observação em várias colunas ou espalhar os dados de uma mesma pessoa em tabelas diferentes sem necessidade.
+
+   * O modo Tidy: Se você está analisando a saúde de pacientes, cada linha deve representar um paciente em um momento específico.
+
+#. "**Cada variável deve formar uma coluna**" (Variable)
+
+   Uma variável é um atributo que você mede (ex: Peso, Data, Temperatura).
+
+   * O erro comum: Ter colunas chamadas "Janeiro", "Fevereiro" e "Março". Aqui, o nome da variável é "Mês", e Janeiro/Fevereiro são apenas valores.
+
+   * O modo Tidy: Criar uma coluna única chamada Mes onde os valores são listados.
+
+#. "**Cada tipo de unidade observacional forma uma tabela**"
+
+   Esta regra foca na organização macro.
+
+   Sobre o terceiro critério do tidy data, as observações devem ser coerentes com a tabela, tornando-a objetiva quanto ao tipo de informação que deve armazenar. A ideia é que a tabela tenha um propósito único; ao misturar assuntos diferentes em uma mesma estrutura, fere-se a normalização dos dados.
+
+   * O erro comum: Misturar dados de "Clientes" com dados de "Vendas" na mesma tabela, causando redundância (ex: repetir o endereço do cliente toda vez que ele compra algo).
+
+   * O modo Tidy: Ter uma tabela para Clientes e outra para Vendas, relacionando-as por um ID. Isso facilita a manutenção e evita erros de digitação.
+
+\newpage
+
+### Combinando conjuntos de dados
+
+\newpage
+
 ## Concatenação
 ## Combinando vários conjuntos de dados
 ## Conclusão
