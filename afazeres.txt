@@ -1,6 +1,6 @@
-ESCRITO EM 02/01/26
+ESCRITO EM 03/01/26
 ---
-PARA 03/01/26
+PARA 04/01/26
 ---
 Subir github:
 
@@ -8,11 +8,11 @@ Doing:
     - Manipulção de dados
         - Preparação dos dados
             - Tidy data
+                - Combinando conjuntos de dados
             - Concatenação
             - Combinando vários conjuntos de dados
             - Conclusão
 
-        
 To do:
     - Manipulção de dados
         - Dados ausentes
