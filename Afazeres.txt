@@ -1,0 +1,34 @@
+# Python dados II - Afazeres
+
+ESCRITO EM | 04/01/26
+      PARA | 05/01/26
+
+## > NEXT STEP (Foco da próxima interação)
+- [ ] Finalizar "Concatenação".
+
+## 0. ROTINA
+- [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
+- [ ] 0.2 Subir progresso para o GitHub (Push final)
+
+## 1. DOING
+- [ ] Manipulação de dados
+    - [ ] Preparação dos dados
+        - [x] Tidy data
+            - [x] Combinando conjuntos de dados
+        - [ ] Concatenação
+            - [ ] Adicionando linhas
+                - [ ] Ignorando o índice
+            - [ ] Adicionando colunas
+            - [ ] Concatenação com índices diferentes
+                - [ ] Concatenando linhas com colunas diferentes
+                - [ ] Concatenando colunas com linhas diferentes
+        - [ ] Combinando vários conjuntos de dados
+        - [ ] Conclusão
+
+## 2. TO DO
+- [ ] Dados ausentes
+- [ ] Tidy data (dados organizados)
+
+## 3. SCRIPTS (Ideias e Backlog)
+- [x] [Ideia] Script para automação de X
+- [x] [Refatoração] Melhorar função Y
