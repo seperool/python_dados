@@ -141,9 +141,9 @@ Então o que é *tidy data*? O artigo de Hadley Wickham o define como um conceit
 
 #. "**Cada tipo de unidade observacional forma uma tabela**"
 
-   Esta regra foca na organização macro.
+   Esta regra foca na [organização macro]{.underline}.
 
-   Sobre o terceiro critério do tidy data, as observações devem ser coerentes com a tabela, tornando-a objetiva quanto ao tipo de informação que deve armazenar. A ideia é que a tabela tenha um propósito único; ao misturar assuntos diferentes em uma mesma estrutura, fere-se a normalização dos dados.
+   Sobre o terceiro critério do tidy data, [as observações devem ser coerentes com a tabela]{.underline}, tornando-a objetiva quanto ao tipo de informação que deve armazenar. A ideia é que [a tabela tenha um propósito único]{.underline}; ao misturar assuntos diferentes em uma mesma estrutura, fere-se a normalização dos dados.
 
    * O erro comum: Misturar dados de "Clientes" com dados de "Vendas" na mesma tabela, causando redundância (ex: repetir o endereço do cliente toda vez que ele compra algo).
 
@@ -153,9 +153,32 @@ Então o que é *tidy data*? O artigo de Hadley Wickham o define como um conceit
 
 ### Combinando conjuntos de dados
 
+Começaremos com o último critério de Hadley Wickham para *tidy data*: "cada tipo de unidade de observação forma uma tabela".
+
+Quando os dados estão organizados, é necessário combinar várias tabelas para responder a uma pergunta. Por exemplo, pode haver uma tabela separada que armazene informações de empresas e outra tabela contendo preços de ações. Se quisermos observar os preços de todas as ações no mercado de tecnologia, talvez antes tenhamos de encontrar todas as empresas de tecnologia na tabela de informações sobre empresas e então combinar esses dados com os preços das ações a fim de obter as informações de que precisamos para responder à nossa pergunta.
+
+Os dados podem ter sido separados em tabelas distintas para reduzir a quantidade de informações redundantes (não precisamos armazenar informações sobre as empresas em cada entrada de preço das ações), mas essa organização implica que, como analistas de dados, teremos de combinar os dados relevantes por conta própria para responder à nossa pergunta.
+
+Em outras ocasiões, um único conjunto de dados pode estar dividido em várias partes. Por exemplo, em dados de séries temporais, cada data pode estar em um arquivo separado. Em outro caso, um arquivo pode ter sido separado em partes para que os arquivos individuais fossem menores. Talvez você precise combinar dados de diversas origens para responder a uma pergunta (por exemplo, como combinar latitudes em longitudes com CEPs). Nos dois casos, você terá que combinar dados em um único dataframe de análise.
+
 \newpage
 
 ## Concatenação
+
+### Adicionando linhas
+#### Ignorando o índice
+
+\newpage
+
+### Adicionando colunas
+
+### Concatenação com índices diferentes
+#### Concatenando linhas com colunas diferentes
+#### Concatenando colunas com linhas diferentes
+
+
+\newpage
+
 ## Combinando vários conjuntos de dados
 ## Conclusão
 
