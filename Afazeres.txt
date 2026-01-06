@@ -1,10 +1,10 @@
 # Python dados II - Afazeres
 
-ESCRITO EM | 04/01/26
-      PARA | 05/01/26
+ESCRITO EM | 05/01/26
+      PARA | 06/01/26
 
 ## > NEXT STEP (Foco da próxima interação)
-- [ ] Finalizar "Concatenação".
+- [ ] Finalizar "Adicionando linhas".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
