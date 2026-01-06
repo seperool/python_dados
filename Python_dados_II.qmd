@@ -165,7 +165,31 @@ Em outras ocasiões, um único conjunto de dados pode estar dividido em várias 
 
 ## Concatenação
 
+Uma das maneiras mais (conceitualmente) fáceis de combinar dados é por meio da concatenação.
+
+Podemos pensar na concatenação como uma junção de linhas ou colunas em seus dados. Essa abordagem é possível se seus dados estiverem separados em partes ou se você fez um cálculo que queira concatenar ao seu conjunto de dados existente.
+
+A [concatenação]{.underline} é feita usando a [função `concat` do `Pandas`]{.underline}.
+
 ### Adicionando linhas
+
+Vamos começar com alguns conjuntos de dados de exemplo para que você veja o que realmente acontece.
+
+```{python}
+import pandas as pd
+
+df1 = pd.read_csv("Cap_04-Preparacao_dados/01-Concatenacao/concat_1.csv")
+df2 = pd.read_csv("Cap_04-Preparacao_dados/01-Concatenacao/concat_2.csv")
+df3 = pd.read_csv("Cap_04-Preparacao_dados/01-Concatenacao/concat_3.csv")
+
+print("dataframe_csv_1:")
+print(df1)
+print("dataframe_csv_2:")
+print(df2)
+print("dataframe_csv_3:")
+print(df3)
+```
+
 #### Ignorando o índice
 
 \newpage
