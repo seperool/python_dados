@@ -190,6 +190,24 @@ print("dataframe_csv_3:")
 print(df3)
 ```
 
+A operação de empilhar dataframes uns sobre os outros é feita com a função `concat` do `Pandas`. Todos os dataframes a serem concatenados são passados em uma `list`.
+
+```{python}
+row_concat = pd.concat([df1,df2,df3])
+print(row_concat)
+```
+
+Como podemos ver, `concat` empilha cegamente os dataframes. Se observar os nomes das linhas (isto é, seus índices), verá que eles são apenas uma versão empilhada dos índices originais das linhas.
+
+Se aplicarmos os diversos métodos para obtenção de subconjuntos, os subconjuntos serão obtidos conforme esperado.
+
+```{python}
+#Obtém o subconjunto da quarta linha do dataframe concatenado
+print(row_concat.iloc[3,])
+```
+
+\newpage
+
 #### Ignorando o índice
 
 \newpage
