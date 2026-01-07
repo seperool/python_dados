@@ -208,6 +208,22 @@ print(row_concat.iloc[3,])
 
 \newpage
 
+O que acontece se você usar `loc` para obter o subconjunto do novo dataframe?
+
+A função `loc` pega os subconjuntos pelo rótulo (nome da linha), logo pega todos os rótulos com mesmo nome, pegando assim 3 linhas diferentes com mesmo nome.
+
+```{python}
+print(row_concat.loc[3])
+```
+
+\newpage
+
+#### Concatenar `Series`
+
+Anteriormente apresentamos o processo de criar uma `Series`. No entanto, se criássemos uma nova série para concatenar em um dataframe, ela não seria concatenada corretamente.
+
+\newpage
+
 #### Ignorando o índice
 
 \newpage
