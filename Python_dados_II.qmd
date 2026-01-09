@@ -292,6 +292,16 @@ print(df1.append(data_dict, ignore_index=True))
 
 #### Ignorando o índice
 
+No último exemplo, quando adicionamos um `dict` em um dataframe, tivemos que usar [o parâmetro `ignore_index`]{.underline}. Se observarmos com mais atenção, veremos que [o índice da linha também foi incrementado em 1]{.underline}, e não houve repetição de um valor de índice anterior.
+
+Se simplesmente queremos concatenar os dados, podemos usar o parâmetro [`ignore_index` para reiniciar o índice da linha após a concatenação]{.underline}.
+
+```{python}
+row_concat_i = pd.concat([df1,df2,df3],
+ignore_index=True)
+print(row_concat_i)
+```
+
 \newpage
 
 ### Adicionando colunas
