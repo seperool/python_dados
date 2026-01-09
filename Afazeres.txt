@@ -1,7 +1,7 @@
 # Python dados II - Afazeres
 
-ESCRITO EM | 07/01/26
-      PARA | 08/01/26
+ESCRITO EM | 08/01/26
+      PARA | 09/01/26
 
 ## > NEXT STEP (Foco da próxima interação)
 - [ ] Finalizar "Adicionando linhas".
