@@ -222,6 +222,72 @@ print(row_concat.loc[3])
 
 Anteriormente apresentamos o processo de criar uma `Series`. No entanto, se criássemos uma nova série para concatenar em um dataframe, ela não seria concatenada corretamente.
 
+```{python}
+#Criar uma nova linha de dados
+new_row_series = pd.Series(['n1','n2','n3','n4'])
+print(new_row_series)
+```
+
+```{python}
+#Tentando adicionar a nova linha em um dataframe
+print(pd.concat([df1,new_row_series]))
+```
+
+O primeiro detalhe que você perceba são os valores [`NaN`]{.underline}. É simplesmente o modo Python de representar um ["valor ausente"]{.underline}.
+
+Esperávamos concatenar nossos novos valores como uma linha, mas isso não aconteceu. De fato, nosso código não só não concatenou os valores como uma linha, como também criou uma nova coluna totalmente desalinhada em relação ao restante dos dados.
+
+Se pararmos para pensar no que está acontecendo nesse caso, poderemos ver que o resultado, na verdade, faz sentido. Em primeiro lugar, se observarmos os novos índices adicionados, percebemos que são muito semelhantes aos resultados que obtivemos quando concatenamos dataframes antes. Os índices do objeto `new_row_series` são análogos aos números das linhas do dataframe.
+
+Além disso, como nossa série não tem uma coluna correspondente, nosso `new_row_series` foi adicionado em uma nova coluna.
+
+\newpage
+
+[Para corrigir esse problema]{.underline}, podemos [transformar a nossa série em um dataframe]{.underline}. Esse dataframe contém uma linha de dados, e os nomes das colunas são aqueles com as quais os dados serão associados.
+
+```{python}
+#Observe os colchetes duplos
+new_row_df = pd.DataFrame([['n1','n2','n3','n4']],columns=['A','B','C','D'])
+print(new_row_df)
+```
+
+```{python}
+print(pd.concat([df1,new_row_df]))
+```
+
+\newpage
+
+`concat` é uma função genérica capaz de concatenar vários [dados de uma só vez]{.underline}.
+
+Se você tiver de [concatenar um único objeto a um dataframe existente]{.underline}, a função `append` poderá cauidar dessa tarefa.
+
+[O método `.append()` foi descontinuado]{.underline} nas versões mais recentes do Pandas (acima da 2.0). Atualmente, a forma correta e recomendada de juntar DataFrames é usar o pd.concat().
+
+* Usando um `DataFrame`:
+
+```
+print(df1.append(df2))
+```
+
+* Usando um `DataFrame` com uma só linha:
+
+```
+print(df1.append(new_row_df))
+```
+
+* Usando um dicionário Python:
+
+```
+data_dict = {
+   'A': 'n1',
+   'B': 'n2',
+   'C': 'n3',
+   'D': 'n4'
+}
+
+print(df1.append(data_dict, ignore_index=True))
+```
+
 \newpage
 
 #### Ignorando o índice
