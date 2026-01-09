@@ -1,10 +1,10 @@
 # Python dados II - Afazeres
 
-ESCRITO EM | 08/01/26
-      PARA | 09/01/26
+ESCRITO EM | 09/01/26
+      PARA | 10/01/26
 
 ## > NEXT STEP (Foco da próxima interação)
-- [ ] Finalizar "Adicionando linhas".
+- "Adicionando colunas".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -15,9 +15,9 @@ ESCRITO EM | 08/01/26
     - [ ] Preparação dos dados
         - [x] Tidy data
             - [x] Combinando conjuntos de dados
-        - [ ] Concatenação
-            - [ ] Adicionando linhas
-                - [ ] Ignorando o índice
+        - [x] Concatenação
+            - [x] Adicionando linhas
+                - [x] Ignorando o índice
             - [ ] Adicionando colunas
             - [ ] Concatenação com índices diferentes
                 - [ ] Concatenando linhas com colunas diferentes
