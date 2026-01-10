@@ -306,6 +306,58 @@ print(row_concat_i)
 
 ### Adicionando colunas
 
+#### Concatenando colunas - axis {.unnumbered}
+
+Concatenar colunas é muito semelhante a concatenar linhas. A principal diferença esta no parâmetro `axis` da função `concat`.
+
+O valor [default de `axis` é `0`]{.underline}, portanto ele concatenará os [dados nas linhas]{.underline}. Entretanto, se passarmos [`axis=1`]{.underline} para a função, [os dados serão concatenados nas colunas]{.underline}.
+
+```{python}
+col_concat = pd.concat([df1,df2,df3],
+axis=1)
+print(col_concat)
+```
+
+#### Subconjuntos colunas {.unnumbered}
+
+Se tentarmos obter um [subconjunto de dados com base nos nomes das colunas]{.underline}, teremos um resultado similar aquele obtido se concatenássemos por linha e gerássemos um subconjunto pelo índice da linhas.
+
+```{python}
+print(col_concat['A'])
+```
+
+\newpage
+
+#### Adicionar uma única coluna {.unnumbered}
+
+[Adicionar uma única coluna]{.underline} em um dataframe pode ser feito diretamente, [sem usar nenhuma função específica do Pandas]{.underline}.
+
+Basta específicar [um novo nome de coluna e o vetor]{.underline} que você quer que seja atribuído a essa nova coluna.
+
+```{python}
+col_concat['new_col_list'] = ['n1','n2','n3','n4']
+print(col_concat)
+```
+
+```{python}
+col_concat['new_col_series'] = pd.Series(['n1','n2','n3','n4'])
+print(col_concat)
+```
+
+Usar a função `concat` continua funcionando, desde que você lhe passe um dataframe. Essa abordagem exige um pouco mais de código desnecessário.
+
+\newpage
+
+#### Reiniciando índices colunas {.unnumbered}
+
+Por fim, podemos [reiniciar os índices das colunas]{.underline} para que [não tenhamos nomes duplicados]{.underline}.
+
+```{python}
+print(pd.concat([df1,df2,df3], axis=1, ignore_index=True))
+```
+
+\newpage
+
 ### Concatenação com índices diferentes
 #### Concatenando linhas com colunas diferentes
 #### Concatenando colunas com linhas diferentes
