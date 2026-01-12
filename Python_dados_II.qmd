@@ -359,6 +359,11 @@ print(pd.concat([df1,df2,df3], axis=1, ignore_index=True))
 \newpage
 
 ### Concatenação com índices diferentes
+
+Os exemplos apresentados [até agora partiram de pressuposto]{.underline} de que estávamos executando uma [concatenação simples de linha ou de coluna]{.underline}. Também foi suposto que a(s) nova(s) linha(s) tinha(m) os mesmos nomes de colunas ou que a(s) coluna(s) tinha(m) os mesmos índices de linha.
+
+Esta seção aborda o que acontece quando os índices das linhas e das colunas não estão alinhados.
+
 #### Concatenando linhas com colunas diferentes
 #### Concatenando colunas com linhas diferentes
 
