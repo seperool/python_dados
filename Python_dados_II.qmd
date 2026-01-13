@@ -419,10 +419,49 @@ print(pd.concat([df1,df3],ignore_index=False, join='inner'))
 
 #### Concatenando colunas com linhas diferentes
 
+Vamos pegar nossos dataframes e modificá-los novamente de modo que tenham índices de linha diferente. Nesse caso, estamos tomando como base as mesmas modificações de dataframe feitas anteriormente.
+
+```{python}
+df1.index = [0,1,2,3]
+df2.index = [4,5,6,7]
+df3.index = [0,2,5,7]
+```
+
+```{python}
+print(df1)
+```
+
+```{python}
+print(df2)
+```
+
+```{python}
+print(df3)
+```
+
+\newpage
+
+Quando concatenamos ao longo de `axis=1`, temos o mesmo resultado de concatenar ao longo de `axis=0`. Os novos dataframes serão somados por coluna, havendo correspondência entre seus respectivos índices de linha. Indicadores de valores ausentes aparecerão nas áreas em que os índices não se alinham.
+
+```{python}
+col_concat = pd.concat([df1,df2,df3], axis=1)
+print(col_concat)
+```
+
+Assim como fizemos quando concatenamos por linha, podemos optar por [manter o resultado somente quando houver índices correspondentes]{.underline} usando [`join=inner`]{.underline}.
+
+```{python}
+print(pd.concat([df1,df3],axis=1,join='inner'))
+```
 
 \newpage
 
 ## Combinando vários conjuntos de dados
+
+### `merge` um a um
+### `merge` de muitos para um
+### `merge` de muitos para muitos
+
 ## Conclusão
 
 \newpage
