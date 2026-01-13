@@ -1,10 +1,10 @@
 # Python dados II - Afazeres
 
-ESCRITO EM | 12/01/26
-      PARA | 13/01/26
+ESCRITO EM | 13/01/26
+      PARA | 14/01/26
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Concatenando colunas com linhas diferentes".
+- "Combinando vários conjuntos de dados".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -19,10 +19,13 @@ ESCRITO EM | 12/01/26
             - [x] Adicionando linhas
                 - [x] Ignorando o índice
             - [x] Adicionando colunas
-            - [ ] Concatenação com índices diferentes
+            - [x] Concatenação com índices diferentes
                 - [x] Concatenando linhas com colunas diferentes
-                - [ ] Concatenando colunas com linhas diferentes
+                - [x] Concatenando colunas com linhas diferentes
         - [ ] Combinando vários conjuntos de dados
+            - [ ] merge um a um
+            - [ ] merge de muitos para um
+            - [ ] merge de muitos para muitos
         - [ ] Conclusão
 
 ## 2. TO DO
