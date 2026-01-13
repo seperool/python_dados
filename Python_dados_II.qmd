@@ -365,6 +365,58 @@ Os exemplos apresentados [até agora partiram de pressuposto]{.underline} de que
 Esta seção aborda o que acontece quando os índices das linhas e das colunas não estão alinhados.
 
 #### Concatenando linhas com colunas diferentes
+
+Vamos modificar nossos dataframes para os próximos exemplos:
+
+```{python}
+df1.columns = ['A','B','C','D']
+df2.columns = ['E','F','G','H']
+df3.columns = ['A','C','F','H']
+```
+
+```{python}
+print(df1)
+```
+
+```{python}
+print(df2)
+```
+
+```{python}
+print(df3)
+```
+
+\newpage
+
+Se tentarmos concatenar esses dataframes como fizemos anteriormente, os dataframes agora serão muito mais do que simplesmente empilhados uns sobre os outros. [As colunas se alinharão e `NaN` preencherá qualquer área que estaja faltando]{.underline}.
+
+```{python}
+row_concat = pd.concat([df1,df2,df3])
+print(row_concat)
+```
+
+Uma maneira de evitar a inclusão de valores `NaN` é manter [somente as colunas que sejam compartilhadas pela lista de objetos a serem concatenados]{.underline}. Um parâmetro chamado `join` faz isso.
+
+Por padrão, seu valor é `outer`, o que significa que todas as colunas serão mantidas.
+
+Porém, [podemos definir `join='inner'` para manter somente as colunas que sejam compartilhadas entre os conjuntos de dados]{underline}.
+
+Se tentarmos manter apenas as colunas de todos os três dataframes, teremos um dataframe vazio, pois não há nenhuma coluna em comum.
+
+```{python}
+print(pd.concat([df1,df2,df3], join='inner'))
+```
+
+\newpage
+
+[Se usarmos os dataframes que tenham colunas em comum, somente aquelas que sejam compartilhadas por todos serão devolvidas]{.underline}.
+
+```{python}
+print(pd.concat([df1,df3],ignore_index=False, join='inner'))
+```
+
+\newpage
+
 #### Concatenando colunas com linhas diferentes
 
 
