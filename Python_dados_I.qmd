@@ -219,7 +219,7 @@ print(df.head())
          ]
   Markdown(tabulate(
   table, 
-  headers=["Informação","Discrição"],
+  headers=["Informação","Descrição"],
   colalign=("left","left")
   ))
   ```
@@ -247,7 +247,7 @@ table = [["object","string","Cadeia de caracteres, usado para representar texto.
          ]
 Markdown(tabulate(
   table, 
-  headers=["Tipo do Pandas","Tipo de Python","Discrição"],
+  headers=["Tipo do Pandas","Tipo de Python","Descrição"],
   colalign=("left","left","left")
 ))
 ```
@@ -327,7 +327,7 @@ table = [["`loc`","Subconjunto baseado no rótulo do índice \n(**nome** da linh
          ]
 Markdown(tabulate(
   table, 
-  headers=["Método para obtenção de subconjuntos","Discrição"],
+  headers=["Método para obtenção de subconjuntos","Descrição"],
   colalign=("left","left")
 ))
 ```
