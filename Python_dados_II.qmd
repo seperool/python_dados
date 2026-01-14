@@ -458,6 +458,64 @@ print(pd.concat([df1,df3],axis=1,join='inner'))
 
 ## Combinando vários conjuntos de dados
 
+A seção anterior fez alusão a alguns conceitos de banco de dados. Os parâmetros `join='inner'` e o default `join='outer'` têm origem no modo de trabalhar com banco de dados quando queremos combinar tabelas.
+
+Em vez de simplesmente ter um índice de linha ou de coluna que queremos usar para concaternar valores, às vezes podemos ter dois ou mais dataframes que queremos combinar com base em valores de dados comuns. Essa tarefa é conhecida no mundo dos bancos de dados como a execução de uma "junção" (`join`).
+
+O Pandas tem um comando `pd.join` que usa `pd.merge` internamente. `join` fará a combinação (`merge`) de objetos com base em um índice, mas o comando `merge` é muito mais explícito e flexível. Se você planeja combinar dataframes pelo índice da linha, por exemplo, poderá consultar a função `join`.
+
+Usaremos conjuntos de dados de pesquisa nessa série de exemplos.
+
+```{python}
+person = pd.read_csv('./Data/Cap_04/survey_person.csv')
+site = pd.read_csv('./Data/Cap_04/survey_site.csv')
+survey = pd.read_csv('./Data/Cap_04/survey_survey.csv')
+visited = pd.read_csv('./Data/Cap_04/survey_visited.csv')
+```
+
+```{python}
+print(person)
+```
+
+```{python}
+print(site)
+```
+
+\newpage
+
+```{python}
+print(survey)
+```
+
+```{python}
+print(visited)
+```
+
+\newpage
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-pandassql
+#| tbl-cap: Como o parâmetro *how* do **Pandas** se relaciona com o **SQL**
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["`left`","`left outer`","Mantém todas as chaves da esquerda."],
+         ["`right`","`right outer`","Mantém todas as chaves da direita."],
+         ["`outer`","`full outer`","Mantém todas as chaves tanto da esquerda quanto da direita."],
+         ["`inner`","`inner`","Mantém somente as chaves que existem tanto na esquerda quanto na direita."]
+         ]
+Markdown(tabulate(
+  table, 
+  headers=["**Pandas**","**SQL**","Descrição"],
+  colalign=("left","left","left")
+  ))
+```
+
+\newpage
+
 ### `merge` um a um
 ### `merge` de muitos para um
 ### `merge` de muitos para muitos
