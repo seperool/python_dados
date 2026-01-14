@@ -1,7 +1,7 @@
 # Python dados II - Afazeres
 
-ESCRITO EM | 13/01/26
-      PARA | 14/01/26
+ESCRITO EM | 14/01/26
+      PARA | 15/01/26
 
 ## > NEXT STEP (Foco da próxima interação)
 - "Combinando vários conjuntos de dados".
