@@ -493,6 +493,12 @@ print(visited)
 
 \newpage
 
+No momento, nossos dados estão separados em várias partes, cada uma sendo uma unidade de observação. Se quiséssemos observar as datas de cada local, junto com as informações de latitude e longitude desse local, teríamos de [combinar (e fazer um `merge`) de vários dataframes]{.underline}.Isso pode ser feito com a [função `merge` do Pandas]{.underline}. `merge` é, na verdade, um método de `dataframe`.
+
+Quando chamamos esse método, o dataframe chamado será referenciado como '`left`'. Na função `merge`, o primeiro parâmetro é o dataframe '`right`'. O próximo parâmetro indica como o resultado final combinado se parecerá (`how`). A @tbl-pandassql apresenta mais detalhes.
+
+Em seguida, definimos o parâmetro `on`. Ele especifica com quais colunas será feita a correspondência. Se as colunas a esquerda e à direita não tiverem o mesmo nome, poderemos usar os parâmetros `left_on` e `right_on` em seu lugar.
+
 ```{python}
 #| echo: false
 #| error: false
@@ -502,15 +508,39 @@ print(visited)
 
 from IPython.display import Markdown
 from tabulate import tabulate
-table = [["`left`","`left outer`","Mantém todas as chaves da esquerda."],
-         ["`right`","`right outer`","Mantém todas as chaves da direita."],
-         ["`outer`","`full outer`","Mantém todas as chaves tanto da esquerda quanto da direita."],
-         ["`inner`","`inner`","Mantém somente as chaves que existem tanto na esquerda quanto na direita."]
+table = [["`left`","`left outer`","Mantém todas as **chaves da esquerda**."],
+         ["`right`","`right outer`","Mantém todas as **chaves da direita**."],
+         ["`outer`","`full outer`","Mantém todas as **chaves** tanto da **esquerda** quanto da **direita**."],
+         ["`inner`","`inner`","Mantém **somente** as **chaves** que existem \n**tanto na esquerda quanto na direita**."]
          ]
 Markdown(tabulate(
   table, 
   headers=["**Pandas**","**SQL**","Descrição"],
   colalign=("left","left","left")
+  ))
+```
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-mergeparam
+#| tbl-cap: Parâmetros do `merge`
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["`left`","O primeiro DataFrame (base principal no caso de `left join`)."],
+         ["`right`",'O segundo DataFrame (o que será "anexado").'],
+         ["`how`","O tipo de união: '`left`', '`right`', '`inner`' (padrão) ou '`outer`'."],
+         ["`on`","Nome da coluna usada como chave (quando o nome é igual em ambos)."],
+         ["`left_on`","Nome da coluna chave no DataFrame da **esquerda**."],
+         ["`right_on`","Nome da coluna chave no DataFrame da **direita**."],
+         ["`suffixes`","Sufixos para diferenciar colunas com nomes iguais que não são chaves \n(ex: `_x`, `_y`)."]
+         ]
+Markdown(tabulate(
+  table, 
+  headers=["Parâmetro","Função"],
+  colalign=("left","left")
   ))
 ```
 
