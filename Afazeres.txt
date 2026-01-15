@@ -1,10 +1,10 @@
 # Python dados II - Afazeres
 
-ESCRITO EM | 14/01/26
-      PARA | 15/01/26
+ESCRITO EM | 15/01/26
+      PARA | 16/01/26
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Combinando vários conjuntos de dados".
+- "merge um a um".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
