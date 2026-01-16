@@ -547,8 +547,53 @@ Markdown(tabulate(
 \newpage
 
 ### `merge` um a um
+
+
+
 ### `merge` de muitos para um
 ### `merge` de muitos para muitos
+
+\newpage
+
+### Resumo
+
+O `pd.merge()` funciona de forma similar aos `JOIN`s do **SQL**. O que define o tipo de relação é a frequência com que as chaves de ligação aparecem em cada DataFrame.
+
+1. ***One-to-One*** (Um-para-Um - o2o)
+
+    Ocorre quando a chave de ligação é única em ambos os DataFrames. É como unir duas tabelas de informações diferentes sobre os mesmos indivíduos.
+
+    * **A lógica**: Cada linha da Tabela A encontra exatamente uma linha correspondente na Tabela B.
+
+    * **Impacto nas linhas**: O número de linhas do DataFrame resultante será igual ao número de chaves que coincidem. Nenhuma linha é duplicada; as colunas são apenas "esticadas" para o lado.
+
+    Exemplo: Uma tabela com `ID` e `Nome`, e outra com `ID` e `Cargo`.
+
+2. ***Many-to-One*** (Muitos-para-Um - m2o)
+
+    Ocorre quando uma das tabelas possui chaves repetidas, mas a outra possui apenas chaves únicas. O pandas preserva as repetições e propaga os dados da tabela "única".
+
+    * **A lógica**: Uma linha da Tabela B (o lado "One") corresponde a várias linhas da Tabela A (o lado "Many").
+
+    * **Impacto nas linhas**: As linhas da Tabela A são preservadas. O conteúdo da linha correspondente na Tabela B é copiado para cada uma dessas linhas.
+
+    * **Exemplo visual**: Se o "Vendedor 1" aparece em 10 linhas de vendas, os dados dele (nome, região) serão repetidos nessas 10 linhas no resultado final.
+
+    Exemplo: Uma tabela de **Vendas** (onde o `ID_Vendedor` se repete) e uma tabela de **Vendedores** (onde cada `ID_Vendedor` é único).
+
+3. ***Many-to-Many*** (Muitos-para-Muitos - m2m)
+
+    Ocorre quando a chave de ligação se repete em ambos os DataFrames. O resultado é um produto cartesiano das linhas correspondentes.
+
+    * **A lógica**: Uma chave aparece N vezes na Tabela A e M vezes na Tabela B.
+
+    * **Impacto nas linhas**: O Pandas cria todas as combinações possíveis entre elas. O número de linhas resultantes para aquela chave específica será $N \times M$.
+
+    * **Atenção**: Este é o caso mais perigoso, pois pode gerar um aumento explosivo no tamanho do seu DataFrame se você não estiver esperando por essas combinações.
+
+    Exemplo: Uma tabela de Produtos em promoção e uma tabela de Lojas que vendem esses produtos. Se um produto aparece 3 vezes na Tabela A e 2 vezes na Tabela B, o resultado terá $3 \times 2 = 6$ linhas para essa chave.
+
+\newpage
 
 ## Conclusão
 
