@@ -546,12 +546,40 @@ Markdown(tabulate(
 
 \newpage
 
-### `merge` um a um
+### `merge` um a um (one-to-one)
 
+No tipo mais simples de `merge`, temos dois dataframes em que queremos fazer a [junção de uma coluna com outra]{.underline}, e as colunas que queremos juntar não contém [nenhum valor duplicado]{.underline}.
 
+Nesse exemplo, modificamos o dataframe `visited` de modo que não haja valores duplicados de `site`.
 
-### `merge` de muitos para um
-### `merge` de muitos para muitos
+```{python}
+visited_subset = visited.loc[[0,2,6]]
+print(visited_subset)
+```
+
+Podemos fazer nosso `merge` um a um (***one-to-one***):
+
+```{python}
+#O valor default de 'how' é 'inner',
+# portanto, não precisa ser especificado.
+o2o_merge = site.merge(
+   visited_subset,
+   left_on='name',
+   right_on='site'
+)
+
+print(o2o_merge)
+```
+
+Como pode ver, criamos agora um novo dataframe a partir de dois dataframes diferentes, em que houve uma correspondência de linhas com base em um conjunto particular de colunas. [No jargão de **SQL**, as colunas usadas na correspondência são chamadas de "**chaves**"]{.underline}.
+
+\newpage
+
+### `merge` de muitos para um (many-to-one)
+
+\newpage
+
+### `merge` de muitos para muitos (many-to-many)
 
 \newpage
 
