@@ -1,10 +1,10 @@
 # Python dados II - Afazeres
 
-ESCRITO EM | 17/01/26
-      PARA | 18/01/26
+ESCRITO EM | 18/01/26
+      PARA | 19/01/26
 
 ## > NEXT STEP (Foco da próxima interação)
-- "merge de muitos para um".
+- "merge de muitos para muitos".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -24,7 +24,7 @@ ESCRITO EM | 17/01/26
                 - [x] Concatenando colunas com linhas diferentes
         - [ ] Combinando vários conjuntos de dados
             - [x] merge um a um
-            - [ ] merge de muitos para um
+            - [x] merge de muitos para um
             - [ ] merge de muitos para muitos
         - [ ] Conclusão
 
