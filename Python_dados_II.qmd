@@ -577,9 +577,27 @@ Como pode ver, criamos agora um novo dataframe a partir de dois dataframes difer
 
 ### `merge` de muitos para um (many-to-one)
 
+Se optarmos por fazer o mesmo `merge`, mas dessa vez sem usar o dataframe `visited` como subconjunto, fariamos um [`merge` de muitos para um (***many-to-one***)]{.underline}. Nesse tipo de merge, um dos dataframes tem valores de chave que se repetem.
+
+[Os dataframes contendo as observações únicas serão então duplicados no `merge`]{.underline}.
+
+```{python}
+m2o_merge = site.merge(
+   visited,
+   left_on='name',
+   right_on='site'
+)
+
+print(m2o_merge)
+```
+
+Como podemos ver, as informações de `site`(`name`, `lat` e `long`) foram duplicadas e houve correspondência com os dados de `visited`.
+
 \newpage
 
 ### `merge` de muitos para muitos (many-to-many)
+
+
 
 \newpage
 
