@@ -524,6 +524,32 @@ Markdown(tabulate(
 #| echo: false
 #| error: false
 #| warning: false
+#| label: tbl-how-examples
+#| tbl-cap: Comportamento do parâmetro `how` no merge
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+table = [
+    ["`inner` (padrão)", "Interseção", "Retorna apenas as linhas que possuem chaves \nem ambos os DataFrames."],
+    ["`left`","Prioriza a Esquerda", "Mantém todos os dados do DataFrame \nda esquerda e traz o que houver match da direita."],
+    ["`right`","Prioriza a Direita", "Mantém todos os dados do DataFrame \nda direita e traz o que houver match da esquerda."],
+    ["`outer`","União", "Retorna todos os registros de ambos. \nOnde não houver correspondência, preenche com `NaN`."]
+]
+
+Markdown(tabulate(
+  table, 
+  headers=["Tipo de Join", "Conceito", "Resultado Prático"],
+  colalign=("left", "left", "left")
+))
+```
+
+\newpage
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
 #| label: tbl-mergeparam
 #| tbl-cap: Parâmetros do `merge`
 
@@ -597,7 +623,49 @@ Como podemos ver, as informações de `site`(`name`, `lat` e `long`) foram dupli
 
 ### `merge` de muitos para muitos (many-to-many)
 
+Por fim, há ocasiões em que vamos querer efetuar uma correspondência baseada em várias colunas. Como exemplo, suponha que haja dois dataframes, provenientes de um `merge` entre `person` e `survey` e de outro entre `visited` com `survey`.
 
+```{python}
+ps = person.merge(
+   survey,
+   left_on='ident',
+   right_on='person'
+)
+
+vs = visited.merge(
+   survey,
+   left_on='ident',
+   right_on='taken'
+)
+```
+
+```{python}
+print(ps)
+```
+
+```{python}
+print(vs)
+```
+
+\newpage
+
+Podemos executar um merge de muitos para muitos (***many-to-many***) passando as várias colunas com as quais a correspondência será feita, usando uma lista Python.
+
+```{python}
+ps_vs = ps.merge(
+   vs,
+   left_on=['ident','taken','quant','reading'],
+   right_on=['person','ident','quant','reading']
+)
+```
+
+Vamos observar apenas a primeira linha:
+
+```{python}
+print(ps_vs.loc[0,])
+```
+
+[O Pandas acrescentará automaticamente um sufixo no nome de uma coluna se houver colisões no nome]{.underline}. Na saída, `_x` refere-se aos valores do dataframe à esquerda, enquanto o sufixo `_y` é proveniente dos valores do dataframe à direita. 
 
 \newpage
 
