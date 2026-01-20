@@ -709,11 +709,24 @@ O `pd.merge()` funciona de forma similar aos `JOIN`s do **SQL**. O que define o 
 
 \newpage
 
-## Conclusão
+## Conclusão preparação dos dados
+
+As vezes, [será preciso combinar diversas partes ou dados ou vários conjuntos de dados, conforme a pergunta que tiver tentano responder]{.underline}. Tenha em mente, porém, que os dados de que você precisar nas análises não estarão necessariamente no melhor formato usado para armazená-los.
+
+Os dados de pesquisa usados no último exemplo estavam separados em quatro partes que precisam ser combinadas. Depois que fizemos o `merge` das tabelas, muitas informações redundantes apareceram nas linhas. [Do ponto de vista da armazenagem de dados e de sua entrada, cada uma dessas duplicações pode lever a erros e inconsistência nos dados]{.underline}. É isso que Hadley quis dizer quando afirmou que, nos dados organizados (***Tidy data***), "cada tipo de unidade de observação forma uma tabela".
 
 \newpage
 
 # Dados Ausentes
+
+## Introdução
+## O que é um valor `NaN`?
+## De onde vêm os valores ausentes?
+## Trabalhando com dados ausentes
+## Conclusão dados ausentes
+
+\newpage
+
 # Tidy data (dados organizados)
 
 \newpage
