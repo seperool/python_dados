@@ -1,10 +1,10 @@
 # Python dados II - Afazeres
 
-ESCRITO EM | 19/01/26
-      PARA | 20/01/26
+ESCRITO EM | 20/01/26
+      PARA | 21/01/26
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Conclusão".
+- "Introdução".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -12,24 +12,14 @@ ESCRITO EM | 19/01/26
 
 ## 1. DOING
 - [ ] Manipulação de dados
-    - [ ] Preparação dos dados
-        - [x] Tidy data
-            - [x] Combinando conjuntos de dados
-        - [x] Concatenação
-            - [x] Adicionando linhas
-                - [x] Ignorando o índice
-            - [x] Adicionando colunas
-            - [x] Concatenação com índices diferentes
-                - [x] Concatenando linhas com colunas diferentes
-                - [x] Concatenando colunas com linhas diferentes
-        - [x] Combinando vários conjuntos de dados
-            - [x] merge um a um
-            - [x] merge de muitos para um
-            - [x] merge de muitos para muitos
-        - [ ] Conclusão
+    - [ ] Dados ausentes
+        - [ ] Introdução
+        - [ ] O que é um valor NaN?
+        - [ ] De onde vêm os valores ausentes?
+        - [ ] Trabalhando com dados ausentes
+        - [ ] Conclusão dados ausentes
 
 ## 2. TO DO
-- [ ] Dados ausentes
 - [ ] Tidy data (dados organizados)
 
 ## 3. SCRIPTS (Ideias e Backlog)
