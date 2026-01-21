@@ -1,26 +1,31 @@
-# Python dados II - Afazeres
+# ANÁLISE DE DADOS COM PYTHON E PANDAS II
+# Autor: Sergio Pedro Rodrigues Oliveira
+# Data Atualização:    21/01/26
+# Próxima Atualização: 22/01/26
 
-ESCRITO EM | 20/01/26
-      PARA | 21/01/26
+# LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Introdução".
+- "O que é um valor NaN?".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
 - [ ] 0.2 Subir progresso para o GitHub (Push final)
 
 ## 1. DOING
-- [ ] Manipulação de dados
-    - [ ] Dados ausentes
-        - [ ] Introdução
-        - [ ] O que é um valor NaN?
+- [P] Manipulação de dados
+    - [P] Dados ausentes
+        - [x] Introdução
+        - [P] O que é um valor NaN?
         - [ ] De onde vêm os valores ausentes?
         - [ ] Trabalhando com dados ausentes
         - [ ] Conclusão dados ausentes
 
 ## 2. TO DO
-- [ ] Tidy data (dados organizados)
+- [P] Manipulação de dados
+    - [x] Preparação dos dados
+    - [P] Dados ausentes
+    - [ ] Tidy data (dados organizados)
 
 ## 3. SCRIPTS (Ideias e Backlog)
 - [x] [Ideia] Script para automação de X
