@@ -720,6 +720,27 @@ Os dados de pesquisa usados no último exemplo estavam separados em quatro parte
 # Dados Ausentes
 
 ## Introdução
+
+Raramente você receberá um conjunto de dados sem valor ausente. Há muitas representações para dados ausentes. Nos bancos de dados, são valores `NULL`; certas linguagens de programação usam `NA`, e, dependendo da origem de seus dados, valores ausentes podem ser uma string vazia, '', ou até mesmo valores númericos como `88` ou `99`. [O Pandas exibe valores ausentes como `NaN`]{.underline}.
+
+### Mapa conceitual {.unnumbered}
+
+1. Conhecimento prévio:
+    a. Importação de bibliotecas;
+    b. Fatiamento e indexação de dados;
+    c. Uso de funções e métodos;
+    d. Uso de parâmetros de funções.
+
+### Objetivos {.unnumbered}
+
+Este capítulo abordará:
+
+   1. O que é um valor ausente
+   2. Como os valores ausentes são criados
+   3. Como recodificar e fazer cálculos com valores ausentes
+
+\newpage
+
 ## O que é um valor `NaN`?
 ## De onde vêm os valores ausentes?
 ## Trabalhando com dados ausentes
