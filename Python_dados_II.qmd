@@ -742,6 +742,65 @@ Este capítulo abordará:
 \newpage
 
 ## O que é um valor `NaN`?
+
+[O valor `NaN` no `Pandas` é proveniente do `numpy`]{.underline}. Valores ausentes podem ser usados ou exibidos de algumas maneiras em [Python - `NaN`, `NAN` ou `nan` -, mas são todos equivalentes]{.underline}.
+
+```
+# Basta importar os valores ausentes do numpy
+
+from numpy import NaN, NAN, nan
+```
+
+[Valores ausentes são diferentes de outros tipos de dados, pois não são realmente iguais a nada]{.underline}. O dado está ausente, portanto não há um conceito de igualdade. `NaN` não é equivalente a 0 nem a uma string vazia, ''. 
+
+Podemos demonstrar essa ideia em Python fazendo testes de igualdade:
+
+```{python}
+print(np.nan == True)
+```
+
+```{python}
+print(np.nan == False)
+```
+
+```{python}
+print(np.nan == 0)
+```
+
+```{python}
+print(np.nan == '')
+```
+
+Valores ausentes também não são iguais a outros valores ausentes:
+
+```{python}
+print(np.nan == np.nan)
+```
+
+\newpage
+
+O Pandas tem [métodos embutidos para testar um valor ausente]{.underline}:
+
+```{python}
+print(pd.isnull(np.nan))
+```
+
+O Pandas também tem [métodos para testar valores que não são ausentes]{.underline}:
+
+```{python}
+print(pd.notnull(np.nan))
+```
+
+```{python}
+print(pd.notnull(42))
+```
+
+```{python}
+print(pd.notnull('missing'))
+```
+
+\newpage
+
 ## De onde vêm os valores ausentes?
 ## Trabalhando com dados ausentes
 ## Conclusão dados ausentes
