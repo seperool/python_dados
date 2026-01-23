@@ -802,6 +802,25 @@ print(pd.notnull('missing'))
 \newpage
 
 ## De onde vêm os valores ausentes?
+
+Podemos obter valores ausentes quando [carregamos um conjunto de dados]{.underline} com esses valores, ou do [processo de manipulação dos dados (***data munging***)]{.underline}.
+
+### Carga de dados
+
+Os dados de pesquisa que usamos anteriormente incluíam um conjunto de dados, `visited`, que continham dados ausentes. Quando os valores foram carregados, o Pandas encontrou automaticamente as células com dados ausentes e nos deu um dataframe com o valor `NaN` nas células apropriadas.
+
+Na função `read_csv`, [três parâmetros estão relacionados com a leitura de valores ausentes]{.underline}:
+   
+* `na_values`; 
+* `keep_default_na`;
+* `na_filter`.
+
+### Dados combinados
+### Valores de entrada do usuário
+### Reindexação
+
+\newpage
+
 ## Trabalhando com dados ausentes
 ## Conclusão dados ausentes
 
