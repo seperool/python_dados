@@ -815,6 +815,57 @@ Na função `read_csv`, [três parâmetros estão relacionados com a leitura de 
 * `keep_default_na`;
 * `na_filter`.
 
+\newpage
+
+#### `na_values` {.unnumbered}
+
+O parâmetro `na_values` nos permite especificar valores ausentes ou `NaN` adicionais. Você pode passar uma str Python ou um objeto do tipo lista para que seja automaticamente codificados como valores ausentes quando o arquivo é lido.
+
+É claro que valores ausentes default, como `NA`, `NaN`, ou `nan`, já estão disponíveis, e é por isso que esse parâmetro nem sempre é usado.
+
+Alguns dados saudáveis podem codificar `99` como valor ausente; para especificar o uso desse valor, defina `na_values=[99]`.
+
+```{python}
+# Define o local em que estão os dados
+visited_file = 'Data/Cap_04/survey_visited.csv'
+
+# Carragar os dados com valores default
+print(pd.read_csv(visited_file))
+```
+
+\newpage
+
+#### `keep_default_na` {.unnumbered}
+
+O parâmetro `keep_default_na` é um `bool` que permite especificar se algum valor adicional deve ser considerado como ausente.
+
+Esse valor é `True` por padrão, ou seja, qualquer valor ausente adicional especificado com o parâmetro `na_values` será concatenado à lista de valores ausentes. No entando, `keep_default_na` também pode ser definido com `keep_default_na=False`; nesse caso, somente os valores ausentes especificados em `na_values` serão usados.
+
+```{python}
+# Carrega os dados sem valores ausentes default
+print(pd.read_csv(visited_file,keep_default_na=False))
+```
+
+```{python}
+# Especifica manualmente os valores ausentes
+print(pd.read_csv(
+   visited_file,
+   na_values=[''],
+   keep_default_na=False))
+```
+
+\newpage
+
+#### `na_filter` {.unnumbered}
+
+Por fim, `na_filter` é um `bool` que especificará se algum valor será lido como ausente.
+
+O valor default de `na_filter=True` implica que valores ausentes serão codificados como `NaN`. Se atribuirmos `na_filter=False`, então nada será recodificado como ausente. Liga e desliga `na_values`.
+
+Podemos pensar nesse parâmetro como uma forma de desativar todos os parâmetros definidos para `na_values` e `keep_default_na`, mas é mais provável que ele seja usado se quisermos ter um ganho de desempenho carregando dados sem valores ausentes.
+
+\newpage
+
 ### Dados combinados
 ### Valores de entrada do usuário
 ### Reindexação
