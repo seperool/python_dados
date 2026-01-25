@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    24/01/26
-# Próxima Atualização: 25/01/26
+# Data Atualização:    25/01/26
+# Próxima Atualização: 26/01/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -18,8 +18,8 @@
         - [x] Introdução
         - [x] O que é um valor NaN?
         - [P] De onde vêm os valores ausentes?
-            - [P] Carga de dados
-            - [ ] Dados combinados
+            - [x] Carga de dados
+            - [P] Dados combinados
             - [ ] Valores de entrada do usuário
             - [ ] Reindexação
         - [ ] Trabalhando com dados ausentes
