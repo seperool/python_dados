@@ -825,6 +825,8 @@ O parâmetro `na_values` nos permite especificar valores ausentes ou `NaN` adici
 
 Alguns dados saudáveis podem codificar `99` como valor ausente; para especificar o uso desse valor, defina `na_values=[99]`.
 
+[`na_values`: Permite que você adicione seus próprios marcadores (ex: '999', 'FALTA', 'INTERROGAÇÃO')]{.underline}.
+
 ```{python}
 # Define o local em que estão os dados
 visited_file = 'Data/Cap_04/survey_visited.csv'
@@ -837,9 +839,11 @@ print(pd.read_csv(visited_file))
 
 #### `keep_default_na` {.unnumbered}
 
-O parâmetro `keep_default_na` é um `bool` que permite especificar se algum valor adicional deve ser considerado como ausente.
+[O parâmetro `keep_default_na` é um `bool`]{.underline} que permite especificar se algum valor adicional deve ser considerado como ausente.
 
 Esse valor é `True` por padrão, ou seja, qualquer valor ausente adicional especificado com o parâmetro `na_values` será concatenado à lista de valores ausentes. No entando, `keep_default_na` também pode ser definido com `keep_default_na=False`; nesse caso, somente os valores ausentes especificados em `na_values` serão usados.
+
+[`keep_default_na=False` decide se a lista padrão do Pandas (ex: '`NaN`', '`NULL`', '`N/A`') deve ser usada]{.underline}.
 
 ```{python}
 # Carrega os dados sem valores ausentes default
@@ -860,9 +864,21 @@ print(pd.read_csv(
 
 Por fim, `na_filter` é um `bool` que especificará se algum valor será lido como ausente.
 
-O valor default de `na_filter=True` implica que valores ausentes serão codificados como `NaN`. Se atribuirmos `na_filter=False`, então nada será recodificado como ausente. Liga e desliga `na_values`.
+O valor default de `na_filter=True` implica que valores ausentes serão codificados como `NaN`. Se atribuirmos `na_filter=False`, então nada será recodificado como ausente. [Liga e desliga a busca por dados faltantes, se for `False`, os outros dois parâmetros são ignorados.]{.underline}.
 
 Podemos pensar nesse parâmetro como uma forma de desativar todos os parâmetros definidos para `na_values` e `keep_default_na`, mas é mais provável que ele seja usado se quisermos ter um ganho de desempenho carregando dados sem valores ausentes.
+
+Como ele funciona:
+
+   * `True` (Padrão): O pandas analisa o conteúdo de todas as colunas em busca de strings que representem dados faltantes e as converte para `NaN`.
+
+  * `False`: O pandas ignora essa busca. Tudo o que estiver no arquivo será lido literalmente como string ou número, sem conversão para "ausente".
+
+Por que usar `na_filter=False`?
+
+   * Velocidade: Em arquivos gigantes onde você sabe que não há dados faltantes, desativar o filtro acelera consideravelmente o carregamento.
+
+   * Integridade: Se o seu arquivo contém a string "NA" (por exemplo, o código de um país como a Namíbia) e você não quer que o pandas a transforme em um buraco vazio (`NaN`).
 
 \newpage
 
