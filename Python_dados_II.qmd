@@ -883,7 +883,38 @@ Por que usar `na_filter=False`?
 \newpage
 
 ### Dados combinados
+
+No capítulo Preparação dos dados mostrou como combinar conjunto de dados (`merge`).Alguns dos exemplos naquele capítulo inclíam valores ausentes na saída. Se recriarmos a tabela combinada, veremos valores ausentes na saída resultante.
+
+```{python}
+visited = pd.read_csv('Data/Cap_04/survey_visited.csv')
+survey = pd.read_csv('Data/Cap_04/survey_survey.csv')
+```
+
+```{python}
+print(visited)
+```
+
+```{python}
+print(survey)
+```
+
+```{python}
+# Default how = 'inner'
+vs = visited.merge(
+   survey, 
+   left_on='ident',
+   right_on='taken'
+   )
+print(vs)
+```
+
+\newpage
+
 ### Valores de entrada do usuário
+
+\newpage
+
 ### Reindexação
 
 \newpage
