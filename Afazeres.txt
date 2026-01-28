@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    26/01/26
-# Próxima Atualização: 27/01/26
+# Data Atualização:    27/01/26
+# Próxima Atualização: 28/01/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Valores de entrada do usuário".
+- "Reindexação".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -20,8 +20,8 @@
         - [P] De onde vêm os valores ausentes?
             - [x] Carga de dados
             - [x] Dados combinados
-            - [P] Valores de entrada do usuário
-            - [ ] Reindexação
+            - [x] Valores de entrada do usuário
+            - [P] Reindexação
         - [ ] Trabalhando com dados ausentes
         - [ ] Conclusão dados ausentes
 
