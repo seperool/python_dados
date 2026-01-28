@@ -961,6 +961,62 @@ print(scientists)
 
 ### Reindexação
 
+Outra maneira de introduzir valores ausentes em seus dados é reindexando o seu dataframe. Isso é conveniente quando queremos adicionar novos indices em nosso dataframe, mas queremos preservar seus valores originais. Um uso comum é quando o índice representa algum intervalo de tempo e queremos adicionar mais datas.
+
+Em termos simples:
+
+   * O que acontece: Você define uma nova lista de índices (ex: novas datas).
+
+   * A consequência: O Pandas mantém os dados que já existiam e, para os novos índices que não possuem valor correspondente, ele insere automaticamente um NaN (valor ausente).
+
+Se quiséssemos observar somente os anos 2000 a 2010 da plotagem de dados Gapminder, poderíamos executar asmesmas operações agrupadas, obter um subconjunto dos dados e então os reindexar.
+
+```{python}
+# Carregando arquivo CSV
+gapminder = pd.read_csv('Data/Cap_01/gapminder.tsv', sep='\t')
+
+# Agrupamento de dados
+life_exp = gapminder.groupby(['year'])['lifeExp'].mean()
+
+print(life_exp)
+```
+
+\newpage
+
+Podemos reindexar fatiando os dados.
+
+```
+# Você pode continuar a encadear o 'loc' do código anterior
+# Esse código não funciona mais!
+print(life_exp.loc[range(2000,2010),])
+```
+
+No Pandas moderno (versão 1.0 ou superior), se você tentar usar o `.loc` com uma lista de rótulos onde alguns não existem no índice, o código gerará um erro de KeyError.
+
+Antigamente, o Pandas criava linhas com NaN automaticamente, mas isso mudou para evitar erros silenciosos que poderiam causar confusão.
+
+```{python}
+# Em vez de .loc, use .reindex
+indices_desejados = range(2000, 2010)
+print(life_exp.\
+   reindex(indices_desejados))
+```
+
+\newpage
+
+Como alternativa, podemos obter o subconjunto dos dados separadamente e usar o método `reindex`.
+
+```{python}
+# Obtém subconjunto
+y2000 = life_exp[life_exp.index > 2000]
+print(y2000)
+```
+
+```{python}
+# Reindexa
+print(y2000.reindex(range(2000,2010)))
+```
+
 \newpage
 
 ## Trabalhando com dados ausentes
