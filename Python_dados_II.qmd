@@ -913,6 +913,50 @@ print(vs)
 
 ### Valores de entrada do usuário
 
+O usuário tambem pode criar valores ausentes - por exemplo, criar um vetor de valores a partir de um cálculo ou um vetor preparado manualmente.
+
+Criaremos nossos próprios dados com valores ausentes. `NaN`s são valores válidos tanto quanto para `Series` quanto para `DataFrames`.
+
+```{python}
+# Valores ausentes em uma Series
+# Também poderia usar 'None' ao inves de pd.nan
+num_legs = pd.Series({'goat':4, 'amoeba': None})
+
+print(num_legs)
+```
+
+```{python}
+# Valores ausentes em um dataframe
+scientists = pd.DataFrame({
+   'Name':['Rosaline Franklin','William Gosset'],
+   'Occupation':['Chemist','statistician'],
+   'Born':['1920-07-25','1876-06-13'],
+   'Died':['1958-04-16','1937-10-16'],
+   'missing': [None, np.nan]
+})
+
+print(scientists)
+```
+
+\newpage
+
+Você também pode atribuir diretamente uma coluna de valores ausentes a um dataframe.
+
+```{python}
+# Cria um novo dataframe
+scientists = pd.DataFrame({
+   'Name':['Rosaline Franklin','William Gosset'],
+   'Occupation':['Chemist','statistician'],
+   'Born':['1920-07-25','1876-06-13'],
+   'Died':['1958-04-16','1937-10-16']
+})
+
+# Atrabui uma coluna de valores ausentes
+scientists['missing']=np.nan
+
+print(scientists)
+```
+
 \newpage
 
 ### Reindexação
