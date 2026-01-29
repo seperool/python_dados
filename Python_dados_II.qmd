@@ -1020,6 +1020,24 @@ print(y2000.reindex(range(2000,2010)))
 \newpage
 
 ## Trabalhando com dados ausentes
+
+Agora que sabemos como os dados ausentes podem ser criados, vamos ver como eles se comportam quando estamos trabalhando com dados.
+
+### Encontrando e contando dados ausentes
+
+\newpage
+
+### Limpando dados ausentes
+#### Recodificar/substituir
+#### Preenchimento para a frente
+#### Preenchimento para trás
+#### Interpolação
+#### Descartando valores ausentes
+
+### Cálculos com dados ausentes
+
+\newpage
+
 ## Conclusão dados ausentes
 
 \newpage
