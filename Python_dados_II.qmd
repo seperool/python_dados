@@ -1025,6 +1025,33 @@ Agora que sabemos como os dados ausentes podem ser criados, vamos ver como eles 
 
 ### Encontrando e contando dados ausentes
 
+```{python}
+ebola = pd.read_csv('Data/Cap_04/country_timeseries.csv')
+```
+
+#### Linhas {.unnumbered}
+
+Uma maneira de ver o número de valores ausentes é contá-los com `count`.
+
+```{python}
+print(ebola.count())
+```
+
+\newpage
+
+Você também pode subtrair o número de linhas não ausentes do número total de linhas.
+
+```{python}
+num_rows = ebola.shape[0]
+num_missing = num_rows - ebola.count()
+print("Número de linhas ausentes:")
+print(num_missing)
+```
+
+\newpage
+
+#### Colunas {.unnumbered}
+
 \newpage
 
 ### Limpando dados ausentes
