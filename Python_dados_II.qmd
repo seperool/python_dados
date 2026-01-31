@@ -1052,6 +1052,18 @@ print(num_missing)
 
 #### Colunas {.unnumbered}
 
+Se quiser contar o número total de valores ausentes em seus dados, ou contar o número de valores ausentes em uma coluna em particular, você poderá usar a função `count_nonzero` do `numpy` em conjunto com o método `isnull`.
+
+A função `np.count_nonzero()` conta quantos valores são verdadeiros (`True`). Como o método `.isnull()` retorna `True` para cada dado ausente, a combinação dos dois resulta no total de nulos.
+
+```{python}
+print(np.count_nonzero(ebola.isnull()))
+```
+
+```{python}
+print(np.count_nonzero(ebola['Cases_Guinea'].isnull()))
+```
+
 \newpage
 
 ### Limpando dados ausentes
