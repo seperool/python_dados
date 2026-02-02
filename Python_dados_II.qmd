@@ -1066,6 +1066,33 @@ print(np.count_nonzero(ebola['Cases_Guinea'].isnull()))
 
 \newpage
 
+Outra forma de obter os contadores de dados ausentes é usar o método `value_counts` em uma série. Uma tabela de frequência de valores será exibida. Se o parâmetro `dropna` for usado, você também poderá obter um contador de valores ausentes.
+
+O `value_counts` serve para contar quantas vezes cada valor aparece em uma coluna. Imagine uma coluna com as frutas: [Maçã, Maçã, Banana, NaN].
+O que acontece na prática:
+
+   * Sem o `dropna=False` (Comportamento padrão): O Pandas ignora os dados ausentes. Ele diria que você tem 2 Maçãs e 1 Banana. O `NaN` fica invisível.
+
+   * Com o `dropna=False`: O Pandas passa a tratar o dado ausente como uma categoria comum. O resultado seria:
+      
+     * Maçã: 2
+
+     * Banana: 1
+
+     * NaN: 1
+
+```{python}
+# Obtém os 5 primeiros contadores da coluna Cases_Guinea
+print(ebola.Cases_Guinea.value_counts(dropna=False).head())
+```
+
+```{python}
+# Também poderia ser
+print(ebola['Cases_Guinea'].value_counts(dropna=False).head())
+```
+
+\newpage
+
 ### Limpando dados ausentes
 #### Recodificar/substituir
 #### Preenchimento para a frente
