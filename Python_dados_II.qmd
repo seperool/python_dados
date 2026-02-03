@@ -1097,7 +1097,57 @@ print(ebola['Cases_Guinea'].value_counts(dropna=False).head())
 
 Há muitas maneiras com as quais podemos lidar com dados ausentes. Por exemplo, podemos [substituir os dados ausentes por outro valor]{.underline}, [preenchê-los usando dados existentes]{.underline} ou [descartá-los de nosso conjunto de dados]{.underline}.
 
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-limpezadados
+#| tbl-cap: Métodos para limpeza de dados.
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [['`fillna`',"Recodificar/substituir valores ausentes.","`df.fillna(0)`"],
+         ["`method='ffill'`","Método embutido para fazer \npreenchimento para a frente (forward).",""],
+         ["`method='bfill'`","Método embutido para fazer \npreenchimento para trás (backward).",""],
+         ["`interpolate`","A interpolação usa valores existentes \npara preencher dados ausentes.",""],
+         ["`dropna`","Descartar observações ou variáveis \ncom esses dados ausentes.",""]]
+Markdown(tabulate(
+  table, 
+  headers=["Método","Descrição","Exemplo"],
+  colalign=("left","left","left")
+  ))
+```
+
+\newpage
+
 #### Recodificar/substituir
+
+Podemos usar [o método `fillna`]{.underline} para recodificar os valores ausentes, [transformando-os em outro valor]{.underline}.
+
+Por exemplo, suponha que quiséssemos que os valores ausentes fossem recodificados como 0.
+
+```{python}
+print(ebola.fillna(0).iloc[0:10,0:5])
+```
+
+Ao usar `fillna`, podemos recodificar os valores para um valor específico. 
+
+Se consultar a documentação, você descobrirá que `fillna`, como muitas outras funções Pandas, tem um parâmetro `inplace`. Isso significa que os dados subjacentes serão automaticamente alterados para você; não é necessário criar uma nova cópia com as alterações. Você poderá usar esse parâmetro quando seus dados ficarem maiores e quiser que o código seja mais eficiente no que diz respeito à memória.
+
+Em termos simples:
+
+   * Comportamento padrão: Quando você usa `df.fillna(0)`, o Pandas cria uma cópia inteira da sua tabela na memória com os novos valores. O original permanece intocado a menos que você o sobrescreva (`df = df.fillna(0)`).
+
+   * Com `inplace=True`: O Pandas altera diretamente a tabela original. Ele não cria uma cópia nova.
+
+Sintaxe do `inplace`:
+
+```
+df.fillna(0, inplace=True)
+```
+
+\newpage
+
 #### Preenchimento para a frente
 #### Preenchimento para trás
 #### Interpolação
