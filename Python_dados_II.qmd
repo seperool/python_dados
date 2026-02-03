@@ -1094,6 +1094,9 @@ print(ebola['Cases_Guinea'].value_counts(dropna=False).head())
 \newpage
 
 ### Limpando dados ausentes
+
+Há muitas maneiras com as quais podemos lidar com dados ausentes. Por exemplo, podemos [substituir os dados ausentes por outro valor]{.underline}, [preenchê-los usando dados existentes]{.underline} ou [descartá-los de nosso conjunto de dados]{.underline}.
+
 #### Recodificar/substituir
 #### Preenchimento para a frente
 #### Preenchimento para trás
