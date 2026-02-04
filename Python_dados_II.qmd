@@ -1107,9 +1107,9 @@ Há muitas maneiras com as quais podemos lidar com dados ausentes. Por exemplo, 
 from IPython.display import Markdown
 from tabulate import tabulate
 table = [['`fillna`',"Recodificar/substituir valores ausentes.","`df.fillna(0)`"],
-         ["`method='ffill'`","Método embutido para fazer \npreenchimento para a frente (forward).",""],
-         ["`method='bfill'`","Método embutido para fazer \npreenchimento para trás (backward).",""],
-         ["`interpolate`","A interpolação usa valores existentes \npara preencher dados ausentes.",""],
+         ["`method='ffill'`","Método embutido para fazer \npreenchimento para a frente (forward).","`.fillna(method='ffill')`"],
+         ["`method='bfill'`","Método embutido para fazer \npreenchimento para trás (backward).","`.fillna(method='bfill')`"],
+         ["`interpolate`","A interpolação usa valores existentes \npara preencher dados ausentes.","`.interpolate()`"],
          ["`dropna`","Descartar observações ou variáveis \ncom esses dados ausentes.",""]]
 Markdown(tabulate(
   table, 
@@ -1148,9 +1148,41 @@ df.fillna(0, inplace=True)
 
 \newpage
 
-#### Preenchimento para a frente
-#### Preenchimento para trás
+#### Preenchimento para a frente (*forward*)
+
+Podemos usar métodos embutidos para fazer preenchimentos para a frente (*forward*) ou para trás (*backward*). Quando preenchemos os dados para a frente, [o último valor conhecido é usado para o próximo valor ausente]{.underline}. Desse modo, os valores ausentes são substituídos pelo último valor conhecido/registrado.
+
+```{python}
+#| error: false
+#| warning: false
+print(ebola.fillna(method='ffill').\
+   iloc[0:10,0:5])
+```
+
+Se a coluna começar com um valor ausente, esse dado permanecerá ausente, pois não haverá um valor anterior com o qual fazer o preenchimento.
+
+\newpage
+
+#### Preenchimento para trás (*backward*)
+
+Também podemos fazer com que o Pandas preencha dados para trás. Quando preenchemos dados para trás, o valor mais recente é usado para substituir os dados ausentes. Desse modo, os valores ausentes são substituídos pelo valor mais recente.
+
+```{python}
+#| error: false
+#| warning: false
+print(ebola.fillna(method='bfill')\
+   .iloc[:,0:5]\
+      .tail())
+```
+
+Se uma coluna terminar com um valor ausente, esse dado permanecerá ausente, pois não haverá nenhum valor novo com o qual fazer o preenchimento.
+
+\newpage
+
 #### Interpolação
+
+\newpage
+
 #### Descartando valores ausentes
 
 ### Cálculos com dados ausentes
