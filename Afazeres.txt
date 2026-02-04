@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    03/02/26
-# Próxima Atualização: 04/02/26
+# Data Atualização:    04/02/26
+# Próxima Atualização: 05/02/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Preenchimento para a frente".
+- "Preenchimento para trás".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -22,8 +22,8 @@
             - [x] Encontrando e contando dados ausentes
             - [P] Limpando dados ausentes
                 - [x] Recodificar/substituir
-                - [P] Preenchimento para a frente
-                - [ ] Preenchimento para trás
+                - [x] Preenchimento para a frente
+                - [P] Preenchimento para trás
                 - [ ] Interpolação
                 - [ ] Descartando valores ausentes
             - [ ] Cálculos com dados ausentes
