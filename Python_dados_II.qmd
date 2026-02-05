@@ -1181,6 +1181,35 @@ Se uma coluna terminar com um valor ausente, esse dado permanecerá ausente, poi
 
 #### Interpolação
 
+A interpolação usa valores existentes para preencher valores ausentes. Embora haja muitas meneiras de preencher valores ausentes, a interpolação no Pandas preenche os valores ausentes de [modo linear]{.underline}. Especificamente, os valores ausentes são tratados como se devessem estar igualmente espaçados.
+
+```{python}
+#| error: false
+#| warning: false
+print(ebola.interpolate()\
+   .iloc[0:10,0:5])
+```
+
+O método `interpolate` tem um parâmetro `method` que pode alterar o método de interpolação.
+
+Principais Parâmetros:
+
+   * `method`: Define a técnica matemática.
+
+      * '`linear`': (Padrão) Ignora o índice e trata os valores como igualmente espaçados.
+
+      * '`time`': Funciona com séries temporais, considerando o intervalo real de tempo entre as datas.
+
+      * '`polynomial`' ou '`spline`': Requer que você passe uma order (ex: ordem 2 ou 3) para curvas mais suaves.
+
+   * `limit_direction`: Controla a direção do preenchimento.
+
+      * '`forward`'; 
+      * '`backward`'; 
+      * '`both`'.
+
+   * `inplace`: Se `True`, altera o DataFrame original.
+
 \newpage
 
 #### Descartando valores ausentes
