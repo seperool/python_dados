@@ -1161,6 +1161,8 @@ print(ebola.fillna(method='ffill').\
 
 Se a coluna começar com um valor ausente, esse dado permanecerá ausente, pois não haverá um valor anterior com o qual fazer o preenchimento.
 
+**Lógica**: O valor da linha $n$ é copiado para a linha $n+1$ se esta for `NaN`.
+
 \newpage
 
 #### Preenchimento para trás (*backward*)
@@ -1176,6 +1178,8 @@ print(ebola.fillna(method='bfill')\
 ```
 
 Se uma coluna terminar com um valor ausente, esse dado permanecerá ausente, pois não haverá nenhum valor novo com o qual fazer o preenchimento.
+
+**Lógica**: O valor da linha $n$ é preenchido pelo valor da linha $n+1$.
 
 \newpage
 
@@ -1213,6 +1217,10 @@ Principais Parâmetros:
 \newpage
 
 #### Descartando valores ausentes
+
+
+
+\newpage
 
 ### Cálculos com dados ausentes
 
