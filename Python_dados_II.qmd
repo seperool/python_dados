@@ -1110,7 +1110,7 @@ table = [['`fillna`',"Recodificar/substituir valores ausentes.","`df.fillna(0)`"
          ["`method='ffill'`","Método embutido para fazer \npreenchimento para a frente (forward).","`.fillna(method='ffill')`"],
          ["`method='bfill'`","Método embutido para fazer \npreenchimento para trás (backward).","`.fillna(method='bfill')`"],
          ["`interpolate`","A interpolação usa valores existentes \npara preencher dados ausentes.","`.interpolate()`"],
-         ["`dropna`","Descartar observações ou variáveis \ncom esses dados ausentes.",""]]
+         ["`dropna`","Descartar observações ou variáveis \ncom esses dados ausentes.",".dropna()"]]
 Markdown(tabulate(
   table, 
   headers=["Método","Descrição","Exemplo"],
@@ -1218,7 +1218,56 @@ Principais Parâmetros:
 
 #### Descartando valores ausentes
 
+O último modo de trabalhar com dados ausentes é descartar observações ou variáveis com esses dados.
 
+Podemos usar o método `dropna` para descartar dados ausentes e especificar parâmetros para que esse método que controlem como os dados são descartados.
+
+Por exemplo, o parâmetro `how` permite especificar se uma linha (ou coluna) será descartada quando algum dado ('`any`') ou todos ('`all`') estiverem ausentes.
+
+O parâmetro `thresh` permite especificar quantos valores diferentes de `NaN` devemos ter para descartar a linha ou a coluna.
+
+```{python}
+print(ebola.shape)
+```
+
+Se somente os casos de dados completos forem mantidos em nosso conjunto de dados Ebola, ficaremos com apenas uma linha de dados.
+
+```{python}
+ebola_dropna = ebola.dropna()
+print(ebola_dropna.shape)
+```
+
+```{python}
+print(ebola_dropna)
+```
+
+\newpage
+
+**Principais parâmetros**:
+
+* `axis`: 
+  
+  Define se você remove a linha (`0` ou '`index`') ou a coluna (`1` ou '`columns`'). O padrão é remover a linha.
+
+* `how`:
+
+    * '`any`': Remove se houver pelo menos um valor nulo (**padrão**).
+
+    * '`all`': Só remove se todos os valores da linha/coluna forem nulos.
+
+* `subset`: 
+  
+  Permite focar em colunas específicas.
+  
+  Ex: `df.dropna(subset=['idade'])` só removerá a linha se o nulo estiver na coluna "`idade`".
+
+* `inplace=True`:
+  
+  Altera o DataFrame original diretamente, sem precisar atribuir a uma nova variável.
+
+**Cuidado**:
+
+Dependendo da quantidade de dados que estiver faltando, manter somente os casos com dados completos pode deixar você com um conjunto de dados inútil. Talvez os dados ausentes não sejam aleatórios, de modo que descartar valores ausentes fará com que você fique com um conjunto de dados tendenciosos ou, quem sabe, manter somente os dados completos o deixará com dados insuficientes para efetuar a sua análise.
 
 \newpage
 
