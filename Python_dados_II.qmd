@@ -1273,6 +1273,38 @@ Dependendo da quantidade de dados que estiver faltando, manter somente os casos 
 
 ### Cálculos com dados ausentes
 
+Supanha que quiséssemos ver os contadores de casos para várias regiões. Podemos somar vários regiões a fim de obter uma nova coluna que armazene os contadores de casos.
+
+```{python}
+ebola['Cases_multiple'] = ebola['Cases_Guinea']+\
+   ebola['Cases_Liberia']+\
+   ebola['Cases_SierraLeone']
+```
+
+Vamos observer as dez primeiras linhas de cálculo.
+
+```{python}
+ebola_subset = ebola.loc[:,\
+   ['Cases_Guinea','Cases_Liberia',\
+      'Cases_SierraLeone','Cases_multiple']]
+print(ebola_subset.head(n=10))
+```
+
+Podemos ver que um valor para `Cases_multiple` foi calculado somente quando não havia valores ausentes para `Cases_Guinea`, `Cases_Liberia` e `Cases_SierraLeone`. [Cálculos com valor ausente em geral devolverão um valor ausente]{.underline}, a menos que a função ou método chamado tenha um modo de ignorar os valores ausentes em seus cálculos.
+
+\newpage
+
+Exemplos de métodos embutidos capazes de ignorar valores ausentes incluem `mean` e `sum`. Essas funções geralmente têm um parâmetro `skipna` permitindo que um valor ainda seja calculado, ignorando os valores ausentes.
+
+```{python}
+# Ignorar valores ausentes é True por padrão
+print(ebola.Cases_Guinea.sum(skipna=True))
+```
+
+```{python}
+print(ebola.Cases_Guinea.sum(skipna=False))
+```
+
 \newpage
 
 ## Conclusão dados ausentes
