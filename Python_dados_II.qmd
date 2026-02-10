@@ -1309,6 +1309,10 @@ print(ebola.Cases_Guinea.sum(skipna=False))
 
 ## Conclusão dados ausentes
 
+É raro ter um conjunto de dados sem qualquer valor ausente. É importante saber como trabalhar com valores ausentes porque, mesmo quando estiver trabalhando com dados completos, valores ausentes ainda poderão surgir durante a sua própria manipulação de dados.
+
+Neste capítulo, analisamos alguns dos métodos básicos usados no processo de análise de dados pertinentes à validade dos dados. Ao observar seus dados e tabular os valores ausentes, podemos dar início ao processo de avaliar se os dados têm uma qualidade suficientemente boa para tomada de decisões e inferências.
+
 \newpage
 
 # Tidy data (dados organizados)
