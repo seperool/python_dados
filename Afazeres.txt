@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    08/02/26
-# Próxima Atualização: 09/02/26
+# Data Atualização:    09/02/26
+# Próxima Atualização: 10/02/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Conclusão dados ausentes".
+- "Tidy data (dados organizados)".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -14,21 +14,13 @@
 
 ## 1. DOING
 - [P] Manipulação de dados
-    - [P] Dados ausentes
-        - [x] Introdução
-        - [x] O que é um valor NaN?
-        - [x] De onde vêm os valores ausentes?
-        - [x] Trabalhando com dados ausentes
-            - [x] Encontrando e contando dados ausentes
-            - [x] Limpando dados ausentes
-            - [x] Cálculos com dados ausentes
-        - [P] Conclusão dados ausentes
+    - [P] Tidy data (dados organizados)
 
 ## 2. TO DO
 - [P] Manipulação de dados
     - [x] Preparação dos dados
-    - [P] Dados ausentes
-    - [ ] Tidy data (dados organizados)
+    - [x] Dados ausentes
+    - [P] Tidy data (dados organizados)
 
 ## 3. SCRIPTS (Ideias e Backlog)
 - [x] [Ideia] Script para automação de X
