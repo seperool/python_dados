@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    09/02/26
-# Próxima Atualização: 10/02/26
+# Data Atualização:    10/02/26
+# Próxima Atualização: 11/02/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -15,6 +15,14 @@
 ## 1. DOING
 - [P] Manipulação de dados
     - [P] Tidy data (dados organizados)
+        - [P] Introdução
+        - [ ] Coluna contêm valores, e não variáveis
+        - [ ] Colunas contendo diversas variáveis
+        - [ ] Variáveis tanto em linhas quanto em colunas
+        - [ ] Várias unidades de observação em uma tabela (normalização)
+        - [ ] Unidade de observação em várias tabelas
+        - [ ] Conclusão Tidy data
+
 
 ## 2. TO DO
 - [P] Manipulação de dados
