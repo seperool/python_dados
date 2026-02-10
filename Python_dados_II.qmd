@@ -1315,7 +1315,22 @@ Neste capítulo, analisamos alguns dos métodos básicos usados no processo de a
 
 \newpage
 
-# Tidy data (dados organizados)
+# *Tidy data* (dados organizados)
+
+## Introdução
+
+### Mapa conceitual {.unnumbered}
+
+### Objetivos {.unnumbered}
+
+\newpage
+
+## Coluna contêm valores, e não variáveis
+## Colunas contendo diversas variáveis
+## Variáveis tanto em linhas quanto em colunas
+## Várias unidades de observação em uma tabela (normalização)
+## Unidade de observação em várias tabelas
+## Conclusão *Tidy data*
 
 \newpage
 
