@@ -1319,6 +1319,20 @@ Neste capítulo, analisamos alguns dos métodos básicos usados no processo de a
 
 ## Introdução
 
+Conforme mencionamos anteriormente, Hadley Wickham, um dos membros mais proeminentes da comunidade R, introduziu o conceito de *tidy data* (dados organizados) em um artigo do *Journal of Statistical Software*.
+
+[*Tidy data* é um framework para estruturar conjuntos de dados de modo que sejam facilmente analisados e visualizados]{.underline}. Podemos pensar nele como um objetivo a que devemos visar quando limpamos os dados.
+
+Depois que você compreende o que é *tidy data*, esse conhecimento fará com que a análise, a visualização e a coleta de dados sejam muito mais fáceis.
+
+Então o que é *tidy data*? O artigo de Hadley Wickham o define como um conceito que atende aos seguintes critérios:
+
+* Cada linha é uma observação. (***observation***)
+* Cada coluna é uma variável. (***variable***)
+* Cada tipo de unidade de observação forma uma tabela.
+
+Este capítulo descreve as diversas maneiras de organizar os dados conforme identificadas pelo artigo de Wickham.
+
 ### Mapa conceitual {.unnumbered}
 
 ### Objetivos {.unnumbered}
