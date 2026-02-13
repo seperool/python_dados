@@ -1367,6 +1367,14 @@ Este capítulo abordará:
 \newpage
 
 ## Coluna contêm valores, e não variáveis
+
+Os dados podem ter colunas que contêm valores em vez de variáveis. Em geral, é um formato conveniente para coleta e apresentação de dados.
+
+### Mantendo uma coluna fixa
+### Mantendo várias colunas fixas
+
+\newpage
+
 ## Colunas contendo diversas variáveis
 ## Variáveis tanto em linhas quanto em colunas
 ## Várias unidades de observação em uma tabela (normalização)
