@@ -1335,7 +1335,34 @@ Este capítulo descreve as diversas maneiras de organizar os dados conforme iden
 
 ### Mapa conceitual {.unnumbered}
 
+Conhecimento prévio:
+
+   a. Chamadas de função e de métodos;
+   b. Obtenção de subconjuntos de dados;
+   c. Laços;
+   d. `list comprehension` (abrangência de listas).
+
+Neste capítulo:
+
+  * Refatoração de dados:
+
+      a. `unpivot`/`melt`/`gather`("despivotear");
+      b. `pivot`/`cast`/`spread`;
+      c. Obtenção de subconjuntos;
+      d. Combinação:
+          1. Uso da biblioteca glob
+          2. Concatenação
+
+\newpage
+
 ### Objetivos {.unnumbered}
+
+Este capítulo abordará:
+
+   1. Operação de `unpivoting`/`melting`/`gathering` de colunas em linhas ("despivotear");
+   2. Operação de `pivoting`/`casting`/`spreading` de linhas em colunas ("pivotear");
+   3. Normalização de dados separando um dataframe em várias tabelas;
+   4. Reunião de dados de várias partes.
 
 \newpage
 
