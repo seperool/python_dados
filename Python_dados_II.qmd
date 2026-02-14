@@ -1371,6 +1371,91 @@ Este capítulo abordará:
 Os dados podem ter colunas que contêm valores em vez de variáveis. Em geral, é um formato conveniente para coleta e apresentação de dados.
 
 ### Mantendo uma coluna fixa
+
+Usaremos dados do **Pew Research Center** sobre renda e religião o Estados Unidos para mostrar como trabalhar com colunas que contenham **valores** em vez de **variáveis**.
+
+```{python}
+# Importando dados Pew
+pew = pd.read_csv("Data/Cap_06/pew.csv")
+print(pew.head())
+```
+
+\newpage
+
+Quando observamos esse conjunto de dados, podemos ver que nem todas as colunas são variável. Os valores relacionados à renda estão espalhados em várias colunas. O formato exibido é uma ótima opção quando apresentamos dados em uma tabela, mas, para análise de dados, a tabela precisa ser reformatada a fim de que tenhamos variáveis para religião, renda e contador.
+
+```{python}
+# Exibe somente as primeiras colunas
+print(pew.iloc[:,0:6])
+```
+
+\newpage
+
+Essa visualização dos dados também é conhecida como dados "largos" (*wide*). Para transformá-lo no formato de dados "longos" (*long*) do *tidy data*, teremos de efetuar uma operação de `unpivot`/`melt`/`gather` (depende da linguagem de programação estatística que estivermos usando) em nosso dataframe. [O Pandas tem uma função chamada `melt` que reformatará o dataframe de maneira organizada]{.underline}.
+
+```{mermaid}
+%%| label: fig-unpivot
+%%| fig-cap: "Transformando wide (largo) em long (longo) data."
+
+graph TD
+    A[Wide Data] --unpivot--> B[Long Data]
+    A --melt--> B
+    A --gather--> B
+```
+
+`melt` aceita alguns **parâmetros**:
+
+* `id_vars`:
+  
+  É um contêiner (lista, tupla, ndarray) que representa as variáveis que permanecerão inalteradas.
+
+* `value_vars`:
+
+   Identifica as colunas em que a operação de `melt` (ou `unpivot`) será executada. Por padrão, ela será executada em todas as colunas não especificadas no parâmetro `id_vars`.
+
+* `var_name`:
+
+   É uma string para o nome da nova coluna quando um `melt` é executado em `value_vars`. Por padrão, ela será chamada de `variable`.
+
+* `value_name`:
+
+   É uma string para o nome da nova coluna que presenta valores para `var_name`. Por padrão, ela será chamada de `value`.
+
+\newpage
+
+```{python}
+# Não precisamos especificar um value_vars, pois queremos pivotear
+#todas as colunas, exceto a coluna 'religion'
+pew_long = pd.melt(pew,id_vars='religion')
+
+print(pew_long.head())
+```
+
+```{python}
+print(pew_long.tail())
+```
+
+\newpage
+
+Podemos alterar os defaults de modo que as colunas sujeitas à operação de `melt`/`unpivot` sejam nomeadas.
+
+```{python}
+pew_long = pd.melt(
+   pew,
+   id_vars='religion',
+   var_name='income',
+   value_name='count'
+   )
+
+print(pew_long.head())
+```
+
+```{python}
+print(pew_long.tail())
+```
+
+\newpage
+
 ### Mantendo várias colunas fixas
 
 \newpage
