@@ -1458,6 +1458,38 @@ print(pew_long.tail())
 
 ### Mantendo várias colunas fixas
 
+Nem todo conjunto de dados terá uma coluna que permanecerá inalterada enquanto você executa um unpivot ("despivotear") no restante das colunas.
+
+Como exemplo, considere o conjunto de dados Billboard:
+
+```{python}
+billboard = pd.read_csv("Data/Cap_06/billboard.csv")
+
+# Oberserve as primeiras linhas e colunas
+print(billboard.iloc[0:5,0:16])
+```
+
+Podemos ver, nesse caso, que cada semana tem a própria coluna. Novamente, não há nada de errado com esse formato de dados. Talvez seja mais fácil inserir os dados nele; além disso, quando os dados são apresentados em uma tabela é muito mais rápido entender o seu significado.
+
+\newpage
+
+No entento, pode haver um momento em que você precisará executar um `melt` nos dados. Por exemplo, se quisesse criar uma plotagem com faceta com as classificações semanais, a variável de facetar teria de ser uma coluna do dataframe.
+
+```{python}
+billboard_long = pd.melt(
+   billboard,
+   id_vars=['year','artist','track','time','date.entered'],
+   var_name='week',
+   value_name='rating'
+)
+
+print(billboard_long.head())
+```
+
+```{python}
+print(billboard_long.tail())
+```
+
 \newpage
 
 ## Colunas contendo diversas variáveis
