@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    14/02/26
-# Próxima Atualização: 15/02/26
+# Data Atualização:    15/02/26
+# Próxima Atualização: 16/02/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Mantendo várias colunas fixas".
+- "Colunas contendo diversas variáveis".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -16,10 +16,8 @@
 - [P] Manipulação de dados
     - [P] Tidy data (dados organizados)
         - [x] Introdução
-        - [P] Coluna contêm valores, e não variáveis
-            - [x] Mantendo uma coluna fixa
-            - [P] Mantendo várias colunas fixas
-        - [ ] Colunas contendo diversas variáveis
+        - [x] Coluna contêm valores, e não variáveis
+        - [P] Colunas contendo diversas variáveis
         - [ ] Variáveis tanto em linhas quanto em colunas
         - [ ] Várias unidades de observação em uma tabela (normalização)
         - [ ] Unidade de observação em várias tabelas
