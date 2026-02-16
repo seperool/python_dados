@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    15/02/26
-# Próxima Atualização: 16/02/26
+# Data Atualização:    16/02/26
+# Próxima Atualização: 17/02/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -18,6 +18,9 @@
         - [x] Introdução
         - [x] Coluna contêm valores, e não variáveis
         - [P] Colunas contendo diversas variáveis
+            - [P] Separar e adicionar colunas individualmente (método simples)
+            - [ ] Separar e combinar em um único passo (método simples)
+            - [ ] Separar e combinar em um único passo (método mais complicado)
         - [ ] Variáveis tanto em linhas quanto em colunas
         - [ ] Várias unidades de observação em uma tabela (normalização)
         - [ ] Unidade de observação em várias tabelas
