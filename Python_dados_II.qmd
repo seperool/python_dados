@@ -1493,6 +1493,13 @@ print(billboard_long.tail())
 \newpage
 
 ## Colunas contendo diversas variáveis
+
+### Separar e adicionar colunas individualmente (método simples)
+### Separar e combinar em um único passo (método simples)
+### Separar e combinar em um único passo (método mais complicado)
+
+\newpage
+
 ## Variáveis tanto em linhas quanto em colunas
 ## Várias unidades de observação em uma tabela (normalização)
 ## Unidade de observação em várias tabelas
