@@ -1494,7 +1494,44 @@ print(billboard_long.tail())
 
 ## Colunas contendo diversas variáveis
 
+Às vezes, as colunas em um conjunto de dados podem representar diversas variáveis. Esse formato é comumente visto quando trabalhamos com dados de saúde, por exemplo.
+
+Para ilustrar a situação, vamos observar o conjunto de dados Ebola.
+
+```{python}
+ebola = pd.read_csv("Data/Cap_06/country_timeseries.csv")
+
+print(ebola.columns)
+```
+
+```{python}
+# Exibe linhas selecionadas
+print(ebola.iloc[:5,[0,1,2,3,10,11]])
+```
+
+\newpage
+
+[Os nomes de colunas `Cases_Guinea` e `Deaths_Guinea` na verdade contêm duas variáveis: o status individual (casos e mortes, respectivamente), assim como o nome do país, Guinea (Guiné)]{.underline}. Os dados também estão organizados em formato largo (`wide`), e a operação de `unpivot` (`melt`) deve ser executada.
+
+```{python}
+ebola_long = pd.melt(
+   ebola,
+   id_vars=['Date','Day']
+)
+
+print(ebola_long.head())
+```
+
+```{python}
+print(ebola_long.tail())
+```
+
+\newpage
+
 ### Separar e adicionar colunas individualmente (método simples)
+
+\newpage
+
 ### Separar e combinar em um único passo (método simples)
 ### Separar e combinar em um único passo (método mais complicado)
 
