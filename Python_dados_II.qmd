@@ -1530,6 +1530,42 @@ print(ebola_long.tail())
 
 ### Separar e adicionar colunas individualmente (método simples)
 
+Conceitualmente, a coluna de interesse pode ser separada com base no underscore no nome da coluna, "_". A primeira parte será a nova coluna de status, e a segunda será a nova coluna de país. Isso exigirá um pouco de parsing e separação de string em Python.
+
+Em Python uma string é um objeto, semelhante ao modo como o Pandas tem objetos `Series` e `DataFrame`. As `Series` podem conter métodos como `mean`, e os `DataFrames` podem conter métodos como `to_csv`.
+
+[As strings também têm métodos]{.underline}. Nesse caso, usaremos o método `split`, [que aceita uma string e a separa com base em um dado delimitador]{.underline}. Por padrão, `split` separará a string com base em um espaço, mas podemos passar o underscore, _, em nosso exemplo.
+
+Para ter acesso aos métodos de string, temos de usar o método de acesso `str`. Isso nos dará acesso aos métodos de string de Python e nos permitirá trabalhar em toda a coluna.
+
+```{python}
+# Obtém a coluna variável,
+# acessa os métodos da string,
+# e separa a coluna com base em um delimitador
+
+variable_split = ebola_long.variable.str.split('_')
+
+print(variable_split[:5])
+```
+
+```{python}
+print(variable_split[-5:])
+```
+
+\newpage
+
+Depois da separação com base no underscore, os valores são devolvidos em uma lista. Sabemos se tratar de uma lista (`list`) porque é assim que o método `split` funciona, mas a pista visual encontra-se no fato de o resultado estar cercado por colchetes.
+
+```{python}
+# O contêiner inteiro
+print(type(variable_split))
+```
+
+```{python}
+# O primeiro elemento do contêiner
+print(type(variable_split[0]))
+```
+
 \newpage
 
 ### Separar e combinar em um único passo (método simples)
