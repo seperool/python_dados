@@ -1566,9 +1566,73 @@ print(type(variable_split))
 print(type(variable_split[0]))
 ```
 
+Agora que a coluna foi separada em várias partes, o próximo passo é atribuir essas partes a uma nova coluna. Inicialmente, porém, precisamos extrair todos os elementos com índice 0 da coluna de status e os elementos de índice 1 da coluna de país. Para isso, tamos de acessar os métodos de string novamente e então usar o método `get` para obter o índice que queremos em cada linha.
+
+* O método `get()`:
+
+   * **O que ele faz**: 
+  
+      O `str.get(i)` acessa o elemento na posição i de cada lista dentro da Series.
+
+   * **A lógica**: 
+      
+      É como se você estivesse percorrendo a coluna e dizendo: "Pegue apenas o primeiro item de cada lista e coloque em uma nova coluna".
+
+```{python}
+status_value = variable_split.str.get(0)
+country_value = variable_split.str.get(1)
+
+print(status_value[:5])
+```
+
+```{python}
+print(status_value[-5:])
+```
+
+```{python}
+print(country_value[:5])
+```
+
+```{python}
+print(country_value[-5:])
+```
+
+Agora que temos os vetores desejados, podemos adicioná-los em nosso dataframe.
+
+```{python}
+ebola_long['status'] = status_value
+ebola_long['country'] = country_value
+
+print(ebola_long.head())
+```
+
 \newpage
 
 ### Separar e combinar em um único passo (método simples)
+
+* O parâmetro `expand=True`
+
+   Este parâmetro altera o tipo de objeto que o `split` devolve.
+
+   * `expand=False` (Padrão): 
+   
+      Retorna uma Series de listas.
+
+      `Ex: 0    [Cases, Guinea]`
+
+   * `expand=True`:
+  
+      Retorna um DataFrame completo, onde cada parte separada vira uma coluna própria.
+  
+      ```
+      Ex:
+      | | 0 | 1 |
+      |---|---|---|
+      | 0 | Cases | Guinea |
+      ```
+
+\newpage
+
 ### Separar e combinar em um único passo (método mais complicado)
 
 \newpage
