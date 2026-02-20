@@ -1610,6 +1610,8 @@ print(ebola_long.head())
 
 ### Separar e combinar em um único passo (método simples)
 
+Nesta seção, exploraremos o fato de que o vetor devolvido está na mesma ordem que nossos dados. Podemos concatenar o novo vetor aos nossos dados originais.
+
 * O parâmetro `expand=True`
 
    Este parâmetro altera o tipo de objeto que o `split` devolve.
@@ -1630,6 +1632,37 @@ print(ebola_long.head())
       |---|---|---|
       | 0 | Cases | Guinea |
       ```
+
+* `axis` parâmetro do `concat`:
+
+  * `axis=1`:
+
+      **Adiciona colunas**. Você está "colando" as novas informações (status e country) à direita da sua tabela original.
+
+   * `axis=0` (**padrão**):
+  
+      **Adicionaria linhas**, uma embaixo da outra.
+
+
+```{python}
+variable_split = ebola_long.variable.str.split('_',expand=True)
+variable_split.columns = ['status','country']
+ebola_parsed = pd.concat([ebola_long,variable_split], axis=1)
+
+print(ebola_parsed.head())
+```
+
+```{python}
+print(ebola_parsed.tail())
+```
+
+Explicando o código:
+
+  * Pega a coluna variable (que tem textos como `Cases_Guinea`), corta onde tem o sublinhado (_) e cria duas colunas separadas graças ao `expand=True`.
+
+  * Define que essas duas novas colunas agora se chamam oficialmente `status` e `country`.
+
+  * Usa o `pd.concat` com `axis=1` para pegar essas duas novas colunas e grudá-las ao lado da sua tabela original (`ebola_long`).
 
 \newpage
 
