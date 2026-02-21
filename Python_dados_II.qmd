@@ -1668,6 +1668,8 @@ Explicando o código:
 
 ### Separar e combinar em um único passo (método mais complicado)
 
+Nesta subseção, exploraremos novamente o fato de que o [vetor devolvido está na mesma ordem que nossos dados]{.underline}. [Podemos concatenar o novo vetor aos nossos dados originais]{.underline}.
+
 \newpage
 
 ## Variáveis tanto em linhas quanto em colunas
