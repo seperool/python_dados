@@ -1670,6 +1670,26 @@ Explicando o código:
 
 Nesta subseção, exploraremos novamente o fato de que o [vetor devolvido está na mesma ordem que nossos dados]{.underline}. [Podemos concatenar o novo vetor aos nossos dados originais]{.underline}.
 
+É possível obter o mesmo resultado com um único passo tirando proveito do fato de que o resultado da separação devolve uma lista com dois elementos, em que cada elemento e uma nova coluna.
+
+Podemos combinar a lista de itens separados com a função embutida `zip`, `zip` aceita um conjunto de iteradores (por exemplo, listas, tuplas) e cria um contêiner composto dos iteradores de entrada, mas cada novo contêiner criado tem o mesmo índice que os contêineres de entrada.
+
+Por exemplo, se tivermos duas listas de valores,
+
+```{python}
+constants = ['pi','e']
+values = ['3.14','2.718']
+```
+
+podemos executar `zip` nas duas:
+
+```{python}
+# Temos que chamar list na função zip
+# para exibir o conteúdo do objeto zip;
+# Em Python 3, zip devolve um iterador
+print(list(zip(constants,values)))
+```
+
 \newpage
 
 ## Variáveis tanto em linhas quanto em colunas
