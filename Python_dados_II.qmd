@@ -1690,6 +1690,12 @@ podemos executar `zip` nas duas:
 print(list(zip(constants,values)))
 ```
 
+[Cada elemento agora tem a constante correspondente ao seu valor]{.underline}.
+
+Conceitualmente, cada contêiner é como um lado de um ziper. Quando executamos `zip` nos contêineres, há uma correspondência entre os índices, e esses dados são devolvidos.
+
+Outra forma de visualizar o que o `zip` faz é tomar cada contêiner passado para ele e empilhá-los uns sobre os outros (pense na concatenação por linhas), [criando, assim, uma espécie de dataframe]{.underline}. `zip` então devolve os valores coluna a coluna em uma tupla.
+
 \newpage
 
 ## Variáveis tanto em linhas quanto em colunas
