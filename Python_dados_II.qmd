@@ -1698,6 +1698,19 @@ Outra forma de visualizar o que o `zip` faz é tomar cada contêiner passado par
 
 \newpage
 
+Podemos usar o mesmo `ebola_long.variable.str.split('_')` para separar os valores da coluna. No entanto, como o resultado já é um contêiner (um objeto `Series`), temos que desempacotá-lo para obter o seu conteúdo (cada lista status-país), em vez de termos o próprio contêiner (a série).
+
+Em Python, o operador asterisco, *, é usado para desempacotar contêineres. Quando executamos `zip` nos contêineres desempacotados, o efeito será o mesmo obtido quando criamos os valores de status e de país anteriormente. Podemos, então, atribuir os vetores às colunas simultaneamente usando a atribuição múltipla.
+
+```{python}
+ebola_long['status'], ebola_long['country'] = \
+   zip(*ebola_long.variable.str.split('_'))
+
+print(ebola_long.head())
+```
+
+\newpage
+
 ## Variáveis tanto em linhas quanto em colunas
 ## Várias unidades de observação em uma tabela (normalização)
 ## Unidade de observação em várias tabelas
