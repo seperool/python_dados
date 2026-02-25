@@ -1709,6 +1709,50 @@ ebola_long['status'], ebola_long['country'] = \
 print(ebola_long.head())
 ```
 
+A lógica funciona assim:
+
+   * `split('_')`: Quebra a string (ex: "Cases_Guinea") em uma lista: `['Cases', 'Guinea']`.
+
+   * O Asterisco (`*`): Ele "abre a caixa". Em vez de passar a coluna inteira para o `zip`, ele passa cada lista individualmente.
+
+   * O `zip`: Ele funciona como um zíper de jaqueta. Ele pega o primeiro item de cada lista e agrupa (todos os "Status"), depois pega o segundo item de cada lista e agrupa (todos os "Países").
+
+\newpage
+
+Aprofundando a função `zip`:
+
+Imagine que o `zip` é um grampeador de listas. Ele pega o primeiro item de cada lista e grampeia juntos, depois o segundo, e assim por diante.
+
+Exemplo simples:
+
+```{python}
+nomes = ['Ana', 'Beto']
+idades = [25, 30]
+
+# O zip vai unir o 1º com o 1º, e o 2º com o 2º
+resultado = list(zip(nomes, idades))
+
+print(resultado)
+```
+
+Por que o texto usa o asterisco `zip(*...)`?
+
+   * No seu caso do Pandas, você não tem duas listas separadas no início. Você tem uma única coluna onde cada linha é uma lista, tipo assim:
+
+  ```[['Cases', 'Guinea'], ['Deaths', 'Guinea']].```
+
+   * Se você der o `zip` direto nessa coluna, ele não sabe o que fazer. O asterisco (*) "derrama" o conteúdo dessa coluna.
+
+   * Imagine que o asterisco faz isso:
+   
+   ```zip(['Cases', 'Guinea'], ['Deaths', 'Guinea'])```
+
+   * O zip então "grampeia":
+
+     * Pega todos os primeiros itens (índice 0): ('Cases', 'Deaths') -> Vai para a coluna Status.
+
+     * Pega todos os segundos itens (índice 1): ('Guinea', 'Guinea') -> Vai para a coluna Country.
+
 \newpage
 
 ## Variáveis tanto em linhas quanto em colunas
