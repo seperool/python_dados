@@ -1756,6 +1756,18 @@ Por que o texto usa o asterisco `zip(*...)`?
 \newpage
 
 ## Variáveis tanto em linhas quanto em colunas
+
+As vezes, os dados estarão formatados de modo que as variáveis se encontrarão tanto nas linhas quanto nas colunas - isto é, em alguma combinação de formatos descritos nas seções anteriores deste capítulo. A maioria dos métodos necessários para organizar dados desse tipo já foi apresentada. O que resta mostrar é o que acontecerá se uma coluna de dados armazenar duas variáveis em vez de uma. Nesse caso, teremos de executar uma operação de `pivot` ou `cast` da variável em colunas separadas.
+
+```{python}
+weather = pd.read_csv("Data/Cap_06/weather.csv")
+
+# Dataframe no formato largo (wide)
+print(weather.iloc[:5,:11])
+```
+
+\newpage
+
 ## Várias unidades de observação em uma tabela (normalização)
 ## Unidade de observação em várias tabelas
 ## Conclusão *Tidy data*
