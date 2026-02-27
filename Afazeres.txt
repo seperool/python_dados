@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    26/02/26
-# Próxima Atualização: 27/02/26
+# Data Atualização:    27/02/26
+# Próxima Atualização: 28/02/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Variáveis tanto em linhas quanto em colunas".
+- "Várias unidades de observação em uma tabela (normalização)".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -18,8 +18,8 @@
         - [x] Introdução
         - [x] Coluna contêm valores, e não variáveis
         - [x] Colunas contendo diversas variáveis
-        - [P] Variáveis tanto em linhas quanto em colunas
-        - [ ] Várias unidades de observação em uma tabela (normalização)
+        - [x] Variáveis tanto em linhas quanto em colunas
+        - [P] Várias unidades de observação em uma tabela (normalização)
         - [ ] Unidade de observação em várias tabelas
         - [ ] Conclusão Tidy data
 
