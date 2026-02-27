@@ -1766,6 +1766,110 @@ weather = pd.read_csv("Data/Cap_06/weather.csv")
 print(weather.iloc[:5,:11])
 ```
 
+Os dados meteorológicos incluem temperaturas mínima e máxima (valores `tmin` e `tmax` na coluna `element`, respectivamente) registradas para cada dia (`d1`, `d2`, `d3`,..., `d31`) do mês (`month`).
+
+[A coluna element contém variáveis que devem ser submetidas a `cast`/`pivot` para que se transformem em novas colunas, e as variáveis de dia devem ser sujeitas à operação de `melt`, gerando valores de linha]{.underline}.
+
+Novamente, não há nada de errado com os dados no formato atual. Eles simplesmente não estão em um formato apropriado para análises, embora esse tipo de formatação possa ser útil quando apresentamos dados em relatórios.
+
+\newpage
+
+Vamos executar primeiro a operação de `melt`/`unpivot` nos valores dos dias.
+
+```{python}
+weather_melt = pd.melt(
+   weather,
+   id_vars=['id','year','month','element'],
+   var_name='day',
+   value_name='temp'
+)
+
+print(weather_melt.head())
+```
+
+```{python}
+print(weather_melt.tail())
+```
+
+\newpage
+
+A seguir, devemos pivotear as variáveis armazenadas na coluna `element`. Esse processo é conhecido como *casting* ou *spreading* em outras linguagens estatística.
+
+Uma das principais diferenças entre `pivot_table` e `melt` é que [`melt` é uma função no Pandas]{.underline}, enquanto [pivot_table é um método que chamamos em um objeto `DataFrame`]{.underline}.
+
+```{python}
+weather_tidy = weather_melt.pivot_table(
+   index=['id','year','month','day'],
+   columns='element',
+   values='temp'
+)
+
+print(weather_tidy.head())
+```
+
+Sobre os parâmetros do `pivot_tabel`:
+
+  * `index`: Define quais colunas não devem mudar. Elas identificam a linha (neste caso: `id`, `year`, `month`, `day`).
+
+  * `columns`: Indica qual coluna contém os nomes que você quer transformar em novas colunas. No texto, é a coluna element (que contém os textos `tmax` e `tmin`).
+
+  * `values`: Indica de onde virão os números (os dados reais) para preencher essas novas colunas. No exemplo, os valores vêm da coluna `temp`.
+
+Observando a tabela após a operação de pivot, percebemos que cada valor na coluna element está agora em uma coluna separada. É possível deixar essa tabela em seu estado atual, mas também podemos linearizar as colunas hierárquicas.
+
+```{python}
+weather_tidy_flat = weather_tidy.reset_index()
+print(weather_tidy_flat.head())
+```
+
+Quando você executa o `pivot_table`, o Pandas transforma as colunas que você passou no parâmetro `index` (como `id`, `year`, `month`, `day`) em um `MultiIndex` (índices hierárquicos). Visualmente, a tabela fica com as linhas "agrupadas" por essas categorias, o que pode dificultar manipulações posteriores.
+
+O `.reset_index()` serve para:
+
+   * Linearizar os dados: Ele retira essas colunas da posição de "índice" e as devolve para o corpo principal da tabela como colunas comuns.
+
+   * Remover a hierarquia: Ele cria um novo índice numérico padrão (0, 1, 2...).
+
+   * Facilitar o acesso: Torna a tabela "plata" (flat), que é o formato padrão do Tidy Data, facilitando filtros e exportações (como para Excel ou CSV).
+
+\newpage
+
+Do mesmo modo, podemos aplicar esses métodos sem o dataframe intermediário:
+
+```{python}
+weather_tidy = weather_melt.\
+   pivot_table(
+      index=['id','year','month','day'],
+      columns='element',
+      values='temp'
+   ).\
+   reset_index()
+
+print(weather_tidy.head())
+```
+
+\newpage
+
+### O Problema do "Destaque" (O Índice){.unnumbered}
+
+Quando você usa o `pivot_table`, o Pandas decide que as colunas que você usou no parâmetro `index` (como `id`, `year`, `month`, `day`) são tão importantes que elas viram "etiquetas de linha".
+
+Visualmente, a tabela fica assim:
+
+   * As colunas id, ano, mês, dia ficam em negrito e em um nível diferente.
+
+   * Elas não se comportam mais como colunas normais onde você pode fazer cálculos; elas viram apenas "nomes das linhas".
+
+Isso é o que o texto chama de hierarquia. É ótimo para um relatório visual (fica bonito de ler), mas é péssimo para o computador processar depois.
+
+### A Solução: `reset_index()` (A Reindexação){.unnumbered}
+
+O `reset_index()` é como se você desse um comando de "voltem para o seu lugar!".
+
+   * Transforma etiquetas em colunas: Ele pega aquelas informações que estavam "presas" no índice (em negrito/destaque) e as coloca de volta como colunas normais da tabela.
+
+   * Cria um contador simples: No lugar delas, ele cria um índice novo, que é apenas uma contagem simples: 0, 1, 2, 3...
+
 \newpage
 
 ## Várias unidades de observação em uma tabela (normalização)
