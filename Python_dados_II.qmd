@@ -1873,8 +1873,34 @@ O `reset_index()` é como se você desse um comando de "voltem para o seu lugar!
 \newpage
 
 ## Várias unidades de observação em uma tabela (normalização)
+
+
+
+\newpage
+
 ## Unidade de observação em várias tabelas
 ## Conclusão *Tidy data*
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-pivotandunpivot
+#| tbl-cap: Métodos para transformação largo (wide) e longo (long)
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["**Objetivo**","Transformar colunas em linhas (**Unpivot**).","Transformar linhas em colunas (**Pivot**)."],
+         ["**Direção**","De Largo (Wide) para Longo (Long).","De Longo (Long) para Largo (Wide)."],
+         ["**Tidy Data**","Formato ideal para análise e gráficos.","Formato ideal para relatórios e tabelas dinâmicas."],
+         ["**Resultado**","Aumenta o número de linhas.","Reduz o número de linhas e cria novos cabeçalhos."]]
+Markdown(tabulate(
+  table, 
+  headers=["Recurso","`pd.melt()`","`.pivot_table()`"],
+  colalign=("left","left","left"),
+  tablefmt="grid"
+  ))
+```
 
 \newpage
 
