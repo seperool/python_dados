@@ -1874,7 +1874,48 @@ O `reset_index()` é como se você desse um comando de "voltem para o seu lugar!
 
 ## Várias unidades de observação em uma tabela (normalização)
 
+### Revisão normalização de tabelas banco de dados{.unnumbered}
 
+As regras de normalização (Formas Normais) visam eliminar a redundância e proteger a integridade dos dados.
+
+As três principais são:
+
+1ª Forma Normal (1FN)
+
+   * Regra: Eliminar grupos repetidos e garantir que cada campo contenha apenas valores atômicos (únicos).
+
+   * Ação: Cada interseção de linha e coluna deve ter apenas um dado.
+
+2ª Forma Normal (2FN)
+
+   * Regra: Estar na 1FN e garantir que todos os atributos dependam da chave primária total.
+
+   * Ação: Eliminar dependências parciais (comum em chaves compostas).
+
+3ª Forma Normal (3FN)
+
+   * Regra: Estar na 2FN e garantir que nenhum atributo dependa de outro atributo que não seja a chave.
+
+   * Ação: Eliminar dependências transitivas (um campo não-chave determinando outro campo não-chave).
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-normalvstidy
+#| tbl-cap: Comparando Normalização SQL e Tidy Data
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["**Normalização**","Integridade e economia de espaço (evita redundância).","Bancos de Dados Relacionais (SQL)."],
+         ["**Tidy Data**","Facilidade de análise e visualização.","Ciência de Dados (R, Python, Excel)."]]
+Markdown(tabulate(
+  table, 
+  headers=["Conceito","Foco Principal","Conceito Comum"],
+  colalign=("left","left","left"),
+  tablefmt="grid"
+  ))
+```
 
 \newpage
 
