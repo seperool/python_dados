@@ -1874,6 +1874,28 @@ O `reset_index()` é como se você desse um comando de "voltem para o seu lugar!
 
 ## Várias unidades de observação em uma tabela (normalização)
 
+Um dos modos mais simples de saber se várias unidades de observação estão representadas em uma tabela é observar cada um das linhas e prestar atenção se há alguma célula ou valor sendo repetido nas linhas.
+
+Isso é muito comum em dados administrativos de educação do governo, em que informações demográficas dos estudantes são informações para cada aluno, para cada ano em que esse aluno estiver matriculado.
+
+Vamos observar novamente os dados da Billboard que limpamos anteriormente.
+
+```{python}
+print(billboard_long.head())
+```
+
+Supanha que tenhamos criado um subconjunto de dados com base em uma faixa musical em particular.
+
+```{python}
+print(billboard_long[billboard_long.track == 'Loser'].head())
+```
+
+Podemos ver que essa tabela, na verdade, armazena dois tipos de dados: [a informação da faixa musical (`track`)]{.underline} e [a classificação semanal]{.underline}.
+
+Seria melhor armazenar a informação da faixa em uma tabela separada. Dessa forma, as informações armazenadas nas colunas `year`, `artist`, `track` e `time` não estariam repetidas no conjunto de dados. Essa consideração é particularmente importante se os dados forem inseridos manualmente. Repetir os mesmos valores de modo contínuo durante a entrada de dados eleva o risco de haver dados inconsistentes.
+
+\newpage
+
 ### Revisão normalização de tabelas banco de dados{.unnumbered}
 
 As regras de normalização (Formas Normais) visam eliminar a redundância e proteger a integridade dos dados.
