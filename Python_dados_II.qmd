@@ -1896,6 +1896,43 @@ Seria melhor armazenar a informação da faixa em uma tabela separada. Dessa for
 
 \newpage
 
+O que deveríamos fazer nesse caso é colocar `year`, `artist`, `track`, `time` e `date.entered` em um novo dataframe, com cada conjunto único de valores recebendo um `ID` único.
+
+Podemos usar esse `ID` único em um segundo dataframe que represente a música, a data, o número da semana e a classificação.
+
+Esse processo como um todo pode ser pensado como uma inversão dos passos de concatenação e combinação de dados.
+
+```{python}
+billboard_song = billboard_long[['year','artist','track','time']]
+print(billboard_song.head())
+```
+
+```{python}
+print(billboard_song.shape)
+```
+
+Sabemos que há entradas duplicadas nesse dataframe, portanto devemos descartar as linhas duplicadas.
+
+```{python}
+billboard_song = billboard_song.drop_duplicates()
+print(billboard_song.head())
+```
+
+```{python}
+print(billboard_song.shape)
+```
+
+\newpage
+
+Podemos então atribuir um valor único para cada linha de dados.
+
+```{python}
+billboard_song['id'] = range(len(billboard_song))
+print(billboard_song.head(n=10))
+```
+
+\newpage
+
 ### Revisão normalização de tabelas banco de dados{.unnumbered}
 
 As regras de normalização (Formas Normais) visam eliminar a redundância e proteger a integridade dos dados.
@@ -1956,7 +1993,8 @@ from tabulate import tabulate
 table = [["**Objetivo**","Transformar colunas em linhas (**Unpivot**).","Transformar linhas em colunas (**Pivot**)."],
          ["**Direção**","De Largo (Wide) para Longo (Long).","De Longo (Long) para Largo (Wide)."],
          ["**Tidy Data**","Formato ideal para análise e gráficos.","Formato ideal para relatórios e tabelas dinâmicas."],
-         ["**Resultado**","Aumenta o número de linhas.","Reduz o número de linhas e cria novos cabeçalhos."]]
+         ["**Resultado**","Aumenta o número de linhas.","Reduz o número de linhas e cria novos cabeçalhos."],
+         ["**Sintaxe**", "Função do pandas (`pd.melt(df)`)", "Método do DataFrame (`df.pivot_table()`)"]]
 Markdown(tabulate(
   table, 
   headers=["Recurso","`pd.melt()`","`.pivot_table()`"],
