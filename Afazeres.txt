@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    03/03/26
-# Próxima Atualização: 04/03/26
+# Data Atualização:    04/03/26
+# Próxima Atualização: 05/03/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -20,6 +20,7 @@
         - [x] Colunas contendo diversas variáveis
         - [x] Variáveis tanto em linhas quanto em colunas
         - [P] Várias unidades de observação em uma tabela (normalização)
+            - [P] Explicação do código
         - [ ] Unidade de observação em várias tabelas
         - [ ] Conclusão Tidy data
 
