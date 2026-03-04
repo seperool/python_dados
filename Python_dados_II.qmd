@@ -1933,6 +1933,37 @@ print(billboard_song.head(n=10))
 
 \newpage
 
+Agora que temos um dataframe separada com as músicas, podemos usar a coluna `id` recém-criada para fazer uma correspondência entre uma música e sua classificação semanal.
+
+```{python}
+# Combina o dataframe de música com o conjunto de dados original
+billboard_ratings = billboard_long.merge(
+   billboard_song,
+   on=['year','artist','track','time']
+   )
+print(billboard_ratings.head())
+```
+
+```{python}
+print(billboard_ratings.shape)
+```
+
+\newpage
+
+Por fim, vamos obter um subconjunto com as colunas que queremos em nosso dataframe de classificações.
+
+```{python}
+billboard_ratings = \
+   billboard_ratings[['id','date.entered','week','rating']]
+print(billboard_ratings.head())
+```
+
+```{python}
+print(billboard_ratings.shape)
+```
+
+\newpage
+
 ### Revisão normalização de tabelas banco de dados{.unnumbered}
 
 As regras de normalização (Formas Normais) visam eliminar a redundância e proteger a integridade dos dados.
