@@ -1890,6 +1890,24 @@ Supanha que tenhamos criado um subconjunto de dados com base em uma faixa musica
 print(billboard_long[billboard_long.track == 'Loser'].head())
 ```
 
+* Análise do código:
+
+   Ele realiza uma filtragem no DataFrame original (`billboard_long`).
+
+   * `billboard_long.track == 'Loser'`: Procura na coluna de músicas (`track`) apenas as linhas onde o nome é 'Loser'.
+
+   * `billboard_long[...]`: Seleciona essas linhas específicas.
+
+   * `.head()`: Mostra apenas as 5 primeiras ocorrências desse filtro.
+
+* Por que ele é importante para o `Tidy Data`?
+
+   Ao isolar uma única música, fica visualmente claro o problema da redundância:
+
+   * Você verá que o nome do artista, o nome da faixa e o tempo da música se repetem identicamente em todas as linhas.
+
+   * A única coisa que realmente muda de linha para linha é a semana e a classificação (rating).
+
 Podemos ver que essa tabela, na verdade, armazena dois tipos de dados: [a informação da faixa musical (`track`)]{.underline} e [a classificação semanal]{.underline}.
 
 Seria melhor armazenar a informação da faixa em uma tabela separada. Dessa forma, as informações armazenadas nas colunas `year`, `artist`, `track` e `time` não estariam repetidas no conjunto de dados. Essa consideração é particularmente importante se os dados forem inseridos manualmente. Repetir os mesmos valores de modo contínuo durante a entrada de dados eleva o risco de haver dados inconsistentes.
@@ -1911,6 +1929,10 @@ print(billboard_song.head())
 print(billboard_song.shape)
 ```
 
+* Análise do código:
+
+   * O código cria um novo DataFrame chamado `billboard_song` selecionando apenas as colunas que descrevem a música (`year`, `artist`, `track`, `time`).
+
 Sabemos que há entradas duplicadas nesse dataframe, portanto devemos descartar as linhas duplicadas.
 
 ```{python}
@@ -1922,6 +1944,12 @@ print(billboard_song.head())
 print(billboard_song.shape)
 ```
 
+* Análise do código:
+
+   * `drop_duplicates()`: Varre o DataFrame `billboard_song` e remove todas as linhas que são exatamente iguais a uma linha anterior.
+
+   * Resultado: Se a música "Loser" aparecia em 20 linhas (uma para cada semana), agora ela aparece em apenas uma linha.
+
 \newpage
 
 Podemos então atribuir um valor único para cada linha de dados.
@@ -1930,6 +1958,22 @@ Podemos então atribuir um valor único para cada linha de dados.
 billboard_song['id'] = range(len(billboard_song))
 print(billboard_song.head(n=10))
 ```
+
+* Análise do código:
+
+   * `len(billboard_song)`: Conta quantas músicas únicas restaram após o `drop_duplicates`.
+
+   * `range(...)`: Gera uma sequência numérica (0, 1, 2...) do mesmo tamanho da tabela.
+
+   * `billboard_song['id']`: Cria uma nova coluna chamada id e atribui esses números a cada linha.
+
+* Por que isso é crucial?
+
+   * Chave Primária: Esse id agora é o "RG" de cada música.
+
+   * Eficiência: Em vez de repetir "Artist: Beck, Track: Loser, Time: 3:55" em centenas de linhas na outra tabela, você usará apenas o número do `id`.
+
+   * Organização Mental: Isso separa claramente quem é o objeto (a música) de qual é o evento (a classificação na Billboard).
 
 \newpage
 
@@ -1948,6 +1992,10 @@ print(billboard_ratings.head())
 print(billboard_ratings.shape)
 ```
 
+* O que acontece aqui:
+
+   * O Pandas olha para a tabela original (`billboard_long`) e para a nova tabela de músicas (`billboard_song`) e diz: "Onde os valores de `year`, `artist`, `track` e `time` forem iguais nas duas tabelas, traga a coluna `id` para cá".
+
 \newpage
 
 Por fim, vamos obter um subconjunto com as colunas que queremos em nosso dataframe de classificações.
@@ -1962,6 +2010,18 @@ print(billboard_ratings.head())
 print(billboard_ratings.shape)
 ```
 
+* Análise do código:
+
+   * Filtragem de Colunas: Ele descarta as colunas textuais (`artist`, `track`, `time`) que agora estão seguras na outra tabela (`billboard_song`).
+
+   * Referência por ID: Mantém apenas o id (o "RG" da música) para sabermos a qual faixa aquele rating se refere.
+
+* Resultado Final:
+
+   * Tabela 1 (`billboard_song`): Contém os dados fixos da música (Cadastro).
+
+   * Tabela 2 (`billboard_ratings`): Contém o desempenho semanal (Transações).
+
 \newpage
 
 ### Revisão normalização de tabelas banco de dados{.unnumbered}
@@ -1970,23 +2030,29 @@ As regras de normalização (Formas Normais) visam eliminar a redundância e pro
 
 As três principais são:
 
-1ª Forma Normal (1FN)
+1ª Forma Normal (**1FN**)
 
    * Regra: Eliminar grupos repetidos e garantir que cada campo contenha apenas valores atômicos (únicos).
 
    * Ação: Cada interseção de linha e coluna deve ter apenas um dado.
 
-2ª Forma Normal (2FN)
+   * Exemplo: Se na coluna telefones você tem (11) 999, (11) 888, isso viola a **1FN**. Você deve separar em duas linhas ou duas colunas.
 
-   * Regra: Estar na 1FN e garantir que todos os atributos dependam da chave primária total.
+2ª Forma Normal (**2FN**)
+
+   * Regra: Estar na **1FN** e garantir que todos os atributos dependam da chave primária total.
 
    * Ação: Eliminar dependências parciais (comum em chaves compostas).
 
-3ª Forma Normal (3FN)
+   * Exemplo: Na tabela original, o `artist` dependia da música, mas não dependia da `week` (semana). Ao separar a música em uma tabela própria com seu próprio `ID`, garantimos que o artista esteja "amarrado" apenas ao que lhe cabe.
 
-   * Regra: Estar na 2FN e garantir que nenhum atributo dependa de outro atributo que não seja a chave.
+3ª Forma Normal (**3FN**)
+
+   * Regra: Estar na **2FN** e garantir que nenhum atributo dependa de outro atributo que não seja a chave.
 
    * Ação: Eliminar dependências transitivas (um campo não-chave determinando outro campo não-chave).
+
+   * Exemplo: Se você tem as colunas `cidade` e `estado`. O `estado` depende da `cidade`, e não diretamente do `ID` do usuário. Você criaria uma tabela de "Cidades" para não ter que repetir o estado toda vez que escrever o nome da cidade.
 
 ```{python}
 #| echo: false
