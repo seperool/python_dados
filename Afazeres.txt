@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    05/03/26
-# Próxima Atualização: 06/03/26
+# Data Atualização:    06/03/26
+# Próxima Atualização: 07/03/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Várias unidades de observação em uma tabela (normalização)".
+- "Unidade de observação em várias tabelas".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -21,6 +21,8 @@
         - [x] Variáveis tanto em linhas quanto em colunas
         - [x] Várias unidades de observação em uma tabela (normalização)
         - [P] Unidade de observação em várias tabelas
+            - [ ] Carregando vários arquivos usando um laço
+            - [ ] Carregando vários arquivos usando uma list comprehension
         - [ ] Conclusão Tidy data
 
 
