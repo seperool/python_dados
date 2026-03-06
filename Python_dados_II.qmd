@@ -2076,6 +2076,12 @@ Markdown(tabulate(
 \newpage
 
 ## Unidade de observação em várias tabelas
+
+### Carregando vários arquivos usando um laço
+### Carregando vários arquivos usando uma `list comprehension`
+
+\newpage
+
 ## Conclusão *Tidy data*
 
 ```{python}
