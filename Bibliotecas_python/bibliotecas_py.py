@@ -35,6 +35,9 @@ import openpyxl                  # Ler e escrever em formato Excel moderno (.xls
 import odo                       # Simplifica a transferência de dados entre diversos formatos (ex: CSV para SQL, DataFrame).
 import unittest                  # Framework para testes de unidade
 import random                    # Geração de números pseudoaleatórios
+import urllib                    # Manipulação de URLs e requisições de rede
+import glob                      # Localiza arquivos usando padrões de busca (ex: *.txt)
+
 
 ################################################################################
 #               BIBLIOTECAS DE COMPUTAÇÃO E ANÁLISE DE DADOS                   #
