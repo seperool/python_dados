@@ -2077,7 +2077,15 @@ Markdown(tabulate(
 
 ## Unidade de observação em várias tabelas
 
+A última porção da organização dos dados relaciona-se à situação em que [o mesmo tipo de dado está espalhado por várias tabelas]{.underline}. Esse problema já foi abordado anteriormente, em que discutimos a concatenação e o `merge` de dados.
 
+Um dos [motivos pelos quais os dados podem estar separados em vários arquivos]{.underline} é o [tamanho desses arquivos]{.underline}. Ao separar dados em várias partes, cada uma delas se torna menor. Isso pode ser bom se houver necessidade de [compartilhar dados na internet ou por email]{.underline}, pois muito serviços limitam o tamanho de um arquivo que poder ser aberto ou compartilhado. O [processo de coleta de dados]{.underline} é outro motivo pelo qual um conjunto de dados pode estar separado em várias partes. Por exemplo, um conjunto de dados separado contendo informações sobre ações no mercado poderia ser criado para cada dia. 
+
+Como o `merge` e a concatenação já foram discutidos, [esta seção terá como foco as técnicas para carregar rapidamente várias fontes de dados e reuni-las]{.underline}.
+
+Exemplo:
+
+\newpage
 
 ### Carregando vários arquivos usando um laço
 ### Carregando vários arquivos usando uma `list comprehension`
