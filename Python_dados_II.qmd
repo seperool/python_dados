@@ -2085,6 +2085,54 @@ Como o `merge` e a concatenação já foram discutidos, [esta seção terá como
 
 Exemplo:
 
+O Unified New York City Taxi and Uber Data (Dados unificados de táxi e Uber da cidade de Nova York) é uma boa opção para demonstrar esses processos.
+
+O conjunto completo contém dados sobre mais de 1,3 Bilhão de corridas de táxi e de Uber na cidade de Nova York e esta organizado em mais de 140 arquivos.
+
+Como demonstração, trabalharemos com apenas cinco desses arquivos de dados.
+
+Quando os mesmos dados estão separados em várias partes, em geral, estas tem um padrão de nomeclatura estruturado associado a elas.
+
+Em primeiro lugar, vamos fazer download dos dados. Não se preocupe muito com os detalhes do bloco de código a seguir. O arquivo `raw_data_urls.txt` contém uma lista de URLs, em que cada URL é o link de download para uma parte dos dados de táxi.
+
+Começamos abrindo e lendo o arquivo e iterando pelas linhas do arquivo (isto é, cada URL de dados). Faremos o download somente dos cinco primeiros conjuntos de dados, pois os arquivos são bem grandes. Usaremos um pouco de manipulação de strings para criar o path em que os dados serão salvos e utilizaremos a biblioteca `urllib` para fazer o download de nossos dados.
+
+\newpage
+
+Bibliotecas usadas:
+
+ * `urllib`
+
+   A urllib é o canivete suíço nativo do Python para lidar com URLs. Ela permite que seu código interaja com a internet sem precisar de navegadores.
+
+   * O que faz: Abre, lê e manipula dados de links da web.
+
+   * Principais usos:
+
+     * Fazer requisições HTTP (baixar o conteúdo de uma página ou API).
+
+     * Codificar parâmetros de busca (transformar espaços em %20, por exemplo).
+
+     *  Analisar a estrutura de uma URL (separar o domínio do caminho).
+
+   * Ponto importante: Embora seja muito poderosa e nativa, muitos desenvolvedores preferem a biblioteca externa `requests` por ser mais "amigável". Mas a `urllib` é quem manda nos bastidores.
+
+ * `glob`
+
+   A `glob` é o seu "detetive de arquivos". Ela serve para encontrar caminhos de arquivos e pastas seguindo padrões específicos, de forma muito mais simples do que listar tudo manualmente.
+
+   * O que faz: Retorna uma lista de arquivos que correspondem a um padrão (usando wildcards ou "coringas").
+
+   * Principais usos:
+
+      * Listar todos os arquivos `.jpg` de uma pasta específica.
+
+      * Encontrar arquivos que começam com "relatorio_" e terminam em .pdf.
+
+      * Navegar por subdiretórios rapidamente.
+
+   * Exemplo de padrão: `glob.glob("*.csv")` traria todos os arquivos Excel/CSV da pasta atual.
+
 \newpage
 
 ### Carregando vários arquivos usando um laço
