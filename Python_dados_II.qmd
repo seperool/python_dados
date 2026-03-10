@@ -2135,6 +2135,26 @@ Bibliotecas usadas:
 
 \newpage
 
+```
+import os
+import urllib.request
+
+# Código para fazer download dos dados;
+# Faz o download somente dos cinco primeiros conjuntos de dados da lista de arquivo
+
+with open('Data/Cap_06/varias_tabelas/raw_data_urls.txt','r') as data_urls:
+    for line, url in enumerate(data_urls):
+      if line == 5:
+         break
+      fn = url.split('/')[-1].strip()
+      fp = os.path.join('..','varias_tabelas',fn)
+      print(url)
+      print(fp)
+      urllib.request.urlretrieve(url,fp)
+```
+
+\newpage
+
 ### Carregando vários arquivos usando um laço
 ### Carregando vários arquivos usando uma `list comprehension`
 
