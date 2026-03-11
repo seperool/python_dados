@@ -2139,19 +2139,65 @@ Bibliotecas usadas:
 import os
 import urllib.request
 
-# Código para fazer download dos dados;
-# Faz o download somente dos cinco primeiros conjuntos de dados da lista de arquivo
+# 1. Ajustamos o caminho base usando o expanduser para o Ubuntu entender o '~'
+base_path = os.path.expanduser("~/Programacao/python_dados/Data/Cap_06/varias_tabelas")
 
-with open('Data/Cap_06/varias_tabelas/raw_data_urls.txt','r') as data_urls:
+# 2. Caminho completo do arquivo TXT
+arquivo_urls = os.path.join(base_path, "raw_data_urls.txt")
+
+# 3. Abrimos o arquivo usando o caminho completo
+with open(arquivo_urls, 'r') as data_urls:
     for line, url in enumerate(data_urls):
-      if line == 5:
-         break
-      fn = url.split('/')[-1].strip()
-      fp = os.path.join('..','varias_tabelas',fn)
-      print(url)
-      print(fp)
-      urllib.request.urlretrieve(url,fp)
+        if line == 5:
+            break
+        
+        # Extrai o nome do arquivo (ex: tabela1.csv)
+        fn = url.split('/')[-1]
+        
+        # Define onde salvar: EXATAMENTE na mesma pasta do TXT
+        fp = os.path.join(base_path, fn)
+        
+        print(f"Baixando linha {line}: {url}")
+        print(f"Salvando em: {fp}")
+        
+        # Realiza o download
+        urllib.request.urlretrieve(url, fp)
 ```
+
+Infelizmente os links estão quebrados. Esse código não funciona mais, mesmo adaptando. Essa parte será puramente teórica.
+
+\newpage
+
+Explicando o código:
+
+  * `with open(arquivo_urls, 'r') as data_urls:`
+  
+   Abre o seu arquivo .txt. o `with` é um "segurança". Ele garante que, assim que o código terminar de ler as URLs (ou se der algum erro no meio), o arquivo seja fechado automaticamente. Sem o `with`, o arquivo poderia ficar "preso" na memória do Ubuntu.
+
+   * `for line, url in enumerate(data_urls):`
+
+   Normalmente, um for leria apenas a url. O `enumerate` adiciona um contador automático. Na primeira volta, `line` vale 0, na segunda 1, e assim por diante. É por isso que você consegue usar o `if line == 5: break` para parar o download após 5 arquivos.
+
+   * `fn = url.split('/')[-1]`
+
+      * O `.split('/')` corta a frase em todos os lugares que tem uma barra, transformando-a em uma lista: `['https:', '', 'site.com', 'dados', 'tabela1.csv']`.
+
+      * O `[-1]` pega o último item dessa lista.
+
+      * Resultado: `fn` (filename) passa a ser apenas `tabela1.csv`.
+
+   * `fp = os.path.join(base_path, fn)`
+   
+      * `fp` significa File Path (caminho do arquivo).
+
+      * Em vez de você escrever manualmente `/home/sergio/.../tabela1.csv`, o Python junta o caminho da pasta (`base_path`) com o nome do arquivo (`fn`) de forma limpa.
+
+   * `urllib.request.urlretrieve(url, fp)`
+      * Esta é a função que efetivamente "teletransporta" o arquivo da web para o seu HD.
+
+      * Ela precisa de dois argumentos:
+        * De onde vem? (`url`)
+        * Para onde vai? (`fp`).
 
 \newpage
 
