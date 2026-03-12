@@ -2201,6 +2201,28 @@ Explicando o código:
 
 \newpage
 
+Nesse exemplo, todos os arquivos com dados brutos das corridas de táxi têm o padrão `fhv_tripdata_YYYY_XX.csv`, em que `YYYY` representa o ano (por exemplo, 2015) e `XX` representa o número da parte. Podemos usaruma função simples de correspondência de padrões da biblioteca `glob` em Python para obter uma lista com todos os nomes de arquivos que correspondam a um determinado padrão.
+
+```
+import glob
+
+#Obtém uma lista de arquivos csv da pasta de dados das corridas de táxi de nyc
+nyc_taxi_data = glob.glob('../data/fhv_*')
+print(nyc_taxi_data)
+```
+
+Agora que temos uma lista dos nomes dos arquivos que queremos carregar, podemos carregar cada arquivo emum dataframe. É possível optar por corregar cada arquivo individualmente, como temos feito até agora.
+
+```
+taxi1 = pd.read_csv(nyc_taxi_data[0])
+taxi2 = pd.read_csv(nyc_taxi_data[1])
+taxi3 = pd.read_csv(nyc_taxi_data[2])
+taxi4 = pd.read_csv(nyc_taxi_data[3])
+taxi5 = pd.read_csv(nyc_taxi_data[4])
+```
+
+\newpage
+
 ### Carregando vários arquivos usando um laço
 ### Carregando vários arquivos usando uma `list comprehension`
 
