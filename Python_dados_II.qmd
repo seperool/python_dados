@@ -2221,6 +2221,39 @@ taxi4 = pd.read_csv(nyc_taxi_data[3])
 taxi5 = pd.read_csv(nyc_taxi_data[4])
 ```
 
+Podemos observar nossos dados e ver como é possível empilhá-los (concatená-los) elegantemente uns sobre os outros.
+
+```
+print(taxi1.head(n=2))
+print(taxi2.head(n=2))
+print(taxi3.head(n=2))
+print(taxi4.head(n=2))
+print(taxi5.head(n=2))
+```
+
+Os dados podem ser concatenados exatamente como fizemos em capítulos anteriores.
+
+```
+# Formato de cada dataframe
+print(taxi1.shape)
+print(taxi2.shape)
+print(taxi3.shape)
+print(taxi4.shape)
+print(taxi5.shape)
+```
+
+\newpage
+
+```
+# Concatena os dataframes
+taxi = pd.concat([taxi1,taxi2,taxi3,taxi4,taxi5])
+
+# Formato final dos dados de táxi concatenados
+print(taxi.shape)
+```
+
+Entretanto, salvar manualmente cada dataframe se tornará tedioso quando os dados estiverem divididos em muitas partes. Como uma abordagem alternativa, podemos automatizar o processo usando laços e `list comprehensions` (abrangência de listas).
+
 \newpage
 
 ### Carregando vários arquivos usando um laço
