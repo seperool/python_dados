@@ -2257,6 +2257,70 @@ Entretanto, salvar manualmente cada dataframe se tornará tedioso quando os dado
 \newpage
 
 ### Carregando vários arquivos usando um laço
+
+Um modo mais fácil de carregar vários arquivos é criar primeiro uma lista vazia, usar um laço para iterar pelos arquivos CSV, carregá-los em um dataframe do Pandas e, por fim, concatenar o dataframe à lista.
+
+```{mermaid}
+%%| label: fig-concatmultdata
+%%| fig-cap: "Carregando vários arquivos usando um laço."
+
+graph TD
+    A[Criar lista vazia] --> B[Laço iterar CSV]
+    B --> C[Coloca em dataframe]
+    C --concatenar--> D[dataframe a lista]
+```
+
+[O tipo de dado final que queremos é uma lista de dataframes porque a função `concat` aceita uma lista de dataframes para concatenar]{.underline}.
+
+\newpage
+
+```
+# Criar uma lista vazia na qual a concatenação será feita
+list_taxi_df = []
+
+# Percorrer cada arquivo CSV em um laço
+for csv_filename in nyc_taxi_data:
+   # Você pode optar por exibir o nome do arquivo para depuração
+   # print(csv_filename)
+
+   # Carrega o arquivo CSV em um dataframe
+   df = pd.read_csv(csv_filename)
+
+   # Concatena o dataframe à lista que armazenará os dataframes
+   list_taxi_df.append(df)
+
+# Exibi o tamanho do dataframe
+print(len(list_taxi_df))
+```
+
+Código:
+
+\newpage
+
+```
+# Tipo do primeiro elemento
+print(type(list_taxi_df[0]))
+```
+
+```
+# Exibe o início do primeiro dataframe
+print(list_taxi_df[0].head())
+```
+
+Agora que temos uma lista de dataframes, podemos concatená-los.
+
+```
+taxi_loop_concat = pd.concat(list_taxi_df)
+print(taxi_loop_concat.shape)
+```
+
+```
+# O mesmo resultado foi obtido em comparação com a carga manual e a concatenação?
+print(taxi.equals(taxi_loop_concat))
+```
+
+\newpage
+
 ### Carregando vários arquivos usando uma `list comprehension`
 
 \newpage
