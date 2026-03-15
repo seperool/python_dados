@@ -2293,7 +2293,25 @@ for csv_filename in nyc_taxi_data:
 print(len(list_taxi_df))
 ```
 
-Código:
+Explicando o código:
+
+   * `list_taxi_df = []`: 
+ 
+      Antes de começar a ler os arquivos, você reserva um espaço na memória do Python para guardá-los. Essa lista vazia é como uma pasta onde você vai colocar cada "folha" (DataFrame) que encontrar.
+
+   * `for csv_filename in nyc_taxi_data`:
+
+      * `nyc_taxi_data` é uma variável que contém os nomes dos seus arquivos (ex: `['viagens_jan.csv', 'viagens_fev.csv']`).
+
+      * A cada volta do laço, o Python pega um desses nomes e coloca dentro da variável temporária `csv_filename`.
+
+  * `df = pd.read_csv`:
+  
+      Aqui o Pandas entra em ação. Ele abre o arquivo físico que está no seu computador e o transforma em um objeto DataFrame na memória. É como se ele estivesse lendo o papel e criando uma tabela digital.
+
+  * `list_taxi_df.append(df)`:
+   
+      Essa é a parte mais importante. O comando `.append()` pega o DataFrame que você acabou de criar e o coloca dentro daquela lista vazia do início.
 
 \newpage
 
