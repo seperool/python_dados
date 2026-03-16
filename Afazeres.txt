@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    15/03/26
-# Próxima Atualização: 16/03/26
+# Data Atualização:    16/03/26
+# Próxima Atualização: 17/03/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Carregando vários arquivos usando uma list comprehension".
+- "Conclusão Tidy data".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -22,8 +22,8 @@
         - [x] Várias unidades de observação em uma tabela (normalização)
         - [P] Unidade de observação em várias tabelas
             - [x] Carregando vários arquivos usando um laço
-            - [P] Carregando vários arquivos usando uma list comprehension
-        - [ ] Conclusão Tidy data
+            - [x] Carregando vários arquivos usando uma list comprehension
+        - [P] Conclusão Tidy data
 
 
 ## 2. TO DO
