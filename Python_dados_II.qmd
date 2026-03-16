@@ -2341,6 +2341,48 @@ print(taxi.equals(taxi_loop_concat))
 
 ### Carregando vários arquivos usando uma `list comprehension`
 
+Python tem um idiom para percorrer dados em um laço adicionando-os em uma lista; esse idiom se chama `list comprehension` (abrangência de lista). O laço apresentado antes, exibido novamente a seguir, sem os comentários, pode ser escrito como uma `list comprehension`.
+
+Em programação, "idiom" (em português, idiomatismo) refere-se à maneira mais natural, eficiente e comum de escrever um código em uma linguagem específica.
+
+Cada linguagem tem uma sintaxe própria, mas o "idiom" vai além: é o jeito "certo" ou "elegante" de resolver um problema usando as ferramentas nativas daquela linguagem.
+
+   * O código não-idiomático: 
+   
+      Funciona, mas ignora as facilidades da linguagem (ex: usar um laço for manual com append para criar uma lista, como no seu primeiro exemplo).
+
+   * O código idiomático: 
+      
+      Usa recursos como a `list comprehension` para ser mais conciso e, muitas vezes, mais rápido.
+
+```
+# O código do laço sem comentários
+list_taxi_df = []
+for csv_filename in nyc_taxi_data:
+   df = pd.read_csv(csv_filename)
+   list_taxi_df.append(df)
+```
+
+```
+# O mesmo código em uma list comprehension
+list_taxi_df_comp = [pd.read_csv(data) for data in nyc_taxi_data]
+```
+
+O resultado de nossa list comprehension é uma lista, assim como no exemplo anterior com um laço.
+
+```
+print(type(list_taxi_df_comp))
+```
+
+Por fim, podemos concatenar o resultado exatamente como fizemos antes.
+
+```
+taxi_loop_concat_comp = pd.concat(list_taxi_df_comp)
+
+# Os dataframes concatenados são os mesmos?
+print(taxi_loop_concat_comp.equals(taxi_loop_concat))
+```
+
 \newpage
 
 ## Conclusão *Tidy data*
