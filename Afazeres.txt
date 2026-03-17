@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    16/03/26
-# Próxima Atualização: 17/03/26
+# Data Atualização:    17/03/26
+# Próxima Atualização: 18/03/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -20,17 +20,14 @@
         - [x] Colunas contendo diversas variáveis
         - [x] Variáveis tanto em linhas quanto em colunas
         - [x] Várias unidades de observação em uma tabela (normalização)
-        - [P] Unidade de observação em várias tabelas
-            - [x] Carregando vários arquivos usando um laço
-            - [x] Carregando vários arquivos usando uma list comprehension
-        - [P] Conclusão Tidy data
-
+        - [x] Unidade de observação em várias tabelas
+        - [x] Conclusão Tidy data
 
 ## 2. TO DO
-- [P] Manipulação de dados
+- [x] Manipulação de dados
     - [x] Preparação dos dados
     - [x] Dados ausentes
-    - [P] Tidy data (dados organizados)
+    - [x] Tidy data (dados organizados)
 
 ## 3. SCRIPTS (Ideias e Backlog)
 - [x] [Ideia] Script para automação de X
