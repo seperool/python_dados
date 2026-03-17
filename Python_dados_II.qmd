@@ -2387,6 +2387,12 @@ print(taxi_loop_concat_comp.equals(taxi_loop_concat))
 
 ## Conclusão *Tidy data*
 
+Este capítulo explorou como podemos reformatar os dados para que estejam mais apropriados à análise, à visualização e à coleta de dados.
+
+Aplicamos os conceitos do artigo `Tidy Data` (Dados organizados) de Hadley Wickham a fim de mostrar as diversas funções e métodos para reformatar nossos dados. Essa é uma habilidade importante porque algumas funções exigem que os dados estejam organizados em um determinado formato, como tidy data ou não, para que funcionem.
+
+Saber como reformatar nossos dados é uma habilidade importante tanto para o cientista de dados quanto para o analista.
+
 ```{python}
 #| echo: false
 #| error: false
