@@ -1364,6 +1364,15 @@ Este capítulo abordará:
    3. Normalização de dados separando um dataframe em várias tabelas;
    4. Reunião de dados de várias partes.
 
+```{mermaid}
+%%| label: fig-tidy
+%%| fig-cap: "Transformando wide (largo) em long (longo) data, e vice-versa."
+
+graph TD
+    A[Wide Data] --melt--> B[Long Data]
+    B --pivot_table--> A
+```
+
 \newpage
 
 ## Coluna contêm valores, e não variáveis
@@ -1795,6 +1804,14 @@ print(weather_melt.tail())
 
 A seguir, devemos pivotear as variáveis armazenadas na coluna `element`. Esse processo é conhecido como *casting* ou *spreading* em outras linguagens estatística.
 
+```{mermaid}
+%%| label: fig-pivot
+%%| fig-cap: "Transformando long (longo) em wide (largo) data."
+
+graph TD
+    A[Long Data] --pivot_table--> B[Wide Data]
+```
+
 Uma das principais diferenças entre `pivot_table` e `melt` é que [`melt` é uma função no Pandas]{.underline}, enquanto [pivot_table é um método que chamamos em um objeto `DataFrame`]{.underline}.
 
 ```{python}
@@ -1814,6 +1831,8 @@ Sobre os parâmetros do `pivot_tabel`:
   * `columns`: Indica qual coluna contém os nomes que você quer transformar em novas colunas. No texto, é a coluna element (que contém os textos `tmax` e `tmin`).
 
   * `values`: Indica de onde virão os números (os dados reais) para preencher essas novas colunas. No exemplo, os valores vêm da coluna `temp`.
+
+\newpage
 
 Observando a tabela após a operação de pivot, percebemos que cada valor na coluna element está agora em uma coluna separada. É possível deixar essa tabela em seu estado atual, mas também podemos linearizar as colunas hierárquicas.
 
