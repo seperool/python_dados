@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    17/03/26
-# Próxima Atualização: 18/03/26
+# Data Atualização:    18/03/26
+# Próxima Atualização: 19/03/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Conclusão Tidy data".
+- "Introdução".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -14,20 +14,20 @@
 
 ## 1. DOING
 - [P] Manipulação de dados
-    - [P] Tidy data (dados organizados)
-        - [x] Introdução
-        - [x] Coluna contêm valores, e não variáveis
-        - [x] Colunas contendo diversas variáveis
-        - [x] Variáveis tanto em linhas quanto em colunas
-        - [x] Várias unidades de observação em uma tabela (normalização)
-        - [x] Unidade de observação em várias tabelas
-        - [x] Conclusão Tidy data
+    - [P] Tipos de dados
+        - [P] Introdução
+        - [ ] Tipos de dados
+        - [ ] Convertendo tipos
+        - [ ] Dados categorizados
+        - [ ] Conclusão
 
 ## 2. TO DO
-- [x] Manipulação de dados
-    - [x] Preparação dos dados
-    - [x] Dados ausentes
-    - [x] Tidy data (dados organizados)
+- [P] Manipulação de dados
+    - [P] Tipos de dados
+    - [ ] Strings e dados do tipo texto
+    - [ ] Apply
+    - [ ] Operações groupby: separar-aplicar-combinar
+    - [ ] O tipo de dado datetime
 
 ## 3. SCRIPTS (Ideias e Backlog)
 - [x] [Ideia] Script para automação de X
