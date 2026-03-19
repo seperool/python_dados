@@ -83,6 +83,25 @@ O objetivo deste estudo é explorar e documentar as funcionalidades essenciais d
 # Tipos de dados
 
 ## Introdução
+
+Os tipos de dados determinam o que pode e o que não pode ser feito com uma variável (isto é, coluna).
+
+Por exemplo, quando tipos de dados numéricos são somados, o resultado será uma soma dos valores; por outro lado, se trings (no Pandas, elas são chamadas de `object`) forem somadas, elas serão concatenadas.
+
+Este capítulo apresenta uma visão geral rápida dos diversos tipos de dados que você poderá encontrar no Pandas e as formas de converter um tipo de dado em outro.
+
+### Objetivos{.unnumbered}
+
+Este capítulo abordará:
+
+  1. Como encontrar os tipos de dados das colunas em um dataframe.
+  2. Conversão entre diversos tipos de dados.
+  3. Como trabalhar com tipos de dados categorizados.
+
+Em outro capítulo discutirá como trabalhar com datas e horas.
+
+\newpage
+
 ## Tipos de dados
 ## Convertendo tipos
 ## Dados categorizados
