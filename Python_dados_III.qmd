@@ -103,6 +103,24 @@ Em outro capítulo discutirá como trabalhar com datas e horas.
 \newpage
 
 ## Tipos de dados
+
+Neste capítulo, usaremos o conjunto de dados embutidos `tips` do `seaborn`.
+
+```{python}
+import seaborn as sns
+import pandas as pd
+
+tips = sns.load_dataset("tips")
+```
+
+Para obter uma lista dos tipos de dados armazenados em cada coluna de nosso dataframe, chamamos o atributo `dtypes`.
+
+```{python}
+print(tips.dtypes)
+```
+
+\newpage
+
 ## Convertendo tipos
 ## Dados categorizados
 ## Conclusão
