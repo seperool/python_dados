@@ -131,7 +131,38 @@ Como o conjunto de dados `tips` é um conjunto totalmente preparado e limpo, as 
 
 ## Convertendo tipos
 
-### Convertendo para objetos string
+O tipo de dado armazenado em uma coluna determinará os tipos de funções e cálculos que podemos realizar nos dados que se encontram nessa coluna. Então sem dúvida é importante saber como fazer conversões entre tipos de dados.
+
+Esta seção tem como foco o modo de converter de um tipo de dado para outro; tenha em mente, porém, que não é mandatório fazer todas as conversões de tipos de dados de uma só vez, no momento em que você recebe seus dados. A análise de dados não é um processo linear e é possível optar por fazer a conversão de tipos durate a análise, conforme necessário. Já vimos um exemplo disto, quando tentamos converter um valor de data, transformando-o somente nos números dos anos.
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-conversao-tipos
+#| tbl-cap: Diferenças entre `astype` e `to_numeric` no Pandas
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+table = [
+    ["**Versatilidade**", "Converte para **qualquer tipo** (int, float, string, category, etc).", "Focada exclusivamente em **números** (int ou float)."],
+    ["**Tratamento de Erros**", "Rígido. Se encontrar uma letra em uma coluna de números, o código trava.", "Flexível. Possui o parâmetro `errors='coerce'` para lidar com sujeira."],
+    ["**Valores Inválidos**", "Frequentemente resulta em `ValueError` se houver espaços ou símbolos.", "Transforma sujeira (ex: 'vazio', '??') em `NaN` automaticamente."],
+    ["**Sintaxe**", "Método do Series/DataFrame (`df['col'].astype()`)", "Função do pandas (`pd.to_numeric(df['col'])`)"],
+    ["**Uso Recomendado**", "Quando os dados estão limpos ou para tipos `str` e `category`.", "Quando os dados vêm de fontes externas e podem conter erros."]
+]
+Markdown(tabulate(
+  table, 
+  headers=["Característica", "`.astype()`", "`pd.to_numeric()`"],
+  colalign=("left", "left", "left"),
+  tablefmt="grid"
+))
+```
+
+\newpage
+
+### Convertendo para objetos string - `.astype()`
 ### Convertendo para valores numéricos
 #### `to_numeric`
 #### Parâmetro downcast de `to_numeric`
