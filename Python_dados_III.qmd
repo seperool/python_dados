@@ -119,9 +119,23 @@ Para obter uma lista dos tipos de dados armazenados em cada coluna de nosso data
 print(tips.dtypes)
 ```
 
+Anteriormente já foi listado os diversos tipos de dados que podem ser armazenados em uma coluna do Pandas. Nosso conjunto de dados inclui os tipos de dados `int64`, `float64` e `category`.
+
+Os tipos `int64` e `float64` representam valores numéricos sem e com casas decimais, respectivamentes. O número após o tipo de dado numérico representa a quantidade de bits de informação que será armazenada para aquele número em particular.
+
+O tipo de dado `category` representa variáveis categorizadas e difere do tipo de dado `object` genérico, que armazena `strings` arbritárias. Exploraremos essas diferenças mais adiante neste capítulo.
+
+Como o conjunto de dados `tips` é um conjunto totalmente preparado e limpo, as variáveis que armazenam `strings` foram salvas com uma categoria (`category`).
+
 \newpage
 
 ## Convertendo tipos
+
+### Convertendo para objetos string
+### Convertendo para valores numéricos
+#### `to_numeric`
+#### Parâmetro downcast de `to_numeric`
+
 ## Dados categorizados
 ## Conclusão
 
