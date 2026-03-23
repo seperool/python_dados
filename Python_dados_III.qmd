@@ -163,6 +163,29 @@ Markdown(tabulate(
 \newpage
 
 ### Convertendo para objetos string - `.astype()`
+
+Em nosssos dados de `tips`, as variáveis `sex`, `smoker`, `day` e `time` estão armazenadas como `category`.
+
+Em geral, é muito mais fácil trabalhar com tipos `object` para string quando a variável não é um número.
+
+Alguns conjuntos de dados podem ter uma coluna `id` na qual esse dado é armazenado como um número, mas que não terá nenhum significado se você fizer um cálculo nesse valor (por exemplo, se tentar achar a média). Identificadores únicos ou números de `id` em geral sção codificados dessa forma, e você talvez queira convertê-los em tipos `object` para string de acordo com a sua necessidade.
+
+Para converter valores em strings, usamos o método [`astype`]{.underline} na coluna. [`astype` aceita um parâmetro `dtype` que será o novo tipo de dado assumido pela coluna]{.underline}. Nesse caso, queremos converter a variável `sex` em um `object` para string `str`.
+
+```{python}
+tips['sex_str'] = tips['sex'].astype(str)
+```
+
+Python tem tipos embutidos [`str`]{.underline}, [`float`]{.underline}, [`int`]{.underline}, [`complex`]{.underline} e [`bool`]{.underline}. No entanto, é possível também especificar qualquer `dtype` da biblioteca `numpy`.
+
+Se observarmos os `dtypes` agora, veremos que `Unique Key` tem um `dtype` igual ao `object`.
+
+```{python}
+print(tips.dtypes)
+```
+
+\newpage
+
 ### Convertendo para valores numéricos
 #### `to_numeric`
 #### Parâmetro downcast de `to_numeric`
