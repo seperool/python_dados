@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS II
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    22/03/26
-# Próxima Atualização: 23/03/26
+# Data Atualização:    23/03/26
+# Próxima Atualização: 24/03/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Convertendo para objetos string".
+- "Convertendo para valores numéricos".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -18,8 +18,8 @@
         - [x] Introdução
         - [x] Tipos de dados
         - [P] Convertendo tipos
-            - [P] Convertendo para objetos string
-            - [ ] Convertendo para valores numéricos
+            - [x] Convertendo para objetos string
+            - [P] Convertendo para valores numéricos
                 - [ ] to_numeric
                 - [ ] Parâmetro downcast de to_numeric
         - [ ] Dados categorizados
