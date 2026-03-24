@@ -187,8 +187,31 @@ print(tips.dtypes)
 \newpage
 
 ### Convertendo para valores numéricos
+
+O método `astype` é uma função genérica que pode ser usada para converter qualquer coluna de um dataframe em outro `dtype`.
+
+Lembre-se de que cada coluna é um objeto `Series` do Pandas - é por isso que a documentação do `astype` está em `pandas.Series.astype`. O exemplo, nesse caso, mostra como alterar o tipo de uma coluna do dataframe, mas, se você estiver trabalhando com um objeto `Series`, poderá usar o mesmo método `astype` para convertê-lo também.
+
+É possível especificar qualquer tipo embutido ou do `numpy` para o método `astype` converter o `dtype` da coluna. Por exemplo, se quiséssemos converter a coluna `total_bill` em um `object` para string primeiro, e então de volta para o seu `float64` original, poderíamos passar `str` e `float` para o `astype`, respectivamente.
+
+```{python}
+# Converte total_bill em uma string
+tips['total_bill'] = tips['total_bill'].astype(str)
+print(tips.dtypes)
+```
+
+```{python}
+# Converte de volta para um float
+tips['total_bill'] = tips['total_bill'].astype(float)
+print(tips.dtypes)
+```
+
+\newpage
+
 #### `to_numeric`
 #### Parâmetro downcast de `to_numeric`
+
+\newpage
 
 ## Dados categorizados
 ## Conclusão
