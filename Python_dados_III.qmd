@@ -209,6 +209,34 @@ print(tips.dtypes)
 \newpage
 
 #### `to_numeric`
+
+Ao converter variáveis em valores numéricos (por exemplo, `int` e `float`), a função `to_numeric` do Pandas, a qual trata melhor os valores não numéricos, também pode ser usada.
+
+Como uma coluna em um dataframe deve ter o mesmo `dtype`, haverá ocasiões em que uma coluna numérica conterá strings como alguns de seus valores. Por exemplo, em vez do valor `NaN` que representa um valor ausente no Pandas, uma coluna numérica poderia usar a string 'missing' ou 'null' para essa finalidade. Isso faria com que toda a coluna fosse uma string do tipo `object` em vez de ser um tipo numérico.
+
+Vamos obter um subconjunto de nosso dataframe `tips` e colocar também um valor 'missing' na coluna `total_bill` para mostrar como a função `to_numeric` atua.
+
+```{python}
+#| warning: false
+# Obtém um subconjunto de tips
+tips_sub_miss = tips.head(10)
+
+# Atribui alguns valores ausentes ('missing')
+tips_sub_miss.loc[[1,3,5,7], 'total_bill'] = 'missing'
+
+print(tips_sub_miss)
+```
+
+\newpage
+
+Ao observar os `dtypes`, você verá que a coluna `total_bill` agora é uma string `object`.
+
+```{python}
+print(tips_sub_miss.dtypes)
+```
+
+\newpage
+
 #### Parâmetro downcast de `to_numeric`
 
 \newpage
