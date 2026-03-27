@@ -253,6 +253,40 @@ pd.to_numeric(tips_sub_miss['total_bill'])
 
 ##### Parâmetro errors{.unnumbered}
 
+`to_numeric` tem um [parâmetro chamado `errors` que determina o que acontece quando a função encontra um valor que ela consiga converter para um valor numérico]{.underline}. Por padrão, é definido com '`raise`', ou seja, se a função encontrar um valor que não possa ser convertido em um valor numérico, um erro será gerado.
+
+De acordo com a documentação, há [três valores possíveis]{.underline} para `errors`:
+
+1. '`raise`' (default) gerará um erro se a conversão para um valor numérico não puder ser feita.
+2. '`coerce`' devolverá `NaN` para valores que não puderem ser convertidos para valores numéricos.
+3. '`ignore`' devolverá o vetor sem converter a coluna em um valor numérico (isto é, não fará nada).
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-parametros-errors
+#| tbl-cap: Comportamento do parâmetro `errors` no `pd.to_numeric()`
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# Definindo os dados da tabela sobre o parâmetro errors
+table_errors = [
+    ["`'raise'` (Padrão)", "Interrompe a execução e exibe um erro (`ValueError`).", "Dados que você sabe que **devem** ser 100% numéricos."],
+    ["`'coerce'`", "Transforma valores não numéricos em `NaN` (Not a Number).", "Dados sujos (ex: 'S/N', '-', 'falta') que precisam ser limpos."],
+    ["`'ignore'`", "Mantém o valor original e a coluna permanece como `object`.", "Raro. Útil se você quer tentar converter, mas manter tudo intacto se falhar."]
+]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  table_errors, 
+  headers=["Opção do Parâmetro", "Comportamento Técnica", "Melhor Caso de Uso"],
+  colalign=("left", "left", "left"),
+  tablefmt="grid"
+))
+```
+
 \newpage
 
 #### Parâmetro downcast de `to_numeric`
