@@ -235,6 +235,24 @@ Ao observar os `dtypes`, você verá que a coluna `total_bill` agora é uma stri
 print(tips_sub_miss.dtypes)
 ```
 
+##### Erro{.unnumbered}
+
+Se tentarmos agora usar o método `astype` para converter a coluna de volta em um `float`, veremos um erro: O Pandas não sabe como converter 'missing' em um `float`.
+
+```
+# Isto causará um erro
+tips_sub_miss['total_bill'].astype(float)
+```
+
+Se usarmos a função `to_numeric` da biblioteca Pandas, veremos um erro semelhante.
+
+```
+# Isto causará um erro
+pd.to_numeric(tips_sub_miss['total_bill'])
+```
+
+##### Parâmetro errors{.unnumbered}
+
 \newpage
 
 #### Parâmetro downcast de `to_numeric`
