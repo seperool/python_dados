@@ -289,6 +289,30 @@ Markdown(tabulate(
 
 \newpage
 
+###### `ignore`{.unnumbered}
+
+Saindo da ordem da documentação, se passarmos o valor 'ignore' para `errors`, nada mudará em nossa coluna. No entanto, não veremos tampouco uma mensagem de erro - o que nem sempre poderá ser o comportamento desejado.
+
+```{python}
+#| warning: false
+tips_sub_miss['total_bill'] = pd.to_numeric(
+  tips_sub_miss['total_bill'],
+  errors='ignore'
+)
+
+print(tips_sub_miss)
+```
+
+```{python}
+print(tips_sub_miss.dtypes)
+```
+
+\newpage
+
+###### `coerce`{.unnumbered}
+
+\newpage
+
 #### Parâmetro downcast de `to_numeric`
 
 \newpage
