@@ -311,6 +311,24 @@ print(tips_sub_miss.dtypes)
 
 ###### `coerce`{.unnumbered}
 
+Em comparação, se passarmos o valor 'coerce', teremos valores `NaN` para a sting 'missing'.
+
+```{python}
+#| warning: false
+tips_sub_miss['total_bill'] = pd.to_numeric(
+  tips_sub_miss['total_bill'],
+  errors='coerce'
+)
+
+print(tips_sub_miss)
+```
+
+```{python}
+print(tips_sub_miss.dtypes)
+```
+
+[Esse é um truqe útil quando você sabe que uma coluna deve conter valores numéricos, mas, por algum motivo, os dados incluem valores não numéricos]{.underline}.
+
 \newpage
 
 #### Parâmetro downcast de `to_numeric`
