@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    29/03/26
-# Próxima Atualização: 30/03/26
+# Data Atualização:    30/03/26
+# Próxima Atualização: 31/03/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Parâmetro downcast de to_numeric".
+- "Dados categorizados".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -17,12 +17,8 @@
     - [P] Tipos de dados
         - [x] Introdução
         - [x] Tipos de dados
-        - [P] Convertendo tipos
-            - [x] Convertendo para objetos string
-            - [x] Convertendo para valores numéricos
-                - [x] to_numeric
-                - [P] Parâmetro downcast de to_numeric
-        - [ ] Dados categorizados
+        - [x] Convertendo tipos
+        - [P] Dados categorizados
         - [ ] Conclusão
 
 ## 2. TO DO
