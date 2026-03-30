@@ -333,6 +333,29 @@ print(tips_sub_miss.dtypes)
 
 #### Parâmetro downcast de `to_numeric`
 
+A função `to_numeric` tem outro parâmetro chamado `downcast`, que permite alterar o `dtype` numérico para o menor `dtype` numérico possível (isto é, fazer um "downcast") depois que uma coluna (ou vetor) tiver sido convertida com sucesso em um vetor numérico.
+
+Por padrão, o valor é definido com `None`, mas outros valores possíveis são '`integer`', '`signed`', '`unsigned`' e '`float`'.
+
+Compare os `dtypes` depois de termos especificado o argumento `downcast`.
+
+```{python}
+#| warning: false
+tips_sub_miss['total_bill'] = pd.to_numeric(
+  tips_sub_miss['total_bill'],
+  errors='coerce',
+  downcast='float'
+)
+
+print(tips_sub_miss)
+```
+
+```{python}
+print(tips_sub_miss.dtypes)
+```
+
+[Podemos ver que o `dtypes` de nossa coluna não é mais '`float64`', isto é, agora ela ocupa um espaço menor (de memória), pois sofreu um `downcast` para `float32`]{.underline}.
+
 \newpage
 
 ## Dados categorizados
