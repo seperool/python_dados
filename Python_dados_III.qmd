@@ -359,6 +359,12 @@ print(tips_sub_miss.dtypes)
 \newpage
 
 ## Dados categorizados
+
+### Conversão para categoria
+### Manipulando dados categorizados
+
+\newpage
+
 ## Conclusão
 
 \newpage
