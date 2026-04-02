@@ -360,6 +360,14 @@ print(tips_sub_miss.dtypes)
 
 ## Dados categorizados
 
+Nem todos os valores são numéricos. O Pandas tem um `dtype` `category` capaz de codificar valores de categoria.
+
+Eis alguns casos de uso para dados categorizados:
+
+  1. Armazenar dados desse modo é mais eficaz quanto a memória e á velocidade, particularmente se o conjunto de dados incluir muitos valores repetidos de string.
+  2. Dados categorizados podem ser apropriados quando uma coluna de valores tiver uma ordem (por exemplo, uma escala de Linkert).
+  3. Algumas bibliotecas Python sabem lidar com dados categorizados (por exemplo, na adequação de modelos estatísticos).
+
 ### Conversão para categoria
 ### Manipulando dados categorizados
 
