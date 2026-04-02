@@ -90,6 +90,35 @@ Por exemplo, quando tipos de dados numéricos são somados, o resultado será um
 
 Este capítulo apresenta uma visão geral rápida dos diversos tipos de dados que você poderá encontrar no Pandas e as formas de converter um tipo de dado em outro.
 
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-referencia-tipos
+#| tbl-cap: Tabela de Referência Rápida de Tipos de Dados no Pandas
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# Definindo os dados da tabela de referência de tipos
+table_referencia = [
+    ["`int64` / `int32`", "Números inteiros (sem casas decimais).", "Idades, quantidades, anos, IDs."],
+    ["`float64` / `float32`", "Números decimais (ponto flutuante).", "Preços, medidas, taxas, coordenadas."],
+    ["`object`", "Geralmente strings ou tipos mistos.", "Nomes, endereços, descrições."],
+    ["`bool`", "Valores lógicos (Verdadeiro ou Falso).", "Flags (ex: 'ativo', 'pago', 'concluido')."],
+    ["`datetime64`", "Representação de datas e horários.", "Data de venda, timestamp de log, nascimento."],
+    ["`category`", "Variáveis categóricas (lista finita de valores).", "Gênero, UF, níveis de escolaridade."]
+]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  table_referencia, 
+  headers=["Tipo no Pandas", "O que representa", "Exemplos de Uso"],
+  colalign=("left", "left", "left"),
+  tablefmt="grid"
+))
+```
+
 ### Objetivos{.unnumbered}
 
 Este capítulo abordará:
@@ -355,6 +384,33 @@ print(tips_sub_miss.dtypes)
 ```
 
 [Podemos ver que o `dtypes` de nossa coluna não é mais '`float64`', isto é, agora ela ocupa um espaço menor (de memória), pois sofreu um `downcast` para `float32`]{.underline}.
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-parametros-downcast
+#| tbl-cap: Comportamento do parâmetro `downcast` no `pd.to_numeric()`
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# Definindo os dados da tabela sobre o parâmetro downcast
+table_downcast = [
+    ["`'integer'`", "Reduz para o menor tipo inteiro possível (ex: `int8`, `int16`).", "Economia agressiva de memória em colunas de contagem."],
+    ["`'signed'`", "Foca no menor tipo de inteiro que suporte números negativos.", "Dados numéricos inteiros que possuem variação de sinal."],
+    ["`'unsigned'`", "Reduz para o menor inteiro positivo (sem sinal).", "IDs, idades ou qualquer métrica que nunca seja negativa."],
+    ["`'float'`", "Reduz a precisão de 64 bits para 32 bits (`float32`).", "Datasets gigantes de ponto flutuante para reduzir o uso de RAM."]
+]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  table_downcast, 
+  headers=["Opção do Parâmetro", "Comportamento Técnico", "Melhor Caso de Uso"],
+  colalign=("left", "left", "left"),
+  tablefmt="grid"
+))
+```
 
 \newpage
 
