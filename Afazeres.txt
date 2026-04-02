@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    31/03/26
-# Próxima Atualização: 01/04/26
+# Data Atualização:    01/04/26
+# Próxima Atualização: 02/04/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Dados categorizados".
+- "Conversão para categoria".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -19,7 +19,7 @@
         - [x] Tipos de dados
         - [x] Convertendo tipos
         - [P] Dados categorizados
-            - [ ] Conversão para categoria
+            - [P] Conversão para categoria
             - [ ] Manipulando dados categorizados
         - [ ] Conclusão
 
