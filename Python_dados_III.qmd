@@ -444,6 +444,42 @@ print(tips.info())
 
 ### Manipulando dados categorizados
 
+A API de referência temuma lista das operações que podem ser realizadas em uma `Series` categorizada. A lista foi reproduzida na @tbl-api-categoria.
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-api-categoria
+#| tbl-cap: API de categoria.
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# Definindo os dados da tabela sobre o parâmetro downcast
+table_downcast = [
+    ["",""],
+    ["",""],
+    ["",""],
+    ["",""],
+    ["",""],
+    ["",""],
+    ["",""],
+    ["",""],
+    ["",""],
+    ["",""],
+    ["",""]
+    ]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  table_downcast, 
+  headers=["Atributo ou método", "Descrição"],
+  colalign=("left", "left"),
+  tablefmt="grid"
+))
+```
+
 \newpage
 
 ## Conclusão
