@@ -425,6 +425,23 @@ Eis alguns casos de uso para dados categorizados:
   3. Algumas bibliotecas Python sabem lidar com dados categorizados (por exemplo, na adequação de modelos estatísticos).
 
 ### Conversão para categoria
+
+Para converter uma coluna em um tipo categoria, passamos `category` ao método `astype`.
+
+```{python}
+# Converte a coluna sex em uma string object antes
+tips['sex'] = tips['sex'].astype('str')
+print(tips.info())
+```
+
+\newpage
+
+```{python}
+# Converte a coluna sex de volta para dados categorizados
+tips['sex'] = tips['sex'].astype('category')
+print(tips.info())
+```
+
 ### Manipulando dados categorizados
 
 \newpage
