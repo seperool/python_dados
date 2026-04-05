@@ -458,17 +458,17 @@ from tabulate import tabulate
 
 # Definindo os dados da tabela sobre o parâmetro downcast
 table_downcast = [
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""],
-    ["",""]
+    ["`Series.cat.categories`","As categorias."],
+    ["`Series.cat.ordered`","Informa se as categorias estão ordenadas."],
+    ["`Series.cat.codes`","Devolve o código inteiro da categoria."],
+    ["`Series.cat.rename_categories()`","Renomeia as categorias."],
+    ["`Series.cat.reorder_categories()`","Reordena as categorias."],
+    ["`Series.cat.add_categories()`","Adiciona novas categorias."],
+    ["`Series.cat.remove_categorias()`","Remove categorias."],
+    ["`Series.cat.remove_unused_categories()`","Remove categorias não usadas."],
+    ["`Series.cat.set_categories()`","Define novas categorias."],
+    ["`Series.cat.as_ordered()`","Deixa as categorias ordenadas."],
+    ["`Series.cat.as_unordered()`","Deixa as categorias não ordenadas."]
     ]
 
 # Gerando a tabela formatada
