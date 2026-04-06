@@ -482,6 +482,94 @@ Markdown(tabulate(
 
 \newpage
 
+#### Atributos de Consulta
+
+* `Series.cat.categories`: 
+  
+  Retorna o índice com os nomes das categorias existentes. É útil para saber exatamente quais rótulos o Pandas está reconhecendo (ex: "Jovem", "Adulto", "Idoso").
+
+  ```{python}
+  import pandas as pd
+
+  # Criando o DataFrame
+  df = pd.DataFrame({'tamanho': ['M', 'P', 'G', 'P', 'M']})
+
+  # Convertendo para o tipo categórico
+  df['tamanho'] = df['tamanho'].astype('category')
+
+  print(df)
+  ```
+
+  ```{python}
+  print(df.dtypes)
+  ```
+
+  ```{python}
+  print(df['tamanho'].cat.categories)
+  ```
+
+* `Series.cat.ordered`: 
+  
+  Retorna um valor booleano (True ou False). Diz se a coluna entende que existe uma hierarquia (ex: se "P" vem antes de "M").
+
+  ```{python}
+  print(df['tamanho'].cat.ordered)
+  # Saída: False
+  ```
+
+\newpage
+
+* `Series.cat.codes`: 
+  
+  Transforma os nomes em números. Se você tem "Sim" e "Não", ele transforma em 0 e 1. É o que os modelos de Machine Learning costumam usar por baixo dos panos.
+
+  Este é o mais interessante. Ele mostra a representação numérica (o "RG" de cada categoria).
+
+  ```{python}
+  print(df['tamanho'].cat.codes)
+  ```
+\newpage
+
+#### Modificação de Rótulos e Estrutura
+
+* `Series.cat.rename_categories()`:
+  
+  Altera apenas o nome dos rótulos. Se você tem categorias em inglês e quer passar para português, usa esta função.
+
+* `Series.cat.add_categories()`:
+  
+  "Abre espaço" para novos nomes. Se a coluna só aceita "A" e "B", e você tentar inserir "C" sem usar isso antes, o Pandas vai gerar um erro ou transformar o "C" em nulo (NaN).
+
+* `Series.cat.remove_categories()`:
+  
+  Remove categorias específicas da lista de permissões. Se houver dados marcados com a categoria removida, eles viram NaN.
+
+* `Series.cat.remove_unused_categories()`:
+  
+  É a "faxina". Se você filtrou seu DataFrame e não existe mais ninguém da categoria "Idoso", essa função remove esse rótulo da memória da coluna.
+
+\newpage
+
+#### Gestão de Ordem e Reconfiguração
+
+* `Series.cat.reorder_categories()`:
+  
+  Muda a sequência das categorias. Útil para quando a ordem importa (ex: mudar de [Baixo, Alto, Médio] para [Baixo, Médio, Alto]). As categorias devem ser as mesmas que já existem.
+
+* `Series.cat.set_categories()`:
+  
+  É a função "faz-tudo". Com ela, você pode adicionar, remover e ordenar categorias de uma só vez, definindo exatamente como a lista final deve ser.
+
+* `Series.cat.as_ordered()`:
+  
+  Força a coluna a ser ordenada. A partir daqui, o Pandas entende que faz sentido dizer que um valor é "maior" que outro.
+
+* `Series.cat.as_unordered()`:
+  
+  Retira a hierarquia. As categorias passam a ser apenas nomes diferentes, sem relação de grandeza entre elas.
+
+\newpage
+
 ## Conclusão
 
 \newpage
