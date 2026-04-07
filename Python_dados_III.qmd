@@ -536,18 +536,99 @@ Markdown(tabulate(
   
   Altera apenas o nome dos rótulos. Se você tem categorias em inglês e quer passar para português, usa esta função.
 
+  Serve para trocar o nome dos rótulos existentes. Você pode passar uma lista (na ordem que aparecem em .categories) ou um dicionário.
+
+  ```{python}
+  # Trocando P, M, G por Pequeno, Médio, Grande
+  df['tamanho'] = df['tamanho'].cat.rename_categories({'P': 'Pequeno',\
+    'M': 'Médio','G': 'Grande'})
+
+  print(df['tamanho'].cat.categories)
+  # Saída: Index(['Grande', 'Médio', 'Pequeno'], dtype='object')
+  ```
+
 * `Series.cat.add_categories()`:
   
   "Abre espaço" para novos nomes. Se a coluna só aceita "A" e "B", e você tentar inserir "C" sem usar isso antes, o Pandas vai gerar um erro ou transformar o "C" em nulo (NaN).
 
+  Se você tentar mudar um valor para 'GG' em uma coluna que só conhece 'P', 'M' e 'G', o Pandas vai dar erro ou colocar um nulo. Você precisa "autorizar" o novo valor primeiro.
+
+  ```{python}
+  # Adicionando o tamanho 'GG' à lista de permitidos
+  df['tamanho'] = df['tamanho'].cat.add_categories(['GG'])
+
+  # Agora eu posso, por exemplo, mudar a primeira linha para GG
+  df.loc[0, 'tamanho'] = 'GG'
+  print(df['tamanho'].unique())
+  # Saída: ['GG', 'Pequeno', 'Grande'] ...
+  ```
+
+\newpage
+
 * `Series.cat.remove_categories()`:
   
-  Remove categorias específicas da lista de permissões. Se houver dados marcados com a categoria removida, eles viram NaN.
+  Faz o oposto: proíbe um valor. Se houver dados com esse valor na tabela, eles viram `NaN` (vazio).
+
+  Remove categorias específicas da lista de permissões. Se houver dados marcados com a categoria removida, eles viram `NaN`.
+
+  ```{python}
+  # Removendo o tamanho 'Grande'
+  df['tamanho'] = df['tamanho'].cat.remove_categories(['Grande'])
+
+  # Qualquer linha que era 'Grande' agora é NaN (Not a Number)
+  print(df)
+  ```
+
+\newpage
 
 * `Series.cat.remove_unused_categories()`:
   
   É a "faxina". Se você filtrou seu DataFrame e não existe mais ninguém da categoria "Idoso", essa função remove esse rótulo da memória da coluna.
 
+  Exemplo:
+
+  Imagine que você tem uma loja que vende sorvete de Chocolate, Morango e Baunilha.
+
+    * Você tem uma tabela com 100 vendas.
+
+    * Você decide parar de vender Morango e apaga todas as linhas de Morango da sua tabela.
+
+    * Agora sua tabela só tem Chocolate e Baunilha.
+
+  O problema: Mesmo que não exista mais nenhum "Morango" nas linhas da tabela, o Pandas ainda guarda a "opção" Morango na estrutura da coluna. É como se o formulário ainda tivesse o quadradinho do Morango lá, mas ninguém nunca marcasse.
+
+  ```{python}
+  # 1. Criamos os dados
+  cores = pd.Series(['Azul', 'Vermelho', 'Azul'], dtype='category')
+  print(cores.cat.categories)
+  # Saída: Index(['Azul', 'Vermelho'], dtype='object')
+  ```
+  
+  ```{python}
+  # 2. Agora vamos remover todas as linhas que têm 'Vermelho'
+  cores_filtradas = cores[cores != 'Vermelho']
+
+  print(cores_filtradas)
+  ```
+  
+  ```{python}
+  # A tabela só tem 'Azul', certo? Mas olha as categorias:
+  print(cores_filtradas.cat.categories)
+  # Saída: Index(['Azul', 'Vermelho'], dtype='object') 
+  # O 'Vermelho' ainda está "assombrando" a coluna!
+  ```
+
+  A solução: `remove_unused_categories()`
+
+  Ela olha para a tabela, vê o que realmente está escrito lá e joga fora as opções que sobraram no "checklist" mas não estão em linha nenhuma.
+
+  ```{python}
+  cores_filtradas = cores_filtradas.cat.remove_unused_categories()
+
+  print(cores_filtradas.cat.categories)
+  # Saída: Index(['Azul'], dtype='object')
+  # Agora sim! O 'Vermelho' sumiu de vez da estrutura.
+  ```
 \newpage
 
 #### Gestão de Ordem e Reconfiguração
