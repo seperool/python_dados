@@ -653,6 +653,10 @@ Markdown(tabulate(
 
 ## Conclusão
 
+Este capítulo abordou a conversão de um tipo de dado em outro.
+
+Os `dtypes` determinam quais operações podem e não podem ser executadas em uma coluna. Embora este capítulo seja relativemente curto, a conversão de tipos é uma habilidade importante quando trabalhamos com dados e usamos outros métodos do Pandas.
+
 \newpage
 
 # Strings e dados do tipo texto
