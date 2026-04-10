@@ -721,6 +721,18 @@ Os `dtypes` determinam quais operações podem e não podem ser executadas em um
 \newpage
 
 # Strings e dados do tipo texto
+
+## Introdução
+## `strings`
+## Métodos de `string`
+## Outros métodos de `string`
+## Formatação de `strings`
+## Expressões regulares (`RegEx`)
+## Biblioteca `regex`
+## Conclusão
+
+\newpage
+
 # `Apply`
 # Operações `groupby`: separar-aplicar-combinar
 # O tipo de dado `datetime`
