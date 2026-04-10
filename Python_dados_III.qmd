@@ -633,21 +633,82 @@ Markdown(tabulate(
 
 #### Gestão de Ordem e Reconfiguração
 
+Esta é a parte mais poderosa das categorias no Pandas. É aqui que você ensina ao computador que "Grande" é maior que "Pequeno", algo que ele não sabe sozinho apenas lendo o texto.
+
+Vamos usar um exemplo de Níveis de Urgência: ['Baixa', 'Média', 'Alta'].
+
+```{python}
+df = pd.DataFrame({'urgencia': ['Alta', 'Baixa', 'Média', 'Baixa']})
+df['urgencia'] = df['urgencia'].astype('category')
+
+print(df)
+```
+
+```{python}
+print(df.dtypes)
+```
+
 * `Series.cat.reorder_categories()`:
   
   Muda a sequência das categorias. Útil para quando a ordem importa (ex: mudar de [Baixo, Alto, Médio] para [Baixo, Médio, Alto]). As categorias devem ser as mesmas que já existem.
 
+  ```{python}
+  # Definindo a ordem correta
+  df['urgencia'] = df['urgencia'].\
+    cat.reorder_categories(['Baixa', 'Média', 'Alta'],\
+    ordered=True)
+
+  # Agora o Pandas sabe que Baixa < Média < Alta. 
+  # Se você ordenar o DataFrame, ele seguirá essa lógica, não a alfabética!
+  df = df.sort_values('urgencia')
+  print(df)
+  ```
+
+\newpage
+
 * `Series.cat.set_categories()`:
   
-  É a função "faz-tudo". Com ela, você pode adicionar, remover e ordenar categorias de uma só vez, definindo exatamente como a lista final deve ser.
+  É a função "faz-tudo". Com ela, você pode adicionar, remover e ordenar categorias de uma só vez, definindo exatamente como a lista final deve ser. Ela faz o trabalho de `add`, `remove` e `reorder` de uma só vez. Você passa uma lista nova e ela ajusta a coluna para ser exatamente igual a essa lista.
+
+  ```{python}
+  # Imagine que queremos mudar as opções para 
+  # ['Minima', 'Baixa', 'Média', 'Alta', 'Urgente']
+  novas_opcoes = ['Minima', 'Baixa', 'Média', 'Alta', 'Urgente']
+
+  df['urgencia'] = df['urgencia'].\
+    cat.set_categories(novas_opcoes, ordered=True)
+
+  print(df['urgencia'].cat.categories)
+  ```
+
+  **Atenção**: Se você usar set_categories e esquecer de incluir uma categoria que já estava nos dados, o Pandas vai transformar esses valores em `NaN`.
 
 * `Series.cat.as_ordered()`:
   
   Força a coluna a ser ordenada. A partir daqui, o Pandas entende que faz sentido dizer que um valor é "maior" que outro.
 
+  Transforma uma categoria comum em uma categoria ordinal. Ela avisa ao Pandas: "Ei, a ordem em que os nomes aparecem na lista de categorias importa!".
+
+  ```{python}
+  df['urgencia'] = df['urgencia'].cat.  as_ordered()
+  print(df['urgencia'].cat.ordered) 
+  ```
+
+  ```{python}
+  print(df['urgencia'])
+  ```
+
+\newpage
+
 * `Series.cat.as_unordered()`:
   
-  Retira a hierarquia. As categorias passam a ser apenas nomes diferentes, sem relação de grandeza entre elas.
+  É o caminho reverso. Ela remove a hierarquia, voltando a tratar as categorias apenas como rótulos sem relação de "maior" ou "menor".
+
+  ```{python}
+  df['urgencia'] = df['urgencia'].cat.as_unordered()
+
+  print(df['urgencia'])
+  ```
 
 \newpage
 
