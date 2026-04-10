@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    08/04/26
-# Próxima Atualização: 09/04/26
+# Data Atualização:    09/04/26
+# Próxima Atualização: 10/04/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -18,15 +18,15 @@
         - [x] Introdução
         - [x] Tipos de dados
         - [x] Convertendo tipos
-        - [P] Dados categorizados
+        - [x] Dados categorizados
             - [x] Conversão para categoria
-            - [P] Manipulando dados categorizados
+            - [x] Manipulando dados categorizados
         - [x] Conclusão
 
 ## 2. TO DO
 - [P] Manipulação de dados
-    - [P] Tipos de dados
-    - [ ] Strings e dados do tipo texto
+    - [x] Tipos de dados
+    - [P] Strings e dados do tipo texto
     - [ ] Apply
     - [ ] Operações groupby: separar-aplicar-combinar
     - [ ] O tipo de dado datetime
