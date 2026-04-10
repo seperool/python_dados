@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    09/04/26
-# Próxima Atualização: 10/04/26
+# Data Atualização:    10/04/26
+# Próxima Atualização: 11/04/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Manipulando dados categorizados".
+- "Strings e dados do tipo texto".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -14,14 +14,15 @@
 
 ## 1. DOING
 - [P] Manipulação de dados
-    - [P] Tipos de dados
-        - [x] Introdução
-        - [x] Tipos de dados
-        - [x] Convertendo tipos
-        - [x] Dados categorizados
-            - [x] Conversão para categoria
-            - [x] Manipulando dados categorizados
-        - [x] Conclusão
+    - [P] Strings e dados do tipo texto
+        - [ ] Introdução
+        - [ ] strings
+        - [ ] Métodos de string
+        - [ ] Outros métodos de string
+        - [ ] Formatação de strings
+        - [ ] Expressões regulares (RegEx)
+        - [ ] Biblioteca regex
+        - [ ] Conclusão
 
 ## 2. TO DO
 - [P] Manipulação de dados
