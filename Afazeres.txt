@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    10/04/26
-# Próxima Atualização: 11/04/26
+# Data Atualização:    11/04/26
+# Próxima Atualização: 12/04/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -15,7 +15,7 @@
 ## 1. DOING
 - [P] Manipulação de dados
     - [P] Strings e dados do tipo texto
-        - [ ] Introdução
+        - [P] Introdução
         - [ ] strings
         - [ ] Métodos de string
         - [ ] Outros métodos de string
