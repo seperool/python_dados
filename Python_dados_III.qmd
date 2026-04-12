@@ -723,6 +723,24 @@ Os `dtypes` determinam quais operações podem e não podem ser executadas em um
 # Strings e dados do tipo texto
 
 ## Introdução
+
+A maior parte dos dados presentes no mundo pode ser armazenado como texto ou strings. Até mesmo valores que poderão, em algum momento, se tornar numéricos talvez cheguem na forma de texto inicialmente. É importante ser capaz de trabalhar com dados do tipo texto.
+
+Este capítulo não é específico do Pandas, ou seja, exploraremos principalmente como manipular strings em Python sem o Pandas. Os próximos capítulos discutirão outros conteúdos do Pandas. Então retornaremos ás strings e veremos como tudo se relaciona com o Pandas.
+
+Como informação adicional, alguns dos exemplos de string neste capítulo são provenientes de *Monty Python and the Holy Grail* (Monte Python: em busca do cálice sagrado).
+
+### Objetivo{.unnumbered}
+
+Este capítulo abordará:
+
+  1. Obtenção de subconjuntos de `string`
+  2. Métodos de `string`
+  3. Formatação de `string`
+  4. Expressões regulares
+
+\newpage
+
 ## `strings`
 ## Métodos de `string`
 ## Outros métodos de `string`
