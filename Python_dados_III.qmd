@@ -742,6 +742,20 @@ Este capítulo abordará:
 \newpage
 
 ## `strings`
+
+### Obtendo subconjuntos e fatiando strings
+#### Uma letra
+#### Fatiando várias letras
+#### Números negativos
+
+\newpage
+
+### Obtendo o último caractere de uma string
+#### Fatiando a partir do início ou ate o fim
+#### Fatiando com incrementos
+
+\newpage
+
 ## Métodos de `string`
 ## Outros métodos de `string`
 ## Formatação de `strings`
