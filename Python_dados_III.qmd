@@ -743,6 +743,17 @@ Este capítulo abordará:
 
 ## `strings`
 
+Em Python uma string é simplesmente uma série de caracteres. Elas são criadas por um conjunto de aspas de abertura, simples ou duplas, e as aspas de fechamento correspondentes.
+
+Por exemplo:
+
+```{python}
+word = 'grail'
+sent = 'a scratch'
+```
+
+Criará duas strings, `'grail'` e a `'scratch'`, e elas são atribuidas às váriaveis `word` e `sent`, respectivamente.
+
 ### Obtendo subconjuntos e fatiando strings
 #### Uma letra
 #### Fatiando várias letras
