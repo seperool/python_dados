@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    12/04/26
-# Próxima Atualização: 13/04/26
+# Data Atualização:    13/04/26
+# Próxima Atualização: 14/04/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "strings".
+- "Obtendo subconjuntos e fatiando strings".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -17,7 +17,7 @@
     - [P] Strings e dados do tipo texto
         - [x] Introdução
         - [P] strings
-            - [ ] Obtendo subconjuntos e fatiando strings
+            - [P] Obtendo subconjuntos e fatiando strings
                 - [ ] Uma letra
                 - [ ] Fatiando várias letras
                 - [ ] Números negativos
