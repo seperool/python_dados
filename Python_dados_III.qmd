@@ -755,6 +755,13 @@ sent = 'a scratch'
 Criará duas strings, `'grail'` e a `'scratch'`, e elas são atribuidas às váriaveis `word` e `sent`, respectivamente.
 
 ### Obtendo subconjuntos e fatiando strings
+
+[Podemos pensar nas strings como um contêiner de caracteres]{.underline}. Você pode obter um subconjunto de uma string como faria com qualquer outro contêiner Python (por exemplo, `list` ou `Series`).
+
+As tabelas x e y mostram as strings com seus índices associados. Essas informações ajudarão você a compreender os exemplos em que fatiamos valores usando o índice.
+
+
+
 #### Uma letra
 #### Fatiando várias letras
 #### Números negativos
