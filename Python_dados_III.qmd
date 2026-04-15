@@ -758,9 +758,51 @@ Criará duas strings, `'grail'` e a `'scratch'`, e elas são atribuidas às vár
 
 [Podemos pensar nas strings como um contêiner de caracteres]{.underline}. Você pode obter um subconjunto de uma string como faria com qualquer outro contêiner Python (por exemplo, `list` ou `Series`).
 
-As tabelas x e y mostram as strings com seus índices associados. Essas informações ajudarão você a compreender os exemplos em que fatiamos valores usando o índice.
+A @tbl-mapeamento-grail e @tbl-mapeamento-scratch mostram as strings com seus índices associados. Essas informações ajudarão você a compreender os exemplos em que fatiamos valores usando o índice.
 
+```{python}
+#| echo: false
+#| label: tbl-mapeamento-grail
+#| tbl-cap: Posições dos índices para a string 'grail'
 
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# Organizando os dados em linhas
+dados_horizontais = [
+    ["**Índice Positivo**", "0", "1", "2", "3", "4"],
+    ["**String**", "g", "r", "a", "i", "l"],
+    ["**Índice Negativo**", "-5", "-4", "-3", "-2", "-1"]
+]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  dados_horizontais, 
+  tablefmt="grid"
+))
+```
+
+```{python}
+#| echo: false
+#| label: tbl-mapeamento-scratch
+#| tbl-cap: Posições dos índices para a string "a scratch"
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# Organizando os dados em linhas
+dados_horizontais = [
+    ["**Índice Positivo**", "0", "1", "2", "3", "4", "5", "6", "7", "8"],
+    ["**String**", "a", "", "s", "c", "r", "a", "t", "c", "h"],
+    ["**Índice Negativo**", "-9", "-8", "-7", "-6", "-5", "-4", "-3", "-2", "-1"]
+]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  dados_horizontais, 
+  tablefmt="grid"
+))
+```
 
 #### Uma letra
 #### Fatiando várias letras
