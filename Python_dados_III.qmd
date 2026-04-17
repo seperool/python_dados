@@ -804,7 +804,20 @@ Markdown(tabulate(
 ))
 ```
 
+\newpage
+
 #### Uma letra
+
+Para obter a primeira letra de nossas strings, podemos usar a notação de colchetes, []. [Essa notação corresponde ao mesmo método que usamos quando observamos várias fatias de dados]{.underline}.
+
+```{python}
+print(word[0])
+```
+
+```{python}
+print(sent[0])
+```
+
 #### Fatiando várias letras
 #### Números negativos
 
