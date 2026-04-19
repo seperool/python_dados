@@ -819,7 +819,25 @@ print(sent[0])
 ```
 
 #### Fatiando várias letras
+
+Como alternativa, podemos usar a notação de fatiamento para obter intervalos de nossas strings.
+
+```{python}
+# Obtém os 3 primeiros caracteres:
+# Note que o índice 3 é, na verdade, o 4º caractere
+
+print(word[0:3])
+```
+
+[Lembre-se de que, quando usamos a notação de fatiamento em Python, ela é inclusiva à esquerda, mas não à direita]{.underline}. Em outras palavras, o valor do índice especificado em primeiro lugar será incluído, mas não o valor do índice específicado em segundo.
+
+Por exemplo, a notação `[0:3]` incluirá os caracteres de 0 a 3, mas não o índice 3. Outra maneira de dizer isso é afirmar que `[0:3]` incluirá os índices de 0 a 2, inclusive.
+
+\newpage
+
 #### Números negativos
+
+
 
 \newpage
 
