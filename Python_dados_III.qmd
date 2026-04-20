@@ -837,7 +837,43 @@ Por exemplo, a notação `[0:3]` incluirá os caracteres de 0 a 3, mas não o í
 
 #### Números negativos
 
+Lembre-se de que, em Python, passar um índice negativo faz a contagem ser iniciada a partir do **fim** de um contêiner.
 
+```{python}
+# Obtém a última letra
+
+print(sent[-1])
+```
+
+O índice negativo refere-se também à posição de índice, de modo que você poderá usá-lo para fatiar valores.
+
+```{python}
+# Obtém 'a'
+
+print(sent[-9:-8])
+```
+
+Números não negativos podem ser combinados com números negativos.
+
+```{python}
+# Obtém 'a'
+
+print(sent[0:-8])
+```
+
+Observe que não é possível realmente obter a última letra ao usar fatiamento com índice negativo.
+
+```{python}
+# scratch
+
+print(sent[2:-1])
+```
+
+```{python}
+# scratch
+
+print(sent[-7:-1])
+```
 
 \newpage
 
