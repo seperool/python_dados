@@ -878,6 +878,27 @@ print(sent[-7:-1])
 \newpage
 
 ### Obtendo o último caractere de uma string
+
+Obter somente o último elemento de uma string (ou qualquer outro contêiner) pode ser feito com o índice negativo -1. No entanto, isso se torna problemático quando queremos usar a notação de fatiamento e incluir também o último caractere.
+
+Por exemplo, se tentarmos usar a notação de fatiamento para obter a palavra "scratch" da variável `sent`, o resultado devolvido teria uma letra a menos.
+
+[Como o Python não é inclusivo à direita, temos de especificar uma posição de índice igual ao último índice mais um]{.underline}. Para isso, podemos obter o tamanho (`len`) da string e então passar esse valor para a notação de fatiamento.
+
+```{python}
+# Observe que o último índice é uma posição menor que
+#o número devolvido len
+# sent vai do 0 ao 8 caracteres
+s_len = len(sent)
+print(s_len)
+```
+
+```{python}
+print(sent[2:s_len])
+```
+
+\newpage
+
 #### Fatiando a partir do início ou ate o fim
 #### Fatiando com incrementos
 
