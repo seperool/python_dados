@@ -899,7 +899,43 @@ print(sent[2:s_len])
 
 \newpage
 
-#### Fatiando a partir do início ou ate o fim
+#### Fatiando a partir do início ou até o fim
+
+Uma tarefa muito comum é fatiar um valor a partir do início até certo ponto de uma string (ou contêiner). O primeiro elemento é sempre 0, portanto será sempre possível escrever algo como `word[0:3]` para obter os três primeiros elementos, ou `word[-3:length(word)]` para obter os três últimos.
+
+Outro atalho para essa tarafa é deixar em branco os dados à esquerda ou à direita de:
+
+  * Se o lado esquerdo de : estiver vazio, a fatia será tomada do início e terminará no índice a direita (não inclusivo).
+  * Se o lado direito de : estiver vazio, a fatia terá início à esquerda e terminará no final da string.
+
+Por exemplo:
+
+```{python}
+print(word[0:3])
+```
+
+```{python}
+print(word[:3])
+```
+
+Por exemplo, as fatias a seguir equivalentes:
+
+```{python}
+print(sent[2:len(sent)])
+```
+
+```{python}
+print(sent[2:])
+```
+
+Outra forma de especificar a string toda é deixar os dois valores vazios.
+
+```{python}
+print(sent[:])
+```
+
+\newpage
+
 #### Fatiando com incrementos
 
 \newpage
