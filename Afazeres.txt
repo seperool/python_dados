@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    20/04/26
-# Próxima Atualização: 21/04/26
+# Data Atualização:    21/04/26
+# Próxima Atualização: 22/04/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Fatiando a partir do início ou ate o fim".
+- "Fatiando com incrementos".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -22,8 +22,8 @@
                 - [x] Fatiando várias letras
                 - [x] Números negativos
             - [P] Obtendo o último caractere de uma string
-                - [P] Fatiando a partir do início ou ate o fim
-                - [ ] Fatiando com incrementos
+                - [x] Fatiando a partir do início ou ate o fim
+                - [P] Fatiando com incrementos
         - [ ] Métodos de string
         - [ ] Outros métodos de string
         - [ ] Formatação de strings
