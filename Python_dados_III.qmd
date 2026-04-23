@@ -938,6 +938,20 @@ print(sent[:])
 
 #### Fatiando com incrementos
 
+A última notação para fatiamento nos permite fatiar em incrementos. Para isso, use um segundo dois-pontos, :, para especificar um terceiro número. Esse permite determinar o incremento com base no qual os valores serão extraídos.
+
+Por exemplo, podemos obter uma string com os caracteres alternados passando 2 para considerar todo segundo caractere.
+
+```{python}
+print(sent[::2])
+```
+
+Qualquer inteiro pode ser passado nessa posição; portanto, se você quiser considerar cada terceiro caractere (ou valor em um contêiner), passe o valor 3.
+
+```{python}
+print(sent[::3])
+```
+
 \newpage
 
 ## Métodos de `string`
