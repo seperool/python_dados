@@ -955,7 +955,18 @@ print(sent[::3])
 \newpage
 
 ## Métodos de `string`
+
+Muitos métodos também são usados quando processamos dados em Python. Uma lista com [todos os métodos de string]{.underline} pode ser encontrada na página "*String Methods*" (Métodos de string) da documentação. As tabelas [x]{.underline} e [y]{.underline} resumem alguns métodos de string comumente utilizados em Python.
+
+\newpage
+
 ## Outros métodos de `string`
+
+### Método join
+### Método splitlines
+
+\newpage
+
 ## Formatação de `strings`
 ## Expressões regulares (`RegEx`)
 ## Biblioteca `regex`
