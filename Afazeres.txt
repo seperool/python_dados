@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    22/04/26
-# Próxima Atualização: 23/04/26
+# Data Atualização:    23/04/26
+# Próxima Atualização: 24/04/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -17,15 +17,10 @@
     - [P] Strings e dados do tipo texto
         - [x] Introdução
         - [x] strings
-            - [x] Obtendo subconjuntos e fatiando strings
-                - [x] Uma letra
-                - [x] Fatiando várias letras
-                - [x] Números negativos
-            - [x] Obtendo o último caractere de uma string
-                - [x] Fatiando a partir do início ou ate o fim
-                - [x] Fatiando com incrementos
         - [P] Métodos de string
         - [ ] Outros métodos de string
+            - [ ] Método join
+            - [ ] Método splitlines
         - [ ] Formatação de strings
         - [ ] Expressões regulares (RegEx)
         - [ ] Biblioteca regex
