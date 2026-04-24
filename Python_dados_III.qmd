@@ -956,7 +956,85 @@ print(sent[::3])
 
 ## Métodos de `string`
 
-Muitos métodos também são usados quando processamos dados em Python. Uma lista com [todos os métodos de string]{.underline} pode ser encontrada na página "*String Methods*" (Métodos de string) da documentação. As tabelas [x]{.underline} e [y]{.underline} resumem alguns métodos de string comumente utilizados em Python.
+Muitos métodos também são usados quando processamos dados em Python. Uma lista com [todos os métodos de string]{.underline} pode ser encontrada na página "*String Methods*" (Métodos de string) da documentação. A @tbl-metodos-string e @tbl-exe-metodos-string resumem alguns métodos de string comumente utilizados em Python.
+
+```{python}
+#| echo: false
+#| label: tbl-metodos-string
+#| tbl-cap: Métodos de string de Python
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# Organizando os dados em linhas
+dados_horizontais = [
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"]
+    ]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  dados_horizontais,
+  headers=["Método", "Descrição"],
+  colalign=("left", "left"),
+  tablefmt="grid"
+))
+```
+
+\newpage
+
+```{python}
+#| echo: false
+#| label: tbl-exe-metodos-string
+#| tbl-cap: Exemplos de uso dos métodos de string de Python
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# Organizando os dados em linhas
+dados_horizontais = [
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"],
+    ["**Índice Positivo**", "0"]
+    ]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  dados_horizontais,
+  headers=["Código", "Resultado"],
+  colalign=("left", "left"),
+  tablefmt="grid"
+))
+```
 
 \newpage
 
