@@ -1008,23 +1008,23 @@ from tabulate import tabulate
 
 # Organizando os dados em linhas
 dados_horizontais = [
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"],
-    ["**Índice Positivo**", "0"]
+    ["**Índice Positivo**", "'Black Knight'"],
+    ["**Índice Positivo**", "2"],
+    ["**Índice Positivo**", "`True`"],
+    ["**Índice Positivo**", "`True`"],
+    ["**Índice Positivo**", "7"],
+    ["**Índice Positivo**", "`ValueError`"],
+    ["**Índice Positivo**", "`False` (Há um espaço em branco)"],
+    ["**Índice Positivo**", "`True`"],
+    ["**Índice Positivo**", "`False` (Apóstrofo e espaço)"],
+    ["**Índice Positivo**", "'black knight'"],
+    ["**Índice Positivo**", "'BLACK KNIGHT'"],
+    ["**Índice Positivo**", "scratch!"],
+    ["**Índice Positivo**", "I'm not dead."],
+    ["**Índice Positivo**", "`['NI!', 'NI!', 'NI!', 'NI!']`"],
+    ["**Índice Positivo**", "('3',',','4')"],
+    ["**Índice Positivo**", "'  nine  '"],
+    ["**Índice Positivo**", "00009"]
     ]
 
 # Gerando a tabela formatada
