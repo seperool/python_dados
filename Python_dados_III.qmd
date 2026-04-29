@@ -1008,12 +1008,12 @@ from tabulate import tabulate
 
 # Organizando os dados em linhas
 dados_horizontais = [
-    ["**Índice Positivo**", "'Black Knight'"],
-    ["**Índice Positivo**", "2"],
-    ["**Índice Positivo**", "`True`"],
-    ["**Índice Positivo**", "`True`"],
-    ["**Índice Positivo**", "7"],
-    ["**Índice Positivo**", "`ValueError`"],
+    ["`'black Knight'.capitalize()`", "'Black Knight'"],
+    ["`'It's just a flesh wound!'.count('u')`", "2"],
+    ["`'Halt! Who goes there?'.starswith('Halt')`", "`True`"],
+    ["`'coconut'.endswith('nut')`", "`True`"],
+    ["`'It's just a flesh wound!'.find('u')`", "7"],
+    ["`'It's just a flesh wound!'.index('scratch')`", "`ValueError`"],
     ["**Índice Positivo**", "`False` (Há um espaço em branco)"],
     ["**Índice Positivo**", "`True`"],
     ["**Índice Positivo**", "`False` (Apóstrofo e espaço)"],
@@ -1023,8 +1023,8 @@ dados_horizontais = [
     ["**Índice Positivo**", "I'm not dead."],
     ["**Índice Positivo**", "`['NI!', 'NI!', 'NI!', 'NI!']`"],
     ["**Índice Positivo**", "('3',',','4')"],
-    ["**Índice Positivo**", "'  nine  '"],
-    ["**Índice Positivo**", "00009"]
+    ["`'nine'.center(width=10)`", "'  nine  '"],
+    ["`'9'.zfill(with=5)`", "00009"]
     ]
 
 # Gerando a tabela formatada
