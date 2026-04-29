@@ -250,6 +250,9 @@ Vamos obter um subconjunto de nosso dataframe `tips` e colocar também um valor 
 # Obtém um subconjunto de tips
 tips_sub_miss = tips.head(10)
 
+# 1. Converte a coluna para o tipo 'object' (string)
+tips_sub_miss['total_bill'] = tips_sub_miss['total_bill'].astype(object)
+
 # Atribui alguns valores ausentes ('missing')
 tips_sub_miss.loc[[1,3,5,7], 'total_bill'] = 'missing'
 
@@ -322,7 +325,7 @@ Markdown(tabulate(
 
 Saindo da ordem da documentação, se passarmos o valor 'ignore' para `errors`, nada mudará em nossa coluna. No entanto, não veremos tampouco uma mensagem de erro - o que nem sempre poderá ser o comportamento desejado.
 
-```{python}
+```
 #| warning: false
 tips_sub_miss['total_bill'] = pd.to_numeric(
   tips_sub_miss['total_bill'],
@@ -332,9 +335,11 @@ tips_sub_miss['total_bill'] = pd.to_numeric(
 print(tips_sub_miss)
 ```
 
-```{python}
+```
 print(tips_sub_miss.dtypes)
 ```
+
+Obs.: `ignore` foi descontinuado na atualização mais recente do Pandas.
 
 \newpage
 
