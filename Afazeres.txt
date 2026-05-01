@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    29/04/26
-# Próxima Atualização: 30/04/26
+# Data Atualização:    30/04/26
+# Próxima Atualização: 01/05/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -17,8 +17,8 @@
     - [P] Strings e dados do tipo texto
         - [x] Introdução
         - [x] strings
-        - [P] Métodos de string
-        - [ ] Outros métodos de string
+        - [x] Métodos de string
+        - [P] Outros métodos de string
             - [ ] Método join
             - [ ] Método splitlines
         - [ ] Formatação de strings
