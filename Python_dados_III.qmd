@@ -1045,8 +1045,15 @@ Markdown(tabulate(
 
 ## Outros métodos de `string`
 
-### Método join
-### Método splitlines
+Para além dos métodos da @tbl-metodos-string, este tópico lista mais alguns métodos de string que são convenientes (mas difíceis de apresentar em uma tabela).
+
+### Método `join`
+
+
+
+\newpage
+
+### Método `splitlines`
 
 \newpage
 
