@@ -1049,7 +1049,32 @@ Para além dos métodos da @tbl-metodos-string, este tópico lista mais alguns m
 
 ### Método `join`
 
+O método `join` aceita um contêiner (por exemplo, uma `list`) e devolve uma nova string contendo cada elemento da lista. Por exemplo, suponha que queremos combinar coordenadas na notação DMS (Degrees, Minutes, Seconds, ou Graus, Minutos, Segundos).
 
+```{python}
+d1 = '40'
+m1 = '46'
+s1 = '52.837'
+u1 = 'N'
+
+d2 = '73'
+m2 = '58'
+s2 = '26.302'
+u2 = 'W'
+```
+
+[Podemos juntar todos os valores com um espaço, ' ', usando o método `join` no espaço]{.underline}.
+
+```{python}
+coords = ' '.join([d1, m1, s1, u1,\
+   d2, m2, s2, u2])
+
+print(coords)
+```
+
+Esse metódo também será útil se houver uma lista de strings que você queira separar usando o seu próprio delimitador (por exemplo, tabulação \t, vírgulas ,).
+
+Se quiséssemos, poderíamos usar `split` em um espaço, ' ', e obter as partes individuais de `coords`.
 
 \newpage
 
