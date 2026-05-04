@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    02/05/26
-# Próxima Atualização: 03/05/26
+# Data Atualização:    03/05/26
+# Próxima Atualização: 04/05/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -19,8 +19,8 @@
         - [x] strings
         - [x] Métodos de string
         - [P] Outros métodos de string
-            - [P] Método join
-            - [ ] Método splitlines
+            - [x] Método join
+            - [P] Método splitlines
         - [ ] Formatação de strings
         - [ ] Expressões regulares (RegEx)
         - [ ] Biblioteca regex
