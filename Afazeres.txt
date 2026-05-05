@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    03/05/26
-# Próxima Atualização: 04/05/26
+# Data Atualização:    04/05/26
+# Próxima Atualização: 05/05/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Métodos de string".
+- "Método splitlines".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
