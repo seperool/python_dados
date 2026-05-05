@@ -37,6 +37,7 @@ import unittest                  # Framework para testes de unidade
 import random                    # Geração de números pseudoaleatórios
 import urllib                    # Manipulação de URLs e requisições de rede
 import glob                      # Localiza arquivos usando padrões de busca (ex: *.txt)
+from pprint import pprint        # (Data Pretty Printer) formata estruturas de dados Python de forma organizada e legível.
 
 
 ################################################################################
