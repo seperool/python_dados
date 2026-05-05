@@ -1080,6 +1080,26 @@ Se quiséssemos, poderíamos usar `split` em um espaço, ' ', e obter as partes 
 
 ### Método `splitlines`
 
+[O método `splitlines` é semelhante ao método `split`]{.underline}. Em geral, é usado em strings com várias linhas e devolve uma lista em que cada elemento será uma linha da string multilinha.
+
+```{python}
+multi_str = """Guard: What? Ridden on a horse?
+King Arthur: Yes!
+Guard: You're using coconuts!
+King Arthur: What?
+Guard: You've got ... coconut[s] and you're bangin' 'em together.
+"""
+
+print(multi_str)
+```
+
+[Podemos obter cada linha como um elemento separado em uma lista usando `splitlines`]{.underline}.
+
+```{python}
+multi_str_split = multi_str.splitlines()
+print(multi_str_split)
+```
+
 \newpage
 
 ## Formatação de `strings`
