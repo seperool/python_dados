@@ -69,6 +69,7 @@ import pandas as pd
 import json
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pprint import pprint
 ```
 
 \newpage
@@ -1097,8 +1098,28 @@ print(multi_str)
 
 ```{python}
 multi_str_split = multi_str.splitlines()
-print(multi_str_split)
+pprint(multi_str_split)
 ```
+
+\newpage
+
+Observações:
+
+  * Biblioteca `pprint`:
+
+    * É o módulo completo que contém ferramentas para formatação de dados. Ela analisa objetos Python (listas, dicionários, tuplas) e calcula como eles devem ser exibidos para não estourarem a largura da tela.
+
+  * função `pprint`:
+
+    * Diferente do `print()` comum, que joga tudo em uma linha só, a função `pprint` quebra as linhas automaticamente, recua (indenta) os itens e organiza a saída visualmente.
+
+    * Ela evita que sua lista "fuja" da margem da folha, pois ela detecta o fim da linha e empilha os dados verticalmente.
+
+\newpage
+
+Exemplo:
+
+
 
 \newpage
 
