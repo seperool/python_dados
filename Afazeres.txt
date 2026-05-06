@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    05/05/26
-# Próxima Atualização: 06/05/26
+# Data Atualização:    06/05/26
+# Próxima Atualização: 07/05/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Método splitlines".
+- "Formatação de strings".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -18,10 +18,8 @@
         - [x] Introdução
         - [x] strings
         - [x] Métodos de string
-        - [P] Outros métodos de string
-            - [x] Método join
-            - [P] Método splitlines
-        - [ ] Formatação de strings
+        - [x] Outros métodos de string
+        - [P] Formatação de strings
         - [ ] Expressões regulares (RegEx)
         - [ ] Biblioteca regex
         - [ ] Conclusão
