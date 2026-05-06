@@ -1119,7 +1119,20 @@ Observações:
 
 Exemplo:
 
+Por fim, suponha que quisessémos somente o texto do `Guard`. Essa é uma conversa entre duas pessoas, portanto `Guard` fala em linhas alternadas.
 
+```{python}
+guard = multi_str_split[::2]
+pprint(guard)
+```
+
+Há algumas maneiras para obter somente as linhas de `Guard`. Uma fonte seria usar o método `replace` na string e substituir a string `'Guard: '` por uma string vazia, isto é, ''. Poderíamos então usar o método `splitlines`.
+
+```{python}
+guard = multi_str.replace('Guard: ','')\
+  .splitlines()[::2]
+pprint(guard)
+```
 
 \newpage
 
