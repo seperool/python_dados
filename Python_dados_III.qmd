@@ -1138,6 +1138,12 @@ pprint(guard)
 
 ## Formatação de `strings`
 
+A formatação de strings nos permite especificar um template genérico para uma string e inserir variáveis no padrão. Esse template também é capaz de lidar com várias maneiras de representar visualmente uma string - [por exemplo, mostrando dois valores decimais em um `float` ou exibindo um número como uma porcentagem, em vez de ser um valor decimal]{.underline}.
+
+A formatação de string pode ajudar até mesmo quando queremos exibir algo no console. Em vez de simplesmente exibir a variável, podemos mostrar uma string que ofereça pistas sobre o valor apresentado.
+
+Há vários casos de uso para formatação de strings, e Python tem duas formas de tratá-las.
+
 ### Formatação de `strings` personalizada
 ### Formatação de `strings` de caracteres
 ### Formatação de números
