@@ -1145,6 +1145,61 @@ A formatação de string pode ajudar até mesmo quando queremos exibir algo no c
 Há vários casos de uso para formatação de strings, e Python tem duas formas de tratá-las.
 
 ### Formatação de `strings` personalizada
+
+Uma forma mais novade formatação de strings está descrita na documentação sobre o assunto, junto com vários exemplos.
+
+#### Formatação de Strings Personalizada (`string.Formatter`){.unnumbered}
+
+O Python permite realizar substituições complexas de variáveis através do método `format()`. Para customizar esse comportamento, existe a classe string.`Formatter`, que utiliza a mesma lógica interna do método padrão.
+
+Principais Métodos de Execução:
+
+  * `format()`: A interface principal. Recebe uma string de formato e argumentos (`*args`, `kwargs`).
+
+  * `vformat()`: O "motor" real da formatação. É útil quando os argumentos já estão em um dicionário predefinido, evitando desempacotar e reempacotar os dados.
+
+\newpage
+
+```{python}
+#| echo: false
+#| label: tbl-formatter-methods
+#| tbl-cap: Métodos para Customização (Subclasses)
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+mtd_cust = [
+    ["`parse()`", "Decompõe a string em texto literal e campos de substituição."],
+    ["`get_field()`", "Converte o nome do campo (ex: `0[nome]`) no objeto a ser formatado."],
+    ["`get_value()`", "Recupera o valor do dado via índice (inteiro) ou chave (string)."],
+    ["`format_field()`", "Executa a formatação final chamando a função nativa `format()`."],
+    ["`convert_field()`", "Converte o valor para tipos específicos: `s` (str), `r` (repr) ou `a` (ascii)."],
+    ["`check_unused_args()`", "Verifica e valida se há argumentos que não foram utilizados na string."]
+    ]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  mtd_cust,
+  headers=["Método", "Descrição"],
+  colalign=("left", "left"),
+  tablefmt="grid"
+))
+```
+
+Resumo do fluxo de execução:
+
+O processo segue uma ordem lógica de processamento que garante a flexibilidade da formatação:
+
+  1. **Análise**: O `parse()` quebra a estrutura da string.
+
+  2. **Busca**: O `get_field()` e `get_value()` localizam os dados.
+
+  3. **Conversão**: O `convert_field()` ajusta o tipo se solicitado.
+
+  4. **Formatação**: O `format_field()` gera o resultado visual final.
+
+\newpage
+
 ### Formatação de `strings` de caracteres
 ### Formatação de números
 ### Formatação no estilo do `printf` de **C**
