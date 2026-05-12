@@ -1198,6 +1198,28 @@ O processo segue uma ordem lógica de processamento que garante a flexibilidade 
 
   4. **Formatação**: O `format_field()` gera o resultado visual final.
 
+#### `parse(format_string)` {.unnumbered}
+
+Este método "quebra" a frase para entender o que é texto fixo e o que é variável.
+
+```{python}
+from string import Formatter
+fmt = Formatter()
+
+texto = "Oi, {nome}! Você tem {idade} anos."
+for literal, campo, espec, conv in fmt.parse(texto):
+    print(f"Texto: '{literal}' | Campo: '{campo}'")
+```
+
+\newpage
+
+#### `get_field()` {.unnumbered}
+
+
+
+#### `get_value(key, args, kwargs)` {.unnumbered}
+#### `format_field(value, format_spec)` {.unnumbered}
+#### `convert_field(value, conversion)` {.unnumbered}
 \newpage
 
 ### Formatação de `strings` de caracteres
