@@ -1218,8 +1218,35 @@ for literal, campo, espec, conv in fmt.parse(texto):
 
 
 #### `get_value(key, args, kwargs)` {.unnumbered}
+
+É o responsável por "ir buscar" o valor dentro das suas variáveis.
+
+```{python}
+# Se você passar (nome="Sergio"), o get_value busca a chave "nome"
+# Se você passar ("Sergio"), o get_value busca o índice 0
+kwargs = {'nome': 'Sergio'}
+print(fmt.get_value('nome', (), kwargs)) # Saída: Sergio
+```
+
 #### `format_field(value, format_spec)` {.unnumbered}
+
+Aqui é onde acontece a mágica dos números e alinhamentos (como o `:.2f`).
+
+```{python}
+numero = 10.5678
+print(fmt.format_field(numero, ".2f")) # Saída: 10.57
+```
+
 #### `convert_field(value, conversion)` {.unnumbered}
+
+Ele aplica transformações rápidas como `!r` (representação com aspas) ou `!s` (string pura).
+
+```{python}
+valor = "Brasil"
+# 's' para string, 'r' para repr (mostra as aspas)
+print(fmt.convert_field(valor, 'r')) # Saída: 'Brasil' (com aspas)
+```
+
 \newpage
 
 ### Formatação de `strings` de caracteres
