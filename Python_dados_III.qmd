@@ -1215,7 +1215,43 @@ for literal, campo, espec, conv in fmt.parse(texto):
 
 #### `get_field()` {.unnumbered}
 
+Ele recebe o nome que você escreveu entre as chaves (ex: `pessoa.nome`) e o divide em duas partes:
 
+  1. **A Base**: Ele chama o get_value para buscar o objeto principal (a variável `pessoa`).
+
+  2. **O Resto**: Ele identifica as "instruções extras" (como `.nome` ou `[0]`) que devem ser aplicadas a esse objeto.
+
+```{python}
+from string import Formatter
+
+# 1. Definimos uma estrutura simples
+class Carro:
+    def __init__(self, modelo):
+        self.modelo = modelo
+
+meu_carro = Carro("Fusca")
+fmt = Formatter()
+
+# 2. Vamos usar o get_field manualmente para ver o que ele faz
+# A string de formato que queremos testar é "{0.modelo}"
+# Onde '0' é o índice do argumento e '.modelo' é o atributo.
+
+campo_completo = "0.modelo"
+args = (meu_carro,)  # Passamos o objeto dentro de uma tupla
+kwargs = {}
+
+# O get_field vai decompor "0.modelo"
+objeto_final, chave_usada = fmt.get_field(campo_completo, args, kwargs)
+
+print(f"Valor extraído: {objeto_final}") 
+print(f"Chave principal usada: {chave_usada}")
+
+# Saída:
+# Valor extraído: Fusca
+# Chave principal usada: 0
+```
+
+\newpage
 
 #### `get_value(key, args, kwargs)` {.unnumbered}
 
@@ -1250,6 +1286,11 @@ print(fmt.convert_field(valor, 'r')) # Saída: 'Brasil' (com aspas)
 \newpage
 
 ### Formatação de `strings` de caracteres
+
+
+
+\newpage
+
 ### Formatação de números
 ### Formatação no estilo do `printf` de **C**
 ### Strings literais formatadas em Python 3.6+
