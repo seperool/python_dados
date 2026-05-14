@@ -1146,7 +1146,10 @@ Há vários casos de uso para formatação de strings, e Python tem duas formas 
 
 ### Formatação de `strings` personalizada
 
-Uma forma mais novade formatação de strings está descrita na documentação sobre o assunto, junto com vários exemplos.
+Uma forma mais novade formatação de strings está descrita na documentação[^1] sobre o assunto, junto com vários exemplos[^2].
+
+[^1]: <https://docs.python.org/3.6/library/string.html#string-formatting>
+[^2]: <https://docs.python.org/3.6/library/string.html#format-exemples>
 
 #### Formatação de Strings Personalizada (`string.Formatter`){.unnumbered}
 
