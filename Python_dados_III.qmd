@@ -1290,7 +1290,33 @@ print(fmt.convert_field(valor, 'r')) # Saída: 'Brasil' (com aspas)
 
 ### Formatação de `strings` de caracteres
 
-Para formatar strings de caracteres, você deve essencialmente escrever string com caracteres [placeholders especiais]{.underline} e [usar o método `format` na string para inserir valores nesses placeholders]{.underline}.
+Para formatar strings de caracteres, você deve essencialmente escrever string com caracteres [placeholders especiais]{.underline}[^3] e [usar o método `format` na string para inserir valores nesses placeholders]{.underline}.
+
+[^3]: A palavra placeholder significa "marcador de lugar". No Python, os placeholders mais comuns são as chaves {}. Elas servem para avisar ao interpretador: "Guarde esse espaço aqui, porque um dado vai entrar neste local mais tarde".
+
+Exemplos:
+
+```{python}
+var = 'flash wound'
+s = "It's just a {}!"
+
+print(s.format(var))
+```
+
+```{python}
+print(s.format('scratch'))
+```
+
+```{python}
+# 1. O modelo com os placeholders {}
+modelo_frase = "Olá, {}! Seu saldo é R$ {}."
+
+# 2. Inserindo os valores com o .format()
+frase_final = modelo_frase.format("Sergio", 100)
+
+print(frase_final)
+# Saída: Olá, Sergio! Seu saldo é R$ 100.
+```
 
 \newpage
 
