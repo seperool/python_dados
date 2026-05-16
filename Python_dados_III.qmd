@@ -1290,7 +1290,7 @@ print(fmt.convert_field(valor, 'r')) # Saída: 'Brasil' (com aspas)
 
 ### Formatação de `strings` de caracteres
 
-
+Para formatar strings de caracteres, você deve essencialmente escrever string com caracteres [placeholders especiais]{.underline} e [usar o método `format` na string para inserir valores nesses placeholders]{.underline}.
 
 \newpage
 
