@@ -1,12 +1,12 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    17/05/26
-# Próxima Atualização: 18/05/26
+# Data Atualização:    18/05/26
+# Próxima Atualização: 19/05/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
 ## > NEXT STEP (Foco da próxima interação)
-- "Formatação de strings de caracteres".
+- "Formatação de números".
 
 ## 0. ROTINA
 - [ ] 0.1 Revisar o "Next Step" e anotações do dia anterior
@@ -21,8 +21,8 @@
         - [x] Outros métodos de string
         - [P] Formatação de strings
             - [x] Formatação de strings personalizada
-            - [P] Formatação de strings de caracteres
-            - [ ] Formatação de números
+            - [x] Formatação de strings de caracteres
+            - [P] Formatação de números
             - [ ] Formatação no estilo do printf de C
             - [ ] Strings literais formatadas em Python 3.6+
         - [ ] Expressões regulares (RegEx)
