@@ -1320,6 +1320,33 @@ print(frase_final)
 
 \newpage
 
+Os placeholders também podem se referir às variáveis diversas vezes.
+
+```{python}
+# Usando variáveis diversas vezes pelo indice
+s = """Black Knight: 'Tis but a {0}.
+King Arthur: A {0}? Your arm's off!
+"""
+print(s.format("scratch"))
+```
+
+Quando você define um índice (como `{0}`), você está dizendo ao Python: "Busque sempre o primeiro argumento que foi passado dentro do .format()". Isso permite que você replique o mesmo valor ao longo do texto sem precisar digitá-lo várias vezes no método.
+
+Se você tivesse passado mais palavras, poderia alternar entre elas usando `{0}`, `{1}`, `{2}`, etc.
+
+```{python}
+# {0} será o Nome e {1} será a Profissão
+frase = """Porteiro: Quem é você?
+Visitante: Meu nome é {0}.
+Porteiro: Ah, você é o {1}?
+Visitante: Sim, eu mesmo, o {1} {0}!
+"""
+
+print(frase.format("Sergio", "Programador"))
+```
+
+\newpage
+
 ### Formatação de números
 ### Formatação no estilo do `printf` de **C**
 ### Strings literais formatadas em Python 3.6+
