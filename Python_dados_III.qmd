@@ -1347,7 +1347,22 @@ print(frase.format("Sergio", "Programador"))
 
 \newpage
 
+Também podemos fornecer uma variável aos placeholders.
+
+```{python}
+s = 'Hayden Planetarium Coordinates: {lat}, {lon}'
+print(s.format(lat='40.7815º N',\
+  lon='73.9733º W'))
+```
+
+\newpage
+
 ### Formatação de números
+
+
+
+\newpage
+
 ### Formatação no estilo do `printf` de **C**
 ### Strings literais formatadas em Python 3.6+
 
