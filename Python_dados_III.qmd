@@ -1359,7 +1359,19 @@ print(s.format(lat='40.7815º N',\
 
 ### Formatação de números
 
+Os números também podem ser formatados.
 
+```{python}
+print('Some digits of pi: {}'.\
+  format(3.14159265359))
+```
+
+É possível até mesmo formatar números e [usar vírgulas como separadores de milhar]{.underline}.
+
+```{python}
+print("In 2005, Lu Chao of China recited: {:,} digits of pi.".\
+  format(67890))
+```
 
 \newpage
 
