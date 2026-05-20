@@ -1373,6 +1373,19 @@ print("In 2005, Lu Chao of China recited: {:,} digits of pi.".\
   format(67890))
 ```
 
+Números podem ser usados para fazer um cálculo e podem ser formatados com determinado número de valores decimais.
+
+A seguir, calcularemos uma proporção e formataremos esse valor com um percentual.
+
+```{python}
+# O 0 em (0:.4) e em (0:.4%) refere-se ao índice 0 nesse formato;
+# O .4 refere-se à quantidade de valores decimais, 4;
+# Se especificarmos um %, o decimal será formatado como uma porcentagem.
+
+print("I remenber {0:.4} or {0:.4%} of what Lu Chao recited.".\
+  format(7/67890))
+```
+
 \newpage
 
 ### Formatação no estilo do `printf` de **C**
