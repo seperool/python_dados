@@ -1388,6 +1388,22 @@ print("I remenber {0:.4} or {0:.4%} of what Lu Chao recited.".\
 
 \newpage
 
+Por fim, podemos usar a formatação de strings para preencher um número com zeros, semelhante ao modo como `zfill` funciona com strings. Ao lidar com dados, esse método pode ser útil [se estivermos trabalhando com números]{.underline} de ID lidos como números, [mas que devem ser strings]{.underline}.
+
+```{python}
+# o primeiro 0 refere-se ao índice nesse formato;
+# o segundo zero refere-se ao caractere para preencher;
+# o 5 nesse caso refere-se à quantidade de caracteres no total;
+# d indica que um digito será usado;
+
+# o número é preenchido com 0s de modo que a string como um todo tem 
+#5 caracteres.
+
+print("My ID number is {0:05d}".format(42))
+```
+
+\newpage
+
 ### Formatação no estilo do `printf` de **C**
 ### Strings literais formatadas em Python 3.6+
 
