@@ -1405,6 +1405,15 @@ print("My ID number is {0:05d}".format(42))
 \newpage
 
 ### Formatação no estilo do `printf` de **C**
+
+Outra maneira de efetuar uma formatação de strings em Python é por meio do operador %. Essa opção segue o estilo de formatação do `printf` de C.
+
+De acordo com a documentação, o método `str.format` apresentado na seção 8.5.3 é preferivel. Apesar disso, você ainda poderá ver exemplos de código que usam esse estilo de formatação.
+
+Não daremos muitos detalhes sobre esse método, mas eis alguns dos exemplos anteriores recriados com o estilo de formatação do `printf` do C.
+
+\newpage
+
 ### Strings literais formatadas em Python 3.6+
 
 \newpage
