@@ -1412,6 +1412,22 @@ De acordo com a documentação, o método `str.format` apresentado na seção 8.
 
 Não daremos muitos detalhes sobre esse método, mas eis alguns dos exemplos anteriores recriados com o estilo de formatação do `printf` do C.
 
+```{python}
+# d representa um digito inteiro
+
+s = 'I only know %d digits of pi' % 7
+print(s)
+```
+
+```{python}
+# s representa uma string;
+# observe que o padrão da string usa parênteses ()
+#em vez de chaves {};
+# a variável passada é um dicionário Python, que usa {}.
+print('Some digits of %(cont)s: %(value).2f' %\
+  {'cont':'e', 'value': 2.718})
+```
+
 \newpage
 
 ### Strings literais formatadas em Python 3.6+
