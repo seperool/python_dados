@@ -1434,6 +1434,18 @@ print('Some digits of %(cont)s: %(value).2f' %\
 
 Strings literais formatadas, f-strings, são um recurso novo em Python. A sintaxe é bem parecida com aquela usada na seção "Formatação de strings personalizada" (3.5.1). A principal diferença é que [nossa string deve começar com a letra **f**]{.underline}. Essa sintaxe diz a Python que temos uma string literal formatada. [Podemos então usar a variável diretamente no placeholder, {}, sem chamar `format`]{.underline}. 
 
+```{python}
+var = 'flesh wound'
+s = f"It's just a {var}!"
+print(s)
+```
+
+```{python}
+lat = '40.7815º N'
+lon = '73.9733º W'
+s = f'Hayden Planetarium Coordinates: {lat}, {lon}'
+print(s)
+```
 
 [As principais vantagens de usar f-strings é que elas são mais legíveis, podem ser mais rápidas e oferecem melhor desempenho]{.underline}.
 
