@@ -1,7 +1,7 @@
 # ANÁLISE DE DADOS COM PYTHON E PANDAS III
 # Autor: Sergio Pedro Rodrigues Oliveira
-# Data Atualização:    26/05/26
-# Próxima Atualização: 27/05/26
+# Data Atualização:    27/05/26
+# Próxima Atualização: 28/05/26
 
 # LEGENDA: [x] = Concluído; [P] = Em Progresso; [ ] = A Fazer
 
@@ -19,13 +19,12 @@
         - [x] strings
         - [x] Métodos de string
         - [x] Outros métodos de string
-        - [P] Formatação de strings
-            - [x] Formatação de strings personalizada
-            - [x] Formatação de strings de caracteres
-            - [x] Formatação de números
-            - [x] Formatação no estilo do printf de C
-            - [x] Strings literais formatadas em Python 3.6+
+        - [x] Formatação de strings
         - [P] Expressões regulares (RegEx)
+            - [ ] Correspondência de padrão
+            - [ ] Encontrando um padrão
+            - [ ] Substituindo um padrão
+            - [ ] Compilando um padrão
         - [ ] Biblioteca regex
         - [ ] Conclusão
 
