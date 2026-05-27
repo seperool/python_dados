@@ -1452,6 +1452,14 @@ print(s)
 \newpage
 
 ## Expressões regulares (`RegEx`)
+
+### Correspondência de padrão
+### Encontrando um padrão
+### Substituindo um padrão
+### Compilando um padrão
+
+\newpage
+
 ## Biblioteca `regex`
 ## Conclusão
 
