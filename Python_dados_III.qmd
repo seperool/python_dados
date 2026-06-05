@@ -1453,7 +1453,11 @@ print(s)
 
 ## Expressões regulares (`RegEx`)
 
+Quando os métodos básicos se string de Python que procuram padrões não forem suficientes, você pode apelar para as expressões regulares a fim de resolver o problema.
 
+As expressões regulares - que são extremamente eficazes - possíbilitam uma forma (não trivial) de encontrar e fazer a correspondência de padrões em strings. A desvantagem é que, depois de terminar de escrever uma expressão regular complexa, será difícil descobrir oque o padrão faz somente olhando para ele, ou seja, [a sintaxe é difícil de ler]{.underline}.
+
+Em muitas tarefas com dados, como fazer a correspondência com um número de telefone ou efetuar uma validação do campo endereço, [quase sempre é mais fácil pesquisar no Google a qual tipo de padrão você está querendo corresponder, e colar o código que alguém já escreveu em seu próprio código]{.underline} ([não se esqueça de documentar o local do qual você obteve o padrão]{.underline}).
 
 \newpage
 
