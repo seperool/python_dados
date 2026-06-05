@@ -1453,6 +1453,10 @@ print(s)
 
 ## Expressões regulares (`RegEx`)
 
+
+
+\newpage
+
 ### Correspondência de padrão
 ### Encontrando um padrão
 ### Substituindo um padrão
