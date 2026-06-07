@@ -1459,6 +1459,16 @@ As expressões regulares - que são extremamente eficazes - possíbilitam uma fo
 
 Em muitas tarefas com dados, como fazer a correspondência com um número de telefone ou efetuar uma validação do campo endereço, [quase sempre é mais fácil pesquisar no Google a qual tipo de padrão você está querendo corresponder, e colar o código que alguém já escreveu em seu próprio código]{.underline} ([não se esqueça de documentar o local do qual você obteve o padrão]{.underline}).
 
+Antes de prosseguir, talvez você queira acessar <https://regex101.com/>; [é um ótimo local e referência para expressões regulares e teste de padrões em strings de teste]{.underline}. Há até um modo Python para que você possa copiar/colar diretamente um padrão do site para o seu próprio código Python. 
+
+Expressões regulares em Python usam o módulo `re`[^re] (`import re`). Esse módulo também tem um ótimo *How To* (Como fazer)[^como_faz] que pode ser usado como recurso adicional.
+
+A \textcolor{red}{tabela x e y} mostram parte da sintaxe das RegEx e os caracteres especiais que serão usados nesta seção.
+
+[^re]: Expressões regulares em Python: <https://docs.python.org/3.6/library/re.html>
+
+[^como_faz]: How To (como faz) das expressões regulares em Python: <https://docs.python.org/3.6/howto/regex.html>
+
 \newpage
 
 ### Correspondência de padrão
