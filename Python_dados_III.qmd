@@ -1463,11 +1463,47 @@ Antes de prosseguir, talvez você queira acessar <https://regex101.com/>; [é um
 
 Expressões regulares em Python usam o módulo `re`[^re] (`import re`). Esse módulo também tem um ótimo *How To* (Como fazer)[^como_faz] que pode ser usado como recurso adicional.
 
-A \textcolor{red}{tabela x e y} mostram parte da sintaxe das RegEx e os caracteres especiais que serão usados nesta seção.
+A @tbl-sintaxe-regex e \textcolor{red}{tabela x e y} mostram parte da sintaxe das RegEx e os caracteres especiais que serão usados nesta seção.
 
 [^re]: Expressões regulares em Python: <https://docs.python.org/3.6/library/re.html>
 
 [^como_faz]: How To (como faz) das expressões regulares em Python: <https://docs.python.org/3.6/howto/regex.html>
+
+
+```{python}
+#| echo: false
+#| error: false
+#| warning: false
+#| label: tbl-sintaxe-regex
+#| tbl-cap: Sintaxe básica de RegEx
+
+from IPython.display import Markdown
+from tabulate import tabulate
+
+# Definindo os dados da tabela de referência de tipos
+table_referencia = [
+    ["`.`", "Qualquer caractere (exceto nova linha)."],
+    ["`^`", "Início da string."],
+    ["`$`", "Fim da string."],
+    ["`*`", "Zero ou mais repetições."],
+    ["`+`", "Uma ou mais repetições."],
+    ["`?`", "Zero ou uma repetição."],
+    ["`{m}`", "Exatamente m repetições."],
+    ["`{m,n}`", "De m a n repetições."],
+    [r"`\`", "Escapa caracteres especiais."],  # O r"..." evita que o Python reclame da barra
+    ["`[]`", "Conjunto de caracteres."],
+    [r"`|`", "Operador OU (Alternância)."],     # O r"..." protege a barra vertical
+    ["`()`", "Grupo de captura."]
+]
+
+# Gerando a tabela formatada
+Markdown(tabulate(
+  table_referencia, 
+  headers=["Sintaxe", "Descrição"],
+  colalign=("left", "left"),
+  tablefmt="grid"
+))
+```
 
 \newpage
 
