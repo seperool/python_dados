@@ -1519,12 +1519,12 @@ from tabulate import tabulate
 
 # Definindo os dados da tabela de referência de tipos
 table_referencia = [
-    [r"`\d`", "Qualquer caractere (exceto nova linha)."],
-    [r"`\D`", "Início da string."],
-    [r"`\s`", "Fim da string."],
-    [r"`\S`", "Zero ou mais repetições."],
-    [r"`\w`", "Uma ou mais repetições."],
-    [r"`\W`", "Zero ou uma repetição."]
+    [r"`\d`", "Um digito."],
+    [r"`\D`", "Qualquer caractere que NÃO seja um digito (oposto de `\d`)."],
+    [r"`\s`", "Qualquer caractere de espaço em branco."],
+    [r"`\S`", "Qualquer caractere que NÃO seja um espaço em branco (oposto a `\s`)."],
+    [r"`\w`", "Caracteres de palavras."],
+    [r"`\W`", "Qualquer caractere que NÃO seja um caracteres de palavras (oposto a `\w`)."]
 ]
 
 # Gerando a tabela formatada
