@@ -1536,6 +1536,10 @@ Markdown(tabulate(
 ))
 ```
 
+Para usar expressões regulares, escreva uma string contendo o padrão **RegEx** e especifique uma string para a correspondência com o padrão. Várias funções do módulo `re` podem ser usadas para cuidar de necessidades específicas. Algumas tarefas comuns estão apresentadas na \textcolor{red}{tabela x}.
+
+
+
 \newpage
 
 ### Correspondência de padrão
